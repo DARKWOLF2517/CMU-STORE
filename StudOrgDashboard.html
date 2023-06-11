@@ -45,7 +45,7 @@
             top: 50px;
             left: 0;
             height: 100vh;
-            width: 230px;
+            width: 200px;
             background-color: #343a40; /* Dark background color */
             color: #fff; /* Text color */
             overflow-y: auto;
@@ -91,9 +91,8 @@
 
         .toggle-button {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            background-color: #333333;
+            top: 8px;
+            left: 19px;
             border: none;
         }
 
@@ -117,7 +116,7 @@
 
             .toggle-button {
                 top: 20px;
-                right: 20px;
+                left: 20px;
             }
 
             .dropdown-menu {
@@ -135,6 +134,7 @@
       height: 210px;
       padding: 20px;
       padding-bottom: 50px;
+      border-radius: 10px;
       background-color: #ffffff;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -168,6 +168,7 @@
       margin-left: 10px;
     }
     .calendar-container {
+      border-radius: 10px;
       position: absolute;
       bottom: 30px;
       right: 20px;
@@ -204,8 +205,7 @@
 
     .dashboard {
             display: flex;
-            margin-top: 30px;
-            margin-left: auto;
+            margin-top: 30px;  
         }
 
         .dashboard-card {
@@ -241,6 +241,49 @@
             color: #007bff;
             margin: 10px 0;
         }
+         /* Additional styles for buttons */
+         .dashboard-buttons {
+            display: flex;
+            margin-top: 5px;  
+            margin-right: 15px;
+        }
+        .dashboard-button {
+    background-color: #e8e8e8;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-right: 10px; /* Add right margin for spacing */
+}
+
+.dashboard-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-button.events {
+    background-color: #ffbb33;
+}
+
+.dashboard-button.accountabilities {
+    background-color: #00cc99;
+}
+
+.dashboard-button.attendance {
+    background-color: #66a3ff;
+}
+
+.dashboard-button.evaluation {
+    background-color: #ff4d4d;
+}
+
+.dashboard-button.student-organization {
+    background-color: #9933ff;
+}
+
     </style>
 
     <title>Student Organization Dashboard</title>
@@ -249,7 +292,9 @@
     <!-- TOP NAV BAR -->
     <div class="wrapper">
         <div class="top-nav">
-           
+          <div class="nav-item toggle-button">
+            <button class="btn btn-primary" id="sidebar-toggle"><i class="bi bi-list"></i></button>
+          </div>
             <a href="#" class="nav-link link-light">
                 <span class="nav-link-text">CMU-STORE-AMS</span>
             </a>
@@ -308,15 +353,13 @@
                         <span class="nav-link-text">Evaluation</span>
                     </a>
                 </li>
-                <li class="nav-item toggle-button">
-                    <button class="btn btn-primary" id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                </li>
+                
             </ul>
            
         </div>
         <div class="content">
             
-        
+        <!-- Dashboard  -->
         <h2>Student Organization Dashboard</h2>
         <div class="dashboard">
             <div class="dashboard-card">
@@ -334,104 +377,130 @@
                 <p id="completedEventCount">Loading...</p>
             </div>
         </div>
-    </div>
-
+        <div class="dashboard-buttons">
+          <div class="dashboard-button events">
+              <i class="fas fa-calendar"></i>
+              <h6>Events</h6>
+          </div>
+  
+          <div class="dashboard-button accountabilities">
+              <i class="fas fa-tasks"></i>
+              <h6>Accountabilities</h6>
+          </div>
+  
+          <div class="dashboard-button attendance">
+              <i class="fas fa-clipboard-list"></i>
+              <h6>Attendance</h6>
+          </div>
+  
+          <div class="dashboard-button evaluation">
+              <i class="fas fa-chart-bar"></i>
+              <h6>Evaluation</h6>
+          </div>
+  
+          <div class="dashboard-button student-organization">
+              <i class="fas fa-users"></i>
+              <h6>Student Organization</h6>
+          </div>
+      </div>
 <!-- Timeline container -->
 <div class="timeline-container">
-    <div class="timeline-header">
-      <h3>Timeline</h3>
-    </div>
-    <hr>
-    <div class="timeline-content">
-      <ul class="timeline-event-list">
-        <li class="timeline-event">
-          <div class="event-date">June 10, 2023</div>
-          <div class="event-description">Event 1</div>
-        </li>
-        <li class="timeline-event">
-          <div class="event-date">June 15, 2023</div>
-          <div class="event-description">Event 2</div>
-        </li>
-        <li class="timeline-event">
-          <div class="event-date">June 20, 2023</div>
-          <div class="event-description">Event 3</div>
-        </li>
-      </ul>
-    </div>
+  <div class="timeline-header">
+    <h3>Timeline</h3>
   </div>
+  <hr>
+  <div class="timeline-content">
+    <ul class="timeline-event-list">
+      <li class="timeline-event">
+        <div class="event-date">June 10, 2023</div>
+        <div class="event-description">Event 1</div>
+      </li>
+      <li class="timeline-event">
+        <div class="event-date">June 15, 2023</div>
+        <div class="event-description">Event 2</div>
+      </li>
+      <li class="timeline-event">
+        <div class="event-date">June 20, 2023</div>
+        <div class="event-description">Event 3</div>
+      </li>
+    </ul>
+  </div>
+</div>
 
-  <div class="calendar-container">
-    <div>
-      <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left-fill"></i></button>
-      <span id="month-year"></span>
-      <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right-fill"></i></button>
-    </div>
-    <table>
-      <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+<div class="calendar-container">
+  <div>
+    <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left-fill"></i></button>
+    <span id="month-year"></span>
+    <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right-fill"></i></button>
   </div>
+  <table>
+    <tr>
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+    </div>
+
   <!-- Content class end -->
 </div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

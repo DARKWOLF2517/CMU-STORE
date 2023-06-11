@@ -59,6 +59,43 @@
             color: #007bff;
             margin: 10px 0;
         }
+        
+        /* Additional styles for buttons */
+        .dashboard-button {
+            background-color: #e8e8e8;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .dashboard-button:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-button.events {
+            background-color: #ffbb33;
+        }
+
+        .dashboard-button.accountabilities {
+            background-color: #00cc99;
+        }
+
+        .dashboard-button.attendance {
+            background-color: #66a3ff;
+        }
+
+        .dashboard-button.evaluation {
+            background-color: #ff4d4d;
+        }
+
+        .dashboard-button.student-organization {
+            background-color: #9933ff;
+        }
     </style>
 </head>
 <body>
@@ -75,14 +112,41 @@
 
         <div class="dashboard-card">
             <i class="far fa-calendar-alt"></i>
-            <h6> Number of Events</h6>
+            <h6>Number of Events</h6>
             <p id="eventCount">Loading...</p>
         </div>
 
         <div class="dashboard-card">
             <i class="fas fa-check-circle"></i>
-            <h6> Number of Completed Events</h6>
+            <h6>Number of Completed Events</h6>
             <p id="completedEventCount">Loading...</p>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-button events">
+            <i class="fas fa-calendar"></i>
+            <h6>Events</h6>
+        </div>
+
+        <div class="dashboard-button accountabilities">
+            <i class="fas fa-tasks"></i>
+            <h6>Accountabilities</h6>
+        </div>
+
+        <div class="dashboard-button attendance">
+            <i class="fas fa-clipboard-list"></i>
+            <h6>Attendance</h6>
+        </div>
+
+        <div class="dashboard-button evaluation">
+            <i class="fas fa-chart-bar"></i>
+            <h6>Evaluation</h6>
+        </div>
+
+        <div class="dashboard-button student-organization">
+            <i class="fas fa-users"></i>
+            <h6>Student Organization</h6>
         </div>
     </div>
 
