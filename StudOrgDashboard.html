@@ -204,8 +204,8 @@
 
     .dashboard {
             display: flex;
-            justify-content: space-between;
             margin-top: 30px;
+            margin-left: auto;
         }
 
         .dashboard-card {
@@ -215,11 +215,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
-           left: 20px;
-        }
-
-        .dashboard-card:last-child {
-            margin-right: 0; /* Remove the right margin for the last card */
+            margin-right: 15px; /* Adjust the distance between each card */
         }
 
         .dashboard-card:hover {
@@ -228,8 +224,16 @@
 
         .dashboard-card h6 {
             margin: 0;
-            font-size: 24px;
+            font-size: 18px; /* Change the font size to a bit smaller */
             color: #333;
+            display: flex; /* Add display flex */
+            align-items: center; /* Center the icon vertically */
+            justify-content: center; /* Center the icon horizontally */
+        }
+
+        .dashboard-card i {
+            margin-right: 5px; /* Add some spacing between the icon and text */
+            font-size: 48px; /* Increase the icon size */
         }
 
         .dashboard-card p {
@@ -314,7 +318,6 @@
             
         
         <h2>Student Organization Dashboard</h2>
-
         <div class="dashboard">
             <div class="dashboard-card">
                 <h6><i class="fas fa-users"></i> Number of Members</h6>
