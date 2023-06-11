@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Organization Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .dashboard-card {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-card h2 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Organization Dashboard</h1>
+
+    <div class="dashboard">
+        <div class="dashboard-card">
+            <h2>Number of Members</h2>
+            <p id="memberCount">Loading...</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Number of Events</h2>
+            <p id="eventCount">Loading...</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Number of Completed Events</h2>
+            <p id="completedEventCount">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Simulating data retrieval from an API or database
+        setTimeout(() => {
+            const memberCount = 100; // Replace with actual member count
+            const eventCount = 10; // Replace with actual event count
+            const completedEventCount = 5; // Replace with actual completed event count
+
+            document.getElementById('memberCount').textContent = memberCount;
+            document.getElementById('eventCount').textContent = eventCount;
+            document.getElementById('completedEventCount').textContent = completedEventCount;
+        }, 1000); // Simulating a delay of 1 second for data retrieval
+    </script>
+</body>
+</html>
