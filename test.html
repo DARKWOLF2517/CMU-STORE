@@ -2,51 +2,86 @@
 <html>
 <head>
     <title>Student Organization Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f5f5f5;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
+            margin-bottom: 50px;
         }
 
         .dashboard {
             display: flex;
-            justify-content: space-around;
-            margin-top: 50px;
+            justify-content: space-between;
+            margin-top: 30px;
         }
 
         .dashboard-card {
-            background-color: #f2f2f2;
-            padding: 20px;
+            background-color: #fff;
+            padding: 10px;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-right: 10px; /* Adjust the distance between each card */
         }
 
-        .dashboard-card h2 {
+        .dashboard-card:last-child {
+            margin-right: 0; /* Remove the right margin for the last card */
+        }
+
+        .dashboard-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-card h6 {
             margin: 0;
+            font-size: 18px; /* Change the font size to a bit smaller */
+            color: #333;
+            display: flex; /* Add display flex */
+            align-items: center; /* Center the icon vertically */
+            justify-content: center; /* Center the icon horizontally */
+        }
+
+        .dashboard-card i {
+            margin-right: 5px; /* Add some spacing between the icon and text */
+            font-size: 30px; /* Increase the icon size */
+        }
+
+        .dashboard-card p {
+            font-size: 36px;
+            color: #007bff;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <h1>Student Organization Dashboard</h1>
 
+    <h2>Student Organization Dashboard</h2>
+
     <div class="dashboard">
         <div class="dashboard-card">
-            <h2>Number of Members</h2>
+            <i class="fas fa-users"></i> 
+            <h6>Number of Members</h6>
             <p id="memberCount">Loading...</p>
         </div>
 
         <div class="dashboard-card">
-            <h2>Number of Events</h2>
+            <i class="far fa-calendar-alt"></i>
+            <h6> Number of Events</h6>
             <p id="eventCount">Loading...</p>
         </div>
 
         <div class="dashboard-card">
-            <h2>Number of Completed Events</h2>
+            <i class="fas fa-check-circle"></i>
+            <h6> Number of Completed Events</h6>
             <p id="completedEventCount">Loading...</p>
         </div>
     </div>
@@ -63,5 +98,7 @@
             document.getElementById('completedEventCount').textContent = completedEventCount;
         }, 1000); // Simulating a delay of 1 second for data retrieval
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>
