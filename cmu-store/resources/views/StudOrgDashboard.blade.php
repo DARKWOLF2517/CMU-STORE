@@ -51,7 +51,7 @@
             height: 100vh;
             width: 200px;
             background-color: #343a40; /* Dark background color */
-            color: #fff; /* Text color *//
+            color: #fff; /* Text color */
             overflow-y: auto;
             transition: width 0.3s ease-in-out;
             z-index: 1000;
