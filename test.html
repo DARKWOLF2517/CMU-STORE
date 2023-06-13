@@ -1,171 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Organization Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .dashboard {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .dashboard-card {
-            background-color: #fff;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-            margin-right: 5px; /* Adjust the distance between each card */
-        }
-
-        .dashboard-card:last-child {
-            margin-right: 0; /* Remove the right margin for the last card */
-        }
-
-        .dashboard-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .dashboard-card h6 {
-            margin: 0;
-            font-size: 18px; /* Change the font size to a bit smaller */
-            color: #333;
-            display: flex; /* Add display flex */
-            align-items: center; /* Center the icon vertically */
-            justify-content: center; /* Center the icon horizontally */
-        }
-
-        .dashboard-card i {
-            margin-right: 5px; /* Add some spacing between the icon and text */
-            font-size: 48px; /* Increase the icon size */
-        }
-
-        .dashboard-card p {
-            font-size: 36px;
-            color: #007bff;
-            margin: 10px 0;
-        }
-        
-        /* Additional styles for buttons */
-        .dashboard-button {
-            background-color: #e8e8e8;
-            color: #333;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-            margin-top: 30px;
-            cursor: pointer;
-        }
-        .dashboard-button i {
-    margin-right: 5px; /* Add some spacing between the icon and text */
-    font-size: 60px; /* Increase the icon size */
-}
-        .dashboard-button:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .dashboard-button.events {
-            background-color: #ffbb33;
-        }
-
-        .dashboard-button.accountabilities {
-            background-color: #00cc99;
-        }
-
-        .dashboard-button.attendance {
-            background-color: #66a3ff;
-        }
-
-        .dashboard-button.evaluation {
-            background-color: #ff4d4d;
-        }
-
-        .dashboard-button.student-organization {
-            background-color: #9933ff;
-        }
-    </style>
+  <title>QR Code Scanner</title>
+  <style>
+    #video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <h1>Student Organization Dashboard</h1>
+  <h1>QR Code Scanner</h1>
+  <video id="video"></video>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <script>
+    // Access the device's camera and stream the video to the <video> element
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var video = document.getElementById('video');
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function(error) {
+        console.log('Error accessing the camera:', error);
+      });
 
-    <h2>Student Organization Dashboard</h2>
+    // Listen for the 'play' event to start scanning the video frames
+    document.getElementById('video').addEventListener('play', function() {
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
 
-    <div class="dashboard">
-        <div class="dashboard-card">
-            <i class="fas fa-users"></i> 
-            <h6>Number of Members</h6>
-            <p id="memberCount">Loading...</p>
-        </div>
+      // Set the canvas dimensions to match the video feed
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
 
-        <div class="dashboard-card">
-            <i class="far fa-calendar-alt"></i>
-            <h6>Number of Events</h6>
-            <p id="eventCount">Loading...</p>
-        </div>
+      // Function to scan the video frames for QR codes
+      function scanQRCode() {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-        <div class="dashboard-card">
-            <i class="fas fa-check-circle"></i>
-            <h6>Number of Completed Events</h6>
-            <p id="completedEventCount">Loading...</p>
-        </div>
-    </div>
+        // Use a library like zxing.js or qr-scanner.js to decode the QR code
+        // Here's an example using zxing.js:
+        const codeReader = new ZXing.BrowserQRCodeReader();
+        codeReader.decodeFromCanvas(canvas)
+          .then(function(result) {
+            // QR code decoded successfully
+            alert('QR code scanned: ' + result.text);
+          })
+          .catch(function(error) {
+            // No QR code found in the current frame
+            console.log('No QR code found:', error);
+          });
 
-    <div class="dashboard">
-        <div class="dashboard-button events">
-            <i class="fas fa-calendar"></i>
-            <h6>Events</h6>
-        </div>
+        // Call the scanQRCode function recursively to continuously scan video frames
+        requestAnimationFrame(scanQRCode);
+      }
 
-        <div class="dashboard-button accountabilities">
-            <i class="fas fa-tasks"></i>
-            <h6>Accountabilities</h6>
-        </div>
-
-        <div class="dashboard-button attendance">
-            <i class="fas fa-clipboard-list"></i>
-            <h6>Attendance</h6>
-        </div>
-
-        <div class="dashboard-button evaluation">
-            <i class="fas fa-chart-bar"></i>
-            <h6>Evaluation</h6>
-        </div>
-
-        <div class="dashboard-button student-organization">
-            <i class="fas fa-users"></i>
-            <h6>Student Organization</h6>
-        </div>
-    </div>
-
-    <script>
-        // Simulating data retrieval from an API or database
-        setTimeout(() => {
-            const memberCount = 100; // Replace with actual member count
-            const eventCount = 10; // Replace with actual event count
-            const completedEventCount = 5; // Replace with actual completed event count
-
-            document.getElementById('memberCount').textContent = memberCount;
-            document.getElementById('eventCount').textContent = eventCount;
-            document.getElementById('completedEventCount').textContent = completedEventCount;
-        }, 1000); // Simulating a delay of 1 second for data retrieval
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+      // Start scanning the video frames for QR codes
+      scanQRCode();
+    });
+  </script>
 </body>
 </html>

@@ -110,7 +110,7 @@
             .sidebar.collapsed {
                 width: 60px;
             }
-            
+
             .content {
                 margin-left: 72px;
             }
@@ -129,7 +129,7 @@
                 float: none;
             }
         }
-        
+
     /* New styles for the timeline pane */
     .timeline-container {
       position: absolute;
@@ -156,7 +156,7 @@
 
     .timeline-event {
       margin-bottom: 10px;
-      
+
     }
     .timeline-event-list {
       list-style: none;
@@ -183,26 +183,26 @@
       background-color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added box shadow */
     }
-    
+
     table {
       border-collapse: collapse;
       width: 100%;
     }
-    
+
     th, td {
       text-align: center;
       padding: 8px;
       font-size: 14px; /* Adjusted font size */
     }
-    
+
     th {
       background-color: #f2f2f2;
     }
-    
+
     td {
       border: 1px solid #dddddd;
     }
-    
+
     .today {
       background-color: #007bff;
       color: white;
@@ -210,7 +210,7 @@
 
     .dashboard {
             display: flex;
-            margin-top: 20px;  
+            margin-top: 20px;
         }
 
         .dashboard-card {
@@ -253,9 +253,9 @@
             display: flex;
 
             margin-right: 15px;
-            
+
         }
-        
+
         .dashboard-button {
     background-color: #e8e8e8;
     color: #333;
@@ -297,9 +297,9 @@
 
     </style>
 
-    <title>Student Organization Dashboard</title>
 </head>
 <body>
+
     <!-- TOP NAV BAR -->
     <div class="wrapper">
         <div class="top-nav">
@@ -309,7 +309,7 @@
             <a href="#" class="nav-link link-light">
                 <span class="nav-name">CMU-STORE-AMS</span>
             </a>
-             
+
             <div class="profile-dropdown dropdown">
                 <button class="notification-button btn btn-link">
                     <i class="bi bi-bell"></i>
@@ -349,12 +349,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link link-light">
-                    <i class="bi bi-clipboard-check"></i>
-                      <span class="nav-link-text">Attendance</span>
-                  </a>
-              </li>
-                <li class="nav-item">
                     <a href="#" class="nav-link link-light">
                         <i class="bi bi-currency-dollar"></i>
                         <span class="nav-link-text">Accountabilities</span>
@@ -366,159 +360,13 @@
                         <span class="nav-link-text">Evaluation</span>
                     </a>
                 </li>
-                
+
             </ul>
-           
-        </div>
-        <div class="content">
-            
-        <!-- Dashboard  -->
-        <h2>Student Organization Dashboard</h2>
-        <div class="dashboard">
-            <div class="dashboard-card">
-              <i class="fas fa-users"></i>
-                <h6> Number of Members</h6>
-                <p id="memberCount">Loading...</p>
-            </div>
-    
-            <div class="dashboard-card">
-              <i class="far fa-calendar-alt"></i> 
-                <h6>Number of Events</h6>
-                <p id="eventCount">Loading...</p>
-            </div>
-    
-            <div class="dashboard-card">
-              <i class="fas fa-check-circle"></i> 
-                <h6>Number of Completed Events</h6>
-                <p id="completedEventCount">Loading...</p>
-            </div>
-        </div>
-        <div class="dashboard-buttons">
-          <div class="dashboard-button events">
-              <i class="fas fa-calendar"></i>
-              <h6>Events</h6>
-          </div>
-  
-          <div class="dashboard-button accountabilities">
-              <i class="fas fa-tasks"></i>
-              <h6>Accountabilities</h6>
-          </div>
-  
-          <div class="dashboard-button attendance">
-              <i class="fas fa-clipboard-list"></i>
-              <h6>Attendance</h6>
-          </div>
-  
-          <div class="dashboard-button evaluation">
-              <i class="fas fa-chart-bar"></i>
-              <h6>Evaluation</h6>
-          </div>
-  
-          <div class="dashboard-button student-organization">
-              <i class="fas fa-users"></i>
-              <h6>Student Organization</h6>
-          </div>
-      </div>
-<!-- Timeline container -->
-<div class="timeline-container">
-  <div class="timeline-header">
-    <h3>Timeline</h3>
-  </div>
-  <hr>
-  <div class="timeline-content">
-    <ul class="timeline-event-list">
-      <li class="timeline-event">
-        <div class="event-date">June 10, 2023</div>
-        <div class="event-description">Event 1</div>
-      </li>
-      <li class="timeline-event">
-        <div class="event-date">June 15, 2023</div>
-        <div class="event-description">Event 2</div>
-      </li>
-      <li class="timeline-event">
-        <div class="event-date">June 20, 2023</div>
-        <div class="event-description">Event 3</div>
-      </li>
-    </ul>
-  </div>
-</div>
 
-<div class="calendar-container">
-  <div>
-    <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left-fill"></i></button>
-    <span id="month-year"></span>
-    <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right-fill"></i></button>
-  </div>
-  <table>
-    <tr>
-      <th>Sun</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-</div>
-    </div>
+        </div>
 
-  <!-- Content class end -->
-</div> 
+        @yield('main-content')
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
@@ -542,21 +390,21 @@
           let currentMonth = today.getMonth();
           let currentYear = today.getFullYear();
           const cells = document.getElementsByTagName('td');
-          
+
           function updateCalendar() {
             const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             const firstDay = new Date(currentYear, currentMonth, 1);
             const lastDay = new Date(currentYear, currentMonth + 1, 0);
             const numDays = lastDay.getDate();
             const startDay = firstDay.getDay();
-            
+
             for (let i = 0; i < cells.length; i++) {
               cells[i].innerHTML = '';
               cells[i].classList.remove('today');
             }
-            
+
             document.getElementById('month-year').textContent = `${monthNames[currentMonth]} ${currentYear}`;
-            
+
             let date = 1;
             for (let i = startDay; i < startDay + numDays; i++) {
               cells[i].innerHTML = date;
@@ -566,9 +414,9 @@
               date++;
             }
           }
-          
+
           updateCalendar();
-          
+
           document.getElementById('prev-month').addEventListener('click', () => {
             currentMonth--;
             if (currentMonth < 0) {
@@ -577,7 +425,7 @@
             }
             updateCalendar();
           });
-          
+
           document.getElementById('next-month').addEventListener('click', () => {
             currentMonth++;
             if (currentMonth > 11) {
