@@ -1,1 +1,64 @@
-test ni sya
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Scanner</title>
+  <style>
+    #video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Scanner</h1>
+  <video id="video"></video>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <script>
+    // Access the device's camera and stream the video to the <video> element
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var video = document.getElementById('video');
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function(error) {
+        console.log('Error accessing the camera:', error);
+      });
+
+    // Listen for the 'play' event to start scanning the video frames
+    document.getElementById('video').addEventListener('play', function() {
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+
+      // Set the canvas dimensions to match the video feed
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      // Function to scan the video frames for QR codes
+      function scanQRCode() {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Use a library like zxing.js or qr-scanner.js to decode the QR code
+        // Here's an example using zxing.js:
+        const codeReader = new ZXing.BrowserQRCodeReader();
+        codeReader.decodeFromCanvas(canvas)
+          .then(function(result) {
+            // QR code decoded successfully
+            alert('QR code scanned: ' + result.text);
+          })
+          .catch(function(error) {
+            // No QR code found in the current frame
+            console.log('No QR code found:', error);
+          });
+
+        // Call the scanQRCode function recursively to continuously scan video frames
+        requestAnimationFrame(scanQRCode);
+      }
+
+      // Start scanning the video frames for QR codes
+      scanQRCode();
+    });
+  </script>
+</body>
+</html>
