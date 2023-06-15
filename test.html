@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    /* CSS styles remain the same */
     body {
       background-color: #f8f9fa;
     }
@@ -71,28 +72,30 @@
 </head>
 <body>
 
-    <div class="head-container">
-      <button class="btn btn-primary btn-sm mt-3" id="addEventBtn" data-bs-toggle="modal" data-bs-target="#eventModal">
-        <i class="fas fa-plus"></i> Add Event
-      </button>
+  <div class="head-container">
+    <!-- Updated button attributes to include an ID -->
+    <button class="btn btn-primary btn-sm mt-3" id="addEventBtn" data-bs-toggle="modal" data-bs-target="#eventModal">
+      <i class="fas fa-plus"></i> Add Event
+    </button>
 
-        <button class="btn btn-primary btn-sm mt-3 dropdown-toggle" type="button" id="sortDropdownButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-sort"></i>Sort
-        </button>
-        <div class="dropdown-menu" aria-labelledby="sortDropdownButton">
-          <a class="dropdown-item" href="#">Completed Events</a>
-          <a class="dropdown-item" href="#">Ongoing Events</a>
-          <a class="dropdown-item" href="#">Upcoming Events</a>
-        </div>
-
+    <button class="btn btn-primary btn-sm mt-3 dropdown-toggle" type="button" id="sortDropdownButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-sort"></i>Sort
+    </button>
+    <div class="dropdown-menu" aria-labelledby="sortDropdownButton">
+      <a class="dropdown-item" href="#">Completed Events</a>
+      <a class="dropdown-item" href="#">Ongoing Events</a>
+      <a class="dropdown-item" href="#">Upcoming Events</a>
     </div>
 
-    <div class="events-container">
-      <h3>Events</h3>
-      <div id="eventList"></div>
-    </div>
+  </div>
 
-  <!-- Event Modal -->
+  <div class="events-container">
+    <h3>Events</h3>
+    <hr>
+    <!-- Updated container ID -->
+    <div id="eventList"></div>
+  </div>
+
   <form id="eventForm">
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
       <!-- Removed redundant inner form element -->
@@ -161,6 +164,11 @@
                 <input class="form-check-input" type="checkbox" id="extendeeCheckbox" value="Extendee">
                 <label class="form-check-label">Extendee</label>
               </div>
+              <div class="form-fines">
+                <label class="label">Fines</label>
+                <input class="form-input" type="text" id="finesBox">
+                
+              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -174,16 +182,6 @@
   </form>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const attendanceCheckbox = document.getElementById('attendanceCheckbox');
-    const attendanceOptions = document.getElementById('attendanceOptions');
-
-    attendanceCheckbox.addEventListener('change', function () {
-      attendanceOptions.style.display = this.checked ? 'block' : 'none';
-    });
-  </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   <script>
     const attendanceCheckbox = document.getElementById('attendanceCheckbox');
     const attendanceOptions = document.getElementById('attendanceOptions');
@@ -209,6 +207,9 @@
       const eventTime = eventTimeInput.value;
       const eventLocation = eventLocationInput.value;
       const eventDescription = eventDescriptionInput.value;
+      const requireAttendance = attendanceCheckbox.checked;
+      const finesCheckbox = document.getElementById('finesCheckbox');
+      const requireFines = finesCheckbox.checked;
 
       // Create the event card
       const eventCard = document.createElement('div');
@@ -221,6 +222,8 @@
         <p>Time: ${eventTime}</p>
         <p>Location: ${eventLocation}</p>
         <p>Description: ${eventDescription}</p>
+        ${requireAttendance ? '<p>Require Attendance</p>' : ''}
+        ${requireFines ? '<p>Fines</p>' : ''}
         <button class="btn btn-primary">See More</button>
       `;
 
@@ -233,11 +236,13 @@
       eventTimeInput.value = '';
       eventLocationInput.value = '';
       eventDescriptionInput.value = '';
+      attendanceCheckbox.checked = false;
+      finesCheckbox.checked = false;
+      attendanceOptions.style.display = 'none';
 
       // Close the modal
-      const modal = document.getElementById('eventModal');
-      const bootstrapModal = bootstrap.Modal.getInstance(modal);
-      bootstrapModal.hide();
+      const modal = bootstrap.Modal.getInstance(document.getElementById('eventModal'));
+      modal.hide();
     });
   </script>
 </body>
