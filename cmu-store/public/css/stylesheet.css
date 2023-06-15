@@ -74,12 +74,14 @@ body{
 }
 
 .sidebar-title .bi {
-    color: #fff; /* Sidebar title icon color */
+    color: #fff;
 }
 
 .nav-link i.bi {
-    color: #fff; /* Nav link icons color */
+    color: #fff;
 }
+
+/* Toggle button  */
 
 .toggle-button {
     position: absolute;
