@@ -134,8 +134,7 @@
             <div id="attendanceOptions" style="display: none;">
               <div class="mb-3">
                 <label class="form-label">Require attendance to:</label>
-              </div>
-              <!-- Updated checkbox values to include unique IDs -->
+                <!-- Updated checkbox values to include unique IDs -->
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="allStudentsCheckbox" value="All Students">
                 <label class="form-check-label">All Students</label>
@@ -165,11 +164,12 @@
                 <label class="form-check-label">Extendee</label>
               </div>
               <div class="mb-3">
-                <label for="eventName" class="form-label">Amount of Fines</label>
-                <input type="text" class="form-control" id="eventName">
+                <label for="amountFines" class="form-label">Amount of Fines</label>
+                <input type="number" class="form-control" id="amountFines">
               </div>
             </div>
           </div>
+        </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <!-- Updated button ID -->
@@ -195,6 +195,7 @@
     const eventTimeInput = document.getElementById('eventTime');
     const eventLocationInput = document.getElementById('eventLocation');
     const eventDescriptionInput = document.getElementById('eventDescription');
+    const eventFinesInput = document.getElementById('amountFines');
     const saveEventBtn = document.getElementById('saveEventBtn');
     const eventList = document.getElementById('eventList');
 
@@ -207,8 +208,7 @@
       const eventLocation = eventLocationInput.value;
       const eventDescription = eventDescriptionInput.value;
       const requireAttendance = attendanceCheckbox.checked;
-      const finesCheckbox = document.getElementById('finesCheckbox');
-      const requireFines = finesCheckbox.checked;
+      const requireFines = eventFinesInput.value;
 
       // Create the event card
       const eventCard = document.createElement('div');
@@ -222,7 +222,7 @@
         <p>Location: ${eventLocation}</p>
         <p>Description: ${eventDescription}</p>
         ${requireAttendance ? '<p>Require Attendance</p>' : ''}
-        ${requireFines ? '<p>Fines</p>' : ''}
+        <p>Amount of Fines: ${requireFines}</p>
         <button class="btn btn-primary">See More</button>
       `;
 
@@ -236,7 +236,7 @@
       eventLocationInput.value = '';
       eventDescriptionInput.value = '';
       attendanceCheckbox.checked = false;
-      finesCheckbox.checked = false;
+      eventFinesInput.value = '';
       attendanceOptions.style.display = 'none';
 
       // Close the modal
