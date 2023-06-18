@@ -1,27 +1,32 @@
 
-body{
+body {
     background-color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .top-nav {
     background-color: #ffffff;
     color: #000000;
-    padding: 7px;
+    padding: 0.875rem; /* Converted from 7px */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 3.125rem; /* Converted from 50px */
 }
 
-.top-nav  .notification-button{
+
+.top-nav .notification-button {
     display: flex;
     align-items: center;
     color: #000000;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 0.625rem; /* Converted from 10px */
 }
-.nav-name{
-  padding-left: 60px;
+
+.nav-name {
+    padding-left: 3.75rem; /* Converted from 60px */
 }
+
 .top-nav .profile-dropdown {
     display: flex;
     align-items: center;
@@ -30,15 +35,15 @@ body{
 }
 
 .top-nav .profile-dropdown .profile-name {
-    margin-right: 5px;
+    margin-right: 0.3125rem; /* Converted from 5px */
 }
 
 .sidebar {
     position: absolute;
-    top: 50px;
+    top: 3.125rem; /* Converted from 50px */
     left: 0;
     height: 100vh;
-    width: 200px;
+    width: 16%; /* Converted from 200px */
     background-color: #343a40; /* Dark background color */
     overflow-y: auto;
     transition: width 0.3s ease-in-out;
@@ -46,17 +51,17 @@ body{
 }
 
 .sidebar.collapsed {
-    width: 72px;
+    width: 4.5%; /* Converted from 72px */
 }
 
 .content {
-    margin-left: 230px;
-    padding: 20px;
+    margin-left: 14.375%; /* Converted from 230px */
+    padding: 1.25rem; /* Converted from 20px */
     transition: margin-left 0.3s ease-in-out;
 }
 
 .content.collapsed {
-    margin-left: 72px;
+    margin-left: 4.5%; /* Converted from 72px */
 }
 
 .nav-link-text {
@@ -74,214 +79,203 @@ body{
 }
 
 .sidebar-title .bi {
-    color: #fff;
+    color: #000000;
 }
 
 .nav-link i.bi {
-    color: #fff;
+    color: #1f1f1f;
 }
 
-/* Toggle button  */
+/* Toggle button */
 
 .toggle-button {
     position: absolute;
-    top: 7px;
-    left: 19px;
+    top: 0.4375rem; /* Converted from 7px */
+    left: 1.1875rem; /* Converted from 19px */
     border: 1px;
     background-color: #e3e5e9;
-
 }
 
-/* Updated styles for smaller devices */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 230px;
-    }
 
-    .sidebar.collapsed {
-        width: 60px;
-    }
+  .dashboard {
+    padding: 20px;
+  }
 
-    .content {
-        margin-left: 72px;
-    }
+  .card {
+    border-radius: 10px;
+    height: 150px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-    .content.collapsed {
-        margin-left: 0;
-    }
+  .timeline {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white; /* Set background color to white */
+    overflow: auto; /* Enable horizontal and vertical scroll */
+  }
 
-    .toggle-button {
-        top: 20px;
-        left: 20px;
-    }
+  .timeline .list-group {
+    border: none; /* Remove the border */
+    max-height: 200px; /* Set a maximum height for the list */
+    overflow-y: auto; /* Enable vertical scroll */
+  }
 
-    .dropdown-menu {
-        position: static;
-        float: none;
-    }
-}
+  .timeline .list-group-item {
+    border: none; /* Remove the border from list items */
+  }
 
-/* New styles for the timeline pane */
-.timeline-container {
-position: absolute;
-top: 70px;
-right: 20px;
-width: 350px;
-height: 210px;
-padding: 20px;
-padding-bottom: 50px;
-border-radius: 10px;
-background-color: #ffffff;
-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.timeline-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.timeline-content {
-margin-top: 20px;
-overflow-y: auto; /* Add scrollbar for vertical overflow */
-max-height: 100px;
-}
+  .calendar {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+  }
 
-.timeline-event {
-margin-bottom: 10px;
-
-}
-.timeline-event-list {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.event-date {
-font-weight: bold;
-color: #007bff;
-}
-
-.event-description {
-margin-left: 10px;
-}
-.calendar-container {
-border-radius: 10px;
-position: absolute;
-bottom: 30px;
-right: 20px;
-width: 350px;
-height: 300px;
-margin: 0 auto;
-background-color: white;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added box shadow */
-}
 
 table {
-border-collapse: collapse;
-width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-th, td {
-text-align: center;
-padding: 8px;
-font-size: 14px; /* Adjusted font size */
+th,
+td {
+  text-align: center;
+  padding: 0.625rem; /* Converted from 8px */
+  font-size: 0.875rem; /* Converted from 14px */
 }
 
 th {
-background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 td {
-border: 1px solid #dddddd;
+  border: 1px solid #dddddd;
 }
 
 .today {
-background-color: #007bff;
-color: white;
+  background-color: #007bff;
+
 }
 
-.dashboard {
+.timeline {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    /* Set background color to white */
+    overflow: auto;
+    /* Enable horizontal and vertical scroll */
+  }
+
+  .timeline .list-group {
+    border: none;
+    /* Remove the border */
+    max-height: 200px;
+    /* Set a maximum height for the list */
+    overflow-y: auto;
+    /* Enable vertical scroll */
+  }
+
+  .timeline .list-group-item {
+    border: none;
+    /* Remove the border from list items */
+  }
+
+  /* Align icons to the right */
+  .card-title {
     display: flex;
-    margin-top: 20px;
-}
-
-.dashboard-card {
-width: 200px; /* Set a fixed width for the cards */
-height: 150px; /* Set a fixed height for the cards */
-background-color: #fff;
-padding: 10px;
-text-align: center;
-border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-transition: box-shadow 0.3s ease;
-margin-right: 15px; /* Adjust the distance between each card */
-}
-
-.dashboard-card:hover {
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dashboard-card h6 {
-margin: 0;
-font-size: 18px; /* Change the font size to a bit smaller */
-color: #333;
-display: flex; /* Add display flex */
-align-items: center; /* Center the icon vertically */
-justify-content: center; /* Center the icon horizontally */
-}
-
-.dashboard-card i {
-margin-right: 5px; /* Add some spacing between the icon and text */
-font-size: 48px; /* Increase the icon size */
-}
-
-.dashboard-card p {
-font-size: 36px;
-color: #007bff;
-margin: 10px 0;
-}
- /* Additional styles for buttons */
- .dashboard-buttons {
-    display: flex;
-
-    margin-right: 15px;
-
-}
-
-.dashboard-button {
-background-color: #e8e8e8;
-color: #333;
-padding: 10px;
-text-align: center;
-border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-transition: box-shadow 0.3s ease;
-margin-top: 30px;
-cursor: pointer;
-margin-right: 10px; /* Add right margin for spacing */
-
-}
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    color: rgb(151, 154, 156);
+  }
 
 
-.dashboard-button:hover {
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .card-title i {
+    color: rgb(34, 34, 34);
+    padding-top: 30px;
+    margin-left: 30px;
+    padding-top: 25px;
+    font-size: 2.5rem; /* Increase icon size */
+  }
+  .card-text {
+    margin-right: 40px;
+  }
 
-.dashboard-button.events {
-background-color: #ffbb33;
-}
+  /* Add custom styles for the current day */
+  .calendar table td.today {
+    background-color: rgba(0, 123, 255, 0.2);
+  }
 
-.dashboard-button.accountabilities {
-background-color: #00cc99;
-}
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
 
-.dashboard-button.attendance {
-background-color: #66a3ff;
-}
+    .top-nav .notification-button {
+      margin-right: 0.3125rem; /* Converted from 5px */
+    }
 
-.dashboard-button.evaluation {
-background-color: #ff4d4d;
-}
+    .nav-name {
+      display: none;
+    }
 
-.dashboard-button.student-organization {
-background-color: #9933ff;
-}
+    .top-nav .profile-dropdown {
+      margin-right: 0;
+    }
+
+    .sidebar {
+      position: static;
+      top: auto;
+      height: auto;
+      width: 100%;
+      transition: none;
+    }
+
+    .sidebar.collapsed {
+      width: 100%;
+    }
+
+    .content {
+      margin-left: 0;
+    }
+
+    .content.collapsed {
+      margin-left: 0;
+    }
+
+    /* Additional styles specific to smaller screens */
+
+    .card-title {
+      justify-content: flex-start;
+      padding-left: 30px;
+      margin-top: 10px;
+    }
+
+    .card-title i {
+      margin-left: 0;
+      margin-right: 10px;
+      padding-top: 0;
+      font-size: 2rem;
+    }
+
+    .timeline {
+      margin-top: 15px;
+      padding: 5px;
+    }
+
+    .timeline .list-group {
+      max-height: 150px;
+    }
+
+    .calendar {
+      margin-top: 15px;
+      padding: 5px;
+    }
+
+    .calendar table {
+      font-size: 0.75rem;
+    }
+  }

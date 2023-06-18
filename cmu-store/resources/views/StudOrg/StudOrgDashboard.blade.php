@@ -6,151 +6,149 @@
 
 <div class="content">
 
-    <!-- Dashboard  -->
-    <h2>Student Organization Dashboard</h2>
-    <div class="dashboard">
-        <div class="dashboard-card">
-          <i class="fas fa-users"></i>
-            <h6> Number of Members</h6>
-            <p id="memberCount">Loading...</p>
+    <div class="container dashboard">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6 class="card-title">
+                 <b> NUMBER OF MEMBERS</b>
+                  <i class="bi bi-people"></i>
+                </h6>
+                <h3 class="card-text">100</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6 class="card-title">
+                  <b>NUMBER OF UPCOMING EVENTS</b>
+                  <i class="bi bi-calendar-event"></i>
+                </h6>
+                <h3 class="card-text">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6 class="card-title">
+                  <b>NUMBER OF COMPLETED EVENTS</b>
+                  <i class="bi bi-check-circle"></i>
+                </h6>
+                <h3 class="card-text">10</h3>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="dashboard-card">
-          <i class="far fa-calendar-alt"></i>
-            <h6>Number of Events</h6>
-            <p id="eventCount">Loading...</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="timeline shadow">
+              <h4>Schedule</h4>
+              <hr>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <h6 class="mb-0">Event 1</h6>
+                  <small>2023-06-20 10:00 AM - 2023-06-20 12:00 PM</small>
+                </div>
+                <div class="list-group-item">
+                  <h6 class="mb-0">Event 2</h6>
+                  <small>2023-06-22 02:00 PM - 2023-06-22 04:00 PM</small>
+                </div>
+                <div class="list-group-item">
+                  <h6 class="mb-0">Event 3</h6>
+                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+                </div>
+                <div class="list-group-item">
+                  <h6 class="mb-0">Event 3</h6>
+                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+                </div>
+                <div class="list-group-item">
+                  <h6 class="mb-0">Event 3</h6>
+                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="calendar shadow">
+              <div class="calendar-container">
+                <div>
+                  <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
+                  <b><span id="month-year"></span></b>
+                  <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+                </div>
+                <table>
+                  <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="dashboard-card">
-          <i class="fas fa-check-circle"></i>
-            <h6>Number of Completed Events</h6>
-            <p id="completedEventCount">Loading...</p>
-        </div>
-    </div>
-    <div class="dashboard-buttons">
-      <div class="dashboard-button events">
-          <i class="fas fa-calendar"></i>
-          <h6>Events</h6>
       </div>
-
-      <div class="dashboard-button accountabilities">
-          <i class="fas fa-tasks"></i>
-          <h6>Accountabilities</h6>
-      </div>
-
-      <div class="dashboard-button attendance">
-          <i class="fas fa-clipboard-list"></i>
-          <h6>Attendance</h6>
-      </div>
-
-      <div class="dashboard-button evaluation">
-          <i class="fas fa-chart-bar"></i>
-          <h6>Evaluation</h6>
-      </div>
-
-      <div class="dashboard-button student-organization">
-          <i class="fas fa-users"></i>
-          <h6>Student Organization</h6>
-      </div>
-  </div>
-<!-- Timeline container -->
-<div class="timeline-container">
-<div class="timeline-header">
-<h3>Timeline</h3>
-</div>
-<hr>
-<div class="timeline-content">
-<ul class="timeline-event-list">
-  <li class="timeline-event">
-    <div class="event-date">June 10, 2023</div>
-    <div class="event-description">Event 1</div>
-  </li>
-  <li class="timeline-event">
-    <div class="event-date">June 15, 2023</div>
-    <div class="event-description">Event 2</div>
-  </li>
-  <li class="timeline-event">
-    <div class="event-date">June 20, 2023</div>
-    <div class="event-description">Event 3</div>
-  </li>
-</ul>
-</div>
-</div>
-
-<div class="calendar-container">
-<div>
-<button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left-fill"></i></button>
-<span id="month-year"></span>
-<button id="next-month" class="btn btn-link"><i class="bi bi-caret-right-fill"></i></button>
-</div>
-<table>
-<tr>
-  <th>Sun</th>
-  <th>Mon</th>
-  <th>Tue</th>
-  <th>Wed</th>
-  <th>Thu</th>
-  <th>Fri</th>
-  <th>Sat</th>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-</table>
-</div>
-</div>
-
 <!-- Content class end -->
 </div>
 @endsection

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <!-- Add Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <style>
+    /* Custom CSS for the dashboard */
+    body {
+      background-color: rgb(211, 211, 211);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    .dashboard {
+      padding: 20px;
+    }
+  
+    .card {
+      border-radius: 10px;
+      height: 150px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .timeline {
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: white; /* Set background color to white */
+      overflow: auto; /* Enable horizontal and vertical scroll */
+    }
+    
+    .timeline .list-group {
+      border: none; /* Remove the border */
+      max-height: 200px; /* Set a maximum height for the list */
+      overflow-y: auto; /* Enable vertical scroll */
+    }
+    
+    .timeline .list-group-item {
+      border: none; /* Remove the border from list items */
+    }
+  
+    .calendar {
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 0.625rem; /* Converted from 8px */
+    font-size: 0.875rem; /* Converted from 14px */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    border: 1px solid #dddddd;
+}
+
+.today {
+    background-color: #007bff;
+
+}
+
+.timeline {
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: white;
+      /* Set background color to white */
+      overflow: auto;
+      /* Enable horizontal and vertical scroll */
+    }
+
+    .timeline .list-group {
+      border: none;
+      /* Remove the border */
+      max-height: 200px;
+      /* Set a maximum height for the list */
+      overflow-y: auto;
+      /* Enable vertical scroll */
+    }
+
+    .timeline .list-group-item {
+      border: none;
+      /* Remove the border from list items */
+    }
+  
+    /* Align icons to the right */
+    .card-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 20px;
+      color: rgb(151, 154, 156);
+    }
+    
+  
+    .card-title i {
+      color: rgb(34, 34, 34);
+      padding-top: 30px;
+      margin-left: 30px;
+      padding-top: 25px;
+      font-size: 2.5rem; /* Increase icon size */
+    }
+    .card-text {
+      margin-right: 40px;
+    }
+    
+    /* Add custom styles for the current day */
+    .calendar table td.today {
+      background-color: rgba(0, 123, 255, 0.2);
+    }
+  </style>
+  
+  <title>Student Organization Dashboard</title>
+</head>
+<body>
+  <div class="container dashboard">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6 class="card-title">
+              NUMBER OF MEMBERS
+              <i class="bi bi-people"></i>
+            </h6>
+            <h3 class="card-text">100</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6 class="card-title">
+              NUMBER OF UPCOMING EVENTS
+              <i class="bi bi-calendar-event"></i>
+            </h6>
+            <h3 class="card-text">0</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6 class="card-title">
+              NUMBER OF COMPLETED EVENTS
+              <i class="bi bi-check-circle"></i>
+            </h6>
+            <h3 class="card-text">10</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="timeline shadow">
+          <h4>Schedule</h4>
+          <hr>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h6 class="mb-0">Event 1</h6>
+              <small>2023-06-20 10:00 AM - 2023-06-20 12:00 PM</small>
+            </div>
+            <div class="list-group-item">
+              <h6 class="mb-0">Event 2</h6>
+              <small>2023-06-22 02:00 PM - 2023-06-22 04:00 PM</small>
+            </div>
+            <div class="list-group-item">
+              <h6 class="mb-0">Event 3</h6>
+              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+            </div>
+            <div class="list-group-item">
+              <h6 class="mb-0">Event 3</h6>
+              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+            </div>
+            <div class="list-group-item">
+              <h6 class="mb-0">Event 3</h6>
+              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="calendar shadow">
+          <div class="calendar-container">
+            <div>
+              <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
+              <b><span id="month-year"></span></b>
+              <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+            </div>
+            <table>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <script>
+    // JavaScript code to highlight the current day
+    var today = new Date();
+    var day = today.getDate();
+    var month = today.getMonth();
+    var year = today.getFullYear();
+
+    var calendarCells = document.getElementsByTagName("td");
+
+    for (var i = 0; i < calendarCells.length; i++) {
+      var cell = calendarCells[i];
+      if (cell.innerText === day.toString()) {
+        cell.classList.add("today");
+        break;
+      }
+    }
+
+    var monthYear = document.getElementById("month-year");
+    monthYear.innerText = new Date().toLocaleString("en-us", { month: "long", year: "numeric" });
+
+    var prevMonthBtn = document.getElementById("prev-month");
+    var nextMonthBtn = document.getElementById("next-month");
+
+    prevMonthBtn.addEventListener("click", function () {
+      month--;
+      if (month < 0) {
+        month = 11;
+        year--;
+      }
+      updateCalendar();
+    });
+
+    nextMonthBtn.addEventListener("click", function () {
+      month++;
+      if (month > 11) {
+        month = 0;
+        year++;
+      }
+      updateCalendar();
+    });
+
+    function updateCalendar() {
+      var firstDayOfMonth = new Date(year, month, 1).getDay();
+      var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      var cells = document.getElementsByTagName("td");
+
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].innerText = "";
+        cells[i].classList.remove("today");
+      }
+
+      for (var i = 1; i <= daysInMonth; i++) {
+        cells[firstDayOfMonth].innerText = i;
+        firstDayOfMonth++;
+      }
+
+      monthYear.innerText = new Date(year, month).toLocaleString("en-us", { month: "long", year: "numeric" });
+
+      // Highlight the current day again after updating the calendar
+      for (var i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        if (cell.innerText === day.toString()) {
+          cell.classList.add("today");
+          break;
+        }
+      }
+    }
+  </script>
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          const today = new Date();
+          let currentMonth = today.getMonth();
+          let currentYear = today.getFullYear();
+          const cells = document.getElementsByTagName('td');
+
+          function updateCalendar() {
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            const numDays = lastDay.getDate();
+            const startDay = firstDay.getDay();
+
+            for (let i = 0; i < cells.length; i++) {
+              cells[i].innerHTML = '';
+              cells[i].classList.remove('today');
+            }
+
+            document.getElementById('month-year').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+            let date = 1;
+            for (let i = startDay; i < startDay + numDays; i++) {
+              cells[i].innerHTML = date;
+              if (date === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                cells[i].classList.add('today');
+              }
+              date++;
+            }
+          }
+
+          updateCalendar();
+
+          document.getElementById('prev-month').addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+              currentMonth = 11;
+              currentYear--;
+            }
+            updateCalendar();
+          });
+
+          document.getElementById('next-month').addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+              currentMonth = 0;
+              currentYear++;
+            }
+            updateCalendar();
+          });
+        });
+      </script>
+</body>
+</html>
