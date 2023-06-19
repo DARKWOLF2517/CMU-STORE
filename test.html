@@ -1,399 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-  <!-- Add Bootstrap Icons CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <title>Event Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
   <style>
-    /* Custom CSS for the dashboard */
-    body {
-      background-color: rgb(211, 211, 211);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  
-    .dashboard {
+    .event-container {
+      margin-top: 20px;
+      border: 1px solid #ddd;
       padding: 20px;
-    }
-  
-    .card {
-      border-radius: 10px;
-      height: 150px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    .timeline {
-      margin-top: 30px;
-      padding: 10px;
-      border-radius: 10px;
-      background-color: white; /* Set background color to white */
-      overflow: auto; /* Enable horizontal and vertical scroll */
-    }
-    
-    .timeline .list-group {
-      border: none; /* Remove the border */
-      max-height: 200px; /* Set a maximum height for the list */
-      overflow-y: auto; /* Enable vertical scroll */
-    }
-    
-    .timeline .list-group-item {
-      border: none; /* Remove the border from list items */
-    }
-  
-    .calendar {
-      margin-top: 30px;
-      padding: 10px;
-      border-radius: 10px;
-      background-color: white;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th,
-td {
-    text-align: center;
-    padding: 0.625rem; /* Converted from 8px */
-    font-size: 0.875rem; /* Converted from 14px */
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-td {
-    border: 1px solid #dddddd;
-}
-
-.today {
-    background-color: #007bff;
-
-}
-
-.timeline {
-      margin-top: 30px;
-      padding: 10px;
-      border-radius: 10px;
-      background-color: white;
-      /* Set background color to white */
-      overflow: auto;
-      /* Enable horizontal and vertical scroll */
-    }
-
-    .timeline .list-group {
-      border: none;
-      /* Remove the border */
-      max-height: 200px;
-      /* Set a maximum height for the list */
-      overflow-y: auto;
-      /* Enable vertical scroll */
-    }
-
-    .timeline .list-group-item {
-      border: none;
-      /* Remove the border from list items */
-    }
-  
-    /* Align icons to the right */
-    .card-title {
+    .head-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      top: 20px;
-      color: rgb(151, 154, 156);
+      margin-bottom: 20px;
     }
-    
-  
-    .card-title i {
-      color: rgb(34, 34, 34);
-      padding-top: 30px;
-      margin-left: 30px;
-      padding-top: 25px;
-      font-size: 2.5rem; /* Increase icon size */
+
+    .event-list {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
-    .card-text {
-      margin-right: 40px;
+
+    .event-list-scroll {
+      max-height: 300px;
+      overflow-y: auto;
     }
-    
-    /* Add custom styles for the current day */
-    .calendar table td.today {
-      background-color: rgba(0, 123, 255, 0.2);
+
+    .custom-select-width {
+      width: 150px;
     }
+
+    /* Added CSS for the "Add Event" button */
+    .add-event-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .add-event-button h2 {
+      margin: 0;
+    }
+
+    .add-event-button button {
+      margin-left: auto;
+    }
+      /* Updated CSS for the "card-text" class */
+  .card-text {
+    margin-bottom: px;
+  }
   </style>
-  
-  <title>Student Organization Dashboard</title>
 </head>
+
 <body>
-  <div class="container dashboard">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h6 class="card-title">
-              NUMBER OF MEMBERS
-              <i class="bi bi-people"></i>
-            </h6>
-            <h3 class="card-text">100</h3>
-          </div>
+  <div class="container event-container">
+    <div class="row head-container">
+      <div class="col-md-9">
+        <div class="input-group search-bar">
+          <input type="text" class="form-control rounded-start" placeholder="Search" aria-label="Search"
+            aria-describedby="search-icon">
+          <button class="btn btn-primary rounded-end" type="button" id="search-icon">
+            <i class="bi bi-search"></i>
+          </button>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h6 class="card-title">
-              NUMBER OF UPCOMING EVENTS
-              <i class="bi bi-calendar-event"></i>
-            </h6>
-            <h3 class="card-text">0</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h6 class="card-title">
-              NUMBER OF COMPLETED EVENTS
-              <i class="bi bi-check-circle"></i>
-            </h6>
-            <h3 class="card-text">10</h3>
-          </div>
+      <div class="col-md-3">
+        <div class="d-flex justify-content-end">
+          <select class="form-select custom-select-width">
+            <option selected>Sort by</option>
+            <option>Date</option>
+            <option>Location</option>
+          </select>
         </div>
       </div>
     </div>
+  </div>
+  <div class="container event-list">
     <div class="row">
-      <div class="col-md-6">
-        <div class="timeline shadow">
-          <h4>Schedule</h4>
-          <hr>
-          <div class="list-group">
-            <div class="list-group-item">
-              <h6 class="mb-0">Event 1</h6>
-              <small>2023-06-20 10:00 AM - 2023-06-20 12:00 PM</small>
-            </div>
-            <div class="list-group-item">
-              <h6 class="mb-0">Event 2</h6>
-              <small>2023-06-22 02:00 PM - 2023-06-22 04:00 PM</small>
-            </div>
-            <div class="list-group-item">
-              <h6 class="mb-0">Event 3</h6>
-              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
-            </div>
-            <div class="list-group-item">
-              <h6 class="mb-0">Event 3</h6>
-              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
-            </div>
-            <div class="list-group-item">
-              <h6 class="mb-0">Event 3</h6>
-              <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
-            </div>
-          </div>
+      <div class="col-md-12">
+        <div class="add-event-button">
+          <h2>Events</h2>
+          <button class="btn btn-primary me-2" id="add-event-button">
+            <i class="bi bi-plus"></i> Add Event
+          </button>
         </div>
+        <div class="event-list-scroll" id="event-cards"></div>
       </div>
-      <div class="col-md-6">
-        <div class="calendar shadow">
-          <div class="calendar-container">
-            <div>
-              <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
-              <b><span id="month-year"></span></b>
-              <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Event Modal -->
+  <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="event-modal-label">Add Event</h5>
+         
+        </div>
+        <div class="modal-body">
+          <form id="event-form">
+            <div class="mb-3">
+              <label for="event-title" class="form-label">Title of Event</label>
+              <input type="text" class="form-control" id="event-title" required>
             </div>
-            <table>
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-          </div>
+            <div class="mb-3">
+              <label for="event-start-date" class="form-label">Start date of Event</label>
+              <input type="date" class="form-control" id="event-start-date" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-end-date" class="form-label">End date of Event</label>
+              <input type="date" class="form-control" id="event-end-date" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-start-time" class="form-label">Start time of Event</label>
+              <input type="time" class="form-control" id="event-start-time" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-end-time" class="form-label">End time of Event</label>
+              <input type="time" class="form-control" id="event-end-time" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-location" class="form-label">Location of Event</label>
+              <input type="text" class="form-control" id="event-location" required>
+            </div>
+            <div class="mb-3">
+              <label for="event-description" class="form-label">Description</label>
+              <textarea class="form-control" id="event-description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="require-attendance">
+                <label class="form-check-label" for="require-attendance">Require Attendance</label>
+              </div>
+            </div>
+            <div class="mb-3" id="attendance-options" style="display: none;">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-1st-years">
+                <label class="form-check-label" for="attendance-option-1st-years">1st years</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-2nd-years">
+                <label class="form-check-label" for="attendance-option-2nd-years">2nd years</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-3rd-years">
+                <label class="form-check-label" for="attendance-option-3rd-years">3rd years</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-4th-years">
+                <label class="form-check-label" for="attendance-option-4th-years">4th years</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-5th-years">
+                <label class="form-check-label" for="attendance-option-5th-years">5th years</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-extendees">
+                <label class="form-check-label" for="attendance-option-extendees">Extendees</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="attendance-option-select-all">
+                <label class="form-check-label" for="attendance-option-select-all">Select All Students</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="save-event-button">Save</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <script>
-    // JavaScript code to highlight the current day
-    var today = new Date();
-    var day = today.getDate();
-    var month = today.getMonth();
-    var year = today.getFullYear();
+   $(document).ready(function () {
+  // Event handler for "Add Event" button
+  $('#add-event-button').click(function () {
+    $('#event-modal').modal('show');
+  });
 
-    var calendarCells = document.getElementsByTagName("td");
+  // Event handler for "Require Attendance" checkbox
+  $('#require-attendance').change(function () {
+    $('#attendance-options').toggle(this.checked);
+  });
 
-    for (var i = 0; i < calendarCells.length; i++) {
-      var cell = calendarCells[i];
-      if (cell.innerText === day.toString()) {
-        cell.classList.add("today");
-        break;
-      }
-    }
+  // Event handler for "Save" button in the modal
+  $('#save-event-button').click(function () {
+    // Get the form values
+    var title = $('#event-title').val();
+    var startDate = $('#event-start-date').val();
+    var endDate = $('#event-end-date').val();
+    var startTime = $('#event-start-time').val();
+    var endTime = $('#event-end-time').val();
+    var location = $('#event-location').val();
+    var description = $('#event-description').val();
+    var requireAttendance = $('#require-attendance').is(':checked');
+    var attendanceOptions = {
+      '1st-years': $('#attendance-option-1st-years').is(':checked'),
+      '2nd-years': $('#attendance-option-2nd-years').is(':checked'),
+      '3rd-years': $('#attendance-option-3rd-years').is(':checked'),
+      '4th-years': $('#attendance-option-4th-years').is(':checked'),
+      '5th-years': $('#attendance-option-5th-years').is(':checked'),
+      'extendees': $('#attendance-option-extendees').is(':checked'),
+      'select-all': $('#attendance-option-select-all').is(':checked')
+    };
 
-    var monthYear = document.getElementById("month-year");
-    monthYear.innerText = new Date().toLocaleString("en-us", { month: "long", year: "numeric" });
+    // Create a new event card with the form values
+    var eventCard = `
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <p class="card-text">Start Date: ${startDate}</p>
+          <p class="card-text">End Date: ${endDate}</p>
+          <p class="card-text">Start Time: ${startTime}</p>
+          <p class="card-text">End Time: ${endTime}</p>
+          <p class="card-text">Location: ${location}</p>
+          <p class="card-text">Description: ${description}</p>
+          <p class="card-text">Require Attendance: ${requireAttendance}</p>
+        </div>
+      </div>
+    `;
 
-    var prevMonthBtn = document.getElementById("prev-month");
-    var nextMonthBtn = document.getElementById("next-month");
+    // Add the event card to the event list
+    $('#event-cards').append(eventCard);
 
-    prevMonthBtn.addEventListener("click", function () {
-      month--;
-      if (month < 0) {
-        month = 11;
-        year--;
-      }
-      updateCalendar();
-    });
+    // Reset the form values
+    $('#event-form')[0].reset();
+    $('#require-attendance').prop('checked', false);
+    $('#attendance-options').hide();
 
-    nextMonthBtn.addEventListener("click", function () {
-      month++;
-      if (month > 11) {
-        month = 0;
-        year++;
-      }
-      updateCalendar();
-    });
+    // Close the modal
+    $('#event-modal').modal('hide');
+  });
 
-    function updateCalendar() {
-      var firstDayOfMonth = new Date(year, month, 1).getDay();
-      var daysInMonth = new Date(year, month + 1, 0).getDate();
+  // Event handler for "Close" button in the modal
+  $('#event-modal').on('hidden.bs.modal', function () {
+    // Reset the form values
+    $('#event-form')[0].reset();
+    $('#require-attendance').prop('checked', false);
+    $('#attendance-options').hide();
+  });
+  
+  // Event handler for "Cancel" button in the modal
+  $('#event-modal').on('click', '.btn-secondary', function () {
+    // Close the modal
+    $('#event-modal').modal('hide');
+  });
+});
 
-      var cells = document.getElementsByTagName("td");
-
-      for (var i = 0; i < cells.length; i++) {
-        cells[i].innerText = "";
-        cells[i].classList.remove("today");
-      }
-
-      for (var i = 1; i <= daysInMonth; i++) {
-        cells[firstDayOfMonth].innerText = i;
-        firstDayOfMonth++;
-      }
-
-      monthYear.innerText = new Date(year, month).toLocaleString("en-us", { month: "long", year: "numeric" });
-
-      // Highlight the current day again after updating the calendar
-      for (var i = 0; i < cells.length; i++) {
-        var cell = cells[i];
-        if (cell.innerText === day.toString()) {
-          cell.classList.add("today");
-          break;
-        }
-      }
-    }
   </script>
-      <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-          const today = new Date();
-          let currentMonth = today.getMonth();
-          let currentYear = today.getFullYear();
-          const cells = document.getElementsByTagName('td');
-
-          function updateCalendar() {
-            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            const firstDay = new Date(currentYear, currentMonth, 1);
-            const lastDay = new Date(currentYear, currentMonth + 1, 0);
-            const numDays = lastDay.getDate();
-            const startDay = firstDay.getDay();
-
-            for (let i = 0; i < cells.length; i++) {
-              cells[i].innerHTML = '';
-              cells[i].classList.remove('today');
-            }
-
-            document.getElementById('month-year').textContent = `${monthNames[currentMonth]} ${currentYear}`;
-
-            let date = 1;
-            for (let i = startDay; i < startDay + numDays; i++) {
-              cells[i].innerHTML = date;
-              if (date === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
-                cells[i].classList.add('today');
-              }
-              date++;
-            }
-          }
-
-          updateCalendar();
-
-          document.getElementById('prev-month').addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) {
-              currentMonth = 11;
-              currentYear--;
-            }
-            updateCalendar();
-          });
-
-          document.getElementById('next-month').addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) {
-              currentMonth = 0;
-              currentYear++;
-            }
-            updateCalendar();
-          });
-        });
-      </script>
 </body>
+
 </html>
