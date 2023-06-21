@@ -1,23 +1,52 @@
+.event-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
   .head-container {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  #addEventBtn {
-    width: 150px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
-    font-size: 18px;
+    margin-bottom: 20px;
   }
+
+  .event-list {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .event-list-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .custom-select-width {
+    width: 150px;
+  }
+
+  /* Added CSS for the "Add Event" button */
+  .add-event-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .add-event-button h2 {
+    margin: 0;
+  }
+
+  .add-event-button button {
+    margin-left: auto;
+  }
+    /* Updated CSS for the "card-text" class */
+.card-text {
+  margin-bottom: px;
+}
