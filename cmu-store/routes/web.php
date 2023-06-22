@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('StudOrg.StudOrgDashboard');
 });
 
-Route::get('Events', function () {
+Route::get('StudOrgEvents', function () {
     return view('StudOrg.StudOrgAddEvent');
 });
 

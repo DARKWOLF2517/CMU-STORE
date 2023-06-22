@@ -43,7 +43,7 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark" aria-current="page">
+                    <a href="/" class="nav-link link-dark" aria-current="page">
                         <i class="bi bi-speedometer2"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
@@ -55,9 +55,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">
+                    <a href="/StudOrgEvents" class="nav-link link-dark">
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
+
                     </a>
                 </li>
                 <li class="nav-item">

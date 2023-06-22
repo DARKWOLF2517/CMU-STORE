@@ -4,7 +4,7 @@
 <div class="content">
 <div class="container event-container">
     <div class="row head-container">
-      <div class="col-md-9">
+      <div class="col-md-6">
         <div class="input-group search-bar">
           <input type="text" class="form-control rounded-start" placeholder="Search" aria-label="Search"
             aria-describedby="search-icon">
