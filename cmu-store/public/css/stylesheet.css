@@ -5,6 +5,9 @@ body {
 }
 
 .top-nav {
+    position: absolute;
+    width: 100%;
+    top: 0; /* Converted from 7px */
     background-color: #ffffff;
     color: #000000;
     padding: 0.875rem; /* Converted from 7px */
@@ -55,6 +58,7 @@ body {
 }
 
 .content {
+    padding: 20px;
     margin-left: 14.375%; /* Converted from 230px */
     padding: 1.25rem; /* Converted from 20px */
     transition: margin-left 0.3s ease-in-out;
@@ -98,7 +102,7 @@ body {
 
 
   .dashboard {
-    padding: 20px;
+    padding: 50px;
   }
 
   .card {
@@ -209,73 +213,73 @@ td {
     background-color: rgba(0, 123, 255, 0.2);
   }
 
-  @media (max-width: 768px) {
-    body {
-      font-size: 14px;
-    }
+/*
+  Event page */
 
-    .top-nav .notification-button {
-      margin-right: 0.3125rem; /* Converted from 5px */
-    }
+  .event-container {
+    padding: 50px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-    .nav-name {
-      display: none;
-    }
+  .head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
-    .top-nav .profile-dropdown {
-      margin-right: 0;
-    }
+  .event-list {
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    .sidebar {
-      position: static;
-      top: auto;
-      height: auto;
-      width: 100%;
-      transition: none;
-    }
+  .event-list-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+  }
 
-    .sidebar.collapsed {
-      width: 100%;
-    }
+  .custom-select-width {
+    width: 150px;
+  }
 
-    .content {
-      margin-left: 0;
-    }
+  .add-event-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
-    .content.collapsed {
-      margin-left: 0;
-    }
+  .add-event-button h2 {
+    margin: 0;
+  }
 
-    /* Additional styles specific to smaller screens */
+  .add-event-button button {
+    margin-left: auto;
+  }
 
-    .card-title {
-      justify-content: flex-start;
-      padding-left: 30px;
-      margin-top: 10px;
-    }
+  .card-text {
+    margin-bottom: 0;
+  }
 
-    .card-title i {
-      margin-left: 0;
-      margin-right: 10px;
-      padding-top: 0;
-      font-size: 2rem;
-    }
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 
-    .timeline {
-      margin-top: 15px;
-      padding: 5px;
-    }
-
-    .timeline .list-group {
-      max-height: 150px;
-    }
-
-    .calendar {
-      margin-top: 15px;
-      padding: 5px;
-    }
-
-    .calendar table {
-      font-size: 0.75rem;
-    }
+  .ellipsis-button {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6c757d;
   }
