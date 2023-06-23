@@ -59,11 +59,11 @@
             <input type="date" class="form-control" id="event-end-date">
           </div>
           <div class="mb-3">
-            <label for="event-start-time" class="form-label">Start Time</label>
+            <label for="event-start-time" class="form-label">Start Attendance</label>
             <input type="time" class="form-control" id="event-start-time">
           </div>
           <div class="mb-3">
-            <label for="event-end-time" class="form-label">End Time</label>
+            <label for="event-end-time" class="form-label">End Attendance</label>
             <input type="time" class="form-control" id="event-end-time">
           </div>
           <div class="mb-3">
