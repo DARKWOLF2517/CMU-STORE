@@ -1,318 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Page</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
-  <style>
-    .event-container {
-      margin-top: 20px;
-      border: 1px solid #ddd;
-      padding: 20px;
-      width: 100%;
-      box-sizing: border-box;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+    <title>Attendance Checking</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    .head-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .event-list {
-      margin-top: 20px;
-      border: 1px solid #ddd;
-      padding: 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .event-list-scroll {
-      max-height: 300px;
-      overflow-y: auto;
-    }
-
-    .custom-select-width {
-      width: 150px;
-    }
-
-    .add-event-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .add-event-button h2 {
-      margin: 0;
-    }
-
-    .add-event-button button {
-      margin-left: auto;
-    }
-
-    .card-text {
-      margin-bottom: 0;
-    }
-
-    .card-actions {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    .ellipsis-button {
-      border: none;
-      background: transparent;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #6c757d;
-    }
-  </style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container event-container">
-    <div class="row head-container">
-      <div class="col-md-9">
-        <div class="input-group search-bar">
-          <input type="text" class="form-control rounded-start" placeholder="Search" aria-label="Search"
-            aria-describedby="search-icon">
-          <button class="btn btn-primary rounded-end" type="button" id="search-icon">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="d-flex justify-content-end">
-          <select class="form-select custom-select-width">
-            <option selected>Sort by</option>
-            <option>Upcoming Events</option>
-            <option>Completed Events</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container event-list">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="add-event-button">
-          <h2>Events</h2>
-          <button class="btn btn-primary me-2" id="add-event-button">
-            <i class="bi bi-plus"></i> Add Event
-          </button>
-        </div>
-        <div class="event-list-scroll" id="event-cards"></div>
-      </div>
-    </div>
-  </div>
+    <h1>Attendance List</h1>
+    
+    <?php
+    // Check if the form is submitted
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Retrieve the data from the QR code scanner
+        $studentName = $_POST['studentName'];
+        $date = date('Y-m-d');
+        $timeIn = date('H:i:s');
 
-  <!-- Event Modal -->
-  <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="event-modal-label">Create Event</h5>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="event-title" class="form-label">Event Title</label>
-            <input type="text" class="form-control" id="event-title">
-          </div>
-          <div class="mb-3">
-            <label for="event-start-date" class="form-label">Start Date</label>
-            <input type="date" class="form-control" id="event-start-date">
-          </div>
-          <div class="mb-3">
-            <label for="event-end-date" class="form-label">End Date</label>
-            <input type="date" class="form-control" id="event-end-date">
-          </div>
-          <div class="mb-3">
-            <label for="event-start-time" class="form-label">Start Time</label>
-            <input type="time" class="form-control" id="event-start-time">
-          </div>
-          <div class="mb-3">
-            <label for="event-end-time" class="form-label">End Time</label>
-            <input type="time" class="form-control" id="event-end-time">
-          </div>
-          <div class="mb-3">
-            <label for="event-location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="event-location">
-          </div>
-          <div class="mb-3">
-            <label for="event-description" class="form-label">Description</label>
-            <textarea class="form-control" id="event-description" rows="3"></textarea>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="require-attendance">
-            <label class="form-check-label" for="require-attendance">
-              Require Attendance
-            </label>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="save-event-button">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
-  <script>
-    var events = [];
-
-    function displayEvents() {
-      $('#event-cards').empty();
-      if (events.length > 0) {
-        events.forEach(function (event, index) {
-          var card = `
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title">Event Name: ${event.title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.startDate} - ${event.endDate}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.startTime} - ${event.endTime}</h6>
-                <p class="card-text">Location: ${event.location}</p>
-                <p class="card-text">Description: ${event.description}</p>
-                <div class="card-actions">
-                  <button class="ellipsis-button" onclick="editEvent(${index})">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="ellipsis-button" onclick="deleteEvent(${index})">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          `;
-          $('#event-cards').append(card);
-        });
-      } else {
-        var emptyMessage = `
-          <div class="alert alert-info" role="alert">
-            No events found.
-          </div>
-        `;
-        $('#event-cards').append(emptyMessage);
-      }
+        // Append the attendance details to a file
+        $attendanceData = $studentName . ',' . $date . ',' . $timeIn . "\n";
+        file_put_contents('attendance.csv', $attendanceData, FILE_APPEND);
     }
+    ?>
 
-    function addEvent() {
-      var title = $('#event-title').val();
-      var startDate = $('#event-start-date').val();
-      var endDate = $('#event-end-date').val();
-      var startTime = $('#event-start-time').val();
-      var endTime = $('#event-end-time').val();
-      var location = $('#event-location').val();
-      var description = $('#event-description').val();
-      var requireAttendance = $('#require-attendance').prop('checked');
+    <form method="POST">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+        <input type="submit" value="Submit">
+    </form>
 
-      var event = {
-        title: title,
-        startDate: startDate,
-        endDate: endDate,
-        startTime: startTime,
-        endTime: endTime,
-        location: location,
-        description: description,
-        requireAttendance: requireAttendance
-      };
+    <br>
 
-      events.push(event);
-      $('#event-modal').modal('hide');
-      displayEvents();
-      resetEventForm();
-    }
-
-    function editEvent(index) {
-      var event = events[index];
-
-      $('#event-modal-label').text('Edit Event');
-      $('#event-title').val(event.title);
-      $('#event-start-date').val(event.startDate);
-      $('#event-end-date').val(event.endDate);
-      $('#event-start-time').val(event.startTime);
-      $('#event-end-time').val(event.endTime);
-      $('#event-location').val(event.location);
-      $('#event-description').val(event.description);
-      $('#require-attendance').prop('checked', event.requireAttendance);
-
-      $('#save-event-button').unbind('click').click(function () {
-        saveEvent(index);
-      });
-
-      $('#event-modal').modal('show');
-    }
-
-    function saveEvent(index) {
-      var title = $('#event-title').val();
-      var startDate = $('#event-start-date').val();
-      var endDate = $('#event-end-date').val();
-      var startTime = $('#event-start-time').val();
-      var endTime = $('#event-end-time').val();
-      var location = $('#event-location').val();
-      var description = $('#event-description').val();
-      var requireAttendance = $('#require-attendance').prop('checked');
-
-      var event = {
-        title: title,
-        startDate: startDate,
-        endDate: endDate,
-        startTime: startTime,
-        endTime: endTime,
-        location: location,
-        description: description,
-        requireAttendance: requireAttendance
-      };
-
-      events[index] = event;
-      $('#event-modal').modal('hide');
-      displayEvents();
-      resetEventForm();
-    }
-
-    function deleteEvent(index) {
-      events.splice(index, 1);
-      displayEvents();
-    }
-
-    function resetEventForm() {
-      $('#event-modal-label').text('Add Event');
-      $('#event-title').val('');
-      $('#event-start-date').val('');
-      $('#event-end-date').val('');
-      $('#event-start-time').val('');
-      $('#event-end-time').val('');
-      $('#event-location').val('');
-      $('#event-description').val('');
-      $('#require-attendance').prop('checked', false);
-
-      $('#save-event-button').unbind('click').click(function () {
-        addEvent();
-      });
-    }
-
-    $(document).ready(function () {
-      $('#add-event-button').click(function () {
-        $('#event-modal').modal('show');
-      });
-
-      $('#save-event-button').click(function () {
-        addEvent();
-      });
-
-      displayEvents();
-    });
-  </script>
+    <h2>Attendance Table</h2>
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Time In</th>
+        </tr>
+        <?php
+        // Read the attendance data from the file and populate the table
+        $attendanceFile = file('attendance.csv');
+        foreach ($attendanceFile as $attendance) {
+            $attendanceDetails = explode(',', $attendance);
+            $studentName = $attendanceDetails[0];
+            $date = $attendanceDetails[1];
+            $timeIn = $attendanceDetails[2];
+            echo "<tr>
+                    <td>$studentName</td>
+                    <td>$date</td>
+                    <td>$timeIn</td>
+                </tr>";
+        }
+        ?>
+    </table>
 </body>
-
 </html>
