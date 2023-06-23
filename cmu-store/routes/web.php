@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('StudOrg.StudOrgDashboard');
 });
 
-Route::get('StudOrgEvents', function () {
-    return view('StudOrg.StudOrgAddEvent');
-});
+// Route::get('StudOrgEvents', function () {
+//     return view('StudOrg.StudOrgAddEvent');
+// });
 
 // Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/events', [EventController::class, 'showEvents'])->name('events');
+Route::get('/StudOrgEvents', [EventController::class, 'showEvents'])->name('events');
