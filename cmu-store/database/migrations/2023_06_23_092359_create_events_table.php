@@ -20,7 +20,7 @@ return new class extends Migration
             $table->time('end_attendance');
             $table->string('location');
             $table->text('description');
-            $table->binary('require_attendance');
+            $table->tinyInteger('require_attendance');
             $table->unsignedBigInteger('org_id');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
             $table->timestamps();
