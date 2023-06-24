@@ -93,41 +93,71 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <script>
-    var events = [];
+   
 
     function displayEvents() {
-      $('#event-cards').empty();
-      if (events.length > 0) {
-        events.forEach(function (event, index) {
-          var card = `
-            <div class="card mb-3">
-              <div class="card-body">
-                <h6 class="card-title">Event Name: ${event.title}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.startDate} - ${event.endDate}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.startTime} - ${event.endTime}</h6>
-                <h6 class="card-text">Location: ${event.location}</h6>
-                <h6 class="card-text">Description: ${event.description}</h6>
-                <div class="card-actions">
-                  <button class="ellipsis-button" onclick="editEvent(${index})">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="ellipsis-button" onclick="deleteEvent(${index})">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </div>
-              </div>
+    // Pass the events data to JavaScript
+    const events = @json($events);
+
+// Loop through the events and create cards
+const cards = events.map(event => {
+    return `
+
+
+ 
+        <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.start_date}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.start_attendance}</h6>
+              <h6 class="card-text">Location: ${event.location}</h6>
+              <h6 class="card-text">Description: ${event.description}</h6>
+              <div class="card-actions">
+                <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
+                <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
+              </div>    
             </div>
-          `;
-          $('#event-cards').append(card);
-        });
-      } else {
-        var emptyMessage = `
-          <div class="alert alert-info" role="alert">
-            No events found.
-          </div>
-        `;
-        $('#event-cards').append(emptyMessage);
-      }
+        </div>
+    `;
+});
+
+// Append the cards to the events container
+const eventsContainer = document.getElementById('event-cards');
+eventsContainer.innerHTML = cards.join('');
+
+
+      // $('#event-cards').empty();
+      // if (events.length > 0) {
+      //   events.forEach(function (event, index) {
+      //     var card = `
+      //       <div class="card mb-3">
+      //         <div class="card-body">
+      //           <h6 class="card-title">Event Name: ${event.title}</h6>
+      //           <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.startDate} - ${event.endDate}</h6>
+      //           <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.startTime} - ${event.endTime}</h6>
+      //           <h6 class="card-text">Location: ${event.location}</h6>
+      //           <h6 class="card-text">Description: ${event.description}</h6>
+      //           <div class="card-actions">
+      //             <button class="ellipsis-button" onclick="editEvent(${index})">
+      //               <i class="bi bi-pencil-square"></i>
+      //             </button>
+      //             <button class="ellipsis-button" onclick="deleteEvent(${index})">
+      //               <i class="bi bi-trash"></i>
+      //             </button>
+      //           </div>
+      //         </div>
+      //       </div>
+      //     `;
+      //     $('#event-cards').append(card);
+      //   });
+      // } else {
+      //   var emptyMessage = `
+      //     <div class="alert alert-info" role="alert">
+      //       No events found.
+      //     </div>
+      //   `;
+      //   $('#event-cards').append(emptyMessage);
+      // }
     }
 
     function addEvent() {
