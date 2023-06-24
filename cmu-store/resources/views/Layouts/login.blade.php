@@ -7,47 +7,7 @@
   <title>Login Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    body {
-      background-color: #9ba3aa;
-    }
-    .container{
-      padding-top: 10%;
-      width: 100%;
-      
-    }
-
-    .login-wrap {
-      background-color: #fff;
-      padding: 4rem 2.5rem;
-      height: 100%;
-      border-radius: 10px;
-      
-    }
-
-    .icon {
-      font-size: 2.5rem;
-      color: #007bff;
-    }
-
-    .login-form .form-control {
-      border-radius: 10px;
-    }
-
-    
-
-    .checkbox-wrap input {
-      margin-right: 10px;
-    }
-
-    .submit {
-      border: none;
-      height: 40px;
-      justify-content: center;
-      width: 70px;
-    }
-
-  </style>
+  <link href="/css/stylesheet.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,7 +16,7 @@
       <div class="col-md-6 col-lg-5">
         <div class="login-wrap p-4 p-md-5">
           <h3 class="text-center mb-4">CMU-STORE-AMS</h3>
-          
+
           <form action="#" class="login-form">
             <div class="form-group">
               <div class="input-group">
@@ -98,5 +58,4 @@
     </div>
   </div>
 </body>
-
 </html>

@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('Login', function () {
+    return view('Layouts.login');
+});
 
 Route::get('/', function () {
     return view('StudOrg.StudOrgDashboard');
