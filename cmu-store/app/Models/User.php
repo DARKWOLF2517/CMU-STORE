@@ -18,10 +18,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'name',
-        'email',
+        'username',
         'password',
     ];
+    public function user_organization()
+    {
+        return $this->hasMany(UserOrganization::class, 'user_id', 'student_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

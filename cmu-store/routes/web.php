@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
@@ -13,13 +14,13 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('Login', function () {
-    return view('Layouts.login');
-});
+// Route::get('Login', function () {
+//     return view('Layouts.login');
+// });
 
-Route::get('/', function () {
-    return view('StudOrg.StudOrgDashboard');
-});
+// Route::get('/', function () {
+//     return view('StudOrg.StudOrgDashboard');
+// });
 
 // Route::get('StudOrgEvents', function () {
 //     return view('StudOrg.StudOrgAddEvent');
@@ -29,3 +30,23 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/StudOrgEvents', [EventController::class, 'showEvents'])->name('events');
+
+
+
+
+
+Route::get('/', function () {
+    return view('Layouts.login');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -11,5 +11,22 @@ class Event extends Model
 
     
     protected $table = 'events';
-    // protected $fillable = ['event_id','name', 'session'];
+    protected $primaryKey = 'event_id';
+    
+    protected $fillable = [
+        'name',
+        'start_date',
+        'end_date',
+        'start_attendance',
+        'end_attendance',
+        'location',
+        'description',
+        'require_attendance',
+        'org_id',
+    ];
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class, 'org_id', 'org_id');
+    }
 }
