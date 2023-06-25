@@ -18,9 +18,9 @@ use App\Http\Controllers\HomeController;
 //     return view('Layouts.login');
 // });
 
-// Route::get('/', function () {
-//     return view('StudOrg.StudOrgDashboard');
-// });
+Route::get('/homepage', function () {
+    return view('StudOrg.StudOrgDashboard');
+});
 
 // Route::get('StudOrgEvents', function () {
 //     return view('StudOrg.StudOrgAddEvent');
