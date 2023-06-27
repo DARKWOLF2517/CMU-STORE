@@ -33,11 +33,14 @@
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     <span class="profile-name"><strong>User</strong></span>
                 </a>
+                
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
+                    
+                  </form>
                 </ul>
             </div>
         </div>
@@ -46,7 +49,7 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="{{ url('/homepage') }}" class="nav-link link-dark" aria-current="page">
+                    <a href="{{ url('/dashboard') }}" class="nav-link link-dark" aria-current="page">
                         <i class="bi bi-speedometer2"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>

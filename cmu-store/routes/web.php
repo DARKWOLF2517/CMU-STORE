@@ -31,20 +31,26 @@ Route::get('StudOrgAttendance', function () {
 });
 // Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+#dashboard
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/logout', [HomeController::class, 'logout']);
+
+#events
+Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/StudOrgEvents', [EventController::class, 'showEvents'])->name('events');
 
 
 
-
-
 Route::get('/', function () {
-    return view('Layouts.login');
+    return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
