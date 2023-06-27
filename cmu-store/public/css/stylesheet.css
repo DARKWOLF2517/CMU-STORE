@@ -324,3 +324,74 @@ body {
     cursor: pointer;
     color: #6c757d;
   }
+
+  /* Attendance page stylelsheet */
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  .table-bordered{
+    background-color: rgb(38, 141, 201);
+    border-radius: 10px;
+  }
+  .card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .card-title {
+    margin-bottom: 0;
+  }
+  .table th,
+  .table td {
+    vertical-align: middle;
+  }
+  .calendar-container {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .calendar-container .date {
+    text-align: center;
+  }
+  .current-day {
+    background-color: rgb(180, 180, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    margin-bottom: 10px;
+    color: black;
+  }
+  .calendar-navigation button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+  .calendar-year {
+    font-weight: bold;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  .button-container button {
+    margin-left: 10px;
+  }
+  .card-body {
+    max-height: 300px;
+    overflow-y: auto;
+  }
