@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Models\UserOrganization;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      
+        if(Auth::id()){
+         
+            $student_id = Auth::id();
+    
+            $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
+            if($userOrganization->role_id == 1){
+                return view('StudOrg.StudOrgDashboard');
+            }
+            else if($userOrganization->role_id == 2){
+                return view('Student.StudentDashboard');
+            }
+            else{
+                return redirect()->back();
+            }
+            
+        }
+        
+ 
+    }
+    public function logout()
+    {
+        Auth::logout();
+    
+        // Redirect the user to the desired location after logout
+        return redirect('/');
     }
 }

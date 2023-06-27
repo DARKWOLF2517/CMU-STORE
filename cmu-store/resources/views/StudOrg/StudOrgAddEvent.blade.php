@@ -46,45 +46,49 @@
           <h5 class="modal-title" id="event-modal-label">Create Event</h5>
         </div>
         <div class="modal-body">
+          <form id="eventsForm" action="{{ route('events.store') }}" method="POST">
+               @csrf
           <div class="mb-3">
-            <label for="event-title" class="form-label">Event Title</label>
-            <input type="text" class="form-control" id="event-title">
+            <label for="event-title" class="form-label">Event Name</label>
+            <input type="text" name="name" class="form-control" id="event-title">
           </div>
           <div class="mb-3">
             <label for="event-start-date" class="form-label">Start Date</label>
-            <input type="date" class="form-control" id="event-start-date">
+            <input type="date" name="start_date" class="form-control" id="event-start-date">
           </div>
           <div class="mb-3">
             <label for="event-end-date" class="form-label">End Date</label>
-            <input type="date" class="form-control" id="event-end-date">
+            <input type="date" name="end_date" class="form-control" id="event-end-date">
           </div>
           <div class="mb-3">
             <label for="event-start-time" class="form-label">Start Attendance</label>
-            <input type="time" class="form-control" id="event-start-time">
+            <input type="time" name="start_attendance" class="form-control" id="event-start-time">
           </div>
           <div class="mb-3">
             <label for="event-end-time" class="form-label">End Attendance</label>
-            <input type="time" class="form-control" id="event-end-time">
+            <input type="time" name="end_attendance" class="form-control" id="event-end-time">
           </div>
           <div class="mb-3">
             <label for="event-location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="event-location">
+            <input type="text" name="location" class="form-control" id="event-location">
           </div>
           <div class="mb-3">
             <label for="event-description" class="form-label">Description</label>
-            <textarea class="form-control" id="event-description" rows="3"></textarea>
+            <textarea class="form-control" name="description" id="event-description" rows="3"></textarea>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="require-attendance">
+            <input class="form-check-input" type="checkbox" id="require-attendance" name="require_attendance" value="1" >
             <label class="form-check-label" for="require-attendance">
               Require Attendance
             </label>
           </div>
+          <input type="hidden" name="org_id" value="1">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="save-event-button">Save</button>
+          <button type="submit" class="btn btn-primary" id="save-event-button">Save</button>
         </div>
+      </form>
       </div>
     </div>
   </div>
