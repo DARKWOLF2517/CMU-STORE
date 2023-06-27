@@ -164,109 +164,109 @@ eventsContainer.innerHTML = cards.join('');
       // }
     }
 
-    function addEvent() {
-      var title = $('#event-title').val();
-      var startDate = $('#event-start-date').val();
-      var endDate = $('#event-end-date').val();
-      var startTime = $('#event-start-time').val();
-      var endTime = $('#event-end-time').val();
-      var location = $('#event-location').val();
-      var description = $('#event-description').val();
-      var requireAttendance = $('#require-attendance').prop('checked');
+    // function addEvent() {
+    //   var title = $('#event-title').val();
+    //   var startDate = $('#event-start-date').val();
+    //   var endDate = $('#event-end-date').val();
+    //   var startTime = $('#event-start-time').val();
+    //   var endTime = $('#event-end-time').val();
+    //   var location = $('#event-location').val();
+    //   var description = $('#event-description').val();
+    //   var requireAttendance = $('#require-attendance').prop('checked');
 
-      var event = {
-        title: title,
-        startDate: startDate,
-        endDate: endDate,
-        startTime: startTime,
-        endTime: endTime,
-        location: location,
-        description: description,
-        requireAttendance: requireAttendance
-      };
+    //   var event = {
+    //     title: title,
+    //     startDate: startDate,
+    //     endDate: endDate,
+    //     startTime: startTime,
+    //     endTime: endTime,
+    //     location: location,
+    //     description: description,
+    //     requireAttendance: requireAttendance
+    //   };
 
-      events.push(event);
-      $('#event-modal').modal('hide');
-      displayEvents();
-      resetEventForm();
-    }
+    //   events.push(event);
+    //   $('#event-modal').modal('hide');
+    //   displayEvents();
+    //   resetEventForm();
+    // }
 
-    function editEvent(index) {
-      var event = events[index];
+    // function editEvent(index) {
+    //   var event = events[index];
 
-      $('#event-modal-label').text('Edit Event');
-      $('#event-title').val(event.title);
-      $('#event-start-date').val(event.startDate);
-      $('#event-end-date').val(event.endDate);
-      $('#event-start-time').val(event.startTime);
-      $('#event-end-time').val(event.endTime);
-      $('#event-location').val(event.location);
-      $('#event-description').val(event.description);
-      $('#require-attendance').prop('checked', event.requireAttendance);
+    //   $('#event-modal-label').text('Edit Event');
+    //   $('#event-title').val(event.title);
+    //   $('#event-start-date').val(event.startDate);
+    //   $('#event-end-date').val(event.endDate);
+    //   $('#event-start-time').val(event.startTime);
+    //   $('#event-end-time').val(event.endTime);
+    //   $('#event-location').val(event.location);
+    //   $('#event-description').val(event.description);
+    //   $('#require-attendance').prop('checked', event.requireAttendance);
 
-      $('#save-event-button').unbind('click').click(function () {
-        saveEvent(index);
-      });
+    //   $('#save-event-button').unbind('click').click(function () {
+    //     saveEvent(index);
+    //   });
 
-      $('#event-modal').modal('show');
-    }
+    //   $('#event-modal').modal('show');
+    // }
 
-    function saveEvent(index) {
-      var title = $('#event-title').val();
-      var startDate = $('#event-start-date').val();
-      var endDate = $('#event-end-date').val();
-      var startTime = $('#event-start-time').val();
-      var endTime = $('#event-end-time').val();
-      var location = $('#event-location').val();
-      var description = $('#event-description').val();
-      var requireAttendance = $('#require-attendance').prop('checked');
+    // function saveEvent(index) {
+    //   var title = $('#event-title').val();
+    //   var startDate = $('#event-start-date').val();
+    //   var endDate = $('#event-end-date').val();
+    //   var startTime = $('#event-start-time').val();
+    //   var endTime = $('#event-end-time').val();
+    //   var location = $('#event-location').val();
+    //   var description = $('#event-description').val();
+    //   var requireAttendance = $('#require-attendance').prop('checked');
 
-      var event = {
-        title: title,
-        startDate: startDate,
-        endDate: endDate,
-        startTime: startTime,
-        endTime: endTime,
-        location: location,
-        description: description,
-        requireAttendance: requireAttendance
-      };
+    //   var event = {
+    //     title: title,
+    //     startDate: startDate,
+    //     endDate: endDate,
+    //     startTime: startTime,
+    //     endTime: endTime,
+    //     location: location,
+    //     description: description,
+    //     requireAttendance: requireAttendance
+    //   };
 
-      events[index] = event;
-      $('#event-modal').modal('hide');
-      displayEvents();
-      resetEventForm();
-    }
+    //   events[index] = event;
+    //   $('#event-modal').modal('hide');
+    //   displayEvents();
+    //   resetEventForm();
+    // }
 
-    function deleteEvent(index) {
-      events.splice(index, 1);
-      displayEvents();
-    }
+    // function deleteEvent(index) {
+    //   events.splice(index, 1);
+    //   displayEvents();
+    // }
 
-    function resetEventForm() {
-      $('#event-modal-label').text('Add Event');
-      $('#event-title').val('');
-      $('#event-start-date').val('');
-      $('#event-end-date').val('');
-      $('#event-start-time').val('');
-      $('#event-end-time').val('');
-      $('#event-location').val('');
-      $('#event-description').val('');
-      $('#require-attendance').prop('checked', false);
+    // function resetEventForm() {
+    //   $('#event-modal-label').text('Add Event');
+    //   $('#event-title').val('');
+    //   $('#event-start-date').val('');
+    //   $('#event-end-date').val('');
+    //   $('#event-start-time').val('');
+    //   $('#event-end-time').val('');
+    //   $('#event-location').val('');
+    //   $('#event-description').val('');
+    //   $('#require-attendance').prop('checked', false);
 
-      $('#save-event-button').unbind('click').click(function () {
-        addEvent();
-      });
-    }
+    //   $('#save-event-button').unbind('click').click(function () {
+    //     addEvent();
+    //   });
+    // }
 
     $(document).ready(function () {
       $('#add-event-button').click(function () {
         $('#event-modal').modal('show');
       });
 
-      $('#save-event-button').click(function () {
-        addEvent();
-      });
+      // $('#save-event-button').click(function () {
+      //   addEvent();
+      // });
 
       displayEvents();
     });
