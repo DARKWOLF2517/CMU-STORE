@@ -22,10 +22,13 @@ Route::get('/homepage', function () {
     return view('StudOrg.StudOrgDashboard');
 });
 
-// Route::get('StudOrgEvents', function () {
-//     return view('StudOrg.StudOrgAddEvent');
-// });
+Route::get('StudOrgEvents', function () {
+    return view('StudOrg.StudOrgAddEvent');
+});
 
+Route::get('StudOrgAttendance', function () {
+    return view('StudOrg.StudOrgAttendance');
+});
 // Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
