@@ -43,7 +43,6 @@ Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/StudOrgEvents', [EventController::class, 'showEvents'])->name('events');
 
 
-
 Route::get('/', function () {
     return view('auth.login');
 });

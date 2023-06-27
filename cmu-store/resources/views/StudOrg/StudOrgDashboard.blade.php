@@ -1,5 +1,6 @@
 @extends('Layouts.main')
 @section('main-content')
+<link href="/css/SODashboard.css" rel="stylesheet">
 
 <div class="content">
 
@@ -149,4 +150,28 @@
       </div>
 <!-- Content class end -->
 </div>
+
+<script>
+    // Simulating data retrieval from an API or database
+    setTimeout(() => {
+        const memberCount = 100; // Replace with actual member count
+        const eventCount = 10; // Replace with actual event count
+        const completedEventCount = 5; // Replace with actual completed event count
+
+        document.getElementById('memberCount').textContent = memberCount;
+        document.getElementById('eventCount').textContent = eventCount;
+        document.getElementById('completedEventCount').textContent = completedEventCount;
+    }, 1000); // Simulating a delay of 1 second for data retrieval
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const attendanceCheckbox = document.getElementById('attendanceCheckbox');
+    const attendanceOptions = document.getElementById('attendanceOptions');
+
+    attendanceCheckbox.addEventListener('change', function () {
+      attendanceOptions.style.display = this.checked ? 'block' : 'none';
+    });
+  </script>
 @endsection

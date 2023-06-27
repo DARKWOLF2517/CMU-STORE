@@ -1,6 +1,7 @@
 @extends('Layouts.main')
 
 @section('main-content')
+<link href="/css/SOEvents.css" rel="stylesheet">
 <div class="content">
 <div class="container event-container">
     <div class="row head-container">
@@ -97,7 +98,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   <script>
-   
+
 
     function displayEvents() {
     // Pass the events data to JavaScript
@@ -108,7 +109,7 @@ const cards = events.map(event => {
     return `
 
 
- 
+
         <div class="card mb-3">
             <div class="card-body">
               <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
@@ -119,7 +120,7 @@ const cards = events.map(event => {
               <div class="card-actions">
                 <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
                 <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
-              </div>    
+              </div>
             </div>
         </div>
     `;

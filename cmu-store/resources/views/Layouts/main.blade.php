@@ -8,10 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link href="/css/stylesheet.css" rel="stylesheet">
-    <link href="/css/Eventsheet.css" rel="stylesheet">
+    <link href="/css/Navbars.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -33,13 +31,13 @@
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     <span class="profile-name"><strong>User</strong></span>
                 </a>
-                
+
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
-                    
+
                   </form>
                 </ul>
             </div>
@@ -55,13 +53,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgAttendance') }}" class="nav-link link-dark">
                         <i class="bi bi-people"></i>
-                        <span class="nav-link-text">Organizations</span>
+                        <span class="nav-link-text">Attendance</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/StudOrgEvents" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgEvents') }}" class="nav-link link-dark">
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 
@@ -155,29 +153,6 @@
         });
       </script>
 
-<script>
-  // Simulating data retrieval from an API or database
-  setTimeout(() => {
-      const memberCount = 100; // Replace with actual member count
-      const eventCount = 10; // Replace with actual event count
-      const completedEventCount = 5; // Replace with actual completed event count
-
-      document.getElementById('memberCount').textContent = memberCount;
-      document.getElementById('eventCount').textContent = eventCount;
-      document.getElementById('completedEventCount').textContent = completedEventCount;
-  }, 1000); // Simulating a delay of 1 second for data retrieval
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-<script>
-  const attendanceCheckbox = document.getElementById('attendanceCheckbox');
-  const attendanceOptions = document.getElementById('attendanceOptions');
-
-  attendanceCheckbox.addEventListener('change', function () {
-    attendanceOptions.style.display = this.checked ? 'block' : 'none';
-  });
-</script>
 </body>
 </html>
 

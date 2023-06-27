@@ -13,7 +13,7 @@
             background-color: #f0f0f0;
             font-family: Arial, Helvetica, sans-serif;
         }
-        
+
         .top-nav {
             background-color: #343a40;
             color: #fff;
