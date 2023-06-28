@@ -3,3 +3,13 @@ body {
     background-color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.content {
+    margin-left: 14.375%; /* Converted from 230px */
+    padding: 1.25rem; /* Converted from 20px */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.collapsed {
+    margin-left: 4.5%; /* Converted from 72px */
+}
