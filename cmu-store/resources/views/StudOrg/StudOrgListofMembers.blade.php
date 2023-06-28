@@ -1,89 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+@extends('Layouts.main')
 
-  <style>
-    body {
-      background-color: rgb(230, 230, 230);
-    }
 
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px; 
-    }
 
-    table {
-      width: 100%;
-      border: 1px solid #ddd;
-      border-color: #ddd;
-    }
-    th{
-      background-color: #2d7dd8;
-      color: white;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .pagination {
-      margin-top: 20px;
-    }
-
-    .pagination button {
-      padding: 8px 12px;
-      text-decoration: none;
-      background-color: #f2f2f2;
-      color: #2d7dd8;
-      border: 1px solid #ddd;
-    }
-
-    .pagination button:disabled {
-      background-color: #f2f2f2;
-      color: #bbb;
-      border: 1px solid #ddd;
-    }
-
-    .pagination button.current-page {
-      background-color: #2d7dd8;
-      color: #fff;
-    }
-
-    .scroll-pane {
-      height: 350px; /* Adjust the height as needed */
-      overflow: auto;
-    }
-
-    h1 {
-      align-self: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h2>Student List</h2>
+@section('main-content')
+<link href="/css/SOListofMembers.css" rel="stylesheet">
+<div class="content">
+<div class="container">
+    <h2>Student member List</h2>
     <div class="scroll-pane">
       <table id="attendance-table">
         <thead>
           <tr>
-            <th>STUDENT ID NUMBER</th>
+            <th>Student ID number</th>
             <th>Name</th>
           </tr>
         </thead>
@@ -133,7 +61,7 @@
             <td>John Smith</td>
           </tr>
 
-          <!-- Add more rows here -->
+
         </tbody>
       </table>
     </div>
@@ -145,6 +73,7 @@
       <button id="last-page-button">&gt;&gt;</button>
     </div>
   </div>
+</div>
 
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
@@ -232,5 +161,3 @@
     showPage(currentPage);
     updatePagination();
   </script>
-</body>
-</html>

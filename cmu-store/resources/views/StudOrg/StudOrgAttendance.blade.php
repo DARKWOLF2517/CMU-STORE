@@ -4,15 +4,17 @@
 
 @section('main-content')
 <link href="/css/SOAttendance.css" rel="stylesheet">
+
 <div class="content">
 <div class="container">
     <div class="button-container">
-      <button class="btn btn-primary">
+      <a href="{{ url('/StudOrgGenerateQR') }}" class="btn btn-primary">
         <i class="fa fa-user-plus"></i> Add a member
-      </button>
-      <button class="btn btn-primary">
+      </a>
+      <a a href="{{ url('/StudOrgListofMembers') }}" class="btn btn-primary">
         <i class="fa fa-list"></i> List of Members
-      </button>
+      </a>
+
     </div>
 
     <div class="row">
@@ -35,7 +37,7 @@
                   <td>2023-06-25</td>
                   <td>Event A</td>
                   <td>
-                    <button class="btn btn-primary" onclick="recordAttendance('Event A')">Record Attendance</button>
+                    <button class="btn btn-primary btn-sm" onclick="recordAttendance('Event A')">Record Attendance</button>
                   </td>
                 </tr>
                 <tr>
@@ -71,7 +73,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">
@@ -98,3 +99,9 @@
     </div>
   </div>
 </div>
+
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+  </body>

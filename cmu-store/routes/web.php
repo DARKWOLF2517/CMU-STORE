@@ -29,6 +29,14 @@ Route::get('StudOrgEvents', function () {
 Route::get('StudOrgAttendance', function () {
     return view('StudOrg.StudOrgAttendance');
 });
+
+Route::get('StudOrgGenerateQR', function () {
+    return view('StudOrg.StudOrgGenerateQR');
+});
+
+Route::get('StudOrgListofMembers', function () {
+    return view('StudOrg.StudOrgListofMembers');
+});
 // Auth::routes();
 
 

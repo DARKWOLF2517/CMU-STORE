@@ -31,6 +31,7 @@
         <div class="add-event-button">
           <h2>Events</h2>
           <button class="btn btn-primary me-2" id="add-event-button">
+            <a href="{{ url('/') }}" class="btn btn-light">Add Event</a>
             <i class="bi bi-plus"></i> Add Event
           </button>
         </div>
