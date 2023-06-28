@@ -45,4 +45,34 @@ class EventController extends Controller
         // Redirect or return a response
         return redirect()->back()->with('success', 'Event created successfully!');
     }
+
+    public function edit(Event $event_id)
+    {   
+        $event = Event::findOrFail($event_id);
+        return view('StudOrg.StudOrgAddEvent', compact('event'));
+    }
+
+    public function update(Request $request, Event $event)
+    {   
+        $request->validate([
+            'name' => 'required',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+            'start_attendance' => 'required',
+            'end_attendance' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'require_attendance' => 'nullable|boolean',
+           
+        ]);
+
+        $event->update($request->all());
+
+        return redirect()->route('events')->with('success', 'Event updated successfully.');
+    }
+    public function destroy(Event $event)
+    {
+        $event->delete();
+        return response()->json(['message' => 'Event deleted successfully']);
+    }
 }
