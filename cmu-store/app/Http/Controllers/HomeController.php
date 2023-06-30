@@ -30,21 +30,40 @@ class HomeController extends Controller
          
             $student_id = Auth::id();
     
-            $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
-            if($userOrganization->role_id == 1){
-                return view('StudOrg.StudOrgDashboard');
-            }
-            else if($userOrganization->role_id == 2){
-                return view('Student.StudentDashboard');
-            }
-            else{
-                return redirect()->back();
-            }
+             $student_orgs = getAllOrgs($student_id);
+            // session("student_orgs",$student_orgs);
+            // foreach($student_orgs as $student_org)
+            // {
+                if($student_org->role_id == 1)
+                {
+                    return view('Student.Selection');
+                }
+            // }
+            return view('Student.StudentDashboard');
+            // $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
+            // if($userOrganization->role_id == 1){
+            //     $student_orgs = getAllOrgsAsOfficer($student_id);
+            //     // if(count(getNumberOfOrgsAsOfficer($student_id) > 1))
+            //     // {
+            //     //     //TODO: Get the organization ID of all Student Orgs where role of student is 1
+            //     //     return view('StudOrg.Selection');
+            //     // }
+            //     return view('StudOrg.StudOrgDashboard');
+            // }
+            // else if($userOrganization->role_id == 2){
+            //     return view('Student.StudentDashboard');
+            // }
+            // else{
+            //     return redirect()->back();
+            // }
             
         }
         
  
     }
+
+    //TODO: Create a function to fetch all student orgs where the role id is 1
+
     public function logout()
     {
         Auth::logout();

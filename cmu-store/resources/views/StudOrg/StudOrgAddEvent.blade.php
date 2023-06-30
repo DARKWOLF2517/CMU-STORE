@@ -162,17 +162,28 @@
   <script>
 
 
+    
+
     function displayEvents() {
     // Pass the events data to JavaScript
     const events = @json($events);
 
 // Loop through the events and create cards
 const cards = events.map(event => {
+
+  let card_container = createElement("div");
+  let card_body = createElement("div");
+  card_body.classList.add("card-body");
+  let header_event_name = createElement("h6");
+  header_event_name.innerHTML = "Event Name: " + event.name;
+  card_body.append(header_event_name);
+  card_container.append(card_body);
+  document.getElementById("event-cards").append(card_container);
+
+
+  
     return `
-
-
-
-        <div class="card mb-3">
+        <div id="event-${event.event_id}" class="card mb-3" data-event-id="${event.event_id}" data-event-name="${event.name}">
             <div class="card-body">
               <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
               <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.start_date}</h6>
@@ -180,7 +191,7 @@ const cards = events.map(event => {
               <h6 class="card-text">Location: ${event.location}</h6>
               <h6 class="card-text">Description: ${event.description}</h6>
               <div class="card-actions">
-                <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
+                <button class="ellipsis-button edit-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
                 <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
               </div>
             </div>
@@ -252,6 +263,9 @@ eventsContainer.innerHTML = cards.join('');
 //   });
 // }
 function deleteEvent(eventId) {
+
+
+
   if (confirm('Are you sure you want to delete this event?')) {
     fetch(`/events/${eventId}`, {
       method: 'DELETE',
