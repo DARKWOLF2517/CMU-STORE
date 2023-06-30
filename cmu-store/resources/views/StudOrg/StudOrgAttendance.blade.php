@@ -8,7 +8,7 @@
 <div class="content">
 <div class="container">
     <div class="button-container">
-      <a href="{{ url('/StudOrgGenerateQR') }}" class="btn btn-primary">
+      <a href="{{ url('/StudOrgAddMember') }}" class="btn btn-primary">
         <i class="fa fa-user-plus"></i> Add a member
       </a>
       <a a href="{{ url('/StudOrgListofMembers') }}" class="btn btn-primary">

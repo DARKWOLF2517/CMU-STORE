@@ -30,8 +30,8 @@ Route::get('StudOrgAttendance', function () {
     return view('StudOrg.StudOrgAttendance');
 });
 
-Route::get('StudOrgGenerateQR', function () {
-    return view('StudOrg.StudOrgGenerateQR');
+Route::get('StudOrgAddMember', function () {
+    return view('StudOrg.StudOrgAddMember');
 });
 
 Route::get('StudOrgListofMembers', function () {
