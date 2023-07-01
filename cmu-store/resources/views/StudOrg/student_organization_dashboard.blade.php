@@ -7,40 +7,40 @@
     <div class="container dashboard">
         <div class="row">
 
-          <div class="col-md-4">
-            <div class="card shadow">
-              <div class="card-body">
-                <h6 class="card-title">
-                 <b> NUMBER OF MEMBERS</b>
-                  <i class="bi bi-people"></i>
-                </h6>
-                <h3 class="card-text">100</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow">
-              <div class="card-body">
-                <h6 class="card-title">
-                  <b>NUMBER OF UPCOMING EVENTS</b>
-                  <i class="bi bi-calendar-event"></i>
-                </h6>
-                <h3 class="card-text">0</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card shadow">
-              <div class="card-body">
-                <h6 class="card-title">
-                  <b>NUMBER OF COMPLETED EVENTS</b>
-                  <i class="bi bi-check-circle"></i>
-                </h6>
-                <h3 class="card-text">10</h3>
-              </div>
-            </div>
-          </div>
-        </div>
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <b>NUMBER OF MEMBERS</b>
+                        <i class="bi bi-people"></i>
+                      </h6>
+                      <h3 class="card-text">{{ numberOfMembers }}</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <b>NUMBER OF UPCOMING EVENTS</b>
+                        <i class="bi bi-calendar-event"></i>
+                      </h6>
+                      <h3 class="card-text">{{ numberOfUpcomingEvents }}</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <b>NUMBER OF COMPLETED EVENTS</b>
+                        <i class="bi bi-check-circle"></i>
+                      </h6>
+                      <h3 class="card-text">{{ numberOfCompletedEvents }}</h3>
+                    </div>
+                  </div>
+                </div>
         <div class="row">
           <div class="col-md-6">
             <div class="timeline shadow">
@@ -150,28 +150,17 @@
       </div>
 <!-- Content class end -->
 </div>
-
 <script>
-    // Simulating data retrieval from an API or database
-    setTimeout(() => {
-        const memberCount = 100; // Replace with actual member count
-        const eventCount = 10; // Replace with actual event count
-        const completedEventCount = 5; // Replace with actual completed event count
+    export default {
+      data() {
+        return {
+          numberOfMembers: 100,
+          numberOfUpcomingEvents: 0,
+          numberOfCompletedEvents: 10,
+        };
+      },
+    };
+    </script>
 
-        document.getElementById('memberCount').textContent = memberCount;
-        document.getElementById('eventCount').textContent = eventCount;
-        document.getElementById('completedEventCount').textContent = completedEventCount;
-    }, 1000); // Simulating a delay of 1 second for data retrieval
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const attendanceCheckbox = document.getElementById('attendanceCheckbox');
-    const attendanceOptions = document.getElementById('attendanceOptions');
 
-    attendanceCheckbox.addEventListener('change', function () {
-      attendanceOptions.style.display = this.checked ? 'block' : 'none';
-    });
-  </script>
 @endsection

@@ -6,7 +6,7 @@
 <link href="/css/SOAttendance.css" rel="stylesheet">
 
 <div class="content">
-<div class="container">
+{{-- <div class="container">
     <div class="button-container">
       <a href="{{ url('/StudOrgAddMember') }}" class="btn btn-primary">
         <i class="fa fa-user-plus"></i> Add a member
@@ -15,7 +15,7 @@
         <i class="fa fa-list"></i> List of Members
       </a>
 
-    </div>
+    </div> --}}
 
     <div class="row">
       <div class="col-md-6">
