@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>vue js example</h1>
-        
+        <h1>adfsadlkfjd</h1>
     </div>
 </template>
 

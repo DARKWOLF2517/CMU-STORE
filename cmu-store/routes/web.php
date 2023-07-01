@@ -48,7 +48,7 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 #events
 
-Route::get('/student_org_events', [EventController::class, 'showEvents'])->name('events');
+Route::get('/student_organization_events', [EventController::class, 'showEvents'])->name('events');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');
