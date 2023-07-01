@@ -19,23 +19,31 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/homepage', function () {
-    return view('StudOrg.StudOrgDashboard');
+    return view('StudOrg.student_organization_attendance');
 });
 
-Route::get('StudOrgEvents', function () {
-    return view('StudOrg.StudOrgAddEvent');
+Route::get('StudentOrganizationEvents', function () {
+    return view('StudOrg.student_organization_events');
 });
 
-Route::get('StudOrgAttendance', function () {
-    return view('StudOrg.StudOrgAttendance');
+Route::get('StudentOrganizationAttendance', function () {
+    return view('StudOrg.student_organization_attendance');
 });
 
-Route::get('StudOrgAddMember', function () {
-    return view('StudOrg.StudOrgAddMember');
+Route::get('StudentOrganizationStudent', function () {
+    return view('StudOrg.student_organization_student');
 });
 
-Route::get('StudOrgListofMembers', function () {
-    return view('StudOrg.StudOrgListofMembers');
+Route::get('StudentOrganizationMemberList', function () {
+    return view('StudOrg.student_organization_member_list');
+});
+
+Route::get('StudentOrganizationAccountablities', function () {
+    return view('StudOrg.student_organization_accountabilities');
+});
+
+Route::get('StudentOrganizationEvaluation', function () {
+    return view('StudOrg.student_organization_evaluation');
 });
 // Auth::routes();
 
