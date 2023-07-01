@@ -32,10 +32,10 @@ class HomeController extends Controller
     
             $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
             if($userOrganization->role_id == 1){
-                return view('StudOrg.StudOrgDashboard');
+                return view('student_organization.student_organization_dashboard');
             }
             else if($userOrganization->role_id == 2){
-                return view('Student.StudentDashboard');
+                return view('student.student_dashboard');
             }
             else{
                 return redirect()->back();

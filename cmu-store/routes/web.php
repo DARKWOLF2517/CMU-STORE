@@ -19,23 +19,23 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/homepage', function () {
-    return view('StudOrg.StudOrgDashboard');
+    return view('StudOrg.student_organization_dashboard');
 });
 
-Route::get('StudOrgEvents', function () {
-    return view('StudOrg.StudOrgAddEvent');
+// Route::get('StudOrgEvents', function () {
+//     return view('StudOrg.StudOrgAddEvent');
+// });
+
+Route::get('/student_organization_attendance', function () {
+    return view('StudOrg.student_organization_attendance');
 });
 
-Route::get('StudOrgAttendance', function () {
-    return view('StudOrg.StudOrgAttendance');
-});
-
-Route::get('StudOrgAddMember', function () {
+Route::get('/student_organization_add_member', function () {
     return view('StudOrg.StudOrgAddMember');
 });
 
-Route::get('StudOrgListofMembers', function () {
-    return view('StudOrg.StudOrgListofMembers');
+Route::get('/student_organization_list_of_member', function () {
+    return view('StudOrg.student_organization_member_list');
 });
 // Auth::routes();
 
@@ -48,7 +48,7 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 #events
 
-Route::get('/StudOrgEvents', [EventController::class, 'showEvents'])->name('events');
+Route::get('/student_org_events', [EventController::class, 'showEvents'])->name('events');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');

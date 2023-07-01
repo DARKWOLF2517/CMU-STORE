@@ -15,7 +15,7 @@
                         <b>NUMBER OF MEMBERS</b>
                         <i class="bi bi-people"></i>
                       </h6>
-                      <h3 class="card-text">{{ numberOfMembers }}</h3>
+                      {{-- <h3 class="card-text">{{ numberOfMembers }}</h3> --}}
                     </div>
                   </div>
                 </div>
@@ -26,7 +26,7 @@
                         <b>NUMBER OF UPCOMING EVENTS</b>
                         <i class="bi bi-calendar-event"></i>
                       </h6>
-                      <h3 class="card-text">{{ numberOfUpcomingEvents }}</h3>
+                      {{-- <h3 class="card-text">{{ numberOfUpcomingEvents }}</h3> --}}
                     </div>
                   </div>
                 </div>
@@ -37,7 +37,7 @@
                         <b>NUMBER OF COMPLETED EVENTS</b>
                         <i class="bi bi-check-circle"></i>
                       </h6>
-                      <h3 class="card-text">{{ numberOfCompletedEvents }}</h3>
+                      {{-- <h3 class="card-text">{{ numberOfCompletedEvents }}</h3> --}}
                     </div>
                   </div>
                 </div>
