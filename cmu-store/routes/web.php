@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/homepage', function () {
-    return view('StudOrg.student_organization_dashboard');
+    return view('student_organization.student_organization_dashboard');
 });
 
 // Route::get('StudOrgEvents', function () {
@@ -27,15 +27,15 @@ Route::get('/homepage', function () {
 // });
 
 Route::get('/student_organization_attendance', function () {
-    return view('StudOrg.student_organization_attendance');
+    return view('student_organization.student_organization_attendance');
 });
 
 Route::get('/student_organization_add_member', function () {
-    return view('StudOrg.StudOrgAddMember');
+    return view('student_organization.StudOrgAddMember');
 });
 
 Route::get('/student_organization_list_of_member', function () {
-    return view('StudOrg.student_organization_member_list');
+    return view('student_organization.student_organization_member_list');
 });
 // Auth::routes();
 

@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/Stud') }}" class="nav-link link-dark">
+                    <a href="{{ url('/student_organization_list_of_member') }}" class="nav-link link-dark">
                         <i class="bi bi-person-vcard"></i>
                         <span class="nav-link-text">Student</span>
                     </a>
