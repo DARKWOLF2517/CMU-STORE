@@ -61,6 +61,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ url('/Stud') }}" class="nav-link link-dark">
+                        <i class="bi bi-person-vcard"></i>
+                        <span class="nav-link-text">Student</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ url('/StudOrgEvents') }}" class="nav-link link-dark">
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
