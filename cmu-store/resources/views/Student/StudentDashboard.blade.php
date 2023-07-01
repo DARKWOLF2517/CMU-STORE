@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    @vite('resources/js/app.js')
 </head>
 <body>
     <h1>Student Dashboard</h1>
+    <div id="app">
 
+       <example/>
+       
+    </div>
      
+  
     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -18,5 +24,6 @@
         
       </form>
     </ul>
+
 </body>
 </html>
