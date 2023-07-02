@@ -26,14 +26,11 @@ Route::get('/homepage', function () {
     return view('student_organization.student_organization_dashboard');
 });
 
-<<<<<<< HEAD
 Route::get('student_organization_events', function () {
     return view('student_organization.student_organization_events');
-=======
-
+});
 Route::get('StudOrgEvents', function () {
-    return view('StudOrg.student_organization_events');
->>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930
+    return view('student_organization.student_organization_events');
 });
 
 Route::get('student_organization_attendance', function () {
