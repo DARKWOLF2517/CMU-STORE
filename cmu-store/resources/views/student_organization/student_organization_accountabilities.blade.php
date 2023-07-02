@@ -47,9 +47,12 @@
 
   <!-- Modal -->
   <div id="editModal" class="modal">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Edit Student Details</h2>
+      <div class="modal-header">
+        <h5 class="modal-title" id="accountability-modal-label">Student's Accountabilities</h5>
+      </div>
+      <div class="modal-body">
       <form id="editForm">
         <div class="mb-3">
           <label for="studentID" class="form-label">Student ID number:</label>
@@ -61,7 +64,7 @@
         </div>
         <div class="mb-3">
           <label for="membershipFee" class="form-label">Membership Fee:</label>
-          <input type="text" id="membershipFee" readonly class="form-control">
+          <input type="text" id="membershipFee" class="form-control">
         </div>
         <div class="mb-3">
           <label for="membershipStatus" class="form-label">Membership Fee Status:</label>
@@ -72,7 +75,7 @@
         </div>
         <div class="mb-3">
           <label for="fines" class="form-label">Fines:</label>
-          <input type="text" id="fines" readonly class="form-control">
+          <input type="text" id="fines" class="form-control">
         </div>
         <div class="mb-3">
           <label for="finesStatus" class="form-label">Fines Status:</label>
@@ -81,13 +84,20 @@
             <option value="Paid">Paid</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="save-accountabilities-button">Save</button>
+        </div>
       </form>
     </div>
+    </div>
+  </div>
   </div>
 
+
+
   <!-- Bootstrap JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 
   <script>
     const editButtons = document.getElementsByClassName('edit-button');
