@@ -1,29 +1,12 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h1>Component B</h1>
     </div>
-</template>
-
-<script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        },
-
-        data() {
-            return {
-                activePage:0,
-            }
-        },
-    }
-</script>
+  </template>
+  
+  <script>
+  export default {
+    // Component B logic
+  };
+  </script>
+  

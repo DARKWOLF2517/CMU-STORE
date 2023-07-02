@@ -18,6 +18,7 @@
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
     
+    @yield('custom-style')
  
 
 </head>
@@ -52,6 +53,7 @@
                 </ul>
             </div>
         </div>
+     </div>
         <!-- SIDE NAV BAR -->
     <div class="wrapper">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
@@ -103,6 +105,7 @@
             </ul>
 
         </div>
+    </div>
         @yield('main-content')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
