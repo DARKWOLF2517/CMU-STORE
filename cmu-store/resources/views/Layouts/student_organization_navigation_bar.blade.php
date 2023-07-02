@@ -69,22 +69,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
+
                     <a href="{{ url('/student_organization_students') }}" class="nav-link link-dark">
                         <i class="bi bi-person-vcard"></i>
-=======
+
                     <a href="{{ url('/StudOrgstudent') }}" class="nav-link link-dark">
                         <i class="bi bi-person"></i>
->>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930
+
                         <span class="nav-link-text">Student</span>
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
+
                     <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
-=======
+
                     <a href="{{ url('/StudOrgEvents') }}" class="nav-link link-dark">
->>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930
+
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 
