@@ -1,9 +1,6 @@
-<<<<<<< HEAD:cmu-store/resources/views/student_organization/student_organization_member_list.blade.php
-@extends('layouts.student_organization_navigation_bar')
-=======
-@extends('Layouts.student_organization_navigation_bar')
 
->>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930:cmu-store/resources/views/StudOrg/student_organization_member_list.blade.php
+@extends('layouts.student_organization_navigation_bar')
+
 @section('main-content')
 
 <div class="content">
