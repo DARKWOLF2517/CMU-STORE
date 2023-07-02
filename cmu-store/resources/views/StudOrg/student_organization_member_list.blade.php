@@ -1,4 +1,4 @@
-@extends('Layouts.main')
+@extends('Layouts.student_organization_navigation_bar')
 
 @section('main-content')
 <link href="/css/SOListofMembers.css" rel="stylesheet">

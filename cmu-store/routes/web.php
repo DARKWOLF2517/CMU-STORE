@@ -18,9 +18,14 @@ use App\Http\Controllers\HomeController;
 //     return view('Layouts.login');
 // });
 
+// Route::get('/homepage', function () {
+//     return view('StudOrg.student_organization_dashboard');
+// });
+
 Route::get('/homepage', function () {
     return view('StudOrg.student_organization_dashboard');
 });
+
 
 Route::get('StudOrgEvents', function () {
     return view('StudOrg.student_organization_events');

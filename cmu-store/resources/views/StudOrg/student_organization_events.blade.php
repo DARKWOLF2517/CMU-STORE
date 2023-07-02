@@ -1,4 +1,4 @@
-@extends('Layouts.main')
+@extends('Layouts.student_organization_navigation_bar')
 
 @section('main-content')
 <link href="/css/SOEvents.css" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="add-event-button">
           <h2>Events</h2>
           <button class="btn btn-primary me-2" id="add-event-button">
-            <i class="bi bi-plus">Add Event</i> 
+            <i class="bi bi-plus">Add Event</i>
           </button>
         </div>
         <div class="event-list-scroll" id="event-cards"></div>

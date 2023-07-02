@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .styled-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .styled-table th {
+      background-color: #f2f2f2;
+    }
+
+    .styled-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .styled-table tbody tr:hover {
+      background-color: #ddd;
+    }
+
+    .styled-table .edit-button,
+    .styled-table .delete-button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .styled-table .edit-button {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .styled-table .delete-button {
+      background-color: #f44336;
+      color: white;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal label {
+      margin-bottom: 8px;
+    }
+
+    .modal input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .modal button[type="submit"] {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .modal button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="container">
+      <h2>Student Accountabilities</h2>
+      <div class="scroll-pane">
+        <table id="attendance-table" class="styled-table">
+          <thead>
+            <tr>
+              <th>Student ID number</th>
+              <th>Name</th>
+              <th>Membership Fee</th>
+              <th>Membership Fee Status</th>
+              <th>Fines</th>
+              <th>Fines Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-05-01</td>
+              <td>John Smith</td>
+              <td>$100</td>
+              <td>Unpaid</td>
+              <td>$10</td>
+              <td>Unpaid</td>
+              <td>
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <!-- Pagination buttons go here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Student Details</h2>
+      <form>
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="student-id" readonly><br><br>
+        <label for="student-name">Name:</label>
+        <input type="text" id="student-name" name="student-name" readonly><br><br>
+        <label for="membership-fee">Membership Fee:</label>
+        <input type="text" id="membership-fee" name="membership-fee"><br><br>
+        <label for="membership-status">Membership Fee Status:</label>
+        <input type="text" id="membership-status" name="membership-status"><br><br>
+        <label for="fines">Fines:</label>
+        <input type="text" id="fines" name="fines"><br><br>
+        <label for="fines-status">Fines Status:</label>
+        <input type="text" id="fines-status" name="fines-status"><br><br>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const editButtons = document.getElementsByClassName('edit-button');
+    const editModal = document.getElementById('editModal');
+    const closeModal = editModal.getElementsByClassName('close')[0];
+    const studentIdField = document.getElementById('student-id');
+    const studentNameField = document.getElementById('student-name');
+    const membershipFeeField = document.getElementById('membership-fee');
+    const membershipStatusField = document.getElementById('membership-status');
+    const finesField = document.getElementById('fines');
+    const finesStatusField = document.getElementById('fines-status');
+
+    function showModal() {
+      const row = this.parentNode.parentNode;
+      const studentId = row.cells[0].textContent;
+      const studentName = row.cells[1].textContent;
+      const membershipFee = row.cells[2].textContent;
+      const membershipStatus = row.cells[3].textContent;
+      const fines = row.cells[4].textContent;
+      const finesStatus = row.cells[5].textContent;
+
+      studentIdField.value = studentId;
+      studentNameField.value = studentName;
+      membershipFeeField.value = membershipFee;
+      membershipStatusField.value = membershipStatus;
+      finesField.value = fines;
+      finesStatusField.value = finesStatus;
+
+      editModal.style.display = 'block';
+    }
+
+    function hideModal() {
+      editModal.style.display = 'none';
+    }
+
+    Array.from(editButtons).forEach(button => {
+      button.addEventListener('click', showModal);
+    });
+
+    closeModal.addEventListener('click', hideModal);
+  </script>
+</body>
+</html>
