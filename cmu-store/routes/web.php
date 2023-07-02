@@ -19,31 +19,31 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/homepage', function () {
-    return view('StudOrg.student_organization_dashboard');
+    return view('student_organization.student_organization_dashboard');
 });
 
-Route::get('StudOrgEvents', function () {
-    return view('StudOrg.student_organization_events');
+Route::get('student_organization_events', function () {
+    return view('student_organization.student_organization_events');
 });
 
-Route::get('StudOrgAttendance', function () {
-    return view('StudOrg.student_organization_attendance');
+Route::get('student_organization_attendance', function () {
+    return view('student_organization.student_organization_attendance');
 });
 
-Route::get('StudOrgListofMember', function () {
-    return view('StudOrg.student_organization_member_list');
+Route::get('student_organization_member_list', function () {
+    return view('student_organization.student_organization_member_list');
 });
 
-Route::get('StudOrgstudent', function () {
-    return view('StudOrg.student_organization_student');
+Route::get('student_organization_students', function () {
+    return view('student_organization.student_organization_students');
 });
 
-Route::get('StudOrgEvaluation', function () {
-    return view('StudOrg.student_organization_evaluation');
+Route::get('student_organization_evaluation', function () {
+    return view('student_organization.student_organization_evaluation');
 });
 
-Route::get('StudOrgAccountabilities', function () {
-    return view('StudOrg.student_organization_accountabilities');
+Route::get('student_organization_accountabilities', function () {
+    return view('student_organization.student_organization_accountabilities');
 });
 // Auth::routes();
 
@@ -56,7 +56,7 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 #events
 
-Route::get('/student_organization_events', [EventController::class, 'showEvents'])->name('events');
+Route::get('/student_organization_events', [EventController::class, 'show_events'])->name('events');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');

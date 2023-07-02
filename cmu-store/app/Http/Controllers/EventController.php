@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 class EventController extends Controller
 {
-    public function showEvents()
+    public function show_events()
     {
         // Retrieve the events with necessary fields
         $events = Event::all();
