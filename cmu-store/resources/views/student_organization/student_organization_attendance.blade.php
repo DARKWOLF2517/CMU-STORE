@@ -6,7 +6,7 @@
 
 
 <div class="content">
-<div class="container">
+<div class="container attendance">
 
 
     <div class="row">
@@ -16,7 +16,7 @@
             <h5 class="card-title">Scheduled Events</h5>
           </div>
           <div class="card-body">
-            <table class="table">
+            <table class="table event">
               <thead>
                 <tr>
                   <th>Date</th>

@@ -4,7 +4,7 @@
 @section('main-content')
 
 <div class="content">
-<div class="container">
+<div class="container memberlist">
     <h2>Student member List</h2>
     <div class="scroll-pane">
       <table id="attendance-table">
