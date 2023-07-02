@@ -95,63 +95,6 @@
     </div>
   </div>
 
-{{-- <!-- Update Event Modal -->
-<div class="modal fade" id="update-event-modal" tabindex="-1" aria-labelledby="update-event-modal-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="update-event-modal-label">Update Event</h5>
-      </div>
-      <div class="modal-body">
-        <form id="update-eventsForm"action="{{ route('events.update', $event->event_id) }}"  method="POST">
-          @csrf
-          @method('PUT')
-          <div class="mb-3">
-            <label for="event-update-title" class="form-label">Event Name</label>
-            <input type="text" name="name" class="form-control" id="event-update-title">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-start-date" class="form-label">Start Date</label>
-            <input type="date" name="start_date" class="form-control" id="event-update-start-date">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-end-date" class="form-label">End Date</label>
-            <input type="date" name="end_date" class="form-control" id="event-update-end-date">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-start-time" class="form-label">Start Attendance</label>
-            <input type="time" name="start_attendance" class="form-control" id="event-update-start-time">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-end-time" class="form-label">End Attendance</label>
-            <input type="time" name="end_attendance" class="form-control" id="event-update-end-time">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-location" class="form-label">Location</label>
-            <input type="text" name="location" class="form-control" id="event-update-location">
-          </div>
-          <div class="mb-3">
-            <label for="event-update-description" class="form-label">Description</label>
-            <textarea class="form-control" name="description" id="event-update-description" rows="3"></textarea>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="event-update-require-attendance" name="require_attendance" value="1">
-            <label class="form-check-label" for="event-update-require-attendance">
-              Require Attendance
-            </label>
-          </div>
-          <input type="hidden" name="org_id" value="1">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="update-event-button">Save</button>
-      </div>
-    </div>
-  </div>
-</div> --}}
-
-
 
 </div>
 

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/"> --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/allmedia.css" rel="stylesheet">
     <link href="/custom_css/Login.css" rel="stylesheet">
@@ -17,8 +17,9 @@
     <link href="/custom_css/SODashboard.css" rel="stylesheet">
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
-    
- 
+
+    @yield('custom-style')
+
 
 </head>
 <body>
@@ -52,6 +53,7 @@
                 </ul>
             </div>
         </div>
+     </div>
         <!-- SIDE NAV BAR -->
     <div class="wrapper">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
@@ -71,8 +73,7 @@
                 <li class="nav-item">
 
                     <a href="{{ url('/student_organization_students') }}" class="nav-link link-dark">
-                        <i class="bi bi-person-vcard"></i>
-
+                        <i class="bi bi-person"></i>
                         <span class="nav-link-text">Student</span>
                     </a>
                 </li>
@@ -80,7 +81,7 @@
 
                     <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
 
-                  
+
 
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
@@ -103,6 +104,7 @@
             </ul>
 
         </div>
+    </div>
         @yield('main-content')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -122,58 +124,7 @@
             this.classList.toggle('collapsed');
         });
     </script>
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-          const today = new Date();
-          let currentMonth = today.getMonth();
-          let currentYear = today.getFullYear();
-          const cells = document.getElementsByTagName('td');
 
-          function updateCalendar() {
-            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            const firstDay = new Date(currentYear, currentMonth, 1);
-            const lastDay = new Date(currentYear, currentMonth + 1, 0);
-            const numDays = lastDay.getDate();
-            const startDay = firstDay.getDay();
-
-            for (let i = 0; i < cells.length; i++) {
-              cells[i].innerHTML = '';
-              cells[i].classList.remove('today');
-            }
-
-            document.getElementById('month-year').textContent = `${monthNames[currentMonth]} ${currentYear}`;
-
-            let date = 1;
-            for (let i = startDay; i < startDay + numDays; i++) {
-              cells[i].innerHTML = date;
-              if (date === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
-                cells[i].classList.add('today');
-              }
-              date++;
-            }
-          }
-
-          updateCalendar();
-
-          document.getElementById('prev-month').addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) {
-              currentMonth = 11;
-              currentYear--;
-            }
-            updateCalendar();
-          });
-
-          document.getElementById('next-month').addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) {
-              currentMonth = 0;
-              currentYear++;
-            }
-            updateCalendar();
-          });
-        });
-      </script>
 
 </body>
 </html>

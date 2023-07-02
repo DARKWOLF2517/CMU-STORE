@@ -1,7 +1,7 @@
 
 @extends('layouts.student_organization_navigation_bar')
 @section('main-content')
-<link href="/custom_css/SODashboard.css" rel="stylesheet">
+{{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
 <div class="content">
 
