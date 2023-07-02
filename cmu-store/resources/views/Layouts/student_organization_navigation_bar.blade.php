@@ -55,26 +55,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/StudentOrganizationAttendance') }}" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgAttendance') }}" class="nav-link link-dark">
                         <i class="bi bi-people"></i>
                         <span class="nav-link-text">Attendance</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/StudentOrganizationStudent') }}" class="nav-link link-dark">
-                        <i class="bi bi-person"></i>
+                    <a href="{{ url('/Stud') }}" class="nav-link link-dark">
+                        <i class="bi bi-person-vcard"></i>
                         <span class="nav-link-text">Student</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/StudentOrganizationEvents') }}" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgEvents') }}" class="nav-link link-dark">
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="StudentOrganizationAccountabilities" class="nav-link link-dark">
+                    <a href="#" class="nav-link link-dark">
                         <i class="bi bi-currency-dollar"></i>
                         <span class="nav-link-text">Accountabilities</span>
                     </a>

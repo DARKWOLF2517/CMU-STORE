@@ -11,7 +11,7 @@ class EventController extends Controller
         // Retrieve the events with necessary fields
         $events = Event::all();
     
-        return view('StudOrg.StudOrgAddEvent', compact('events'));
+        return view('student_organization.student_organization_events', compact('events'));
     }
 
     public function store(Request $request)
@@ -48,8 +48,8 @@ class EventController extends Controller
 
     public function edit(Event $event_id)
     {   
-        $event = Event::findOrFail($event_id);
-        return view('StudOrg.StudOrgAddEvent', compact('event'));
+        $events = Event::findOrFail($event_id);
+        return view('student_organization.student_organization_events', compact('events'));
     }
 
     public function update(Request $request, Event $event)
