@@ -29,7 +29,7 @@
                   <td>2023-06-25</td>
                   <td>Event A</td>
                   <td>
-                    <button class="btn btn-primary btn-sm" onclick="recordAttendance('Event A')">Record Attendance</button>
+                    <button class="btn btn-primary btn-sm"  >Record Attendance</button>
                   </td>
                 </tr>
                 <tr>
@@ -92,8 +92,5 @@
   </div>
 </div>
 
-
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
   </body>
