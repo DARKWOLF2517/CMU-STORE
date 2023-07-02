@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
+                    <a href="{{ url('/student_org_events') }}" class="nav-link link-dark">
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 

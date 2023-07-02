@@ -19,23 +19,31 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/homepage', function () {
-    return view('student_organization.student_organization_dashboard');
+    return view('StudOrg.student_organization_dashboard');
 });
 
-// Route::get('StudOrgEvents', function () {
-//     return view('StudOrg.StudOrgAddEvent');
-// });
-
-Route::get('/student_organization_attendance', function () {
-    return view('student_organization.student_organization_attendance');
+Route::get('StudOrgEvents', function () {
+    return view('StudOrg.student_organization_events');
 });
 
-Route::get('/student_organization_add_member', function () {
-    return view('student_organization.StudOrgAddMember');
+Route::get('StudOrgAttendance', function () {
+    return view('StudOrg.student_organization_attendance');
 });
 
-Route::get('/student_organization_list_of_member', function () {
-    return view('student_organization.student_organization_member_list');
+Route::get('StudOrgListofMember', function () {
+    return view('StudOrg.student_organization_member_list');
+});
+
+Route::get('StudOrgstudent', function () {
+    return view('StudOrg.student_organization_student');
+});
+
+Route::get('StudOrgEvaluation', function () {
+    return view('StudOrg.student_organization_evaluation');
+});
+
+Route::get('StudOrgAccountabilities', function () {
+    return view('StudOrg.student_organization_accountabilities');
 });
 // Auth::routes();
 
