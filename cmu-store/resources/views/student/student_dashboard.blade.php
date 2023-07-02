@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Student Dashboard</h1>
-    <div id="app">
+    <div id="app"class = " container">
 
         <example-component/>
         
