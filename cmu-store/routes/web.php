@@ -22,14 +22,11 @@ use App\Http\Controllers\HomeController;
 //     return view('StudOrg.student_organization_dashboard');
 // });
 
-Route::get('/homepage', function () {
-    return view('student_organization.student_organization_dashboard');
-});
 
 Route::get('student_organization_events', function () {
     return view('student_organization.student_organization_events');
 });
-Route::get('StudOrgEvents', function () {
+Route::get('student_organization_events', function () {
     return view('student_organization.student_organization_events');
 });
 
