@@ -1,7 +1,7 @@
 @extends('Layouts.main')
 
 @section('main-content')
-<link href="/css/SOEvents.css" rel="stylesheet">
+
 <div class="content">
 <div class="container event-container">
     <div class="row head-container">

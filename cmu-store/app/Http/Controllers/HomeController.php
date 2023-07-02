@@ -50,6 +50,6 @@ class HomeController extends Controller
         Auth::logout();
     
         // Redirect the user to the desired location after logout
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

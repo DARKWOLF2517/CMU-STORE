@@ -3,7 +3,7 @@
 
 
 @section('main-content')
-<link href="/css/SOAttendance.css" rel="stylesheet">
+
 
 <div class="content">
 {{-- <div class="container">

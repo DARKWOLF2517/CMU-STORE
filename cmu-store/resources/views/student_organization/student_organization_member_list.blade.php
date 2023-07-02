@@ -1,7 +1,7 @@
 @extends('Layouts.main')
 
 @section('main-content')
-<link href="/css/SOListofMembers.css" rel="stylesheet">
+
 <div class="content">
 <div class="container">
     <h2>Student member List</h2>
