@@ -11,16 +11,18 @@
     <h1>Student Dashboard</h1>
     <div id="app">
 
-       <Example/>
+        <example-component/>
+        
        
     </div>
      
   
-    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+    <ul id="app" class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
+   
         
       </form>
     </ul>

@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/css/stylesheet.css" rel="stylesheet">
-    <link href="/css/Navbars.css" rel="stylesheet">
+    <link href="/custom_css/stylesheet.css" rel="stylesheet">
+    <link href="/custom_css/allmedia.css" rel="stylesheet">
+    <link href="/custom_css/Login.css" rel="stylesheet">
+    <link href="/custom_css/Navbars.css" rel="stylesheet">
+    <link href="/custom_css/SOAttendance.css" rel="stylesheet">
+    <link href="/custom_css/SODashboard.css" rel="stylesheet">
+    <link href="/custom_css/SOEvents.css" rel="stylesheet">
+    <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
+    
+ 
 
 </head>
 <body>
@@ -30,8 +38,8 @@
                     <i class="bi bi-bell"></i>
                 </button>
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <span class="profile-name"><strong>User</strong></span>
+                    <img src="https://cdn.imgbin.com/0/4/19/imgbin-network-administrator-system-administrator-computer-icons-computer-network-database-others-k0X6MX9NfNjeUyBaXUweXTcMw.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <span class="profile-name"><strong>Admin</strong></span>
                 </a>
 
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">

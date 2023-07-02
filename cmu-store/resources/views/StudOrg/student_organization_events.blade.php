@@ -1,7 +1,7 @@
 @extends('Layouts.student_organization_navigation_bar')
 
 @section('main-content')
-<link href="/css/SOEvents.css" rel="stylesheet">
+
 <div class="content">
 <div class="container event-container">
     <div class="row head-container">

@@ -1,6 +1,6 @@
 @extends('Layouts.student_organization_navigation_bar')
 @section('main-content')
-<link href="/css/SODashboard.css" rel="stylesheet">
+{{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
 <div class="content">
 
@@ -157,7 +157,7 @@
           numberOfMembers: 100,
           numberOfUpcomingEvents: 0,
           numberOfCompletedEvents: 10,
-        };
+        };x
       },
     };
     </script>
