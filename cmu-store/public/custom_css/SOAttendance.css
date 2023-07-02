@@ -10,7 +10,6 @@
   .card {
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    height: 100%;
   }
   .card-title {
     margin-bottom: 0;

@@ -59,7 +59,7 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="{{ url('/dashboard') }}" class="nav-link link-dark" aria-current="page">
+                    <a href="{{ url('/homepage') }}" class="nav-link link-dark" aria-current="page">
                         <i class="bi bi-speedometer2"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
@@ -72,7 +72,7 @@
                 </li>
                 <li class="nav-item">
 
-                    <a href="{{ url('/student_organization_students') }}" class="nav-link link-dark">
+                    <a href="{{ url('/student_organization_member_list') }}" class="nav-link link-dark">
                         <i class="bi bi-person"></i>
                         <span class="nav-link-text">Student</span>
                     </a>
@@ -80,9 +80,6 @@
                 <li class="nav-item">
 
                     <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
-
-
-
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 
