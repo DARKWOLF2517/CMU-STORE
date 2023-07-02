@@ -3,234 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
   <style>
-    body {
-      background-color: rgb(230, 230, 230);
-    }
-
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px; 
-    }
-
-    table {
+    .styled-table {
+      border-collapse: collapse;
       width: 100%;
-      border: 1px solid #ddd;
-      border-color: #ddd;
     }
-    th{
-      background-color: #2d7dd8;
-      color: white;
-    }
-    th, td {
+
+    .styled-table th,
+    .styled-table td {
       padding: 8px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
 
-    .pagination {
-      margin-top: 20px;
-    }
-
-    .pagination button {
-      padding: 8px 12px;
-      text-decoration: none;
+    .styled-table th {
       background-color: #f2f2f2;
-      color: #2d7dd8;
-      border: 1px solid #ddd;
     }
 
-    .pagination button:disabled {
-      background-color: #f2f2f2;
-      color: #bbb;
-      border: 1px solid #ddd;
+    .styled-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
     }
 
-    .pagination button.current-page {
-      background-color: #2d7dd8;
-      color: #fff;
+    .styled-table tbody tr:hover {
+      background-color: #ddd;
     }
 
-    .scroll-pane {
-      height: 350px; /* Adjust the height as needed */
+    .styled-table .edit-button,
+    .styled-table .delete-button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .styled-table .edit-button {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .styled-table .delete-button {
+      background-color: #f44336;
+      color: white;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
       overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    h1 {
-      align-self: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal label {
+      margin-bottom: 8px;
+    }
+
+    .modal input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .modal button[type="submit"] {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .modal button[type="submit"]:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <h2>Student List</h2>
-    <div class="scroll-pane">
-      <table id="attendance-table">
-        <thead>
-          <tr>
-            <th>STUDENT ID NUMBER</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-          <tr>
-            <td>2023-05-01</td>
-            <td>John Smith</td>
-          </tr>
-
-          <!-- Add more rows here -->
-        </tbody>
-      </table>
-    </div>
-    <div class="pagination">
-      <button id="first-page-button" disabled>&lt;&lt;</button>
-      <button id="previous-page-button" disabled>&lt; Previous</button>
-      <span id="pagination-numbers"></span>
-      <button id="next-page-button">Next &gt;</button>
-      <button id="last-page-button">&gt;&gt;</button>
+  <div class="content">
+    <div class="container">
+      <h2>Student Accountabilities</h2>
+      <div class="scroll-pane">
+        <table id="attendance-table" class="styled-table">
+          <thead>
+            <tr>
+              <th>Student ID number</th>
+              <th>Name</th>
+              <th>Membership Fee</th>
+              <th>Membership Fee Status</th>
+              <th>Fines</th>
+              <th>Fines Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-05-01</td>
+              <td>John Smith</td>
+              <td>$100</td>
+              <td>Unpaid</td>
+              <td>$10</td>
+              <td>Unpaid</td>
+              <td>
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <!-- Pagination buttons go here -->
+      </div>
     </div>
   </div>
 
-  <script src="{{ asset('js/app.js') }}"></script>
+  <!-- Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Student Details</h2>
+      <form>
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="student-id" readonly><br><br>
+        <label for="student-name">Name:</label>
+        <input type="text" id="student-name" name="student-name" readonly><br><br>
+        <label for="membership-fee">Membership Fee:</label>
+        <input type="text" id="membership-fee" name="membership-fee"><br><br>
+        <label for="membership-status">Membership Fee Status:</label>
+        <input type="text" id="membership-status" name="membership-status"><br><br>
+        <label for="fines">Fines:</label>
+        <input type="text" id="fines" name="fines"><br><br>
+        <label for="fines-status">Fines Status:</label>
+        <input type="text" id="fines-status" name="fines-status"><br><br>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
   <script>
-    const table = document.getElementById('attendance-table');
-    const rowsPerPage = 10;
-    const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-    const pageCount = Math.ceil(rows.length / rowsPerPage);
-    const firstPageButton = document.getElementById('first-page-button');
-    const previousPageButton = document.getElementById('previous-page-button');
-    const nextPageButton = document.getElementById('next-page-button');
-    const lastPageButton = document.getElementById('last-page-button');
-    const paginationNumbers = document.getElementById('pagination-numbers');
-    let currentPage = 1;
+    const editButtons = document.getElementsByClassName('edit-button');
+    const editModal = document.getElementById('editModal');
+    const closeModal = editModal.getElementsByClassName('close')[0];
+    const studentIdField = document.getElementById('student-id');
+    const studentNameField = document.getElementById('student-name');
+    const membershipFeeField = document.getElementById('membership-fee');
+    const membershipStatusField = document.getElementById('membership-status');
+    const finesField = document.getElementById('fines');
+    const finesStatusField = document.getElementById('fines-status');
 
-    function showPage(page) {
-      const startIndex = (page - 1) * rowsPerPage;
-      const endIndex = startIndex + rowsPerPage;
+    function showModal() {
+      const row = this.parentNode.parentNode;
+      const studentId = row.cells[0].textContent;
+      const studentName = row.cells[1].textContent;
+      const membershipFee = row.cells[2].textContent;
+      const membershipStatus = row.cells[3].textContent;
+      const fines = row.cells[4].textContent;
+      const finesStatus = row.cells[5].textContent;
 
-      for (let i = 0; i < rows.length; i++) {
-        rows[i].style.display = i >= startIndex && i < endIndex ? 'table-row' : 'none';
-      }
+      studentIdField.value = studentId;
+      studentNameField.value = studentName;
+      membershipFeeField.value = membershipFee;
+      membershipStatusField.value = membershipStatus;
+      finesField.value = fines;
+      finesStatusField.value = finesStatus;
+
+      editModal.style.display = 'block';
     }
 
-    function updatePaginationButtons() {
-      firstPageButton.disabled = currentPage === 1;
-      previousPageButton.disabled = currentPage === 1;
-      nextPageButton.disabled = currentPage === pageCount;
-      lastPageButton.disabled = currentPage === pageCount;
+    function hideModal() {
+      editModal.style.display = 'none';
     }
 
-    function updatePaginationNumbers() {
-      let paginationHTML = '';
-      for (let i = 1; i <= pageCount; i++) {
-        const buttonClass = i === currentPage ? 'page-number-button current-page' : 'page-number-button';
-        paginationHTML += `<button class="${buttonClass}" data-page="${i}">${i}</button>`;
-      }
-      paginationNumbers.innerHTML = paginationHTML;
-
-      const pageButtons = document.getElementsByClassName('page-number-button');
-      for (let i = 0; i < pageButtons.length; i++) {
-        const pageButton = pageButtons[i];
-        pageButton.addEventListener('click', function() {
-          const page = parseInt(this.getAttribute('data-page'));
-          currentPage = page;
-          showPage(currentPage);
-          updatePaginationButtons();
-          updatePaginationNumbers();
-        });
-      }
-    }
-
-    function updatePagination() {
-      updatePaginationButtons();
-      updatePaginationNumbers();
-    }
-
-    firstPageButton.addEventListener('click', function() {
-      currentPage = 1;
-      showPage(currentPage);
-      updatePagination();
+    Array.from(editButtons).forEach(button => {
+      button.addEventListener('click', showModal);
     });
 
-    previousPageButton.addEventListener('click', function() {
-      if (currentPage > 1) {
-        currentPage--;
-        showPage(currentPage);
-        updatePagination();
-      }
-    });
-
-    nextPageButton.addEventListener('click', function() {
-      if (currentPage < pageCount) {
-        currentPage++;
-        showPage(currentPage);
-        updatePagination();
-      }
-    });
-
-    lastPageButton.addEventListener('click', function() {
-      currentPage = pageCount;
-      showPage(currentPage);
-      updatePagination();
-    });
-
-    showPage(currentPage);
-    updatePagination();
+    closeModal.addEventListener('click', hideModal);
   </script>
 </body>
 </html>

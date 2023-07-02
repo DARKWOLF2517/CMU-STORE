@@ -57,38 +57,47 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="{{ url('/dashboard') }}" class="nav-link link-dark" aria-current="page">
+                    <a href="{{ url('/homepage') }}" class="nav-link link-dark" aria-current="page">
                         <i class="bi bi-speedometer2"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/student_organization_attendance') }}" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgAttendance') }}" class="nav-link link-dark">
                         <i class="bi bi-people"></i>
                         <span class="nav-link-text">Attendance</span>
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a href="{{ url('/student_organization_students') }}" class="nav-link link-dark">
                         <i class="bi bi-person-vcard"></i>
+=======
+                    <a href="{{ url('/StudOrgstudent') }}" class="nav-link link-dark">
+                        <i class="bi bi-person"></i>
+>>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930
                         <span class="nav-link-text">Student</span>
                     </a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
+=======
+                    <a href="{{ url('/StudOrgEvents') }}" class="nav-link link-dark">
+>>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930
                         <i class="bi bi-calendar-check"></i>
                         <span class="nav-link-text">Events</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgAccountabilities') }}" class="nav-link link-dark">
                         <i class="bi bi-currency-dollar"></i>
                         <span class="nav-link-text">Accountabilities</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">
+                    <a href="{{ url('/StudOrgEvaluation') }}" class="nav-link link-dark">
                         <i class="bi bi-clipboard-check"></i>
                         <span class="nav-link-text">Evaluation</span>
                     </a>

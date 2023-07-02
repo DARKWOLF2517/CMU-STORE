@@ -1,4 +1,8 @@
+<<<<<<< HEAD:cmu-store/resources/views/student_organization/student_organization_events.blade.php
 @extends('layouts.student_organization_navigation_bar')
+=======
+@extends('Layouts.student_organization_navigation_bar')
+>>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930:cmu-store/resources/views/StudOrg/student_organization_events.blade.php
 
 @section('main-content')
 
@@ -31,7 +35,7 @@
         <div class="add-event-button">
           <h2>Events</h2>
           <button class="btn btn-primary me-2" id="add-event-button">
-            <i class="bi bi-plus">Add Event</i> 
+            <i class="bi bi-plus">Add Event</i>
           </button>
         </div>
         <div class="event-list-scroll" id="event-cards"></div>

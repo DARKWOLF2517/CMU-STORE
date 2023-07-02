@@ -1,4 +1,8 @@
+<<<<<<< HEAD:cmu-store/resources/views/student_organization/student_organization_dashboard.blade.php
 @extends('layouts.student_organization_navigation_bar')
+=======
+@extends('Layouts.student_organization_navigation_bar')
+>>>>>>> d2f66e5e76ce9dd2228fcf829bff9dc4ab1f1930:cmu-store/resources/views/StudOrg/student_organization_dashboard.blade.php
 @section('main-content')
 {{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
