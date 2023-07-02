@@ -17,6 +17,7 @@
     <link href="/custom_css/SODashboard.css" rel="stylesheet">
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
+    <link href="/custom_css/SOAccountabilities.css" rel="stylesheet">
 
     @yield('custom-style')
 
