@@ -5,6 +5,26 @@
 
 <div class="content">
     <div class="container accountabilities">
+        <div class="row head-container">
+            <div class="col-md-6">
+              <div class="input-group search-bar">
+                <input type="text" class="form-control rounded-start" placeholder="Search Student" aria-label="Search"
+                  aria-describedby="search-icon">
+                <button class="btn btn-primary rounded-end" type="button" id="search-icon">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex justify-content-end">
+                <select class="form-select custom-select-width">
+                  <option selected>Sort by</option>
+                  <option>Alphabetical Order</option>
+                  <option>Year Level</option>
+                </select>
+              </div>
+            </div>
+          </div>
         <h2>Student member List</h2>
         <div class="scroll-pane">
           <table id="attendance-table">
