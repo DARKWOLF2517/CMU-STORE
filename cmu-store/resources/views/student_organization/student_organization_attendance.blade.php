@@ -6,91 +6,121 @@
 
 
 <div class="content">
-<div class="container attendance">
+    <div class="container">
+        <h1 class="mt-4">Attendance Monitoring</h1>
 
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="ScheduledEventContainer">
+              <h4>Scheduled Attendance</h4>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Scheduled Events</h5>
+              <div class="card">
+                <div class="card-header">Event Name: General Assembly</div>
+                <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                    <h5 class="card-title">Start Date: July 3, 2023</h5>
+                    <p class="card-text">Time starts at: 1:00 PM</p>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-3">
+                <div class="card-header">Event Name: Palaro</div>
+                <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                    <h5 class="card-title">Start Date: November 13, 2023</h5>
+                    <p class="card-text">Time starts at: 1:00 PM</p>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="card-body">
-            <table class="table event">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Event</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2023-06-25</td>
-                  <td>Event A</td>
-                  <td>
-                    <button class="btn btn-primary btn-sm"  >Record Attendance</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2023-06-26</td>
-                  <td>Event B</td>
-                  <td>
-                    <!-- No action button for events on other days -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>2023-06-27</td>
-                  <td>Event C</td>
-                  <td>
-                    <!-- No action button for events on other days -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>2023-06-27</td>
-                  <td>Event C</td>
-                  <td>
-                    <!-- No action button for events on other days -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>2023-06-27</td>
-                  <td>Event C</td>
-                  <td>
-                    <!-- No action button for events on other days -->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div class="col-md-6">
+            <div class="PreviousEventContainer">
+              <h4>Previous Recorded Attendance</h4>
+
+              <div class="card">
+                <div class="card-header">Event Name: Freshmen Orientation</div>
+                <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                    <h5 class="card-title">Date: June 2, 2023</h5>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-3">
+                <div class="card-header">Event Name: Freshmen Orientation</div>
+                <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                    <h5 class="card-title">Date: June 2, 2023</h5>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-3">
+                <div class="card-header">Event Name: Freshmen Orientation</div>
+                <div class="card-body d-flex justify-content-between align-items-start">
+                  <div>
+                    <h5 class="card-title">Date: June 2, 2023</h5>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Previous Events</h5>
-          </div>
-          <div class="card-body">
-            <ul class="list-group" id="previousEventsList">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Event X
-                <button class="btn btn-primary btn-sm" onclick="viewAttendance('Event X')">View Attendance</button>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Event Y
-                <button class="btn btn-primary btn-sm" onclick="viewAttendance('Event Y')">View Attendance</button>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Event Z
-                <button class="btn btn-primary btn-sm" onclick="viewAttendance('Event Z')">View Attendance</button>
-              </li>
-            </ul>
+
+      <!-- Start Attendance Modal -->
+      <div class="modal fade" id="startAttendanceModal" tabindex="-1" aria-labelledby="startAttendanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to start attendance?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Start</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
+      <!-- View Attendance Modal -->
+      <div class="modal fade" id="viewAttendanceModal" tabindex="-1" aria-labelledby="viewAttendanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="viewAttendanceModalLabel">View Attendance</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Attendance details go here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
-
-
-  </body>

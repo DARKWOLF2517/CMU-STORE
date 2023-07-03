@@ -1,32 +1,11 @@
-.attendance {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-  }
-  .table-bordered{
-    background-color: rgb(38, 141, 201);
+.rounded-container {
     border-radius: 10px;
+    overflow: hidden;
   }
-  .card {
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  .card-title {
-    margin-bottom: 0;
-  }
-  .event th,
-  .event td {
-    vertical-align: middle;
-  }
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-  }
-  .button-container button {
-    margin-left: 10px;
-  }
-  .card-body {
-    max-height: 100%;
-    overflow-y: auto;
+
+  .ScheduledEventContainer,
+  .PreviousEventContainer {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
   }
