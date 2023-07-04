@@ -8,22 +8,41 @@
       background-color: #f2f2f2;
     }
 
+    .container {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     h1 {
       text-align: center;
       color: #333;
     }
 
-    #video {
-      display: block;
-      margin: 20px auto;
-      border: 2px solid #333;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    #qrData {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <video id="video" autoplay></video>
+  </div>
   <h1>QR Code Scanner</h1>
-  <video id="video" width="400" height="300" autoplay></video>
+  <div id="qrData"></div>
 
   <script src="https://rawgit.com/LazarSoft/jsqrcode/master/src/qr_packed.js"></script>
   <script>
@@ -49,8 +68,8 @@
       var code = jsQR(imageData.data, imageData.width, imageData.height);
 
       if (code) {
-        console.log("QR Code Data:", code.data);
-        // Add your logic here to process the QR code data
+        var qrDataElement = document.getElementById("qrData");
+        qrDataElement.innerText = "QR Code Data: " + code.data;
       }
 
       requestAnimationFrame(scanQRCode);

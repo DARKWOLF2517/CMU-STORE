@@ -18,18 +18,18 @@
     padding: 10px;
     height: 330px;
     border-radius: 10px;
-    background-color: white; /* Set background color to white */
-    overflow: auto; /* Enable horizontal and vertical scroll */
+    background-color: white;
+    overflow: auto;
   }
 
   .timeline .list-group {
-    border: none; /* Remove the border */
-    max-height: 330px; /* Set a maximum height for the list */
-    overflow-y: auto; /* Enable vertical scroll */
+    border: none;
+    max-height: 330px;
+    overflow-y: auto;
   }
 
   .timeline .list-group-item {
-    border: none; /* Remove the border from list items */
+    border: none;
   }
 
   .calendar {
@@ -71,18 +71,13 @@
         padding: 10px;
         border-radius: 10px;
         background-color: white;
-        /* Set background color to white */
-        overflow: auto;
-        /* Enable horizontal and vertical scroll */
+
     }
 
   .timeline .list-group {
     border: none;
-    /* Remove the border */
-    max-height: 200px;
-    /* Set a maximum height for the list */
+    max-height: 240px;
     overflow-y: auto;
-    /* Enable vertical scroll */
   }
 
   .timeline .list-group-item {

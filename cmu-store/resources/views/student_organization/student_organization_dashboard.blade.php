@@ -5,7 +5,7 @@
 
 <div class="content">
 
-    <div class="container dashboard">
+    <div class="dashboard">
         <div class="row">
 
             <div class="row">

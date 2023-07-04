@@ -27,7 +27,7 @@
           </div>
         <h2>Student member List</h2>
         <div class="scroll-pane">
-          <table id="attendance-table">
+          <table id="accountabilities-table">
             <thead>
                 <tr>
                   <th>Student ID number</th>
@@ -48,8 +48,8 @@
                   <td>$10</td>
                   <td>Unpaid</td>
                   <td>
-                    <button class="edit-button btn btn-success">Edit</button>
-                    <button class="delete-button btn btn-danger">Delete</button>
+                    <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                    <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
               </tbody>
@@ -182,7 +182,7 @@
 {{-- Pagination JS --}}
       <script src="{{ asset('js/app.js') }}"></script>
       <script>
-        const table = document.getElementById('attendance-table');
+        const table = document.getElementById('accountabilities-table');
         const rowsPerPage = 10;
         const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
         const pageCount = Math.ceil(rows.length / rowsPerPage);
