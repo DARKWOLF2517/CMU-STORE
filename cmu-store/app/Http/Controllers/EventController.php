@@ -6,14 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 class EventController extends Controller
 {
-    public function show_events()
-    {
-        // Retrieve the events with necessary fields
-        $events = Event::all();
-    
-        return view('student_organization.student_organization_events', compact('events'));
+    public function showEvents()
+    {           
+        return view('student_organization.student_organization_events');
     }
 
+    public function getEvents()
+    {
+        $events = Event::all();
+        return $events->toJson();
+    }
+
+    /**
+     * @param $request
+     */
     public function store(Request $request)
     {
         // Validate the form data
