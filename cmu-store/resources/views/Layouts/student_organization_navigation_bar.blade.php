@@ -63,43 +63,36 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Dashboard"
-                            link_route=""
+                            link_route="/dashboard"
                             link_icon="bi bi-speedometer"
                         ></side-nav-button>
-                        
-                        <li class="nav-item">
-                            <a href="{{ url('/student_organization_attendance') }}" class="nav-link link-dark">
-                                <i class="bi bi-people"></i>
-                                <span class="nav-link-text">Attendance</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
+                        <side-nav-button
+                            link_name="Attendance"
+                            link_route="/student_organization_attendance"
+                            link_icon="bi bi-people"
+                        ></side-nav-button>
+                        <side-nav-button
+                            link_name="Student"
+                            link_route="/student_organization_member_list"
+                            link_icon="bi bi-person"
+                        ></side-nav-button>
 
-                            <a href="{{ url('/student_organization_member_list') }}" class="nav-link link-dark">
-                                <i class="bi bi-person"></i>
-                                <span class="nav-link-text">Student</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
+                        <side-nav-button
+                            link_name="Events"
+                            link_route="/student_organization_events"
+                            link_icon="bi bi-calendar-check"
+                        ></side-nav-button>
 
-                            <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
-                                <i class="bi bi-calendar-check"></i>
-                                <span class="nav-link-text">Events</span>
-
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/student_organization_accountabilities') }}" class="nav-link link-dark">
-                                <i class="bi bi-currency-dollar"></i>
-                                <span class="nav-link-text">Accountabilities</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/student_organization_evaluation') }}" class="nav-link link-dark">
-                                <i class="bi bi-clipboard-check"></i>
-                                <span class="nav-link-text">Evaluation</span>
-                            </a>
-                        </li>
+                        <side-nav-button
+                            link_name="Accountabilities"
+                            link_route="/student_organization_accountabilities"
+                            link_icon="bi bi-currency-dollar"
+                        ></side-nav-button>
+                        <side-nav-button
+                            link_name="Evaluation"
+                            link_route="/student_organization_evaluation"
+                            link_icon="bi bi-clipboard-check"
+                        ></side-nav-button>
 
                     </ul>
 
