@@ -13,17 +13,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
     @vite('resources/js/app.js')
-
+    <style>
+        .container {
+          text-align: center;
+          padding: 50px;
+        }
+      </style>
 </head>
 <body>
     <h1>Student Dashboard</h1>
-    <div id="app"> 
-
-        <navigation_bars/>
+    <div id="app">
+        <div class="container">
+            <h1>Modal Form Example</h1>
+            <button @click="showModal = true">Open Modal</button>
+            <modal-form v-if="showModal" @close-modal="showModal = false"></modal-form>
+          </div>
     </div>
-
-
-  
 
 </body>
 </html>
