@@ -35,7 +35,15 @@
             <i class="bi bi-plus">Add Event</i>
           </button>
         </div>
-        <div class="event-list-scroll" id="event-cards"></div>
+        <div class="event-list-scroll" id="event-cards">
+          <div class="spinner-border" id="event-spinner" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <event-card
+            target_route="{{ route('get-events') }}"
+          >
+          </event-card>
+        </div>
       </div>
     </div>
   </div>
@@ -98,57 +106,54 @@
 
 </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@endsection
 
+@section('custom-script')
   <script>
 
 
-    function displayEvents() {
-    // Pass the events data to JavaScript
-    const events = @json($events);
+    // function displayEvents() {
+    // // Pass the events data to JavaScript
 
 // Loop through the events and create cards
-const cards = events.map(event => {
-    return `
+// const cards = events.map(event => {
+//     return `
 
 
 
-        <div class="card mb-3">
-            <div class="card-body">
-              <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
-              <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.start_date}</h6>
-              <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.start_attendance}</h6>
-              <h6 class="card-text">Location: ${event.location}</h6>
-              <h6 class="card-text">Description: ${event.description}</h6>
-              <div class="card-actions">
-                <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
-                <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-        </div>
-    `;
-});
+//         <div class="card mb-3">
+//             <div class="card-body">
+//               <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
+//               <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.start_date}</h6>
+//               <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.start_attendance}</h6>
+//               <h6 class="card-text">Location: ${event.location}</h6>
+//               <h6 class="card-text">Description: ${event.description}</h6>
+//               <div class="card-actions">
+//                 <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
+//                 <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
+//               </div>
+//             </div>
+//         </div>
+//     `;
+// });
 
-// Append the cards to the events container
-const eventsContainer = document.getElementById('event-cards');
-eventsContainer.innerHTML = cards.join('');
+// // Append the cards to the events container
+// const eventsContainer = document.getElementById('event-cards');
+// eventsContainer.innerHTML = cards.join('');
 
-    }
+//     }
 
 
-    $(document).ready(function () {
-      $('#add-event-button').click(function () {
-        $('#event-modal').modal('show');
-      });
-      // $('#save-event-button').click(function () {
-      //   addEvent();
-      // });
+//     $(document).ready(function () {
+//       $('#add-event-button').click(function () {
+//         $('#event-modal').modal('show');
+//       });
+//       // $('#save-event-button').click(function () {
+//       //   addEvent();
+//       // });
 
-      displayEvents();
-    });
+//       displayEvents();
+//     });
 
 
 
@@ -195,6 +200,25 @@ eventsContainer.innerHTML = cards.join('');
 //     }
 //   });
 // }
+
+document.getElementById("add-event-button").addEventListener("onclick",(event) => 
+{
+  event.preventDefault();
+  modal.show("event-modal");  
+});
+
+// document.getElementsByClassName('edit-button').addEventListener("onclick",(event) =>
+// {
+//   event.preventDefault();
+
+// })
+
+// document.getElementsByClassName("delete-button").addEventListener("onclick",(event) => 
+// {
+//   event.preventDefault();
+//   deleteEvent();
+// });
+
 function deleteEvent(eventId) {
   if (confirm('Are you sure you want to delete this event?')) {
     fetch(`/events/${eventId}`, {
@@ -219,3 +243,5 @@ function deleteEvent(eventId) {
 
 
   </script>
+
+@endsection

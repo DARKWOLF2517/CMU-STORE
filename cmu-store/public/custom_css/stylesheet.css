@@ -13,3 +13,8 @@ body {
 .content.collapsed {
     margin-left: 4.5%; /* Converted from 72px */
 }
+
+.hidden 
+{
+    display: none;
+}

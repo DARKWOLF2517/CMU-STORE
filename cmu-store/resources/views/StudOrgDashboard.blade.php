@@ -296,7 +296,7 @@
     background-color: #9933ff;
 }
 
-    </style>
+</style>
 
     <title>Student Organization Dashboard</title>
 </head>

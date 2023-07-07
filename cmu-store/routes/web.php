@@ -60,7 +60,8 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 #events
 
-Route::get('/student_organization_events', [EventController::class, 'show_events'])->name('events');
+Route::get('/events', [EventController::class, 'showEvents'])->name('events');
+Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');
