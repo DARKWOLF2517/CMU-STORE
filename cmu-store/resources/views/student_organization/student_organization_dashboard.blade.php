@@ -49,24 +49,8 @@
               <hr>
               <div class="list-group">
                 <div class="list-group-item">
-                  <h6 class="mb-0">Event 1</h6>
-                  <small>2023-06-20 10:00 AM - 2023-06-20 12:00 PM</small>
-                </div>
-                <div class="list-group-item">
-                  <h6 class="mb-0">Event 2</h6>
-                  <small>2023-06-22 02:00 PM - 2023-06-22 04:00 PM</small>
-                </div>
-                <div class="list-group-item">
-                  <h6 class="mb-0">Event 3</h6>
-                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
-                </div>
-                <div class="list-group-item">
-                  <h6 class="mb-0">Event 3</h6>
-                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
-                </div>
-                <div class="list-group-item">
-                  <h6 class="mb-0">Event 3</h6>
-                  <small>2023-06-25 09:00 AM - 2023-06-25 11:00 AM</small>
+                  <h6 class="mb-0">Event name: Speak Now Release</h6>
+                  <small>July 7, 2023  - July 7, 2023  9:00 AM- 12:00 PM</small>
                 </div>
               </div>
             </div>
