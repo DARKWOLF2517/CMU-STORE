@@ -1,90 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Member List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    h2 {
-      color: #333;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ccc;
-    }
-    
-    .pagination {
-      margin-top: 20px;
-      text-align: center;
-    }
-    
-    .pagination button {
-      padding: 5px 10px;
-      margin: 0 2px;
-      font-size: 14px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      background-color: #f5f5f5;
-      cursor: pointer;
-    }
-    
-    .pagination button:hover {
-      background-color: #e0e0e0;
-    }
-    
-    .pagination button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-  </style>
+  <title>QR Code Scanner</title>
 </head>
 <body>
-  <div class="content">
-    <div class="container memberlist">
-      <h2>Student Member List</h2>
-      <div class="scroll-pane">
-        <table id="attendance-table">
-          <thead>
-            <tr>
-              <th>Student ID number</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2023-05-01</td>
-              <td>John Smith</td>
-            </tr>
-            <!-- Add more rows here -->
-          </tbody>
-        </table>
-      </div>
-      <div class="pagination">
-        <button id="first-page-button" disabled>&lt;&lt;</button>
-        <button id="previous-page-button" disabled>&lt; Previous</button>
-        <span id="pagination-numbers"></span>
-        <button id="next-page-button">Next &gt;</button>
-        <button id="last-page-button">&gt;&gt;</button>
-      </div>
-    </div>
-  </div>
+  <video id="video" width="300" height="200"></video>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <div id="output"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+  <script>
+    // Get references to HTML elements
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const outputDiv = document.getElementById('output');
+
+    // Request permission to access the camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+        video.play();
+        requestAnimationFrame(scanQRCode);
+      })
+      .catch(error => {
+        console.error('Camera access denied:', error);
+      });
+
+    // Continuously scan for QR codes
+    function scanQRCode() {
+      // Capture video frame to canvas
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      // Decode QR code from the canvas image
+      const imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
+      const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+      // Display QR code text, if found
+      if (code) {
+        outputDiv.innerText = code.data;
+      } else {
+        outputDiv.innerText = 'No QR code found.';
+      }
+
+      // Request the next frame
+      requestAnimationFrame(scanQRCode);
+    }
+  </script>
 </body>
 </html>

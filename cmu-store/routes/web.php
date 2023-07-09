@@ -22,7 +22,15 @@ use App\Http\Controllers\HomeController;
 //    return view('student_organization.student_organization_dashboard');
 //  });
 
+// STUDENT USER ROUTES
+Route::get('student_evalution', function () {
+    return view('student.student_evaluation');
+});
+Route::get('student_dashboard', function () {
+    return view('student.student_dashboard');
+});
 
+// STUDENT ORGANIZATION ROUTES
 Route::get('student_organization_events', function () {
     return view('student_organization.student_organization_events');
 });
