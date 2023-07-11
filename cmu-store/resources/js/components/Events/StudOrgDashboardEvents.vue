@@ -2,7 +2,7 @@
     <div class="list-group"  v-for="event in this.events" :id="event.event_id">
             <div class="list-group-item">
                 <h6 class="mb-0">Event name: <b> {{ event["name"] }}</b></h6>
-                <small> From:  {{ event["start_date"] }} To:  {{ event["end_date"] }} , {{ event["start_attendance"] }} - {{ event["end_attendance"] }} </small>   
+                <small> From:  {{ event["start_date"] }} To:  {{ event["end_date"] }} , {{ event["start_attendance"] }} - {{ event["end_attendance"] }} </small>
             </div>
     </div>
 </template>
@@ -12,13 +12,13 @@ import {convertDate} from "../Functions/DateConverter.js";
 
 export default {
     props: ['target_route'],
-    data() { 
+    data() {
         return {
             events: []
         }
     },
     created() {
-        this.fetchData();  
+        this.fetchData();
     },
     methods: {
         fetchData() {
@@ -28,7 +28,7 @@ export default {
                     //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
                     "Content-Type":"application/json"
                 }
-            }).then( (response) => {   
+            }).then( (response) => {
                 response.json().then((data) => {
                     data.forEach(element => {
                         console.log(element);

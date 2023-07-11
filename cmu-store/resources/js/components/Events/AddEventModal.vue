@@ -65,7 +65,7 @@
                         //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
                         "Content-Type":"application/json"
                     }
-                }).then( (response) => {   
+                }).then( (response) => {
                     response.json().then((data) => {
                         data.forEach(element => {
                             console.log(element);
