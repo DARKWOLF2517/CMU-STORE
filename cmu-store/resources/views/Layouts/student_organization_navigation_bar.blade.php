@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+
+    {{-- BOOTSTRAP CDN --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+   
+    {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/allmedia.css" rel="stylesheet">
     <link href="/custom_css/Login.css" rel="stylesheet">
@@ -45,14 +51,14 @@
                             <img src="https://cdn.imgbin.com/0/4/19/imgbin-network-administrator-system-administrator-computer-icons-computer-network-database-others-k0X6MX9NfNjeUyBaXUweXTcMw.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
                             <span class="profile-name"><strong>Admin</strong></span>
                         </a>
-
+                        <ul><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></ul>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
 
-                        </form>
+                    
                         </ul>
                     </div>
                 </div>
@@ -101,8 +107,17 @@
             @yield('main-content')
         </div>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    {{-- BOOTSTRAP CDN FOR JAVASCRIPT --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   
+
+
+    {{-- INTERNAL BOOTSTRAP --}}
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebarCollapse');

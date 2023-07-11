@@ -144,16 +144,16 @@
 //     }
 
 
-//     $(document).ready(function () {
-//       $('#add-event-button').click(function () {
-//         $('#event-modal').modal('show');
-//       });
-//       // $('#save-event-button').click(function () {
-//       //   addEvent();
-//       // });
+  $(document).ready(function () {
+    $('#add-event-button').click(function () {
+      $('#event-modal').modal('show');
+    });
+    $('#save-event-button').click(function () {
+      addEvent();
+    });
 
-//       displayEvents();
-//     });
+    // displayEvents();
+  });
 
 
 
@@ -205,6 +205,8 @@ document.getElementById("add-event-button").addEventListener("onclick",(event) =
 {
   event.preventDefault();
   modal.show("event-modal");  
+
+  console.log('clicked modal');
 });
 
 // document.getElementsByClassName('edit-button').addEventListener("onclick",(event) =>

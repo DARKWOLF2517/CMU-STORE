@@ -24,7 +24,7 @@ use App\Http\Controllers\HomeController;
 
 // STUDENT USER ROUTES
 Route::get('student_evalution', function () {
-    return view('student.student_evaluation');
+    return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {
     return view('student.student_dashboard');
@@ -61,13 +61,12 @@ Route::get('student_organization_accountabilities', function () {
 
 
 
-#dashboard
-Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
+#DASHBOARD ROUTES
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [HomeController::class, 'logout']);
 
-#events
-
+#EVENT ROUTES
 Route::get('/events', [EventController::class, 'showEvents'])->name('events');
 Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
@@ -79,7 +78,7 @@ Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('eve
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->middleware(['auth', 'verified'])->name('home');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

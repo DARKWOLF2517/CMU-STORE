@@ -33,7 +33,7 @@ export default {
             fetch(this.target_route, {
                 method: "GET",
                 headers: {
-                    //Type of Data that the server should respond
+                    //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
                     "Content-Type":"application/json"
                 }
             }).then( (response) => {

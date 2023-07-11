@@ -22,13 +22,7 @@
 </head>
 <body>
     <h1>Student Dashboard</h1>
-    <div id="app">
-        <div class="container">
-            <h1>Modal Form Example</h1>
-            <button @click="showModal = true">Open Modal</button>
-            <modal-form v-if="showModal" @close-modal="showModal = false"></modal-form>
-          </div>
-    </div>
+    <ul><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></ul>
 
 </body>
 </html>
