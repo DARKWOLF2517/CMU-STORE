@@ -4,7 +4,7 @@
 {{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
 <div class="content">
-
+ 
     <div class="dashboard">
         <div class="row">
 
@@ -47,12 +47,16 @@
             <div class="timeline shadow">
               <h4>Schedule</h4>
               <hr>
-              <div class="list-group">
+              {{-- <div class="list-group">
                 <div class="list-group-item">
                   <h6 class="mb-0">Event name: Speak Now Release</h6>
                   <small>July 7, 2023  - July 7, 2023  9:00 AM- 12:00 PM</small>
-                </div>
               </div>
+              </div> --}}
+             <event-dashboard
+            target_route="{{ route('get-events') }}"
+          >
+          </event-dashboard>
             </div>
           </div>
           <div class="col-md-6">
@@ -135,17 +139,7 @@
       </div>
 <!-- Content class end -->
 </div>
-<script>
-    export default {
-      data() {
-        return {
-          numberOfMembers: 100,
-          numberOfUpcomingEvents: 0,
-          numberOfCompletedEvents: 10,
-        };x
-      },
-    };
-    </script>
+
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
           const today = new Date();

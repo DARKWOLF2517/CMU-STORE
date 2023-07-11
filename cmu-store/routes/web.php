@@ -23,11 +23,7 @@ use App\Http\Controllers\HomeController;
   });
 
 // STUDENT USER ROUTES
-<<<<<<< HEAD
 Route::get('student_evalution', function () {
-=======
-Route::get('student_evaluationform', function () {
->>>>>>> 89562f70b939d38b29986598b0335010178f07f4
     return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {
