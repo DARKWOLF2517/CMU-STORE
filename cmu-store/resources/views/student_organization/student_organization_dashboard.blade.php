@@ -4,7 +4,7 @@
 {{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
 <div class="content">
- 
+
     <div class="dashboard">
         <div class="row">
 
