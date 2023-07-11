@@ -84,4 +84,7 @@
     border: 1px;
     background-color: #e3e5e9;
 }
-
+.breadcrumb{
+    padding: 30px;
+    width: 100%;
+}

@@ -6,6 +6,15 @@
 @section('main-content')
 
 <div class="content">
+    <div class="container breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+            <li class="breadcrumb-item">Student Organization</li>
+            <li class="breadcrumb-item active" aria-current="page">Event</li>
+          </ol>
+        </nav>
+    </div>
 <div class="container event-container">
     <div class="row head-container">
       <div class="col-md-6">
@@ -155,10 +164,10 @@
 //   });
 // }
 
-// document.getElementById("add-event-button").addEventListener("onclick",(event) => 
+// document.getElementById("add-event-button").addEventListener("onclick",(event) =>
 // {
 //   event.preventDefault();
-//   modal.show("event-modal");  
+//   modal.show("event-modal");
 
 //   console.log('clicked modal');
 // });
@@ -169,7 +178,7 @@
 
 // })
 
-// document.getElementsByClassName("delete-button").addEventListener("onclick",(event) => 
+// document.getElementsByClassName("delete-button").addEventListener("onclick",(event) =>
 // {
 //   event.preventDefault();
 //   deleteEvent();
