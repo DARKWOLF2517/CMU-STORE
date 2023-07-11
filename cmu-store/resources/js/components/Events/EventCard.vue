@@ -45,8 +45,7 @@ export default {
                         // console.log(element[])
                         element["start_date"] = convertDate(element["start_date"]);
                         element["end_date"] = convertDate(element["end_date"]);
-                        element["start_attendance"] = convertTime(element["start_attendance"]);
-                        element["end_attendance"] = convertTime(element["end_attendance"]);
+
                     });
                     this.events = data;
                 })

@@ -68,29 +68,16 @@
                     description:'',
                     require_attendance: '',
                     org_id: '1',
-
-
+                    
                 },
                 errors: {},
             }
         },
         methods: {
             sendData() {
-                fetch(this.target_route, {
-                    method: this.method,
-                    headers: {
-                        //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
-                        "Content-Type":"application/json"
-                    }
-                }).then( (response) => {
-                    response.json().then((data) => {
-                        data.forEach(element => {
-                            console.log(element);
-                            // console.log(element[])
-                            element["start_date"] = convertDate(element["start_date"]);
-                            element["end_date"] = convertDate(element["end_date"]);
-                        });
-                        this.events = data;
+                axios.post(this.target_route, this.formData)
+                    .then(response => {
+                
                     })
                     .catch(error => {
                         if (error.response && error.response.status === 422) {
@@ -98,7 +85,7 @@
                         }
                         console.log(this.formData)
                         alert(this.formData)
-
+                        
     });
             },
         },
