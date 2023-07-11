@@ -73,7 +73,7 @@ Route::get('/logout', [HomeController::class, 'logout']);
 #EVENT ROUTES
 Route::get('/events', [EventController::class, 'showEvents'])->name('events');
 Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
-Route::post('/events', [EventController::class, 'store'])->name('events.store');
+Route::post('/events', [EventController::class, 'store'])->name('event-store');
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');
 Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('events.destroy');
