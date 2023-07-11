@@ -51,7 +51,7 @@
   </div>
 
   <!-- Event Modal -->
-  <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true">
+  {{-- <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -103,9 +103,14 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> --}}
 
+<add-event
+    target_route = "{{ route('event-store') }}"
+    method = "POST"
+>
 
+</add-event>
 </div>
 
 @endsection
@@ -114,45 +119,15 @@
   <script>
 
 
-    // function displayEvents() {
-    // // Pass the events data to JavaScript
-
-// Loop through the events and create cards
-// const cards = events.map(event => {
-//     return `
-
-
-
-//         <div class="card mb-3">
-//             <div class="card-body">
-//               <h6 class="card-title">Event Name:</strong> ${event.name}</h6>
-//               <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: ${event.start_date}</h6>
-//               <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: ${event.start_attendance}</h6>
-//               <h6 class="card-text">Location: ${event.location}</h6>
-//               <h6 class="card-text">Description: ${event.description}</h6>
-//               <div class="card-actions">
-//                 <button class="ellipsis-button" onclick="editEvent(${event.event_id})"> <i class="bi bi-pencil-square"></i></button>
-//                 <button class="ellipsis-button" onclick="deleteEvent(${event.event_id})"> <i class="bi bi-trash"></i></button>
-//               </div>
-//             </div>
-//         </div>
-//     `;
-// });
-
-// // Append the cards to the events container
-// const eventsContainer = document.getElementById('event-cards');
-// eventsContainer.innerHTML = cards.join('');
-
-//     }
 
 
   $(document).ready(function () {
     $('#add-event-button').click(function () {
       $('#event-modal').modal('show');
     });
-    $('#save-event-button').click(function () {
-      addEvent();
-    });
+    // $('#save-event-button').click(function () {
+    //   addEvent();
+    // });
 
     // displayEvents();
   });
@@ -160,29 +135,6 @@
 
 
 
-//     function editEvent(eventId) {
-//   // Perform an AJAX request to fetch the event data
-//   $.ajax({
-//     url: `/events/${eventId}/edit`,
-//     method: 'GET',
-//     success: function (response) {
-//       // Populate the fields in the update event modal with the event data
-//       const event = response.event;
-//       $('#event-update-title').val(event.name);
-//       $('#event-update-start-date').val(event.start_date);
-//       $('#event-update-end-date').val(event.end_date);
-//       $('#event-update-start-time').val(event.start_attendance);
-//       $('#event-update-end-time').val(event.end_attendance);
-//       $('#event-update-location').val(event.location);
-//       $('#event-update-description').val(event.description);
-//       $('#update-event-modal').modal('show');
-//     },
-//     error: function (xhr, status, error) {
-//       // Handle the error appropriately
-//       console.error(error);
-//     }
-//   });
-// }
 // function deleteEvent(eventId) {
 //   console.log("Delete button clicked");
 //   console.log(eventId);  // Add this line
@@ -203,13 +155,13 @@
 //   });
 // }
 
-document.getElementById("add-event-button").addEventListener("onclick",(event) => 
-{
-  event.preventDefault();
-  modal.show("event-modal");  
+// document.getElementById("add-event-button").addEventListener("onclick",(event) => 
+// {
+//   event.preventDefault();
+//   modal.show("event-modal");  
 
-  console.log('clicked modal');
-});
+//   console.log('clicked modal');
+// });
 
 // document.getElementsByClassName('edit-button').addEventListener("onclick",(event) =>
 // {
