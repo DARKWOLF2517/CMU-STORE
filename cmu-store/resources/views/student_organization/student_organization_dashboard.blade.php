@@ -42,104 +42,99 @@
                     </div>
                   </div>
                 </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="timeline shadow">
-              <h4>Schedule</h4>
-              <hr>
-              {{-- <div class="list-group">
-                <div class="list-group-item">
-                  <h6 class="mb-0">Event name: Speak Now Release</h6>
-                  <small>July 7, 2023  - July 7, 2023  9:00 AM- 12:00 PM</small>
-              </div>
-              </div> --}}
-             <event-dashboard
-            target_route="{{ route('get-events') }}"
-          >
-          </event-dashboard>
-            </div>
           </div>
-          <div class="col-md-6">
-            <div class="calendar shadow">
-              <div class="calendar-container">
-                <div>
-                  <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
-                  <b><span id="month-year"></span></b>
-                  <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="timeline shadow">
+                <h4>Schedule</h4>
+                <hr>
+            <event-dashboard
+              target_route="{{ route('get-events') }}"
+              >
+            </event-dashboard>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="calendar shadow">
+                <div class="calendar-container">
+                  <div>
+                    <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
+                    <b><span id="month-year"></span></b>
+                    <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+                  </div>
+                  <table>
+                    <tr>
+                      <th>Sun</th>
+                      <th>Mon</th>
+                      <th>Tue</th>
+                      <th>Wed</th>
+                      <th>Thu</th>
+                      <th>Fri</th>
+                      <th>Sat</th>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
                 </div>
-                <table>
-                  <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </table>
               </div>
             </div>
           </div>
-        </div>
       </div>
 <!-- Content class end -->
+    </div>
 </div>
-
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
           const today = new Date();

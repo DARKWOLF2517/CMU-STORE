@@ -1,9 +1,9 @@
 <template>
-   <div class="list-group"  v-for="event in this.events" :id="event.event_id">
-        <div class="list-group-item">
-            <h6 class="mb-0">Event name: {{ event["name"] }}</h6>
-            <small> From:  {{ event["start_date"] }} To:  {{ event["end_date"] }} , {{ event["start_attendance"] }} - {{ event["end_attendance"] }} </small>
-        </div>
+    <div class="list-group"  v-for="event in this.events" :id="event.event_id">
+            <div class="list-group-item">
+                <h6 class="mb-0">Event name: <b> {{ event["name"] }}</b></h6>
+                <small> From:  {{ event["start_date"] }} To:  {{ event["end_date"] }} , {{ event["start_attendance"] }} - {{ event["end_attendance"] }} </small>   
+            </div>
     </div>
 </template>
 
@@ -22,15 +22,13 @@ export default {
     },
     methods: {
         fetchData() {
-            // document.getElementById("event-spinner").show();
             fetch(this.target_route, {
                 method: "GET",
                 headers: {
                     //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
                     "Content-Type":"application/json"
                 }
-            }).then( (response) => {
-              
+            }).then( (response) => {   
                 response.json().then((data) => {
                     data.forEach(element => {
                         console.log(element);
