@@ -18,16 +18,24 @@ use App\Http\Controllers\HomeController;
 //     return view('Layouts.login');
 // });
 
-//  Route::get('/homepage', function () {
-//    return view('student_organization.student_organization_dashboard');
-//  });
+  Route::get('/homepage', function () {
+    return view('student_organization.student_organization_dashboard');
+  });
 
 // STUDENT USER ROUTES
+<<<<<<< HEAD
 Route::get('student_evalution', function () {
+=======
+Route::get('student_evaluationform', function () {
+>>>>>>> 89562f70b939d38b29986598b0335010178f07f4
     return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {
     return view('student.student_dashboard');
+});
+
+Route::get('studenthome', function () {
+    return view('student.student_home');
 });
 
 // STUDENT ORGANIZATION ROUTES

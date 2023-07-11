@@ -14,7 +14,13 @@ body {
     margin-left: 4.5%; /* Converted from 72px */
 }
 
-.hidden 
+.hidden
 {
     display: none;
 }
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }

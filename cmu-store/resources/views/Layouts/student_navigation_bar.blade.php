@@ -61,11 +61,12 @@
             <div class="wrapper">
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <side-nav-button
-                            link_name="Dashboard"
-                            link_route=""
-                            link_icon="bi bi-speedometer"
-                        ></side-nav-button>
+                        <li class="nav-item">
+                            <a href="{{ url('/studenthome') }}" class="nav-link link-dark">
+                                <i class="bi bi-house"></i>
+                                <span class="nav-link-text">Home</span>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="{{ url('/student_organization_attendance') }}" class="nav-link link-dark">
