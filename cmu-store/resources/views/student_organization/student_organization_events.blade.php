@@ -1,6 +1,8 @@
 
 @extends('layouts.student_organization_navigation_bar')
-
+{{-- @section('custom-style')
+  <link href="/custom_css/SOEvents.css" rel="stylesheet">
+@endsection --}}
 @section('main-content')
 
 <div class="content">
