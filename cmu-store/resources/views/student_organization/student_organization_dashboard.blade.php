@@ -8,50 +8,39 @@
     <div class="dashboard">
         <div class="row">
 
-            <div class="row">
-                <div class="col-md-4">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <h6 class="card-title">
-                        <b>NUMBER OF MEMBERS</b>
-                        <i class="bi bi-people"></i>
-                      </h6>
-                      {{-- <h3 class="card-text">{{ numberOfMembers }}</h3> --}}
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <h6 class="card-title">
-                        <b>NUMBER OF UPCOMING EVENTS</b>
-                        <i class="bi bi-calendar-event"></i>
-                      </h6>
-                      {{-- <h3 class="card-text">{{ numberOfUpcomingEvents }}</h3> --}}
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <h6 class="card-title">
-                        <b>NUMBER OF COMPLETED EVENTS</b>
-                        <i class="bi bi-check-circle"></i>
-                      </h6>
-                      {{-- <h3 class="card-text">{{ numberOfCompletedEvents }}</h3> --}}
-                    </div>
-                  </div>
-                </div>
+          <div class="row">
+                <event-count
+                    target_route = ""
+                    card_title = "NUMBER OF MEMBERS"
+                    card_icon = "bi bi-people"
+                >
+                </event-count>
+                <event-count
+                    target_route = "{{ route('get-events-count') }}"
+                    card_title = "NUMBER OF UPCOMING EVENTS"
+                    card_icon = "bi bi-calendar-event"
+                >
+                </event-count>
+                <event-count
+                    target_route = ""
+                    card_title = "NUMBER OF COMPLETED EVENTS"
+                    card_icon = "bi bi-check-circle"
+                >
+                </event-count>
           </div>
+
+
+
+
           <div class="row">
             <div class="col-md-6">
               <div class="timeline shadow">
                 <h4>Schedule</h4>
                 <hr>
-            <event-dashboard
-              target_route="{{ route('get-events') }}"
-              >
-            </event-dashboard>
+                  <event-dashboard
+                    target_route="{{ route('get-events') }}"
+                    >
+                  </event-dashboard>
               </div>
             </div>
             <div class="col-md-6">
