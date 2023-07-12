@@ -9,7 +9,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
             <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item active" aria-current="page">Attendance</li>
+            <li class="breadcrumb-item active" aria-current="page">Student List</li>
           </ol>
         </nav>
     </div>
