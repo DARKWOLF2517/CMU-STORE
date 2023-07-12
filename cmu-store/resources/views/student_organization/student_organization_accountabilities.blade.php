@@ -4,7 +4,7 @@
 @section('main-content')
 
 <div class="content">
-    <div class="container breadcrumb">
+    <div class="container breadcrumbs">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
@@ -13,7 +13,7 @@
           </ol>
         </nav>
     </div>
-    <div class="container accountabilities">
+    <div class="container" id="tablecontainer">
 
         <div class="row head-container">
             <div class="col-md-6">

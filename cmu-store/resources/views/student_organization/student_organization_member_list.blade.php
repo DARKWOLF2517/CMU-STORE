@@ -4,8 +4,16 @@
 @section('main-content')
 
 <div class="content">
-
-<div class="container memberlist">
+    <div class="container breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+            <li class="breadcrumb-item">Student Organization</li>
+            <li class="breadcrumb-item active" aria-current="page">Attendance</li>
+          </ol>
+        </nav>
+    </div>
+<div class="container" id="tablecontainer">
     <div class="row head-container">
         <div class="col-md-6">
           <div class="input-group search-bar">
@@ -89,7 +97,7 @@
           <input type="text" id="college" class="form-control">
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" id="save-student-button">Save</button>
         </div>
       </form>
