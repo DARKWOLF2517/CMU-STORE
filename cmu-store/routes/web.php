@@ -35,8 +35,8 @@ Route::get('studenthome', function () {
 });
 
 // STUDENT ORGANIZATION ROUTES
-Route::get('student_organization_events', function () {
-    return view('student_organization.student_organization_events');
+Route::get('student_organization_attendance_record', function () {
+    return view('student_organization.student_organization_attendance_record');
 });
 Route::get('student_organization_events', function () {
     return view('student_organization.student_organization_events');

@@ -11,11 +11,11 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
             <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item active" aria-current="page">Event</li>
+            <li class="breadcrumb-item active" aria-current="page">Events</li>
           </ol>
         </nav>
     </div>
-<div class="container event-container">
+<div class="container event-container" id="tablecontainer">
     <div class="row head-container">
       <div class="col-md-6">
         <div class="input-group search-bar">
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-  </div>
+
   <div class="container event-list">
     <div class="row">
       <div class="col-md-12">

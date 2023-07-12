@@ -62,7 +62,7 @@
                     <h5 class="card-title">Date: June 2, 2023</h5>
                   </div>
                   <div class="ml-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
+                    <a class="btn btn-primary" href="/student_organization_attendance_record">View Attendance</a>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@
         </div>
       </div>
 
-      <!-- View Attendance Modal -->
+      {{-- <!-- View Attendance Modal -->
       <div class="modal fade" id="viewAttendanceModal" tabindex="-1" aria-labelledby="viewAttendanceModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -129,6 +129,6 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
 </div>
