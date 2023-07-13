@@ -4,9 +4,8 @@
 {{-- <link href="/css/SODashboard.css" rel="stylesheet"> --}}
 
 <div class="content">
-
     <div class="dashboard">
-        <div class="row">
+      <div class="row">
 
           <div class="row">
                 <event-count
@@ -28,10 +27,6 @@
                 >
                 </event-count>
           </div>
-
-
-
-
           <div class="row">
             <div class="col-md-6">
               <div class="timeline shadow">
@@ -45,86 +40,15 @@
             </div>
             <div class="col-md-6">
               <div class="calendar shadow">
-                <div class="calendar-container">
-                  <div>
-                    <button id="prev-month" class="btn btn-link"><i class="bi bi-caret-left"></i></button>
-                    <b><span id="month-year"></span></b>
-                    <button id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
-                  </div>
-                  <table>
-                    <tr>
-                      <th>Sun</th>
-                      <th>Mon</th>
-                      <th>Tue</th>
-                      <th>Wed</th>
-                      <th>Thu</th>
-                      <th>Fri</th>
-                      <th>Sat</th>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
+                <dashboard-calendar/>
+                
+              </div> 
             </div>
           </div>
       </div>
-<!-- Content class end -->
     </div>
 </div>
-    <script>
+    {{-- <script>
         window.addEventListener('DOMContentLoaded', (event) => {
           const today = new Date();
           let currentMonth = today.getMonth();
@@ -175,6 +99,6 @@
             updateCalendar();
           });
         });
-      </script>
+      </script> --}}
 
 @endsection
