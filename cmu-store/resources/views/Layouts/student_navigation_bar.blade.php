@@ -78,11 +78,11 @@
                             link_route="student_accountabilities"
                             link_icon="bi bi-currency-dollar"
                         ></side-nav-button>
-                        {{-- <side-nav-button
+                        <side-nav-button
                             link_name="Evaluation"
                             link_route="student_evalution"
                             link_icon="bi bi-clipboard-check"
-                        ></side-nav-button> --}}
+                        ></side-nav-button>
 
                     </ul>
 

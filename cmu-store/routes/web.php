@@ -38,6 +38,15 @@ Route::get('student_accountabilities', function () {
     return view('student.student_accountabilities');
 });
 
+Route::get('student_event', function () {
+    return view('student.student_events');
+});
+
+Route::get('student_attendance', function () {
+    return view('student.student_attendance');
+});
+
+
 // STUDENT ORGANIZATION ROUTES
 Route::get('student_organization_attendance_record', function () {
     return view('student_organization.student_organization_attendance_record');
