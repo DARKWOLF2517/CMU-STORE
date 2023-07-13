@@ -65,24 +65,35 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Home"
-                            link_route="/studenthome"
+                            link_route="/student_home"
                             link_icon="bi bi-house"
                         ></side-nav-button>
                         <side-nav-button
                             link_name="Attendance"
-                            link_route="#"
+                            link_route="/student_attendance"
                             link_icon="bi bi-people"
                         ></side-nav-button>
+                        <side-nav-button
+                            link_name="Student"
+                            link_route="/student_profile"
+                            link_icon="bi bi-person"
+                        ></side-nav-button>
+                        <side-nav-button
+                        link_name="Events"
+                        link_route="student_event"
+                        link_icon="bi bi-calendar-check"
+                    ></side-nav-button>
                         <side-nav-button
                             link_name="Accountabilities"
                             link_route="student_accountabilities"
                             link_icon="bi bi-currency-dollar"
                         ></side-nav-button>
-                        <side-nav-button
+                        {{-- <side-nav-button
                             link_name="Evaluation"
-                            link_route="student_evalution"
+                            link_route="student_evaluation"
                             link_icon="bi bi-clipboard-check"
-                        ></side-nav-button>
+                        ></side-nav-button> --}}
+
 
                     </ul>
 

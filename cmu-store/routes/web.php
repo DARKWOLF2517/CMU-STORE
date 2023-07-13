@@ -23,7 +23,7 @@ return view('student_organization.student_organization_dashboard');
 });
 
 // STUDENT USER ROUTES
-Route::get('student_evaluation', function () {
+Route::get('student_evaluationform', function () {
     return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {

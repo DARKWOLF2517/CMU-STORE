@@ -34,6 +34,7 @@
               <th>Events</th>
               <th>Date</th>
               <th>Status</th>
+              <th>Evaluation status</th>
               <th>Remarks</th>
             </tr>
           </thead>
@@ -42,15 +43,17 @@
               <td>Event 1</td>
               <td>June 23, 2023</td>
               <td>Present</td>
+              <th>Complete</th>
               <td></td>
             </tr>
             <tr>
                 <td>Event 3</td>
                 <td>June 24, 2023</td>
                 <td>Absent</td>
+                <th><a  class="btn btn-warning" href ="/student_evaluationform">Evaluate Now</a></th>
                 <td></td>
               </tr>
-            <!-- Add more rows for additional students -->
+
           </tbody>
         </table>
       </div>
