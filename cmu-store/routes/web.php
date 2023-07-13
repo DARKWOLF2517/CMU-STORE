@@ -34,6 +34,10 @@ Route::get('studenthome', function () {
     return view('student.student_home');
 });
 
+Route::get('student_accountabilities', function () {
+    return view('student.student_accountabilities');
+});
+
 // STUDENT ORGANIZATION ROUTES
 Route::get('student_organization_attendance_record', function () {
     return view('student_organization.student_organization_attendance_record');
