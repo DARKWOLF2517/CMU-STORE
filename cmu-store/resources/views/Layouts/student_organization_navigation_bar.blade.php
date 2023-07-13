@@ -127,14 +127,13 @@
    
 
 
-    {{-- INTERNAL BOOTSTRAP --}}
+    {{-- INTERNAL JavaScript --}}
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebarCollapse');
             const content = document.querySelector('.content');
             const icon = document.querySelector('#sidebar-toggle i');
             const dropdown = document.getElementById('sidebar-dropdown');
-
             sidebar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
             icon.classList.toggle('bi-list');

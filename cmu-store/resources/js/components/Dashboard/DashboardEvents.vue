@@ -31,8 +31,6 @@ export default {
             }).then( (response) => {
                 response.json().then((data) => {
                     data.forEach(element => {
-                        console.log(element);
-                        // console.log(element[])
                         element["start_date"] = convertDate(element["start_date"]);
                         element["end_date"] = convertDate(element["end_date"]);
                     });
@@ -40,13 +38,6 @@ export default {
                 })
             })
         },
-        deleteEvent(id) {
-            console.log(id);
-            //Send fetch delete type here.
-        },
-        editEvent(id) {
-            //Show modal here
-        }
     }
 }
 </script>
