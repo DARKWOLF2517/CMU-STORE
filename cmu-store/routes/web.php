@@ -69,6 +69,7 @@ Route::get('student_organization_accountabilities', function () {
 Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [HomeController::class, 'logout']);
+Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
 
 #EVENT ROUTES
 Route::get('/events', [EventController::class, 'showEvents'])->name('events');

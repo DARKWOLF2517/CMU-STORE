@@ -17,6 +17,12 @@ class EventController extends Controller
         return $events->toJson();
     }
 
+    public function getEventsCount()
+    {   
+        $count = Event::count(); 
+        return response()->json(['count' => $count]);
+        
+    }
     /**
      * @param $request
      */
@@ -81,4 +87,7 @@ class EventController extends Controller
         $event->delete();
         return response()->json(['message' => 'Event deleted successfully']);
     }
+
+  
+
 }
