@@ -124,17 +124,15 @@
 
     {{-- BOOTSTRAP CDN FOR JAVASCRIPT --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-   
 
 
-    {{-- INTERNAL BOOTSTRAP --}}
+    {{-- INTERNAL JavaScript --}}
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebarCollapse');
             const content = document.querySelector('.content');
             const icon = document.querySelector('#sidebar-toggle i');
             const dropdown = document.getElementById('sidebar-dropdown');
-
             sidebar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
             icon.classList.toggle('bi-list');

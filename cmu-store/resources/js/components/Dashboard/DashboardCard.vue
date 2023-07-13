@@ -34,11 +34,6 @@ methods: {
             });
         }
     },
-    // created() {
-    //     // this.fetchData();
-    //     alert(this.target_route)
-        
-    // },
     mounted() {
         this.fetchDataCount();
     },

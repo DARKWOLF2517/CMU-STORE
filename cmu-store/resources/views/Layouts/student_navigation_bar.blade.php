@@ -26,9 +26,9 @@
             <!-- TOP NAV BAR -->
             <div class="loader-container">
                 <div class="spinner-border text-primary" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-              </div>
+            </div>
 
             <div class="wrapper">
                 <div class="top-nav">
@@ -63,46 +63,26 @@
             <div class="wrapper">
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="{{ url('/studenthome') }}" class="nav-link link-dark">
-                                <i class="bi bi-house"></i>
-                                <span class="nav-link-text">Home</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ url('/student_organization_attendance') }}" class="nav-link link-dark">
-                                <i class="bi bi-people"></i>
-                                <span class="nav-link-text">Attendance</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-
-                            <a href="{{ url('/student_organization_member_list') }}" class="nav-link link-dark">
-                                <i class="bi bi-person"></i>
-                                <span class="nav-link-text">Student</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-
-                            <a href="{{ url('/student_organization_events') }}" class="nav-link link-dark">
-                                <i class="bi bi-calendar-check"></i>
-                                <span class="nav-link-text">Events</span>
-
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/student_organization_accountabilities') }}" class="nav-link link-dark">
-                                <i class="bi bi-currency-dollar"></i>
-                                <span class="nav-link-text">Accountabilities</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/student_evaluation') }}" class="nav-link link-dark">
-                                <i class="bi bi-clipboard-check"></i>
-                                <span class="nav-link-text">Evaluation</span>
-                            </a>
-                        </li>
+                        <side-nav-button
+                            link_name="Home"
+                            link_route="/studenthome"
+                            link_icon="bi bi-house"
+                        ></side-nav-button>
+                        <side-nav-button
+                            link_name="Attendance"
+                            link_route="#"
+                            link_icon="bi bi-people"
+                        ></side-nav-button>
+                        <side-nav-button
+                            link_name="Accountabilities"
+                            link_route="student_accountabilities"
+                            link_icon="bi bi-currency-dollar"
+                        ></side-nav-button>
+                        {{-- <side-nav-button
+                            link_name="Evaluation"
+                            link_route="student_evalution"
+                            link_icon="bi bi-clipboard-check"
+                        ></side-nav-button> --}}
 
                     </ul>
 
@@ -114,10 +94,10 @@
     <script>
         window.addEventListener('load', function () {
           // Remove loader once the page has finished loading
-          var loader = document.querySelector('.loader-container');
-          loader.style.display = 'none';
+            var loader = document.querySelector('.loader-container');
+            loader.style.display = 'none';
         });
-      </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
