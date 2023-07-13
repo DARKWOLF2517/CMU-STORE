@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Attendance</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .table-container {
-      width: 80%;
-    }
-    .table-container h2 {
-      margin-bottom: 20px;
-    }
-    .table-container .table {
-      font-size: 16px;
-    }
-  </style>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="table-container">
-      <h2>Attendance </h2>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Date</th>
-            <th>Attendance Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Event 1</td>
-            <td>July 15, 2023</td>
-            <td>Attended</td>
-          </tr>
-          <tr>
-            <td>Event 2</td>
-            <td>August 2, 2023</td>
-            <td>Not Attended</td>
-          </tr>
-          <tr>
-            <td>Event 3</td>
-            <td>September 10, 2023</td>
-            <td>Attended</td>
-          </tr>
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
+
+  <!-- Breadcrumbs -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Courses</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+  </nav>
+
+  <!-- Container for Announcements -->
+  <div class="container mt-4">
+    <h3>Announcements</h3>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Announcement Title</h5>
+        <p class="card-subtitle mb-2 text-muted">Date Posted: July 13, 2023</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor mauris eu mauris vulputate, id cursus odio rutrum.</p>
+      </div>
     </div>
   </div>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Container for Event Overview -->
+  <div class="container mt-4">
+    <h3>Event Overview</h3>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Event Title</h5>
+        <p class="card-subtitle mb-2 text-muted">Event Date: July 20, 2023</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor mauris eu mauris vulputate, id cursus odio rutrum.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -23,14 +23,14 @@ use App\Http\Controllers\HomeController;
   });
 
 // STUDENT USER ROUTES
-Route::get('student_evalution', function () {
+Route::get('student_evaluation', function () {
     return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {
     return view('student.student_dashboard');
 });
 
-Route::get('studenthome', function () {
+Route::get('student_home', function () {
     return view('student.student_home');
 });
 

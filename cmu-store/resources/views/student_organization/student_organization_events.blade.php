@@ -30,8 +30,8 @@
         <div class="d-flex justify-content-end">
           <select class="form-select custom-select-width">
             <option selected>Sort by</option>
-            <option>Upcoming Events</option>
-            <option>Completed Events</option>
+            <option>1st semester events</option>
+            <option>2nd semester Events</option>
           </select>
         </div>
       </div>
