@@ -13,6 +13,7 @@
     <link href="/custom_css/allmedia.css" rel="stylesheet">
     <link href="/custom_css/Login.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
+    <link href="/custom_css/StudDashboard.css" rel="stylesheet">
     <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
     @vite('resources/js/app.js')
     @yield('custom-style')
@@ -20,16 +21,15 @@
 
 </head>
     <body>
-
+        <div class="loader-container">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
         <div id="app">
 
-            <!-- TOP NAV BAR -->
-            <div class="loader-container">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
 
+            <!-- TOP NAV BAR -->
             <div class="wrapper">
                 <div class="top-nav">
                 <div class="nav-item toggle-button">
@@ -47,14 +47,13 @@
                             <img src="https://cdn.imgbin.com/0/4/19/imgbin-network-administrator-system-administrator-computer-icons-computer-network-database-others-k0X6MX9NfNjeUyBaXUweXTcMw.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
                             <span class="profile-name"><strong>Admin</strong></span>
                         </a>
-
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
 
-                        </form>
+
                         </ul>
                     </div>
                 </div>
