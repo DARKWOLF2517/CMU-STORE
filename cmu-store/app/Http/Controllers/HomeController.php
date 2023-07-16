@@ -25,9 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-      
+    
         if(Auth::id()){
-         
+        
             $student_id = Auth::id();
     
             $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
@@ -43,7 +43,7 @@ class HomeController extends Controller
             
         }
         
- 
+
     }
     public function logout()
     {

@@ -83,7 +83,8 @@ Route::get('student_qrscanner', function () {
 
 
 #DASHBOARD ROUTES
-Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index']);
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [HomeController::class, 'logout']);
 Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
