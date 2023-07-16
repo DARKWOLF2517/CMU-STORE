@@ -27,7 +27,7 @@
               </div>
             </div>
 
-        <table class="table table-styled" >
+        {{-- <table class="table table-styled" >
 
           <thead>
             <tr>
@@ -55,6 +55,14 @@
               </tr>
 
           </tbody>
-        </table>
-      </div>
+        </table> --}}
+        <student-attendance
+        target_route="{{ route('get-events') }}"
+        show = "{{true}}"
+        >
+
+        </student-attendance>
+    </div>
 </div>
+
+@endsection
