@@ -74,6 +74,10 @@ Route::get('student_organization_evaluation', function () {
 Route::get('student_organization_accountabilities', function () {
     return view('student_organization.student_organization_accountabilities');
 });
+
+Route::get('student_qrscanner', function () {
+    return view('student_organization.student_organization_qr_scanner');
+});
 // Auth::routes();
 
 
