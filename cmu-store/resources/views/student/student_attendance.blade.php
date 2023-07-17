@@ -10,7 +10,6 @@
             <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
             <li class="breadcrumb-item">Student Organization</li>
             <li class="breadcrumb-item"><a href="/student_organization_attendance">Attendance</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Attendance Record</li>
           </ol>
         </nav>
     </div>
@@ -21,8 +20,8 @@
               <div class="sort">
                 <select class="form-select custom-select-width">
                   <option selected>Sort by</option>
-                  <option>Alphabetical Order</option>
-                  <option>Year Level</option>
+                  <option>1st semester events</option>
+                  <option>2nd semester events</option>
                 </select>
               </div>
             </div>

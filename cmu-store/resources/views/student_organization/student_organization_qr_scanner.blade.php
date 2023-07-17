@@ -1,146 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QR Code Scanner</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    .container {
-      width: 400px;
-      height: 300px;
-      margin: 20px auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    #video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    #qrData {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* Style for the pop-up box */
-    #popupBox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    #popupContent {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    #popupData {
-      font-size: 16px;
-      font-weight: normal;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 8px 16px;
-      border: none;
-      background-color: #4CAF50;
-      color: #fff;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <title>QR Code Reader</title>
 </head>
 <body>
-  <div class="container">
-    <video id="video" autoplay></video>
-  </div>
-  <h1>QR Code Scanner</h1>
-  <div id="qrData"></div>
+  <h1>QR Code Reader</h1>
+  <video id="camera" width="100%" height="auto" autoplay></video>
+  <div id="output"></div>
 
-  <!-- Add a pop-up box for displaying the QR code data -->
-  <div id="popupBox" style="display: none;">
-    <div id="popupContent">
-      <h2>Scanned QR Code Data:</h2>
-      <p id="popupData"></p>
-      <button onclick="closePopup()">Close</button>
-    </div>
-  </div>
-
-  <script src="https://rawgit.com/LazarSoft/jsqrcode/master/src/qr_packed.js"></script>
+  <script src="path/to/instascan.min.js"></script>
   <script>
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-      .then(function(stream) {
-        var video = document.getElementById("video");
-        video.srcObject = stream;
-        video.play();
+    const video = document.getElementById('camera');
+    const output = document.getElementById('output');
+
+    // Show an alert to request permission before accessing the camera
+    window.alert('This website would like to access your camera for scanning QR codes.');
+
+    // Initialize the QR code scanner
+    const scanner = new Instascan.Scanner({ video: video });
+
+    scanner.addListener('scan', result => {
+      output.textContent = `QR Code detected: ${result}`;
+    });
+
+    Instascan.Camera.getCameras()
+      .then(cameras => {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]); // Use the rear camera by default
+        } else {
+          console.error('No cameras found.');
+        }
       })
-      .catch(function(err) {
-        console.error("Error accessing the camera.", err);
+      .catch(error => {
+        console.error('Error accessing the camera:', error);
       });
-
-    // Function to show the QR code data in the pop-up box
-    function showQRData(data) {
-      var popupDataElement = document.getElementById("popupData");
-      popupDataElement.innerText = data;
-
-      var popupBox = document.getElementById("popupBox");
-      popupBox.style.display = "flex"; // Show the pop-up box
-    }
-
-    // Function to close the pop-up box
-    function closePopup() {
-      var popupBox = document.getElementById("popupBox");
-      popupBox.style.display = "none"; // Hide the pop-up box
-    }
-
-    // Modify the code section where the QR code is detected
-    function scanQRCode() {
-      var video = document.getElementById("video");
-      var canvas = document.createElement("canvas");
-      var context = canvas.getContext("2d");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-      var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-      var code = jsQR(imageData.data, imageData.width, imageData.height);
-
-      if (code) {
-        var qrDataElement = document.getElementById("qrData");
-        qrDataElement.innerText = "QR Code Data: " + code.data;
-
-        // Show the QR code data in the pop-up box
-        showQRData(code.data);
-      }
-
-      requestAnimationFrame(scanQRCode);
-    }
-
-    scanQRCode();
   </script>
 </body>
 </html>
