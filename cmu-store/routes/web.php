@@ -50,6 +50,9 @@ Route::get('student_attendance', function () {
     return view('student.student_attendance');
 });
 
+Route::get('student_profile', function () {
+    return view('student.student_profile');
+});
 
 // STUDENT ORGANIZATION ROUTES
 Route::get('student_organization_attendance_record', function () {
