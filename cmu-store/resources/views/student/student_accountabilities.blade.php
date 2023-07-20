@@ -33,13 +33,6 @@
               <td>Paid</td>
               <td>No fines</td>
             </tr>
-            <tr>
-              <td>67890</td>
-              <td>Jane Smith</td>
-              <td>Not paid</td>
-              <td>Has fines</td>
-            </tr>
-            <!-- Add more rows for additional students -->
           </tbody>
         </table>
       </div>

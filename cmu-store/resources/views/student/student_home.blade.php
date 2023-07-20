@@ -3,14 +3,14 @@
 
 <div class="content">
 
-        <div class="row">
-          <div class="container col-lg-12">
-              <h2>Organizations</h2>
-              <hr>
-              <div class="row" id="organizations">
-                <!-- Organizations will be dynamically populated here -->
-              </div>
-          </div>
+    <div class="row">
+        <div class="container col-lg-12">
+            <h2>Events</h2>
+            <hr>
+            <div class="row" id="events">
+              <!-- Events will be dynamically populated here -->
+            </div>
+        </div>
 
           <div class="container" id="tablecontainer">
         <div class="row mt-4">
@@ -29,34 +29,34 @@
 
 </div>
 <script>
-    // Sample organizations data with links
-    const organizations = [
+    // Sample event data with links
+    const eventData = [
       {
-        name: "Organization 1",
+        title: "Event 1",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-        link: "https://www.facebook.com/Q.Sollinamor/" // Replace this with the organization's URL
+        link: "https://www.example.com/event1" // Replace this with the event's URL
       },
       {
-        name: "Organization 2",
+        title: "Event 2",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-        link: "https://dfe" // Replace this with the organization's URL
+        link: "https://www.example.com/event2" // Replace this with the event's URL
       },
       {
-        name: "Organization 3",
+        title: "Event 3",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-        link: "https://fef" // Replace this with the organization's URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
       },
     ];
 
 
-    // Display organizations as cards
-    function displayOrganizations() {
-      const organizationsContainer = document.getElementById("organizations");
+    // Display events as cards
+    function displayEvents() {
+      const eventsContainer = document.getElementById("events");
 
-      organizations.forEach((org) => {
+      eventData.forEach((event) => {
         const col = document.createElement("div");
         col.classList.add("col-lg-4");
 
@@ -65,12 +65,12 @@
 
         const img = document.createElement("img");
         img.classList.add("card-img");
-        img.src = org.image;
-        img.alt = org.name;
+        img.src = event.image;
+        img.alt = event.title;
 
         // Create an anchor tag for the clickable card
         const cardLink = document.createElement("a");
-        cardLink.href = org.link;
+        cardLink.href = event.link;
         cardLink.style.textDecoration = "none"; // Remove the default underline
 
         cardLink.appendChild(img);
@@ -81,22 +81,22 @@
 
         const title = document.createElement("h5");
         title.classList.add("card-title");
-        title.innerText = org.name;
+        title.innerText = event.title;
 
         const description = document.createElement("p");
         description.classList.add("card-text", "card-description");
-        description.innerText = org.description;
+        description.innerText = event.description;
 
         cardBody.appendChild(title);
         cardBody.appendChild(description);
         card.appendChild(cardBody);
         col.appendChild(card);
 
-        organizationsContainer.appendChild(col);
+        eventsContainer.appendChild(col);
       });
     }
 
-    displayOrganizations();
+    displayEvents();
   </script>
 <script>
     // Sample announcements data
