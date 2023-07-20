@@ -17,5 +17,9 @@ export default {
             show: this.showIcon
         }
     },
+
+    mounted() {
+        this.show = true;
+    },
 }
 </script>

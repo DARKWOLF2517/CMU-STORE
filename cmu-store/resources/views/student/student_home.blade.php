@@ -25,84 +25,121 @@
 
           <div class="col-lg-6">
               <h2>Upcoming Events</h2>
-              <div class="shadow scroll-container" id="upcoming-events"></div>
+              <div class="shadow scroll-container" id="upcoming-events">
+
+                {{-- <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"> sdafsadf</h5>
+                        <p class="card-text text-muted">sadf</p>
+                        <p class="card-text"> sadf</p>
+                        <p class="card-text">asdfasd</p>
+                    </div> 
+                </div> --}}
+
+              </div>
           </div>
         </div>
       </div>
     </div>
 
 </div>
-<script>
+{{-- <script>
     // Sample event data with links
-    // const eventData = [
-    //   {
-    //     title: "Event 1",
-    //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //     image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-    //     link: "https://www.example.com/event1" // Replace this with the event's URL
-    //   },
-    //   {
-    //     title: "Event 2",
-    //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //     image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-    //     link: "https://www.example.com/event2" // Replace this with the event's URL
-    //   },
-    //   {
-    //     title: "Event 3",
-    //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //     image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
-    //     link: "https://www.example.com/event3" // Replace this with the event's URL
-    //   },
-    // ];
+    const eventData = [
+      {
+        title: "Event 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event1" // Replace this with the event's URL
+      },
+      {
+        title: "Event 2",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event2" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      
+    ];
 
 
     // Display events as cards
-    // function displayEvents() {
-    //   const eventsContainer = document.getElementById("events");
+    function displayEvents() {
+      const eventsContainer = document.getElementById("events");
 
-    //   eventData.forEach((event) => {
-    //     const col = document.createElement("div");
-    //     col.classList.add("col-lg-4");
+      eventData.forEach((event) => {
+        const col = document.createElement("div");
+        col.classList.add("col-lg-4");
 
-    //     const card = document.createElement("div");
-    //     card.classList.add("card", "mb-3");
+        const card = document.createElement("div");
+        card.classList.add("card", "mb-3");
 
-    //     const img = document.createElement("img");
-    //     img.classList.add("card-img");
-    //     img.src = event.image;
-    //     img.alt = event.title;
+        const img = document.createElement("img");
+        img.classList.add("card-img");
+        img.src = event.image;
+        img.alt = event.title;
 
-    //     // Create an anchor tag for the clickable card
-    //     const cardLink = document.createElement("a");
-    //     cardLink.href = event.link;
-    //     cardLink.style.textDecoration = "none"; // Remove the default underline
+        // Create an anchor tag for the clickable card
+        const cardLink = document.createElement("a");
+        cardLink.href = event.link;
+        cardLink.style.textDecoration = "none"; // Remove the default underline
 
-    //     cardLink.appendChild(img);
-    //     card.appendChild(cardLink);
+        cardLink.appendChild(img);
+        card.appendChild(cardLink);
 
-    //     const cardBody = document.createElement("div");
-    //     cardBody.classList.add("card-body");
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-    //     const title = document.createElement("h5");
-    //     title.classList.add("card-title");
-    //     title.innerText = event.title;
+        const title = document.createElement("h5");
+        title.classList.add("card-title");
+        title.innerText = event.title;
 
-    //     const description = document.createElement("p");
-    //     description.classList.add("card-text", "card-description");
-    //     description.innerText = event.description;
+        const description = document.createElement("p");
+        description.classList.add("card-text", "card-description");
+        description.innerText = event.description;
 
-    //     cardBody.appendChild(title);
-    //     cardBody.appendChild(description);
-    //     card.appendChild(cardBody);
-    //     col.appendChild(card);
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
+        card.appendChild(cardBody);
+        col.appendChild(card);
 
-    //     eventsContainer.appendChild(col);
-    //   });
-    // }
+        eventsContainer.appendChild(col);
+      });
+    }
 
-    // displayEvents();
-  </script>
-{{-- <script>
+    displayEvents();
+  </script> --}}
+<script>
     // Sample announcements data
     const announcements = [
       {
@@ -135,6 +172,18 @@
         date: "July 15, 2023",
         time: "2:00 PM - 4:00 PM",
         location: "Auditorium"
+      },
+      {
+        title: "Career Fair",
+        date: "July 20, 2023",
+        time: "9:00 AM - 5:00 PM",
+        location: "Student Center"
+      },
+      {
+        title: "Career Fair",
+        date: "July 20, 2023",
+        time: "9:00 AM - 5:00 PM",
+        location: "Student Center"
       },
       {
         title: "Career Fair",
@@ -215,6 +264,6 @@
 
     displayAnnouncements();
     displayUpcomingEvents();
-  </script> --}}
+  </script>
   {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 @endsection

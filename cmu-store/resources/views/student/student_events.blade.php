@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-
+        <br>
         <h2>Events</h2>
         <hr>
         <div class="row" id="events">
@@ -79,79 +79,101 @@
             </div>
         </div>
 
-    <script>
-        // Sample event data with links
-        // const eventData = [
-        //     {
-        //         title: "Event 1",
-        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        //         image: "https://via.placeholder.com/300x200",
-        //         link: "https://www.example.com/event1",
-        //         details: "Event 1 details go here. You can provide more information about this event."
-        //     },
-        //     {
-        //         title: "Event 2",
-        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        //         image: "https://via.placeholder.com/300x200",
-        //         link: "https://www.example.com/event2",
-        //         details: "Event 2 details go here. You can provide more information about this event."
-        //     },
-        //     {
-        //         title: "Event 3",
-        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        //         image: "https://via.placeholder.com/300x200",
-        //         link: "https://www.example.com/event3",
-        //         details: "Event 3 details go here. You can provide more information about this event."
-        //     },
-        // ];
+    {{-- <script>
+       // Sample event data with links
+        const eventData = [
+            {
+                title: "Event 1",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event1",
+                details: "Event 1 details go here. You can provide more information about this event."
+            },
+            {
+                title: "Event 2",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event2",
+                details: "Event 2 details go here. You can provide more information about this event."
+            },
+            {
+                title: "Event 3",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event3",
+                details: "Event 3 details go here. You can provide more information about this event."
+            },
+            {
+                title: "Event 3",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event3",
+                details: "Event 3 details go here. You can provide more information about this event."
+            },
+            {
+                title: "Event 3",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event3",
+                details: "Event 3 details go here. You can provide more information about this event."
+            },
+            {
+                title: "Event 3",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "https://via.placeholder.com/300x200",
+                link: "https://www.example.com/event3",
+                details: "Event 3 details go here. You can provide more information about this event."
+            },
+            
+        ];
 
-        // Function to display events as cards
-        // function displayEvents() {
-        //     const eventsContainer = document.getElementById("events");
+       //Function to display events as cards
+        function displayEvents() {
+            const eventsContainer = document.getElementById("events");
 
-        //     eventData.forEach((event) => {
-        //         const col = document.createElement("div");
-        //         col.classList.add("col-lg-4");
+            eventData.forEach((event) => {
+                const col = document.createElement("div");
+                col.classList.add("col-lg-4");
 
-        //         const card = document.createElement("div");
-        //         card.classList.add("card", "mb-3");
+                const card = document.createElement("div");
+                card.classList.add("card", "mb-3");
 
-        //         const img = document.createElement("img");
-        //         img.classList.add("card-img");
-        //         img.src = event.image;
-        //         img.alt = event.title;
+                const img = document.createElement("img");
+                img.classList.add("card-img");
+                img.src = event.image;
+                img.alt = event.title;
 
-        //         // Create an anchor tag for the clickable card
-        //         const cardLink = document.createElement("a");
-        //         cardLink.href = "#"; // Since we're using a modal, set href to "#"
-        //         cardLink.style.textDecoration = "none"; // Remove the default underline
-        //         cardLink.addEventListener("click", () => {
-        //             // When the card is clicked, show the modal with event details
-        //             showEventModal(event);
-        //         });
+                // Create an anchor tag for the clickable card
+                const cardLink = document.createElement("a");
+                cardLink.href = "#"; // Since we're using a modal, set href to "#"
+                cardLink.style.textDecoration = "none"; // Remove the default underline
+                cardLink.addEventListener("click", () => {
+                    // When the card is clicked, show the modal with event details
+                    showEventModal(event);
+                });
 
-        //         cardLink.appendChild(img);
-        //         card.appendChild(cardLink);
+                cardLink.appendChild(img);
+                card.appendChild(cardLink);
 
-        //         const cardBody = document.createElement("div");
-        //         cardBody.classList.add("card-body");
+                const cardBody = document.createElement("div");
+                cardBody.classList.add("card-body");
 
-        //         const title = document.createElement("h5");
-        //         title.classList.add("card-title");
-        //         title.innerText = event.title;
+                const title = document.createElement("h5");
+                title.classList.add("card-title");
+                title.innerText = event.title;
 
-        //         const description = document.createElement("p");
-        //         description.classList.add("card-text", "card-description");
-        //         description.innerText = event.description;
+                const description = document.createElement("p");
+                description.classList.add("card-text", "card-description");
+                description.innerText = event.description;
 
-        //         cardBody.appendChild(title);
-        //         cardBody.appendChild(description);
-        //         card.appendChild(cardBody);
-        //         col.appendChild(card);
+                cardBody.appendChild(title);
+                cardBody.appendChild(description);
+                card.appendChild(cardBody);
+                col.appendChild(card);
 
-        //         eventsContainer.appendChild(col);
-        //     });
-        // }
+                eventsContainer.appendChild(col);
+            });
+        }
 
         // Function to show the event details modal
         function showEventModal(event) {
@@ -166,8 +188,8 @@
             $("#eventModal").modal("show");
         }
 
-        // displayEvents();
-    </script>
+        displayEvents();
+    </script> --}}
 
 @endsection
 

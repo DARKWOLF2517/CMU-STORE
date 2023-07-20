@@ -2,8 +2,8 @@
     <div class="col-lg-4" v-for="event in this.events" :id="event.event_id">
         <div class="card mb-3" >
             <a href="#"> 
-                <div style="width: 100px;" >
-                    <img src="https://img.freepik.com/free-vector/duck-doodle-simple-style-white-background_1308-87748.jpg?w=2000" alt="" class="card-img">
+                <div >
+                    <img src="https://via.placeholder.com/300x200" alt="" class="card-img">
                 </div>
             </a>
             <div class="card-body"> 

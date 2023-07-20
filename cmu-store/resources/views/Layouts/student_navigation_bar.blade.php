@@ -96,12 +96,13 @@
                         link_name="Events"
                         link_route="student_event"
                         link_icon="bi bi-calendar-check"
-                    ></side-nav-button>
+                        ></side-nav-button>
                         <side-nav-button
                             link_name="Accountabilities"
                             link_route="student_accountabilities"
                             link_icon="bi bi-currency-dollar"
                         ></side-nav-button>
+
                     </ul>
 
                 </div>
