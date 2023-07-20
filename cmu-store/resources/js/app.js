@@ -12,7 +12,8 @@ import SideNavbtn from './components/StudentOrg/SideNav/SideNavButton.vue';
 import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
 
 //student module 
-import StudentAttendance from './components/StudentUser/StudentAttendance.vue';
+import StudentAttendance from './components/StudentUser/Attendance/StudentAttendance.vue';
+import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
 
 const app = createApp({});
 //org module
@@ -25,6 +26,6 @@ app.component('add-event', AddEvent);
 app.component('qr-scanner', QrScanner);
 //student module
 app.component ('student-attendance',StudentAttendance);
-
+app.component ('student-event-card', StudentEventModal)
 
 app.mount('#app');

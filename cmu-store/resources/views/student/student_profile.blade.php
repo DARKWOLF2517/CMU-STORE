@@ -7,18 +7,21 @@
           <div class="col-md-3">
             <div class="card profile-card"> <!-- Add the "profile-card" class here -->
               <div class="card-body text-center">
-                <canvas id="qrCodeCanvas" class="img-fluid" alt="QR Code"></canvas>
+                {{QrCode::generate('2020400')}}
                 <!-- Student's Name -->
                 <h3 class="mt-3">Taylor Swift</h3>
                 <!-- Student ID -->
-                <p>Student ID: 2020400</p>
+                <p>Student ID: 2020301072</p>
               </div>
             </div>
           </div>
           <!-- Additional Information Container -->
           <div class="col-md-7 mt-4 mt-md-0">
             <div class="card">
-              <div class="card-header"> <h3>Student Information</h3></div>
+              <div class="card-header"> 
+                <h3>Student Information</h3>
+              </div>
+              
               <div class="card-body">
                 <!-- Year Level -->
                 <h6>Year Level</h6>
@@ -41,7 +44,7 @@
 
 
       <!-- QR Code Generator Library -->
-      <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+      {{-- <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
       <script>
           const qrCodeCanvas = document.getElementById('qrCodeCanvas');
           const qr = new QRious({
@@ -49,4 +52,6 @@
               value: 'John Doe, Student ID: 202020202',
               size: 200 // Increase the size value to make the QR code bigger
           });
-      </script>
+      </script> --}}
+
+@endsection

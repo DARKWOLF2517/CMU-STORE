@@ -34,120 +34,124 @@
             </div>
           </div>
         </div>
-                <h2>Events</h2>
-                <hr>
-                <div class="row" id="events">
-                  <!-- Events will be dynamically populated here -->
-                </div>
-                 <!-- Modal for displaying event details -->
-    <div class="modal" tabindex="-1" role="dialog" id="eventModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="eventModalTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="eventModalBody">
-                    <!-- Event details will be dynamically populated here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="event-list-scroll" id="event-cards">
-              <div class="spinner-border" id="event-spinner" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <event-card
-                target_route="{{ route('get-events') }}"
-                admin = {{false}}
-              >
-              </event-card>
-            </div>
-          </div>
-        </div>
-      </div>
 
-@endsection
-=======
+        <h2>Events</h2>
+        <hr>
+        <div class="row" id="events">
+          <!-- Events will be dynamically populated here -->
+          {{-- <div class="col-lg-4">
+            <div class="card mb-3"> 
+                <a href="#"> <img src="https://img.freepik.com/free-vector/duck-doodle-simple-style-white-background_1308-87748.jpg?w=2000" alt="" class="card-img"></a>
+                <div class="card-body"> 
+                  <h5 class="card-title">Event 1</h5>
+                  <p class="card-text card-desciprtion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            
+        
+          </div> --}}
+          <student-event-card
+          target_route="{{ route('get-events') }}"
+          >
+          </student-event-card>
         </div>
-    </div>
+
+
+
+
+        <!-- Modal for displaying event details -->
+        <div class="modal" tabindex="-1" role="dialog" id="eventModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="eventModalBody">
+                        <!-- Event details will be dynamically populated here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <script>
         // Sample event data with links
-        const eventData = [
-            {
-                title: "Event 1",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                image: "https://via.placeholder.com/300x200",
-                link: "https://www.example.com/event1",
-                details: "Event 1 details go here. You can provide more information about this event."
-            },
-            {
-                title: "Event 2",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                image: "https://via.placeholder.com/300x200",
-                link: "https://www.example.com/event2",
-                details: "Event 2 details go here. You can provide more information about this event."
-            },
-            {
-                title: "Event 3",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                image: "https://via.placeholder.com/300x200",
-                link: "https://www.example.com/event3",
-                details: "Event 3 details go here. You can provide more information about this event."
-            },
-        ];
+        // const eventData = [
+        //     {
+        //         title: "Event 1",
+        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        //         image: "https://via.placeholder.com/300x200",
+        //         link: "https://www.example.com/event1",
+        //         details: "Event 1 details go here. You can provide more information about this event."
+        //     },
+        //     {
+        //         title: "Event 2",
+        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        //         image: "https://via.placeholder.com/300x200",
+        //         link: "https://www.example.com/event2",
+        //         details: "Event 2 details go here. You can provide more information about this event."
+        //     },
+        //     {
+        //         title: "Event 3",
+        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        //         image: "https://via.placeholder.com/300x200",
+        //         link: "https://www.example.com/event3",
+        //         details: "Event 3 details go here. You can provide more information about this event."
+        //     },
+        // ];
 
         // Function to display events as cards
-        function displayEvents() {
-            const eventsContainer = document.getElementById("events");
+        // function displayEvents() {
+        //     const eventsContainer = document.getElementById("events");
 
-            eventData.forEach((event) => {
-                const col = document.createElement("div");
-                col.classList.add("col-lg-4");
+        //     eventData.forEach((event) => {
+        //         const col = document.createElement("div");
+        //         col.classList.add("col-lg-4");
 
-                const card = document.createElement("div");
-                card.classList.add("card", "mb-3");
+        //         const card = document.createElement("div");
+        //         card.classList.add("card", "mb-3");
 
-                const img = document.createElement("img");
-                img.classList.add("card-img");
-                img.src = event.image;
-                img.alt = event.title;
+        //         const img = document.createElement("img");
+        //         img.classList.add("card-img");
+        //         img.src = event.image;
+        //         img.alt = event.title;
 
-                // Create an anchor tag for the clickable card
-                const cardLink = document.createElement("a");
-                cardLink.href = "#"; // Since we're using a modal, set href to "#"
-                cardLink.style.textDecoration = "none"; // Remove the default underline
-                cardLink.addEventListener("click", () => {
-                    // When the card is clicked, show the modal with event details
-                    showEventModal(event);
-                });
+        //         // Create an anchor tag for the clickable card
+        //         const cardLink = document.createElement("a");
+        //         cardLink.href = "#"; // Since we're using a modal, set href to "#"
+        //         cardLink.style.textDecoration = "none"; // Remove the default underline
+        //         cardLink.addEventListener("click", () => {
+        //             // When the card is clicked, show the modal with event details
+        //             showEventModal(event);
+        //         });
 
-                cardLink.appendChild(img);
-                card.appendChild(cardLink);
+        //         cardLink.appendChild(img);
+        //         card.appendChild(cardLink);
 
-                const cardBody = document.createElement("div");
-                cardBody.classList.add("card-body");
+        //         const cardBody = document.createElement("div");
+        //         cardBody.classList.add("card-body");
 
-                const title = document.createElement("h5");
-                title.classList.add("card-title");
-                title.innerText = event.title;
+        //         const title = document.createElement("h5");
+        //         title.classList.add("card-title");
+        //         title.innerText = event.title;
 
-                const description = document.createElement("p");
-                description.classList.add("card-text", "card-description");
-                description.innerText = event.description;
+        //         const description = document.createElement("p");
+        //         description.classList.add("card-text", "card-description");
+        //         description.innerText = event.description;
 
-                cardBody.appendChild(title);
-                cardBody.appendChild(description);
-                card.appendChild(cardBody);
-                col.appendChild(card);
+        //         cardBody.appendChild(title);
+        //         cardBody.appendChild(description);
+        //         card.appendChild(cardBody);
+        //         col.appendChild(card);
 
-                eventsContainer.appendChild(col);
-            });
-        }
+        //         eventsContainer.appendChild(col);
+        //     });
+        // }
 
         // Function to show the event details modal
         function showEventModal(event) {
@@ -162,6 +166,12 @@
             $("#eventModal").modal("show");
         }
 
-        displayEvents();
+        // displayEvents();
     </script>
->>>>>>> 1423652fc85ae2f9edb178d590f1e334abcaeb0f
+
+@endsection
+
+
+@section('custom-script')
+
+@endsection
