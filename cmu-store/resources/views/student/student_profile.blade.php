@@ -1,4 +1,5 @@
 @extends('layouts.student_navigation_bar')
+
 @section('main-content')
 <div class="content">
     <div class="container md-6 mt-4">
@@ -41,17 +42,5 @@
           </div>
         </div>
       </div>
-
-
-      <!-- QR Code Generator Library -->
-      {{-- <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
-      <script>
-          const qrCodeCanvas = document.getElementById('qrCodeCanvas');
-          const qr = new QRious({
-              element: qrCodeCanvas,
-              value: 'John Doe, Student ID: 202020202',
-              size: 200 // Increase the size value to make the QR code bigger
-          });
-      </script> --}}
 
 @endsection

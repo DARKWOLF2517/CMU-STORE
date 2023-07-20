@@ -2,13 +2,15 @@
 import './bootstrap';
 
 import { createApp } from 'vue';
+//all
+import SideNavbtn from './components/SideNav/SideNavButton.vue';
+
 //org module
 import EventsDashboard from './components/StudentOrg/Dashboard/DashboardEvents.vue';
 import EventsCount from './components/StudentOrg/Dashboard/DashboardCard.vue';
 import CalendarCard from './components/StudentOrg/Dashboard/CalendarCard.vue';
 import AddEvent from './components/StudentOrg/Events/AddEventModal.vue';
 import EventCard from './components/StudentOrg/Events/EventCard.vue';
-import SideNavbtn from './components/StudentOrg/SideNav/SideNavButton.vue';
 import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
 
 //student module 
@@ -16,9 +18,13 @@ import StudentAttendance from './components/StudentUser/Attendance/StudentAttend
 import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
 
 const app = createApp({});
+
+//all
+app.component('side-nav-button',SideNavbtn);
+
+
 //org module
 app.component('event-card',EventCard);
-app.component('side-nav-button',SideNavbtn);
 app.component('event-dashboard', EventsDashboard);
 app.component('event-count', EventsCount);
 app.component('dashboard-calendar', CalendarCard);
