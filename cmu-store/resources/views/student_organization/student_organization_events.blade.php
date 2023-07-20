@@ -52,6 +52,7 @@
           </div>
           <event-card
             target_route="{{ route('get-events') }}"
+            admin = {{true}}
           >
           </event-card>
         </div>

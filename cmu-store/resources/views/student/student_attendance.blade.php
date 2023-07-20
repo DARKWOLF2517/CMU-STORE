@@ -58,7 +58,7 @@
         </table> --}}
         <student-attendance
         target_route="{{ route('get-events') }}"
-        show = "{{true}}"
+        show = {{true}}
         >
 
         </student-attendance>

@@ -7,8 +7,8 @@
                 <h6 class="card-text">Location: {{ event["location"] }} </h6>
                 <h6 class="card-text">Description: {{ event["description"] }} </h6>
                 <div class="card-actions">
-                    <button class="ellipsis-button" type="button" @click="editEvent(event.event_id)"> <i class="bi bi-pencil-square"></i></button>
-                    <button class="ellipsis-button" type="button" @click="deleteEvent(event.event_id)"> <i class="bi bi-trash"></i></button>
+                    <button class="ellipsis-button" v-if="show" type="button" @click="editEvent(event.event_id)"> <i class="bi bi-pencil-square"></i></button>
+                    <button class="ellipsis-button" v-if="show" type="button" @click="deleteEvent(event.event_id)"> <i class="bi bi-trash"></i></button>
                 </div>
         </div>
     </div>
@@ -19,14 +19,16 @@
 import {convertDate} from "../Functions/DateConverter.js";
 
 export default {
-    props: ['target_route'],
+    props: ['target_route', 'admin'],
     data() { 
         return {
-            events: []
+            events: [],
+            show: this.admin
         }
     },
     created() {
-        this.fetchData();  
+        this.fetchData();
+        console.log("mounted")
     },
     methods: {
         fetchData() {
