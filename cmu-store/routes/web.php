@@ -16,12 +16,17 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::get('/', function () {
+    return view('layouts.login');
+});
+
+Route::get('dashboard', function () {
     return view('layouts.student_navigation_bar');
 });
 
 // login route
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/homepage', function () {
 return view('student_organization.student_organization_dashboard');
@@ -36,7 +41,7 @@ Route::get('student_evaluationform', function () {
     return view('student.student_evaluationform');
 });
 Route::get('student_dashboard', function () {
-    return view('student.student_dashboard');
+    return view('student.student_profile');
 });
 
 Route::get('student_home', function () {
@@ -101,7 +106,7 @@ Route::get('student_qrscanner', function () {
 // Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // Route::get('/dashboard', [HomeController::class, 'index']);
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/logout', [HomeController::class, 'logout']);
+
 Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
 
 #EVENT ROUTES
@@ -122,10 +127,9 @@ Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('eve
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
-require __DIR__.'/auth.php';
