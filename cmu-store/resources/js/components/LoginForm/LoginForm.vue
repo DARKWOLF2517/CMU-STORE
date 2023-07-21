@@ -31,11 +31,17 @@ methods: {
     axios.post('/login', this.form)
         .then(response => {
         // Handle successful login (e.g., redirect to dashboard)
+            console.log('SUccess')
+            // window.location = '/dashboard';
         })
         .catch(error => {
         // Handle login error (e.g., display error message)
+        console.log(error)
         });
     }
-}
+},
+mounted() {
+    console.log('Mounted')
+},
 }
 </script>

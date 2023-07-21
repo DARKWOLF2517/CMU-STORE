@@ -7,11 +7,12 @@
   <title>Login Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="/css/stylesheet.css" rel="stylesheet">
+  {{-- <link href="/css/stylesheet.css" rel="stylesheet"> --}}
+  @vite('resources/js/app.js')
 </head>
 
 <body>
-  <div class="container">
+  {{-- <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-5">
         <div class="login-wrap p-4 p-md-5">
@@ -56,6 +57,10 @@
         </div>
       </div>
     </div>
+  </div> --}}
+  <div id="app">
+    <login-form> </login-form>
   </div>
+  
 </body>
 </html>
