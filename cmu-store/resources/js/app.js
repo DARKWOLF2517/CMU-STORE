@@ -4,6 +4,7 @@ import './bootstrap';
 import { createApp } from 'vue';
 //all
 import SideNavbtn from './components/SideNav/SideNavButton.vue';
+import LoginForm from './components/LoginForm/LoginForm.vue';
 
 //org module
 import EventsDashboard from './components/StudentOrg/Dashboard/DashboardEvents.vue';
@@ -21,7 +22,7 @@ const app = createApp({});
 
 //all
 app.component('side-nav-button',SideNavbtn);
-
+app.component('login-form',LoginForm);
 
 //org module
 app.component('event-card',EventCard);

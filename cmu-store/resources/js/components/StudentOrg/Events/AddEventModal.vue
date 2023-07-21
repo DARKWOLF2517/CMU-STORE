@@ -84,7 +84,7 @@
                             this.errors = error.response.data.errors;
                         }
                         console.log(this.formData)
-                        alert(this.formData)
+                        alert('error    ')
                         
     });
             },

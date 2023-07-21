@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,13 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('Login', function () {
-//     return view('Layouts.login');
-// });
+Route::get('/', function () {
+    return view('layouts.student_navigation_bar');
+});
+
+// login route
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/homepage', function () {
 return view('student_organization.student_organization_dashboard');
@@ -94,7 +99,7 @@ Route::get('student_qrscanner', function () {
 
 #DASHBOARD ROUTES
 // Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/dashboard', [HomeController::class, 'index']);
+// Route::get('/dashboard', [HomeController::class, 'index']);
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [HomeController::class, 'logout']);
 Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
@@ -109,9 +114,9 @@ Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('eve
 
 
 
-Route::get('/', function () {
-    return view('auth.login');
-})->middleware(['auth', 'verified'])->name('home');
+// Route::get('/', function () {
+//     return view('auth.login');
+// })->middleware(['auth', 'verified'])->name('home');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

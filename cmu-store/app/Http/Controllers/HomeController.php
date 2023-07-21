@@ -29,7 +29,6 @@ class HomeController extends Controller
         if(Auth::id()){
         
             $student_id = Auth::id();
-    
             $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
             if($userOrganization->role_id == 1){
                 return view('student_organization.student_organization_dashboard');
