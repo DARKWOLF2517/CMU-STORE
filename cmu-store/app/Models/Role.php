@@ -16,4 +16,11 @@ class Role extends Model
         'role_id',
         'name',
     ];
+
+
+    public function userOrganization()
+    {
+        return $this->hasMany(UserOrganization::class);
+    }
+
 }

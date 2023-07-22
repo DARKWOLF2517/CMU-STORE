@@ -51,4 +51,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function userOrganization()
+    {
+        return $this->hasOne(UserOrganization::class,'student_id');
+    }
+
+    public function hasRole($roleName)
+    {
+        return $this->userOrganization->roles->role_id === $roleName;
+    }
 }

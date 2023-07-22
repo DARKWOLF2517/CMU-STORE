@@ -17,20 +17,24 @@ use App\Http\Controllers\LoginController;
 */
 Route::get('/', function () {
     return view('layouts.login');
-});
+})->name('login');
 
-Route::get('dashboard', function () {
-    return view('layouts.student_navigation_bar');
+Route::get('org-dashboard', function () {
+    return view('layouts.student_organization_navigation_bar');
+})->middleware('auth')->name('org-dashboard');
+
+Route::get('student_dashboard', function () {
+    return view('student.student_profile');
 });
 
 // login route
 // Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('login', [LoginController::class, 'authenticate'])->name('authentication');
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/homepage', function () {
-return view('student_organization.student_organization_dashboard');
-});
+// Route::get('/homepage', function () {
+// return view('student_organization.student_organization_dashboard');
+// });
 
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
@@ -40,9 +44,9 @@ Route::get('/usercards', function () {
 Route::get('student_evaluationform', function () {
     return view('student.student_evaluationform');
 });
-Route::get('student_dashboard', function () {
-    return view('student.student_profile');
-});
+// Route::get('student_dashboard', function () {
+//     return view('student.student_profile');
+// });
 
 Route::get('student_home', function () {
     return view('student.student_home');
