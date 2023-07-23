@@ -90,7 +90,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Dashboard"
-                            link_route="/dashboard"
+                            link_route="/org-dashboard"
                             link_icon="bi bi-speedometer"
                         ></side-nav-button>
                         <side-nav-button

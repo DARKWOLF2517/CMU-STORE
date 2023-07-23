@@ -30,7 +30,10 @@ class User extends Authenticatable
         return $this->hasMany(UserOrganization::class,  'student_id');
     }
 
-
+    public function hasRole($roleName)
+    {
+        return $this->userOrganization->roles->role_id === $roleName;
+    }
     
     /**
      * The attributes that should be hidden for serialization.
@@ -53,13 +56,5 @@ class User extends Authenticatable
     ];
 
 
-    public function userOrganization()
-    {
-        return $this->hasOne(UserOrganization::class,'student_id');
-    }
 
-    public function hasRole($roleName)
-    {
-        return $this->userOrganization->roles->role_id === $roleName;
-    }
 }
