@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
   <title>QR Code Reader</title>
@@ -37,3 +37,32 @@
   </script>
 </body>
 </html>
+
+
+{{QrCode::generate('ss')}} --}}
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  @vite('resources/js/app.js')
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"> 
+    <qr-scanner></qr-scanner>
+ </div>
+</body>
+</html>
+
+
+
+{{-- 
+@extends('layouts.student_organization_navigation_bar')
+
+@section('main-content')
+
+@endsection --}}

@@ -93,7 +93,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
       <!-- Start Attendance Modal -->
       <div class="modal fade" id="startAttendanceModal" tabindex="-1" aria-labelledby="startAttendanceModalLabel" aria-hidden="true">

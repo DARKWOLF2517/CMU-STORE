@@ -9,6 +9,10 @@
             <hr>
             <div class="row" id="events">
               <!-- Events will be dynamically populated here -->
+              <student-event-card
+              target_route="{{ route('get-events') }}"
+              >
+              </student-event-card>
             </div>
         </div>
 
@@ -21,14 +25,25 @@
 
           <div class="col-lg-6">
               <h2>Upcoming Events</h2>
-              <div class="shadow scroll-container" id="upcoming-events"></div>
+              <div class="shadow scroll-container" id="upcoming-events">
+
+                {{-- <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"> sdafsadf</h5>
+                        <p class="card-text text-muted">sadf</p>
+                        <p class="card-text"> sadf</p>
+                        <p class="card-text">asdfasd</p>
+                    </div> 
+                </div> --}}
+
+              </div>
           </div>
         </div>
       </div>
     </div>
 
 </div>
-<script>
+{{-- <script>
     // Sample event data with links
     const eventData = [
       {
@@ -49,6 +64,32 @@
         image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
         link: "https://www.example.com/event3" // Replace this with the event's URL
       },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+
+      {
+        title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://via.placeholder.com/300x200", // Replace this with the actual image URL
+        link: "https://www.example.com/event3" // Replace this with the event's URL
+      },
+      
     ];
 
 
@@ -97,8 +138,8 @@
     }
 
     displayEvents();
-  </script>
-<script>
+  </script> --}}
+{{-- <script>
     // Sample announcements data
     const announcements = [
       {
@@ -131,6 +172,18 @@
         date: "July 15, 2023",
         time: "2:00 PM - 4:00 PM",
         location: "Auditorium"
+      },
+      {
+        title: "Career Fair",
+        date: "July 20, 2023",
+        time: "9:00 AM - 5:00 PM",
+        location: "Student Center"
+      },
+      {
+        title: "Career Fair",
+        date: "July 20, 2023",
+        time: "9:00 AM - 5:00 PM",
+        location: "Student Center"
       },
       {
         title: "Career Fair",
@@ -211,5 +264,6 @@
 
     displayAnnouncements();
     displayUpcomingEvents();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</script> --}}
+  {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+@endsection

@@ -7,7 +7,8 @@
   <title>Login Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="/css/stylesheet.css" rel="stylesheet">
+  <link href="/custom_css/stylesheet.css" rel="stylesheet">
+  @vite('resources/js/app.js')
 </head>
 
 <body>
@@ -17,7 +18,8 @@
         <div class="login-wrap p-4 p-md-5">
           <h3 class="text-center mb-4">CMU-STORE-AMS</h3>
 
-          <form action="#" class="login-form">
+          <form action="{{ route('authentication') }}" method="POST" class="login-form">
+            @csrf
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -25,7 +27,7 @@
                     <i class="fas fa-user"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control rounded-left" placeholder="Username" required="">
+                <input type="text" class="form-control rounded-left" placeholder="Username" required name="email">
               </div>
             </div>
             <div class="form-group d-flex">
@@ -35,7 +37,7 @@
                     <i class="fas fa-lock"></i>
                   </span>
                 </div>
-                <input type="password" class="form-control rounded-left" placeholder="Password" required="">
+                <input type="password" class="form-control rounded-left" placeholder="Password" required name="password">
               </div>
             </div>
             <div class="form-group d-md-flex">
@@ -57,5 +59,9 @@
       </div>
     </div>
   </div>
+  {{-- <div id="app">
+    <login-form> </login-form>
+  </div> --}}
+
 </body>
 </html>

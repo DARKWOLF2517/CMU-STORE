@@ -8,7 +8,7 @@
                 <h6 class="card-text">Description: {{ event["description"] }} </h6>
                 <div class="card-actions">
                     <button class="ellipsis-button" type="button" @click="editEvent(event.event_id)"> <i class="bi bi-pencil-square"></i></button>
-                    <button class="ellipsis-button" type="button" @click="deleteEvent(event.event_id)"> <i class="bi bi-trash"></i></button>
+                    <button class="ellipsis-button"  type="button" @click="deleteEvent(event.event_id)"> <i class="bi bi-trash"></i></button>
                 </div>
         </div>
     </div>
@@ -22,11 +22,13 @@ export default {
     props: ['target_route'],
     data() { 
         return {
-            events: []
+            events: [],
+            
         }
     },
     created() {
-        this.fetchData();  
+        this.fetchData();
+        console.log("mounted")
     },
     methods: {
         fetchData() {

@@ -27,8 +27,6 @@
             </div>
         </div>
         <div id="app">
-
-
             <!-- TOP NAV BAR -->
             <div class="wrapper">
                 <div class="top-nav">
@@ -44,15 +42,32 @@
                             <i class="bi bi-bell"></i>
                         </button>
                         <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://cdn.imgbin.com/0/4/19/imgbin-network-administrator-system-administrator-computer-icons-computer-network-database-others-k0X6MX9NfNjeUyBaXUweXTcMw.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <span class="profile-name"><strong>Admin</strong></span>
+                            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <span class="profile-name"><strong>User</strong></span>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
+                            <side-nav-button
+                            link_name="Settings"
+                            link_route = "#"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
 
+                            <side-nav-button
+                            link_name="Profile"
+                            link_route = "#"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <side-nav-button
+                            link_name="Sign out"
+                            link_route = "{{url('/logout')}}"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
 
                         </ul>
                     </div>
@@ -64,7 +79,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Home"
-                            link_route="/student_home"
+                            link_route="/student_dashboard"
                             link_icon="bi bi-house"
                         ></side-nav-button>
                         <side-nav-button
@@ -81,12 +96,13 @@
                         link_name="Events"
                         link_route="student_event"
                         link_icon="bi bi-calendar-check"
-                    ></side-nav-button>
+                        ></side-nav-button>
                         <side-nav-button
                             link_name="Accountabilities"
                             link_route="student_accountabilities"
                             link_icon="bi bi-currency-dollar"
                         ></side-nav-button>
+
                     </ul>
 
                 </div>

@@ -24,7 +24,7 @@
 
 <script>
 
-import {convertDate} from "../StudentOrg/Functions/DateConverter.js";
+import {convertDate} from "../../StudentOrg/Functions/DateConverter.js";
 export default {
     
     props: ['target_route', 'show'],

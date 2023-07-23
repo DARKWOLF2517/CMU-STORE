@@ -12,13 +12,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/allmedia.css" rel="stylesheet">
     <link href="/custom_css/Login.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/SOAttendance.css" rel="stylesheet">
+    {{-- <link href="/custom_css/SOAttendance.css" rel="stylesheet"> --}}
     <link href="/custom_css/SODashboard.css" rel="stylesheet">
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
@@ -55,12 +55,31 @@
                             <span class="profile-name"><strong>Admin</strong></span>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{url('/logout')}}">Sign out</a></li>
 
-                    
+                            
+                            <side-nav-button
+                            link_name="Settings"
+                            link_route = "#"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
+
+                            <side-nav-button
+                            link_name="Profile"
+                            link_route = "#"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <side-nav-button
+                            link_name="Sign out"
+                            link_route = "{{url('/logout')}}"
+                            show_icon = "{{false}}"
+                            >
+                            </side-nav-button>
+
                         </ul>
                     </div>
                 </div>
@@ -71,7 +90,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Dashboard"
-                            link_route="/dashboard"
+                            link_route="/org_dashboard"
                             link_icon="bi bi-speedometer"
                         ></side-nav-button>
                         <side-nav-button

@@ -1,13 +1,14 @@
 @extends('layouts.student_navigation_bar')
 @section('main-content')
 <div class="content">
+  <br>
     <div class="container md-6 mt-4">
         <div class="row">
           <!-- Student Profile Container -->
           <div class="col-md-3">
             <div class="card profile-card"> <!-- Add the "profile-card" class here -->
               <div class="card-body text-center">
-                <canvas id="qrCodeCanvas" class="img-fluid" alt="QR Code"></canvas>
+                {{QrCode::generate('2020302072')}}
                 <!-- Student's Name -->
                 <h3 class="mt-3">Taylor Swift</h3>
                 <!-- Student ID -->
@@ -41,7 +42,7 @@
 
 
       <!-- QR Code Generator Library -->
-      <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+      {{-- <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
       <script>
           const qrCodeCanvas = document.getElementById('qrCodeCanvas');
           const qr = new QRious({
@@ -49,4 +50,6 @@
               value: 'John Doe, Student ID: 202020202',
               size: 200 // Increase the size value to make the QR code bigger
           });
-      </script>
+      </script> --}}
+
+@endsection
