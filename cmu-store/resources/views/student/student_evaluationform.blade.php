@@ -8,16 +8,16 @@
         <hr>
         <form>
             <div class="form-group">
-                <h4 for="name">Name of Organization:</H4>
+                <h4 for="name">Name of Activity:</H4>
             </div>
             <div class="form-group">
-              <h5 for="name">Event:</H5>
+              <h5 for="name">Name of Organization:</H5>
             </div>
             <div class="form-group">
-              <h6 for="name">Position Held:</H6>
+              <h6 for="name">Date & Time:</H6>
             </div>
             <div class="form-group">
-              <h6 for="name">Date of Event:</H6>
+              <h6 for="name">Venue:</H6>
             </div>
             <hr>
             <div class="form-group">
@@ -26,10 +26,10 @@
             </div>
             <hr>
             <div class="form-group">
-                <h5>I.  REGISTRATION</h5>
+                <h5>1. PROGRAM/ACTIVITY</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="clarity">a.	Clarity of information on the requirements  :</label>
+                        <label for="clarity">a.	Stimulates the interest of the students.</label>
                         <select class="form-control" id="clarity">
                             <option>Select choice</option>
                             <option>O – Outstanding</option>
@@ -40,7 +40,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="preparation">b.	Adequate time given to prepare the requirements          </label>
+                        <label for="preparation">b.	Provide equal opportunities to all students or participants.       </label>
                         <select class="form-control" id="preparation">
                           <option>Select choice</option>
                           <option>O – Outstanding</option>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="Effectiveness">c.	Effectiveness of interview screening conducted:</label>
+                        <label for="Effectiveness">c.	Enhance the learning experience of the students.</label>
                         <select class="form-control" id="Effectiveness">
                           <option>Select choice</option>
                           <option>O – Outstanding</option>
@@ -64,7 +64,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                      <label for="assistance">d.	Assistance in the preparation of documents:</label>
+                      <label for="assistance">d.	Help in recognizing and developing students’ inner skills such as leadership qualities, creative and innovative skills, etc.</label>
                       <select class="form-control" id="assistance">
                         <option>Select choice</option>
                         <option>O – Outstanding</option>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <label for="schedule">e.	Schedule in the submission of requirement:</label>
+                    <label for="schedule">e.	Help in developing richer learning experiences by giving the students chance to think in new ways to solve a problem or answer a question.</label>
                     <select class="form-control" id="schedule">
                       <option>Select choice</option>
                       <option>O – Outstanding</option>
@@ -88,7 +88,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="accreditation">f.	Accreditation of Student Organization based on standard requirements: </label>
+                  <label for="accreditation">f.	Satisfy students’ need to take time outs to do more than just studying. </label>
                   <select class="form-control" id="accreditation">
                     <option>Select choice</option>
                     <option>O – Outstanding</option>
@@ -98,230 +98,45 @@
                     <option>NI – Needs Improvement</option>
                   </select>
               </div>
-                </div>
-                <hr>
-                <h5>II.  CONDUCT OF ACTIVITIES</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="venue">a.	Clarity of information on the requirements to conduct an activity:</label>
-                        <select class="form-control" id="venue">
-                            <option>Select choice</option>
-                            <option>O – Outstanding</option>
-                            <option>VS – Very Satisfactory</option>
-                            <option>S – Satisfactory</option>
-                            <option>MS – Moderately Satisfactory</option>
-                            <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="organization">b.	Availability of system/ mechanism for fast processing of permit to conduct activity</label>
-                        <select class="form-control" id="organization">
-                          <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="speakers">c.	Appropriateness of time allotted for the approval of the permit</label>
-                        <select class="form-control" id="speakers">
-                          <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                </div>
-                <hr>
-                <h5>III.  ADVISORSHIP</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="venue">a.	Appropriateness in the screening of Organization advisers:</label>
-                        <select class="form-control" id="venue">
-                            <option>Select choice</option>
-                            <option>O – Outstanding</option>
-                            <option>VS – Very Satisfactory</option>
-                            <option>S – Satisfactory</option>
-                            <option>MS – Moderately Satisfactory</option>
-                            <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="organization">b.	Attendance in the student activity:</label>
-                        <select class="form-control" id="organization">
-                          <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="speakers">c.	Ability to give guidance and support:</label>
-                        <select class="form-control" id="speakers">
-                          <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="speakers">d.	Adviser qualifications met</label>
-                      <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                        <option>O – Outstanding</option>
-                        <option>VS – Very Satisfactory</option>
-                        <option>S – Satisfactory</option>
-                        <option>MS – Moderately Satisfactory</option>
-                        <option>NI – Needs Improvement</option>
-                      </select>
-                  </div>
-                </div>
-                <hr>
-                <h5>IV.  MONITORING & SUPERVISION</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="venue">a.	Availability of Head of Student Organization and Activities:</label>
-                        <select class="form-control" id="venue">
-                            <option>Select choice</option>
-                            <option>O – Outstanding</option>
-                            <option>VS – Very Satisfactory</option>
-                            <option>S – Satisfactory</option>
-                            <option>MS – Moderately Satisfactory</option>
-                            <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="organization">b.	Availability of standard procedure in regulating student activities:</label>
-                        <select class="form-control" id="organization">
-                        <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="speakers">c.	Availability of monitoring system of student activities:</label>
-                        <select class="form-control" id="speakers">
-                          <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="speakers">d.	Assistance for the regular submission of AR      </label>
-                      <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                        <option>O – Outstanding</option>
-                        <option>VS – Very Satisfactory</option>
-                        <option>S – Satisfactory</option>
-                        <option>MS – Moderately Satisfactory</option>
-                        <option>NI – Needs Improvement</option>
-                      </select>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                      <label for="speakers">e.	Periodical checking of financial reports:</label>
-                      <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                        <option>O – Outstanding</option>
-                        <option>VS – Very Satisfactory</option>
-                        <option>S – Satisfactory</option>
-                        <option>MS – Moderately Satisfactory</option>
-                        <option>NI – Needs Improvement</option>
-                      </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="speakers">f.	Presence of Open-line communications on organization-related problems </label>
-                    <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                      <option>O – Outstanding</option>
-                      <option>VS – Very Satisfactory</option>
-                      <option>S – Satisfactory</option>
-                      <option>MS – Moderately Satisfactory</option>
-                      <option>NI – Needs Improvement</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                  <label for="speakers">g.	Appropriateness of action on organization related</label>
-                  <select class="form-control" id="speakers">
-                    <option>Select choice</option>
-                    <option>O – Outstanding</option>
-                    <option>VS – Very Satisfactory</option>
-                    <option>S – Satisfactory</option>
-                    <option>MS – Moderately Satisfactory</option>
-                    <option>NI – Needs Improvement</option>
-                  </select>
-              </div>
-              </div>
-              <hr>
-              <h5>V. Efficiency in the delivery of the following personnel:</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="venue">a.	Security</label>
-                        <select class="form-control" id="venue">
-                            <option>Select choice</option>
-                            <option>O – Outstanding</option>
-                            <option>VS – Very Satisfactory</option>
-                            <option>S – Satisfactory</option>
-                            <option>MS – Moderately Satisfactory</option>
-                            <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="organization">b.	Electrical </label>
-                        <select class="form-control" id="organization">
-                            <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="speakers">c.	Janitorial</label>
-                        <select class="form-control" id="speakers">
-                            <option>Select choice</option>
-                          <option>O – Outstanding</option>
-                          <option>VS – Very Satisfactory</option>
-                          <option>S – Satisfactory</option>
-                          <option>MS – Moderately Satisfactory</option>
-                          <option>NI – Needs Improvement</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                <label for="event">d.	Others (please specify) </label>
-                <input type="text" class="form-control" id="event" required placeholder="Type here">
+              <div class="col-md-6">
+                <label for="accreditation">g.	Give students a chance to relax, refresh and mingle easily with others.</label>
+                <select class="form-control" id="accreditation">
+                  <option>Select choice</option>
+                  <option>O – Outstanding</option>
+                  <option>VS – Very Satisfactory</option>
+                  <option>S – Satisfactory</option>
+                  <option>MS – Moderately Satisfactory</option>
+                  <option>NI – Needs Improvement</option>
+                </select>
             </div>
-          </div>
-        </div>
-        <hr>
-                <h5>VI.  Effectiveness of School Facilities and Venue</h5>
+            <div class="col-md-6">
+                <label for="accreditation">h.	Provide opportunity for students to apply learning in their practical life.</label>
+                <select class="form-control" id="accreditation">
+                  <option>Select choice</option>
+                  <option>O – Outstanding</option>
+                  <option>VS – Very Satisfactory</option>
+                  <option>S – Satisfactory</option>
+                  <option>MS – Moderately Satisfactory</option>
+                  <option>NI – Needs Improvement</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="accreditation">i.	Provide opportunity for student to work in team.</label>
+                <select class="form-control" id="accreditation">
+                  <option>Select choice</option>
+                  <option>O – Outstanding</option>
+                  <option>VS – Very Satisfactory</option>
+                  <option>S – Satisfactory</option>
+                  <option>MS – Moderately Satisfactory</option>
+                  <option>NI – Needs Improvement</option>
+                </select>
+            </div>
+                </div>
+                <hr>
+                <h5>2. SPEAKER (IF APPLICABLE)</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="venue">a.	Appropriate charges or billings</label>
+                        <label for="venue">a.	Provides relevant and up to date information about the program/activity</label>
                         <select class="form-control" id="venue">
                             <option>Select choice</option>
                             <option>O – Outstanding</option>
@@ -332,9 +147,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="organization">b.	Ventilation</label>
-                        <select class="form-control" id="Ventilation">
-                            <option>Select choice</option>
+                        <label for="organization">b.	Built rapport with the participants</label>
+                        <select class="form-control" id="organization">
+                          <option>Select choice</option>
                           <option>O – Outstanding</option>
                           <option>VS – Very Satisfactory</option>
                           <option>S – Satisfactory</option>
@@ -345,9 +160,22 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="speakers">c.	Cleanliness and Sanitation</label>
-                        <select class="form-control" id="cleanliness">
-                            <option>Select choice</option>
+                        <label for="speakers">c.	has good balance between theory & practice</label>
+                        <select class="form-control" id="speakers">
+                          <option>Select choice</option>
+                          <option>O – Outstanding</option>
+                          <option>VS – Very Satisfactory</option>
+                          <option>S – Satisfactory</option>
+                          <option>MS – Moderately Satisfactory</option>
+                          <option>NI – Needs Improvement</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="speakers">d.	Has good mastery of the content/ subject matter</label>
+                        <select class="form-control" id="speakers">
+                          <option>Select choice</option>
                           <option>O – Outstanding</option>
                           <option>VS – Very Satisfactory</option>
                           <option>S – Satisfactory</option>
@@ -357,11 +185,11 @@
                     </div>
                 </div>
                 <hr>
-                <h5>VII. Evaluation & Recognition</h5>
+                <h5>3. Venue</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="venue">a.	Implementation of periodic evaluation of student organizations</label>
-                        <select class="form-control" id="implementation">
+                        <label for="venue">a.	Ventilation</label>
+                        <select class="form-control" id="venue">
                             <option>Select choice</option>
                             <option>O – Outstanding</option>
                             <option>VS – Very Satisfactory</option>
@@ -371,9 +199,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="organization">b.	Healthy competition motivated</label>
-                        <select class="form-control" id="competition">
-                            <option>Select choice</option>
+                        <label for="organization">b.	Space</label>
+                        <select class="form-control" id="organization">
+                          <option>Select choice</option>
                           <option>O – Outstanding</option>
                           <option>VS – Very Satisfactory</option>
                           <option>S – Satisfactory</option>
@@ -384,9 +212,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="speakers">c.	Use of appropriate evaluation criteria</label>
+                        <label for="speakers">c.	Ambiance (light & Sounds)</label>
                         <select class="form-control" id="speakers">
-                            <option>Select choice</option>
+                          <option>Select choice</option>
                           <option>O – Outstanding</option>
                           <option>VS – Very Satisfactory</option>
                           <option>S – Satisfactory</option>
@@ -394,30 +222,96 @@
                           <option>NI – Needs Improvement</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
-                      <label for="speakers">d.	Proper keeping of records/ documents for future reference           </label>
-                      <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                        <option>O – Outstanding</option>
-                        <option>VS – Very Satisfactory</option>
-                        <option>S – Satisfactory</option>
-                        <option>MS – Moderately Satisfactory</option>
-                        <option>NI – Needs Improvement</option>
-                      </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="speakers">e.	Fairness in the conduct of evaluation           </label>
-                    <select class="form-control" id="speakers">
-                        <option>Select choice</option>
-                      <option>O – Outstanding</option>
-                      <option>VS – Very Satisfactory</option>
-                      <option>S – Satisfactory</option>
-                      <option>MS – Moderately Satisfactory</option>
-                      <option>NI – Needs Improvement</option>
-                    </select>
-                </div>
-                </div>
                 <hr>
+                <h5>4.  PARTICIPATION</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="venue">a.	Attendance</label>
+                        <select class="form-control" id="venue">
+                            <option>Select choice</option>
+                            <option>O – Outstanding</option>
+                            <option>VS – Very Satisfactory</option>
+                            <option>S – Satisfactory</option>
+                            <option>MS – Moderately Satisfactory</option>
+                            <option>NI – Needs Improvement</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="organization">b.	Cooperation</label>
+                        <select class="form-control" id="organization">
+                        <option>Select choice</option>
+                          <option>O – Outstanding</option>
+                          <option>VS – Very Satisfactory</option>
+                          <option>S – Satisfactory</option>
+                          <option>MS – Moderately Satisfactory</option>
+                          <option>NI – Needs Improvement</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="speakers">c.	Punctuality</label>
+                        <select class="form-control" id="speakers">
+                          <option>Select choice</option>
+                          <option>O – Outstanding</option>
+                          <option>VS – Very Satisfactory</option>
+                          <option>S – Satisfactory</option>
+                          <option>MS – Moderately Satisfactory</option>
+                          <option>NI – Needs Improvement</option>
+                        </select>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="venue"><h5>5.  FOOD/HOSPITALITY</h5></label>
+                        <select class="form-control" id="venue">
+                            <option>Select choice</option>
+                            <option>O – Outstanding</option>
+                            <option>VS – Very Satisfactory</option>
+                            <option>S – Satisfactory</option>
+                            <option>MS – Moderately Satisfactory</option>
+                            <option>NI – Needs Improvement</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="venue"><h5>6.  TEAMWORK/COORDINATION OF ORGANIZATION</h5></label>
+                            <select class="form-control" id="venue">
+                                <option>Select choice</option>
+                                <option>O – Outstanding</option>
+                                <option>VS – Very Satisfactory</option>
+                                <option>S – Satisfactory</option>
+                                <option>MS – Moderately Satisfactory</option>
+                                <option>NI – Needs Improvement</option>
+                            </select>
+                        </div>
+                <hr>
+                <h5> Part II. Please answer the following questions:</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="venue"><h5>1.	How would you rate the overall usefulness/relevance of the program/activity? </h5></label>
+                        <select class="form-control" id="venue">
+                            <option>Select choice</option>
+                            <option>Excellent</option>
+                            <option>Very Good</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Poor</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="venue"><h5>2.	How would you rate the overall quality of the program/activity?</h5></label>
+                            <select class="form-control" id="venue">
+                                <option>Select choice</option>
+                                <option>Excellent</option>
+                                <option>Very Good</option>
+                                <option>Good</option>
+                                <option>Fair</option>
+                                <option>Poor</option>
+                            </select>
+                        </div>
+
+
             <div class="form-group">
               <label for="feedback">Comments or Suggestions:</label>
               <textarea class="form-control" id="feedback" rows="3" placeholder="Enter your feedback" required></textarea>
