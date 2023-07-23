@@ -18,7 +18,7 @@
     <link href="/custom_css/allmedia.css" rel="stylesheet">
     <link href="/custom_css/Login.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/SOAttendance.css" rel="stylesheet">
+    {{-- <link href="/custom_css/SOAttendance.css" rel="stylesheet"> --}}
     <link href="/custom_css/SODashboard.css" rel="stylesheet">
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
@@ -90,7 +90,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Dashboard"
-                            link_route="/org-dashboard"
+                            link_route="/org_dashboard"
                             link_icon="bi bi-speedometer"
                         ></side-nav-button>
                         <side-nav-button

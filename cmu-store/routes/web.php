@@ -18,6 +18,8 @@ use App\Http\Controllers\LoginController;
 
 // login route
 // Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
+// general
 Route::post('/authenticate_user', [LoginController::class, 'authenticate'])->name('authentication');
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/login', function () {
@@ -28,11 +30,12 @@ Route::get('/usercards', function () {
     return view('layouts.organization_cards');
     });
 
+Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
 //admin route
 Route::middleware(['auth', 'user-role:1'])->group(function(){
-    Route::get('org-dashboard', function () {
+    Route::get('org_dashboard', function () {
         return view('student_organization.student_organization_dashboard');
-    })->name('org-dashboard');
+    })->name('org_dashboard');
 
     Route::get('student_organization_attendance_record', function () {
         return view('student_organization.student_organization_attendance_record');
@@ -69,7 +72,6 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
         
     #EVENT ROUTES
     Route::get('/events', [EventController::class, 'showEvents'])->name('events');
-    Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
     Route::post('/events', [EventController::class, 'store'])->name('event-store');
     Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
     Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');
@@ -81,14 +83,14 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
 
 //student route
 Route::middleware(['auth', 'user-role:2'])->group(function(){
-    Route::get('student_dashboard', function () {
+    Route::get('student_profile', function () {
         return view('student.student_profile');
     });
     Route::get('student_evaluationform', function () {
         return view('student.student_evaluationform');
     });
     
-    Route::get('student_home', function () {
+    Route::get('student_dashboard', function () {
         return view('student.student_home');
     });
     

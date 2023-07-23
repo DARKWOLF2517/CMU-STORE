@@ -139,7 +139,7 @@
 
     displayEvents();
   </script> --}}
-<script>
+{{-- <script>
     // Sample announcements data
     const announcements = [
       {
@@ -264,6 +264,6 @@
 
     displayAnnouncements();
     displayUpcomingEvents();
-  </script>
+</script> --}}
   {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 @endsection

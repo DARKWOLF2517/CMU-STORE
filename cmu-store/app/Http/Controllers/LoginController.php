@@ -24,7 +24,7 @@ public function authenticate(Request $request): RedirectResponse
         $student_id = Auth::id();
         $userOrganization = UserOrganization::where('student_id', $student_id)->first();
         if($userOrganization->role_id == 1){
-            return redirect()->intended('org-dashboard');
+            return redirect()->intended('org_dashboard');
         }
         else if($userOrganization->role_id == 2){
             return redirect()->intended('student_dashboard');

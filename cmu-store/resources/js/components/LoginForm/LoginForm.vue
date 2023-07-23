@@ -28,11 +28,11 @@ data() {
 },
 methods: {
     login() {
-    axios.post('/login', this.form)
+    axios.post('/authenticate_user', this.form)
         .then(response => {
         // Handle successful login (e.g., redirect to dashboard)
             console.log('SUccess')
-            // window.location = '/dashboard';
+            window.location = '/org_dashboard';
         })
         .catch(error => {
         // Handle login error (e.g., display error message)
