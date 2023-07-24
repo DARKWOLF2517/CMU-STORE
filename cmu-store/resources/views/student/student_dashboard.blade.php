@@ -3,44 +3,39 @@
 
 <div class="content">
 
-    <div class="row">
-        <div class="container col-lg-12">
-            <h2>Events</h2>
-            <hr>
-            <div class="row" id="events">
-              <!-- Events will be dynamically populated here -->
-              <student-event-card
-              target_route="{{ route('get-events') }}"
-              >
-              </student-event-card>
-            </div>
-        </div>
+  <div class="row">
+    <student-event-card
+    target_route="{{ route('get-events') }}"
+    div_class= "container col-lg-12"
+    >
+    </student-event-card>
 
-          <div class="container" id="tablecontainer">
-        <div class="row mt-4">
-          <div class="col-lg-6">
-              <h2>Recent Announcements</h2>
-              <div class="shadow scroll-container"id="announcement-list"></div>
-            </div>
 
-          <div class="col-lg-6">
-              <h2>Upcoming Events</h2>
-              <div class="shadow scroll-container" id="upcoming-events">
-
-                {{-- <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title"> sdafsadf</h5>
-                        <p class="card-text text-muted">sadf</p>
-                        <p class="card-text"> sadf</p>
-                        <p class="card-text">asdfasd</p>
-                    </div> 
-                </div> --}}
-
-              </div>
+        <div class="container" id="tablecontainer">
+      <div class="row mt-4">
+        <div class="col-lg-6">
+            <h2>Recent Announcements</h2>
+            <div class="shadow scroll-container"id="announcement-list"></div>
           </div>
+
+        <div class="col-lg-6">
+            <h2>Upcoming Events</h2>
+            <div class="shadow scroll-container" id="upcoming-events">
+
+              {{-- <div class="card mb-3">
+                  <div class="card-body">
+                      <h5 class="card-title"> sdafsadf</h5>
+                      <p class="card-text text-muted">sadf</p>
+                      <p class="card-text"> sadf</p>
+                      <p class="card-text">asdfasd</p>
+                  </div> 
+              </div> --}}
+
+            </div>
         </div>
       </div>
     </div>
+  </div>
 
 </div>
 {{-- <script>

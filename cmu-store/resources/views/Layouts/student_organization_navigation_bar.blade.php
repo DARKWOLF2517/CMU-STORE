@@ -22,7 +22,7 @@
     <link href="/custom_css/SODashboard.css" rel="stylesheet">
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
-    <link href="/custom_css/SOAccountabilities.css" rel="stylesheet">
+    <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
     @vite('resources/js/app.js')
     @yield('custom-style')
 

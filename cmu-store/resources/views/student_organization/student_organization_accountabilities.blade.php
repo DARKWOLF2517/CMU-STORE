@@ -190,7 +190,7 @@
     editForm.addEventListener('submit', submitForm);
   </script>
 {{-- Pagination JS --}}
-      <script src="{{ asset('js/app.js') }}"></script>
+      {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
       <script>
         const table = document.getElementById('accountabilities-table');
         const rowsPerPage = 10;

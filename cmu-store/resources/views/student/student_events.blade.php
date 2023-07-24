@@ -33,27 +33,13 @@
             </div>
           </div>
         </div>
-        <br>
-        <h2>Events</h2>
-        <hr>
-        <div class="row" id="events">
-          <!-- Events will be dynamically populated here -->
-          {{-- <div class="col-lg-4">
-            <div class="card mb-3"> 
-                <a href="#"> <img src="https://img.freepik.com/free-vector/duck-doodle-simple-style-white-background_1308-87748.jpg?w=2000" alt="" class="card-img"></a>
-                <div class="card-body"> 
-                  <h5 class="card-title">Event 1</h5>
-                  <p class="card-text card-desciprtion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            
         
-          </div> --}}
-          <student-event-card
-          target_route="{{ route('get-events') }}"
-          >
-          </student-event-card>
-        </div>
+        <student-event-card
+        target_route="{{ route('get-events') }}"
+        div_class= "row"
+        >
+        </student-event-card>
+
 
 
 
