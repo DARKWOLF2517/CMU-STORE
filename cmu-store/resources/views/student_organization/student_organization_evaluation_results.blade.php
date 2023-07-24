@@ -204,7 +204,7 @@
       function drawChart2() {
         var data2 = google.visualization.arrayToDataTable([
           ['Registration', 'Percentage'],
-         ['Outstanding', 18.75],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -227,7 +227,7 @@
       function drawChart3() {
         var data3 = google.visualization.arrayToDataTable([
           ['Registration', 'Percentage'],
-         ['Outstanding', 18.75],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -271,7 +271,7 @@
       function drawChart5() {
         var data5 = google.visualization.arrayToDataTable([
           ['Registration', 'Percentage'],
-         ['Outstanding', 18.75],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -288,12 +288,12 @@
         chart5.draw(data5, options5);
       }
        //Sixth pie
-       google.charts.setOnLoadCallback(drawChart6);
+      google.charts.setOnLoadCallback(drawChart6);
 
 function drawChart6() {
   var data6 = google.visualization.arrayToDataTable([
     ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+    ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -315,7 +315,7 @@ google.charts.setOnLoadCallback(drawChart7);
 function drawChart7() {
   var data7 = google.visualization.arrayToDataTable([
     ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+    ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
