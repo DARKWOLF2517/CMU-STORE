@@ -1,6 +1,6 @@
 
 @extends('layouts.student_organization_navigation_bar')
-<link href="/custom_css/SOAttendance.css" rel="stylesheet">
+{{-- <link href="../custom_css/SOAttendance.css" rel="stylesheet"> --}}
 
 @section('main-content')
 
@@ -22,7 +22,7 @@
             <div class="ScheduledEventContainer">
               <h4>Scheduled Attendance</h4>
 
-              <div class="card">
+              {{-- <div class="card">
                 <div class="card-header">Event Name: General Assembly</div>
                 <div class="card-body d-flex justify-content-between align-items-start">
                   <div>
@@ -46,8 +46,12 @@
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
                   </div>
                 </div>
-              </div>
+              </div> --}}
+              <event-attendance-list
+              target_route="{{ route('get-events') }}"
+              >
 
+              </event-attendance-list>
             </div>
           </div>
 
@@ -132,3 +136,4 @@
       </div> --}}
 
 </div>
+@endsection

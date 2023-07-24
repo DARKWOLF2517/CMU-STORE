@@ -13,7 +13,7 @@ import CalendarCard from './components/StudentOrg/Dashboard/CalendarCard.vue';
 import AddEvent from './components/StudentOrg/Events/AddEventModal.vue';
 import EventCard from './components/StudentOrg/Events/EventCard.vue';
 import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
-
+import EventAttendanceList from './components/StudentOrg/Events/AttendanceEventList.vue';
 //student module 
 import StudentAttendance from './components/StudentUser/Attendance/StudentAttendance.vue';
 import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
@@ -31,6 +31,8 @@ app.component('event-count', EventsCount);
 app.component('dashboard-calendar', CalendarCard);
 app.component('add-event', AddEvent);
 app.component('qr-scanner', QrScanner);
+app.component('event-attendance-list', EventAttendanceList);
+
 //student module
 app.component ('student-attendance',StudentAttendance);
 app.component ('student-event-card', StudentEventModal)

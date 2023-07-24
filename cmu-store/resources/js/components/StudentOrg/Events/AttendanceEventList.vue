@@ -1,0 +1,68 @@
+<template>
+    <div class="card" v-for="event in this.events" :id="event.event_id">
+        <div class="card-header">
+            Event Name: {{ event["name"] }}
+        </div>
+        <div class="card-body d-flex justify-content-between align-items-start">
+            <div>
+            <h5 class="card-title">Start Date: {{ event["start_date"] }}</h5>
+            <p class="card-text">Time starts at: {{ event["start_attendance"] }}</p>
+            </div>
+            <div class="ml-auto">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+<script>
+
+import {convertDate} from "../Functions/DateConverter.js";
+
+export default {
+    props: ['target_route'],
+    data() { 
+        return {
+            events: [],
+            
+        }
+    },
+    created() {
+        this.fetchData();
+        console.log("mounted")
+    },
+    methods: {
+        fetchData() {
+            // document.getElementById("event-spinner").show();
+            fetch(this.target_route, {
+                method: "GET",
+                headers: {
+                    //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
+                    "Content-Type":"application/json"
+                }
+            }).then( (response) => {
+                // document.getElementById("event-spinner").classList.add("hidden");
+                response.json().then((data) => {
+                    data.forEach(element => {
+                        console.log(element);
+                        // console.log(element[])
+                        element["start_date"] = convertDate(element["start_date"]);
+                        element["end_date"] = convertDate(element["end_date"]);
+
+                    });
+                    this.events = data;
+                })
+            })
+        },
+        deleteEvent(id) {
+            console.log(id);
+            //Send fetch delete type here.
+        },
+        editEvent(id) {
+            //Show modal here
+        }
+    }
+}
+</script>
