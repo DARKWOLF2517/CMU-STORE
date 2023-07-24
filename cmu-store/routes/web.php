@@ -30,6 +30,9 @@ Route::get('/usercards', function () {
     return view('layouts.organization_cards');
     });
 
+Route::get('/evaluation_result', function () {
+    return view('student_organization.student_organization_evaluation_results');
+    });
 Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
 //admin route
 Route::middleware(['auth', 'user-role:1'])->group(function(){
@@ -82,16 +85,16 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
 });
 
 //student route
-Route::middleware(['auth', 'user-role:2'])->group(function(){
+Route::middleware(['auth', 'user-role:2'])->group(function(){  
+    Route::get('student_dashboard', function () {
+        return view('student.student_dashboard');
+    });
+
     Route::get('student_profile', function () {
         return view('student.student_profile');
     });
     Route::get('student_evaluationform', function () {
         return view('student.student_evaluationform');
-    });
-    
-    Route::get('student_dashboard', function () {
-        return view('student.student_home');
     });
     
     Route::get('student_accountabilities', function () {
