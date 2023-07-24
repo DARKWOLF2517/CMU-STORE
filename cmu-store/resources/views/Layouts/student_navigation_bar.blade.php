@@ -30,9 +30,9 @@
             <!-- TOP NAV BAR -->
             <div class="wrapper">
                 <div class="top-nav">
-                <div class="nav-item toggle-button">
-                    <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                </div>
+                    <div class="nav-item toggle-button">
+                        <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
+                    </div>
                     <a href="#" class="nav-link link-dark">
                         <span class="nav-name">CMU-STORE-AMS</span>
                     </a>

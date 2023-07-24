@@ -1,5 +1,17 @@
 <template>
-    <table class="table table-styled"  >
+    <div class="container" id="tablecontainer">
+        <div class="col-md-3">
+            <div class="sort">
+            <select class="form-select custom-select-width">
+                <option selected>Sort by</option>
+                <option>1st semester events</option>
+                <option>2nd semester events</option>
+            </select>
+            </div>
+        </div>
+        <br>
+
+        <table class="table table-styled"  >
         <thead>
         <tr>
             <th>Events</th>
@@ -20,6 +32,10 @@
 
         </tbody>
     </table> 
+    </div>
+
+
+
 </template>
 
 <script>

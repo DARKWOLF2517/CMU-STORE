@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        
+        <br>
         <student-event-card
         target_route="{{ route('get-events') }}"
         div_class= "row"
