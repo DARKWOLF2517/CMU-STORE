@@ -42,7 +42,7 @@
       <div class="col-md-12">
         <div class="add-event-button">
           <h2>Events</h2>
-          <button class="btn btn-primary me-2" id="add-event-button">
+          <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" >
             <i class="bi bi-plus">Add Event</i>
           </button>
         </div>
@@ -52,7 +52,6 @@
           </div>
           <event-card
             target_route="{{ route('get-events') }}"
-            admin = {{true}}
           >
           </event-card>
         </div>
@@ -63,7 +62,7 @@
 <add-event
     target_route = "{{ route('event-store') }}"
     method = "POST"
->
+    >
 
 </add-event>
 </div>
@@ -72,78 +71,11 @@
 
 @section('custom-script')
   <script>
-  $(document).ready(function () {
-    $('#add-event-button').click(function () {
-      $('#event-modal').modal('show');
-    });
-  });
-
-
-
-
-// function deleteEvent(eventId) {
-//   console.log("Delete button clicked");
-//   console.log(eventId);  // Add this line
-//   // Perform an AJAX request to delete the event
-//   $.ajax({
-//     url: `/events/${eventId}`,
-//     method: 'DELETE',
-//     success: function (response) {
-//       // Handle the success response
-//       console.log(response.message);
-//       // Reload or update the event list after deletion
-//       displayEvents();
-//     },
-//     error: function (xhr, status, error) {
-//       // Handle the error appropriately
-//       console.error(error);
-//     }
-//   });
-// }
-
-// document.getElementById("add-event-button").addEventListener("onclick",(event) =>
-// {
-//   event.preventDefault();
-//   modal.show("event-modal");
-
-//   console.log('clicked modal');
-// });
-
-// document.getElementsByClassName('edit-button').addEventListener("onclick",(event) =>
-// {
-//   event.preventDefault();
-
-// })
-
-// document.getElementsByClassName("delete-button").addEventListener("onclick",(event) =>
-// {
-//   event.preventDefault();
-//   deleteEvent();
-// });
-
-function deleteEvent(eventId) {
-  if (confirm('Are you sure you want to delete this event?')) {
-    fetch(`/events/${eventId}`, {
-      method: 'DELETE',
-      headers: {
-        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
-        // You may choose to update the UI or refresh the event list
-        // after successful deletion.
-        location.reload();
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }
-}
-
-
+  // $(document).ready(function () {
+  //   $('#add-event-button').click(function () {
+  //     $('#event-modal').modal('show');
+  //   });
+  // });
   </script>
 
 @endsection

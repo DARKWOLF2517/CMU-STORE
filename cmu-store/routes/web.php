@@ -37,6 +37,7 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 //admin route
 Route::middleware(['auth', 'user-role:1'])->group(function(){
     Route::get('org_dashboard', function () {
+
         return view('student_organization.student_organization_dashboard');
     })->name('org_dashboard');
 
@@ -75,10 +76,13 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
         
     #EVENT ROUTES
     Route::get('/events', [EventController::class, 'showEvents'])->name('events');
-    Route::post('/events', [EventController::class, 'store'])->name('event-store');
+   
     Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
     Route::put('/events/{event}', [EventController::class, 'update'])->name('events.update');
+
     Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('events.destroy');
+    Route::post('/events', [EventController::class, 'store'])->name('event-store');
+    
     Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
 
     

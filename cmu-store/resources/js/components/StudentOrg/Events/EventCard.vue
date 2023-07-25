@@ -7,9 +7,28 @@
                 <h6 class="card-text">Location: {{ event["location"] }} </h6>
                 <h6 class="card-text">Description: {{ event["description"] }} </h6>
                 <div class="card-actions">
-                    <button class="ellipsis-button" type="button" @click="editEvent(event.event_id)"> <i class="bi bi-pencil-square"></i></button>
-                    <button class="ellipsis-button"  type="button" @click="deleteEvent(event.event_id)"> <i class="bi bi-trash"></i></button>
+                    <button class="ellipsis-button"   type="button" @click="editEvent(event.event_id)"> <i class="bi bi-pencil-square"></i></button>
+                    <button class="ellipsis-button"  @click="this.id = event.event_id "  data-bs-toggle="modal" data-bs-target="#deleteConfirmation" type="button"> <i class="bi bi-trash"></i></button>
                 </div>
+        </div>
+    </div>
+
+
+        <!-- Delete confirmation-->
+    <div class="modal fade" id="deleteConfirmation" tabindex="-1" aria-labelledby="startAttendanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to Delete Events?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" @click="deleteEvent()">Start</button>
+            </div>
+            </div>
         </div>
     </div>
 </template>
@@ -19,10 +38,11 @@
 import {convertDate} from "../Functions/DateConverter.js";
 
 export default {
-    props: ['target_route'],
+    props: ['target_route']  ,
     data() { 
         return {
             events: [],
+            id: 0,
             
         }
     },
@@ -43,7 +63,7 @@ export default {
                 document.getElementById("event-spinner").classList.add("hidden");
                 response.json().then((data) => {
                     data.forEach(element => {
-                        console.log(element);
+                        // console.log(element);
                         // console.log(element[])
                         element["start_date"] = convertDate(element["start_date"]);
                         element["end_date"] = convertDate(element["end_date"]);
@@ -53,9 +73,19 @@ export default {
                 })
             })
         },
-        deleteEvent(id) {
-            console.log(id);
-            //Send fetch delete type here.
+        deleteEvent() {
+            console.log(this.id);
+            axios.delete(`/events/${this.id}`)
+                    .then(response => {
+                        location.reload();
+                    })
+                    .catch(error => {
+                        if (error.response && error.response.status === 422) {
+                            this.errors = error.response.data.errors;
+                        }
+                        alert(error)
+                        
+            });
         },
         editEvent(id) {
             //Show modal here

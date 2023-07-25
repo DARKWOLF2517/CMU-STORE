@@ -77,7 +77,7 @@
             sendData() {
                 axios.post(this.target_route, this.formData)
                     .then(response => {
-                
+                        location.reload();
                     })
                     .catch(error => {
                         if (error.response && error.response.status === 422) {
@@ -86,7 +86,7 @@
                         console.log(this.formData)
                         alert('error    ')
                         
-    });
+                });
             },
         },
         mounted() {

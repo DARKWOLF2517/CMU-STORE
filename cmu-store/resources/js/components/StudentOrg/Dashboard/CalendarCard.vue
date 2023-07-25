@@ -1,23 +1,23 @@
 <template>
 <div>
     <div class="calendar">
-    <div class="header">
-        <button id = "prev-month" class="btn btn-link" @click="previousMonth"><i class="bi bi-caret-left"></i> </button>
-        <b><span id="month-year"> {{ currentMonth }}</span></b>
-        <button @click="nextMonth" id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
-    </div>
-    <table>
-        <thead>
-        <tr>
-            <th v-for="day in days" :key="day">{{ day }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="week in weeks" :key="week">
-            <td v-for="day in week" :key="day">{{ day }}</td>
-        </tr>
-        </tbody>
-    </table>
+        <div class="header">
+            <button id = "prev-month" class="btn btn-link" @click="previousMonth"><i class="bi bi-caret-left"></i> </button>
+            <b><span id="month-year"> {{ currentMonth }}</span></b>
+            <button @click="nextMonth" id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="day in days" :key="day">{{ day }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="week in weeks" :key="week">
+                <td v-for="day in week" :key="day">{{ day }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </template>

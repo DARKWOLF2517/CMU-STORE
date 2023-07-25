@@ -50,7 +50,6 @@
               <event-attendance-list
               target_route="{{ route('get-events') }}"
               >
-
               </event-attendance-list>
             </div>
           </div>

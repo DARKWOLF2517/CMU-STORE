@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-6">
               <div class="calendar shadow">
-                <dashboard-calendar/>
+                <dashboard-calendar></dashboard-calendar>
                 
               </div> 
             </div>
