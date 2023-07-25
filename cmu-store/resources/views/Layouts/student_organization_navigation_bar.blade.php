@@ -23,6 +23,10 @@
     <link href="/custom_css/SOEvents.css" rel="stylesheet">
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
     <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
+    
+    {{-- icon for webpage tab --}}
+    <link rel="icon" href="{{ url('https://i.pinimg.com/736x/00/eb/c7/00ebc7ed5034e9f18acae56a19966099--flat-illustration-stock-illustrations.jpg') }}">
+
     @vite('resources/js/app.js')
     @yield('custom-style')
 
