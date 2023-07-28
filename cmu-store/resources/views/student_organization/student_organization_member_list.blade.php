@@ -115,7 +115,9 @@
     </div>
   </div>
 </div>
+@endsection
 
+@section('custom-script')
 
 <script>
     const editButtons = document.getElementsByClassName('edit-button');
@@ -256,3 +258,4 @@
     showPage(currentPage);
     updatePagination();
   </script>
+@endsection

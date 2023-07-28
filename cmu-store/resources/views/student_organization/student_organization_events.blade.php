@@ -50,21 +50,13 @@
           <div class="spinner-border" id="event-spinner" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <event-card
-            target_route="{{ route('get-events') }}"
-          >
+          <event-card>
           </event-card>
         </div>
       </div>
     </div>
   </div>
 
-<add-event
-    target_route = "{{ route('event-store') }}"
-    method = "POST"
-    >
-
-</add-event>
 </div>
 
 @endsection

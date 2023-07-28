@@ -125,10 +125,10 @@
   </div>
 
 
-
+@endsection
   <!-- Bootstrap JavaScript -->
   {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
-
+@section('custom-script')
   <script>
     const editButtons = document.getElementsByClassName('edit-button');
     const editModal = document.getElementById('editModal');
@@ -276,3 +276,4 @@
         showPage(currentPage);
         updatePagination();
       </script>
+@endsection

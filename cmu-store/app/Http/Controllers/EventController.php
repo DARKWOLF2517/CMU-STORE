@@ -58,10 +58,11 @@ class EventController extends Controller
         return redirect()->back()->with('success', 'Event created successfully!');
     }
 
-    public function edit(Event $event_id)
+    public function edit($event_id)
     {   
-        $events = Event::findOrFail($event_id);
-        return view('student_organization.student_organization_events', compact('events'));
+        $events = Event::find($event_id);
+        return $events;
+
     }
 
     public function update(Request $request, Event $event)
@@ -79,7 +80,7 @@ class EventController extends Controller
         ]);
 
         $event->update($request->all());
-
+        
         return redirect()->route('events')->with('success', 'Event updated successfully.');
     }
     public function destroy(Event $event)
@@ -87,7 +88,5 @@ class EventController extends Controller
         $event->delete();
         return response()->json(['message' => 'Event deleted successfully']);
     }
-
-  
 
 }

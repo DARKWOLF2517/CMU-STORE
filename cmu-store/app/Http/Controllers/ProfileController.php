@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use PHPUnit\Framework\Constraint\RegularExpression;
 
 class ProfileController extends Controller
 {
@@ -57,4 +59,17 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+
+    //fetch user profile
+    public function getUserProfile($user){
+        $userProfile = User::find($user);
+        return $userProfile;
+
+    }
+
+
+    
+
+
 }
