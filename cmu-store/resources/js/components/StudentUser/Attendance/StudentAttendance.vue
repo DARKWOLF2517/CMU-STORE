@@ -23,7 +23,7 @@
         </thead>
         <tbody v-for="event in this.events" :id="event.event_id">
         <tr>
-            <td>Event: {{ event["name"] }}</td>
+            <td>{{ event["name"] }}</td>
             <td>{{ event["start_date"] }}</td>
             <td v-if="showDiv1">Present</td>
             <th v-if="showDiv1">Pending</th>

@@ -40,12 +40,6 @@
   <div class="container event-list">
     <div class="row">
       <div class="col-md-12">
-        <div class="add-event-button">
-          <h2>Events</h2>
-          <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" >
-            <i class="bi bi-plus">Add Event</i>
-          </button>
-        </div>
         <div class="event-list-scroll" id="event-cards">
           <div class="spinner-border" id="event-spinner" role="status">
             <span class="visually-hidden">Loading...</span>

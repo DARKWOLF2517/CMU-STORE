@@ -1,4 +1,11 @@
 <template>
+    <div class="add-event-button">
+            <h2>Events</h2>
+            <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+            <i class="bi bi-plus">Add Event</i>
+            </button>
+    </div>
+    
     <div class="card mb-3" v-for="event in this.events" :id="event.event_id">
         <div class="card-body">
                 <h6 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h6>
@@ -8,15 +15,16 @@
                 <h6 class="card-text">Description: {{ event["description"] }} </h6>
                 <div class="card-actions">
                     <button class="ellipsis-button" @click=" FetchUpdateData(event.event_id) "   type="button"  data-bs-toggle="modal" data-bs-target="#event-modal" > <i class="bi bi-pencil-square"></i></button>
-                    <button class="ellipsis-button"  @click="this.id = event.event_id "  data-bs-toggle="modal" data-bs-target="#deleteConfirmation" type="button"> <i class="bi bi-trash"></i></button>
+                    <!-- <button class="ellipsis-button"  @click="deleteEvent(event.event_id)"  type="button"> <i class="bi bi-trash"></i></button> -->
+                    <button class="ellipsis-button" @click="this.id = event.event_id"  data-bs-toggle="modal" data-bs-target="#deleteConfirmation" type="button"> <i class="bi bi-trash"></i></button>
                 </div>
         </div>
     </div>
 
 
-        <!-- Delete confirmation-->
-    <div class="modal fade" id="deleteConfirmation" tabindex="-1" aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Delete confirmation -->
+    <div class="modal fade " id="deleteConfirmation" tabindex="-1" aria-labelledby="deleteConfirmationLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -32,11 +40,9 @@
         </div>
     </div>
 
-
-
         <!-- Event Modal -->
-        <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true" >
+        <div class="modal-dialog">  
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="event-modal-label">Create Event</h5>
@@ -92,6 +98,8 @@
 <script>
 
 import {convertDate} from "../Functions/DateConverter.js";
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
 export default {
     props: ['target_route', 'method', 'submit'] ,
@@ -113,13 +121,10 @@ export default {
                     
                 },
                 errors: {},
-            
         }
     },
     created() {
         this.fetchData();
-        console.log("mounted")
-
     },
     methods: {
         sendData() {
@@ -158,13 +163,13 @@ export default {
                 })
             })
         },
-        FetchUpdateData(id) {
+        FetchUpdateData(id){
             axios.get(`edit/events/${id}`)
                 .then(response => {
                     this.formData = response.data
                     this.id = id 
                     this.submit = this.UpdateData
-                    console.log(this.submit)
+                    // console.log(this.submit)
                     // console.log(id)
                     // console.log(response.data)
                 })
@@ -184,10 +189,14 @@ export default {
             });
         },
         deleteEvent() {
-            // console.log(this.id);
+            console.log(this.id);
             axios.delete(`/events/${this.id}`)
                     .then(response => {
-                        location.reload();
+                        const closeButton = $('.modal button[data-bs-dismiss="modal"]');
+                        closeButton.trigger('click');
+                        this.showSucces('Event successfully deleted');
+                        this.fetchData();
+
                     })
                     .catch(error => {
                         if (error.response && error.response.status === 422) {
@@ -196,13 +205,27 @@ export default {
                         alert(error)
                         
             });
-        },
-        // editEvent(id) {
-        //     this.FetchUpdateData(id)
-        //     console.log(this.submit)
-        //     console.log(id)
 
-        // }
+        },
+        showSucces(message){
+            toast.info(message),{
+                autoClose: 100,
+            }
+        },
+        clearData(){
+            this.formData = {
+                    name:'',
+                    start_date:'',
+                    end_date:'',
+                    start_attendance:'',
+                    end_attendance:'',
+                    location:'',
+                    description:'',
+                    require_attendance: '',
+                    org_id: '1',
+                    
+                }
+        },
     }
 }
 </script>

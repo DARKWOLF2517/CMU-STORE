@@ -1,7 +1,7 @@
 
 import './bootstrap';
-
 import { createApp } from 'vue';
+
 //all
 import SideNavbtn from './components/SideNav/SideNavButton.vue';
 import LoginForm from './components/LoginForm/LoginForm.vue';
