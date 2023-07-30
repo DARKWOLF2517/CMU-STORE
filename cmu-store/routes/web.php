@@ -83,7 +83,10 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
     Route::get('edit/events/{event}', [EventController::class, 'edit'])->name('events-edit');
     Route::put('/events/{event}', [EventController::class, 'update'])->name('events-update');
 
+
     Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
+    Route::get('/user/count',[EventController::class, 'getMembersCount'])->name('get-user-count');
+
 
     
 });

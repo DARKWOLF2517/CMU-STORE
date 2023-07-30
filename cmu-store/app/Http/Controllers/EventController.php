@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 class EventController extends Controller
 {
     public function showEvents()
@@ -22,6 +23,11 @@ class EventController extends Controller
         $count = Event::count(); 
         return response()->json(['count' => $count]);
         
+    }    
+    public function getMembersCount()
+    {   
+        $userCount = User::count();
+        return response()->json(['count' => $userCount]);
     }
     /**
      * @param $request
@@ -81,7 +87,7 @@ class EventController extends Controller
 
         $event->update($request->all());
         
-        return redirect()->route('events')->with('success', 'Event updated successfully.');
+        return redirect()->back()->with('success', 'Event updated successfully.');
     }
     public function destroy(Event $event)
     {

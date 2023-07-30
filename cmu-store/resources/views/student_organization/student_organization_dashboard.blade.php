@@ -7,7 +7,7 @@
 
           <div class="row">
                 <event-count
-                    target_route = ""
+                    target_route = "{{ route ('get-user-count') }}"
                     card_title = "NUMBER OF MEMBERS"
                     card_icon = "bi bi-people"
                 >

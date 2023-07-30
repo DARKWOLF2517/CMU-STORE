@@ -179,14 +179,15 @@ export default {
         },
         UpdateData() {
             axios.put(`/events/${this.id}`, this.formData)
-            .then(response => {
-            // The update was successful, handle any additional logic here
-            console.log('User updated successfully:', response.data);
-            })
-            .catch(error => {
-                // console.error('Error updating user:', error);
-                alert('Error updating user:', error)
-            });
+                .then(response => {
+                // The update was successful, handle any additional logic here
+                // console.log('User updated successfully:', response.data);
+                    this.showSucces(response.message.success);
+                })
+                .catch(error => {
+                    // console.error('Error updating user:', error);
+                    alert('Error updating user:', error)
+                });
         },
         deleteEvent() {
             console.log(this.id);
@@ -194,7 +195,7 @@ export default {
                     .then(response => {
                         const closeButton = $('.modal button[data-bs-dismiss="modal"]');
                         closeButton.trigger('click');
-                        this.showSucces('Event successfully deleted');
+                        this.showSucces(response.data.message);
                         this.fetchData();
 
                     })

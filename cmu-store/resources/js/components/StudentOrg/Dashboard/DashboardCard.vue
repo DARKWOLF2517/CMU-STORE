@@ -6,7 +6,8 @@
                         <b>{{ card_title }}</b>
                         <i :class="card_icon"> </i>
                     </h6>
-                    <h3 class="card-text">{{ eventsCount}}</h3>
+                    <h3 class="card-text">{{ count}}</h3>
+
                 </div>
             </div>
     </div>
@@ -15,19 +16,22 @@
 <script>
 export default {
     props: ['target_route', 'card_title', 'card_icon'],
+
     mounted() {
     this.fetchDataCount();
-},
-data() {
-    return {
-        eventsCount: 0
-    };
-},
+    },
+
+    data() {
+        return {
+            count: 0    
+        };
+    },
 methods: {
     fetchDataCount() {
         axios.get(this.target_route)
             .then(response => {
-                this.eventsCount = response.data.count;
+                this.count = response.data.count;
+                // console.log(this.card_title + this.count);
             })
             .catch(error => {
                 console.log(error);
