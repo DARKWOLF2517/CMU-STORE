@@ -116,7 +116,7 @@
                         <side-nav-button
                             link_name="Accountabilities"
                             link_route="/student_organization_accountabilities"
-                            link_icon="bi bi-currency-dollar"
+                            link_icon="bi bi-wallet2"
                         ></side-nav-button>
                         <side-nav-button
                             link_name="Evaluation"
