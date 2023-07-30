@@ -26,8 +26,8 @@ app.component('login-form',LoginForm);
 
 //org module
 app.component('event-card',EventCard);
-app.component('event-dashboard', EventsDashboard);
 app.component('event-count', EventsCount);
+app.component('event-dashboard', EventsDashboard);
 app.component('dashboard-calendar', CalendarCard);
 app.component('qr-scanner', QrScanner);
 app.component('event-attendance-list', EventAttendanceList);
