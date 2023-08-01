@@ -53,7 +53,10 @@
 </head>
 <body>
   <div id="app"> 
-    <qr-scanner></qr-scanner>
+    <div style="width: 50%; margin: auto">
+      <qr-scanner></qr-scanner>
+    </div>
+ 
  </div>
 </body>
 </html>

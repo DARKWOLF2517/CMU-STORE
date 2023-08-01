@@ -1,14 +1,10 @@
 <template>
 <div>
-    <p class="decode-result">
-    Last result: <b>{{ result }}</b>
-    </p>
 
-    <qrcode-stream :paused="paused" @detect="onDetect" @camera-on="onCameraOn" @init="onInit" @camera-off="onCameraOff" @decode="onDecode" @error="onError" >
-    <div v-show="showScanConfirmation" class="scan-confirmation">
-        <img :src="('https://image.pngaaa.com/263/2709263-middle.png')" alt="Checkmark" width="128" />
-    </div>
-    </qrcode-stream>
+    <main>
+        <div id="reader"></div>
+        <div id="result"></div>
+    </main>
 </div>
 </template>
 
@@ -16,90 +12,65 @@
 
 
 import { QrcodeStream } from 'vue-qrcode-reader'
+import {Html5QrcodeScanner} from "html5-qrcode";
+import {Html5Qrcode} from "html5-qrcode";
 
 export default {
 components: { QrcodeStream },
-
+mounted() {
+    this.startQrReading();
+},
 data() {
     return {
-    paused: false,
-    result: "1",
-    showScanConfirmation: false
     }
 },
 
 methods: {
-    onDecode(){
-        console.log(this.result);
+    startQrReading(){
+        const scanner = new Html5QrcodeScanner('reader', { 
+        // Scanner will be initialized in DOM inside element with id of 'reader'
+        qrbox: {
+            width: 250,
+            height: 250,
+        },  // Sets dimensions of scanning box (set relative to reader element width)
+        fps: 20, // Frames per second to attempt a scan
+    });
+        scanner.render(this.success, this.error);
+        // Starts scanner
     },
-    onCameraOn() {
-    this.showScanConfirmation = false
+    success(result){
+        document.getElementById('result').innerHTML = `
+        <h2>Success!</h2>
+        <p><a href="${result}">${result}</a></p>
+        `;
+        // Prints result as a link inside result element
+
+        // scanner.clear();
+        // Clears scanning instance
+
+        // document.getElementById('reader').remove();
+        // Removes reader element from DOM since no longer needed
     },
-
-    onCameraOff() {
-    this.showScanConfirmation = true
-    },
-
-    onError: console.error,
-
-    async onDetect(detectedCodes) {
-    console.log(this.result);
-    this.result = JSON.stringify(
-        detectedCodes.map(code => code.rawValue)
-    )
-
-    this.paused = true
-    await this.timeout(500)
-    this.paused = false
-    },
-
-    timeout(ms) {
-    return new Promise((resolve) => {
-        window.setTimeout(resolve, ms)
-    })
-    },
-
-    // withBase
-
-async onInit (promise) {
-// show loading indicator
-
-try {
-    const { capabilities } = await promise
-
-    // successfully initialized
-} catch (error) {
-    if (error.name === 'NotAllowedError') {
-    // user denied camera access permisson
-    } else if (error.name === 'NotFoundError') {
-    // no suitable camera device installed
-    } else if (error.name === 'NotSupportedError') {
-    // page is not served over HTTPS (or localhost)
-    } else if (error.name === 'NotReadableError') {
-    // maybe camera is already in use
-    } else if (error.name === 'OverconstrainedError') {
-    // did you requested the front camera although there is none?
-    } else if (error.name === 'StreamApiNotSupportedError') {
-    // browser seems to be lacking features
+    error(err) {
+        // console.error(err);
+        // Prints any errors to the console
     }
-} finally {
-    // hide loading indicator
-}
-}
+
 }
 }
 </script>
 
-<style scoped>
-.scan-confirmation {
-position: absolute;
-width: 100%;
-height: 100%;
-
-background-color: rgba(255, 255, 255, 0.8);
-
-display: flex;
-flex-flow: row nowrap;
-justify-content: center;
-}
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #reader {
+        width: 600px;
+    }
+    #result {
+        text-align: center;
+        font-size: 1.5rem;
+    }
 </style>

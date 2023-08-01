@@ -37,7 +37,6 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 //admin route
 Route::middleware(['auth', 'user-role:1'])->group(function(){
     Route::get('org_dashboard', function () {
-
         return view('student_organization.student_organization_dashboard');
     })->name('org_dashboard');
 
