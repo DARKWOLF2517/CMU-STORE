@@ -1,81 +1,62 @@
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #e4e3e3;
-}
-
 .login-wrap {
+    max-width: 400px;
+    margin: 100px auto 0; /* Added margin-top of 100px */
     background-color: #fff;
-    padding: 4rem 2.5rem;
-    height: 100%;
-    border-radius: 10px;
-    border: 1px solid #ced4da; /* Added border */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
   }
 
-  .icon {
-    font-size: 2.5rem;
-    color: #007bff;
+  .login-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .login-form label {
+    font-weight: bold;
+  }
+
+  .login-form .input-group-prepend .input-group-text {
+    background-color: #fff;
   }
 
   .login-form .form-control {
-    border-radius: 10px;
+    border-radius: 3px;
+    border-color: #ccc;
   }
 
-
-
-  .checkbox-wrap input {
-    margin-right: 10px;
+  .login-form .submit {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
   }
 
-  .submit {
-    border: none;
-    height: 40px;
-    justify-content: center;
-    width: 70px;
+  .login-form .submit:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
   }
 
-  .user-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    width: 200px;
+  .login-form a {
+    color: #007bff;
+  }
+
+  .login-form a:hover {
+    color: #0056b3;
+  }
+
+  .login-wrap h3 {
     text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #007bff;
   }
 
-  .user-card:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05) translateY(-5px);
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
   }
 
-  .user-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-
-  .user-card h3 {
-    margin: 0;
-  }
-
-  .user-card p {
-    margin: 10px 0;
-  }
-
-  /* Anchor styles */
-  .user-card a {
-    text-decoration: none; /* Remove default underline */
-    color: inherit; /* Inherit text color from parent */
-  }
-  #usercards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 800px;
-    margin: 30px auto;
+  .logo img {
+    width: 100px; /* Adjust the width as needed */
   }
