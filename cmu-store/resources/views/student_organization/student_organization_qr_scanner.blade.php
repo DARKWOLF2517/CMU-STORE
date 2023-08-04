@@ -50,20 +50,79 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   @vite('resources/js/app.js')
   <title>Document</title>
+  <style>
+
+
+    /* Custom style for the table header */
+    .table thead th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Custom style for alternating rows */
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f2f2f2;
+    }
+
+    /* Custom style for table cells */
+    .table td, .table th {
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* Custom style for the table header on small screens */
+    @media (max-width: 576px) {
+      .table thead th {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="app"> 
+    <div class="top-nav">
+        <a href="#" class="nav-link link-dark">
+            <span class="nav-name">CMU-STORE-AMS</span>
+        </a>
+
+        </div>
+    </div>
+</div>
+  <div id="app">
+
     <div style="width: 50%; margin: auto">
       <qr-scanner></qr-scanner>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>Engineer</td>
+            <td>
+              <button type="button" class="btn btn-info">Edit</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
- 
+
  </div>
 </body>
 </html>
 
 
 
-{{-- 
+{{--
 @extends('layouts.student_organization_navigation_bar')
 
 @section('main-content')
