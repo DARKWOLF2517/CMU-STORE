@@ -94,19 +94,15 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
-            <th>Age</th>
-            <th>Occupation</th>
+            <th>Year Level</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>30</td>
-            <td>Engineer</td>
+            <td>Taylor Swift</td>
+            <td>3rd Year</td>
             <td>
               <button type="button" class="btn btn-info">Edit</button>
               <button type="button" class="btn btn-danger">Delete</button>

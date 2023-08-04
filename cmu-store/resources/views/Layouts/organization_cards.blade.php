@@ -1,4 +1,4 @@
-<link href="/custom_css/login.css" rel="stylesheet">
+<link href="/custom_css/usercard.css" rel="stylesheet">
 
     <div class="container" id = "usercards">
         <div class="user-card" onclick="handleCardClick('User 1')">
