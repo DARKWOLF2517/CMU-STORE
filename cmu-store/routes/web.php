@@ -26,6 +26,12 @@ Route::get('/login', function () {
     return view('layouts.login');
 })->name('login');
 
+Route::get('/login/options', function () {
+    return view('layouts.organization_cards');
+})->name('login-options');
+
+
+
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
     });
