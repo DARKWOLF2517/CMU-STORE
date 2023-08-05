@@ -40,82 +40,125 @@
 
 
 {{QrCode::generate('ss')}} --}}
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Add Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Add Font Awesome CSS -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   @vite('resources/js/app.js')
   <title>Document</title>
   <style>
 
+    body {
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    }
 
-    /* Custom style for the table header */
     .table thead th {
       background-color: #007bff;
       color: white;
+      margin-top: 20px;
     }
 
-    /* Custom style for alternating rows */
     .table-striped tbody tr:nth-of-type(odd) {
-      background-color: #f2f2f2;
+      background-color: #ffffff;
     }
 
-    /* Custom style for table cells */
+
     .table td, .table th {
-      padding: 12px;
+      padding: 10px;
       text-align: center;
     }
 
-    /* Custom style for the table header on small screens */
+
     @media (max-width: 576px) {
       .table thead th {
-        font-size: 14px;
+        font-size: 10px;
       }
+    }
+    .container-with-buttons, .qr-scanner-container, .table-container {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+
+    .qr-scanner-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+
+    qr-scanner {
+
     }
   </style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="#" class="nav-link link-dark">
-            <span class="nav-name">CMU-STORE-AMS</span>
-        </a>
+  <!-- Bootstrap Top Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">CMU-STORE-AMS</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      </div>
+    </div>
+  </nav>
 
+  {{-- <div id="app"> --}}
+    <div id="app" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="container-with-buttons d-flex justify-content-end">
+                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-secondary">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6 qr-scanner-container">
+              <qr-scanner></qr-scanner>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+            <div class="table-container">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Year Level</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Taylor Swift</td>
+                    <td>3rd Year</td>
+                    <td>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
     </div>
-</div>
-  <div id="app">
 
-    <div style="width: 50%; margin: auto">
-      <qr-scanner></qr-scanner>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year Level</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Taylor Swift</td>
-            <td>3rd Year</td>
-            <td>
-              <button type="button" class="btn btn-info">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
- </div>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
 
 
 {{--
