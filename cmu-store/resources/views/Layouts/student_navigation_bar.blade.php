@@ -15,6 +15,7 @@
     <link href="/custom_css/Navbars.css" rel="stylesheet">
     <link href="/custom_css/StudDashboard.css" rel="stylesheet">
     <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
+    <link href="/custom_css/announcement.css" rel="stylesheet">
     @vite('resources/js/app.js')
     @yield('custom-style')
 
@@ -93,9 +94,9 @@
                             link_icon="bi bi-person"
                         ></side-nav-button>
                         <side-nav-button
-                        link_name="Events"
-                        link_route="student_event"
-                        link_icon="bi bi-calendar-check"
+                        link_name="Announcement"
+                        link_route="student_announcement"
+                        link_icon="bi bi-megaphone"
                         ></side-nav-button>
                         <side-nav-button
                             link_name="Accountabilities"
