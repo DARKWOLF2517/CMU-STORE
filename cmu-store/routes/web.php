@@ -26,15 +26,20 @@ Route::get('/login', function () {
     return view('layouts.login');
 })->name('login');
 
-Route::get('/login/options', function () {
-    return view('layouts.organization_cards');
-})->name('login-options');
-
-
-
+//get student org list 
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
-    });
+});
+Route::get('/login/options', function () {
+    return view('layouts.organization_cards');
+})->name('login_options');
+Route::get('login/GetOrgList/{userOrganization}', [LoginController::class, 'GetOrganizationList'])->name('get-user-organization');
+
+//get into organization that been choosen
+Route::get('login/{org_id}/{role_id}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
+
+
+
 
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');

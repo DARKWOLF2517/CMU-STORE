@@ -17,6 +17,7 @@
     width: 200px;
     text-align: center;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
+    
   }
 
   .user-card:hover {
@@ -44,3 +45,4 @@
     text-decoration: none; /* Remove default underline */
     color: inherit; /* Inherit text color from parent */
   }
+

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Organization;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -20,18 +21,28 @@ public function authenticate(Request $request): RedirectResponse
     ]);
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
-        
         $student_id = Auth::id();
+
+        //user organization count
+        $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
+        
+        //user organization result
         $userOrganization = UserOrganization::where('student_id', $student_id)->first();
-        if($userOrganization->role_id == 1){
-            return redirect()->intended('org_dashboard');
-        }
-        else if($userOrganization->role_id == 2){
-            return redirect()->intended('student_dashboard');
-            
+        
+        if ($userOrganizationCount > 1){
+            return redirect()->intended('/login/options');
         }
         else{
-            return redirect()->back();
+            if($userOrganization->role_id == 1){
+                return redirect()->intended('org_dashboard');
+            }
+            else if($userOrganization->role_id == 2){
+                return redirect()->intended('student_dashboard');
+                
+            }
+            else{
+                return redirect()->back();
+            }
         }
 
         // return redirect()->intended('dashboard');
@@ -44,6 +55,28 @@ public function authenticate(Request $request): RedirectResponse
         'email' => 'The provided credentials do not match our records.',
     ])->onlyInput('email');
 }
+
+public function GetOrganizationList($userOrganization)
+{   
+    $userOrganizations = UserOrganization::where('student_id', $userOrganization)->get();
+    // foreach ($userOrganizations as $userOrg){
+    //     $userOrg->role_id = Role::select('name')->where('role_id',$userOrg->role_id)->get();
+    //     $userOrg->student_org_id = Organization::select('name')-> where('org_id',$userOrg->student_org_id)->get();
+    // }  
+    return $userOrganizations->toJson();
+}
+
+public function LoginOrganization($org_id, $role_id)
+{   
+    if($role_id == 1){
+        return redirect()->route('org_dashboard');
+    }
+    else if($role_id == 2){
+        return redirect()->route('student_dashboard');
+        
+    }
+}
+
 public function logout(Request $request): RedirectResponse
 {
     Auth::logout();

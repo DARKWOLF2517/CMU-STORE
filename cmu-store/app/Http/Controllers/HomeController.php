@@ -26,21 +26,21 @@ class HomeController extends Controller
     public function index()
     {
     
-        if(Auth::id()){
+        // if(Auth::id()){
         
-            $student_id = Auth::id();
-            $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
-            if($userOrganization->role_id == 1){
-                return view('student_organization.student_organization_dashboard');
-            }
-            else if($userOrganization->role_id == 2){
-                return view('student.student_dashboard');
-            }
-            else{
-                return redirect()->back();
-            }
+        //     $student_id = Auth::id();
+        //     $userOrganization = UserOrganization::where('student_id', $student_id)->firstOrFail();
+        //     if($userOrganization->role_id == 1){
+        //         return view('student_organization.student_organization_dashboard');
+        //     }
+        //     else if($userOrganization->role_id == 2){
+        //         return view('student.student_dashboard');
+        //     }
+        //     else{
+        //         return redirect()->back();
+        //     }
             
-        }
+        // }
         
 
     }
