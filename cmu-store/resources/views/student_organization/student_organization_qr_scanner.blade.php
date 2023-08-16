@@ -84,6 +84,9 @@
         font-size: 10px;
       }
     }
+    .container-with-buttons{
+        padding: 2px;
+    }
     .container-with-buttons, .qr-scanner-container, .table-container {
       background-color: #f9f9f9;
       border-radius: 10px;
@@ -120,7 +123,7 @@
             <div class="col-md-6">
               <div class="container-with-buttons d-flex justify-content-end">
                 <button class="btn btn-primary">Save</button>
-                <button class="btn btn-secondary">Cancel</button>
+                <button class="btn btn-secondary"  style="margin-left: 10px;">Cancel</button>
               </div>
             </div>
           </div>
