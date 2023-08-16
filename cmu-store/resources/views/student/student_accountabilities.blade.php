@@ -6,10 +6,9 @@
     <div class="container breadcrumbs">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/student_dashboard">Dashboard</a></li>
             <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item"><a href="/student_organization_attendance">Attendance</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Attendance Record</li>
+            <li class="breadcrumb-item active" aria-current="page">Accountabilities</li>
           </ol>
         </nav>
     </div>
