@@ -5,18 +5,18 @@
     <div class="content">
         <div class="container breadcrumb">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/student_dashboard">Dashboard</a></li>
-                    <li class="breadcrumb-item">Student</li>
-                    <li class="breadcrumb-item active" aria-current="page">Announcement</li>
-                </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/student_dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item">Student</li>
+                <li class="breadcrumb-item active" aria-current="page">Announcements</li>
+              </ol>
             </nav>
         </div>
 
 
     <div class="announcement-portlet">
         <div class="portlet-header">
-            <h4 class="portlet-title"><i class="bi bi-megaphone"></i> Announcement Page</h4>
+            <h4 class="portlet-title"><i class="bi bi-megaphone"></i> Announcements</h4>
         </div>
         <div class="announcement-list" id="announcementContainer">
             <!-- Announcement cards will be added here using JavaScript -->

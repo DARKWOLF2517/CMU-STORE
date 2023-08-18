@@ -19,7 +19,8 @@
     @vite('resources/js/app.js')
     @yield('custom-style')
 
-
+      <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
 </head>
     <body>
         <div class="loader-container">
