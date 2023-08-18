@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,10 @@ use App\Http\Controllers\LoginController;
 // Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 // general
+
 Route::post('/authenticate_user', [LoginController::class, 'authenticate'])->name('authentication');
 Route::get('/logout', [LoginController::class, 'logout']);
+
 Route::get('/login', function () {
     return view('layouts.login');
 })->name('login');
@@ -30,15 +34,14 @@ Route::get('/login', function () {
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
 });
-Route::get('/login/options', function () {
-    return view('layouts.organization_cards');
+Route::get('login/options', function () {
+    $hideNav = true;
+    return view('layouts.organization_cards',compact('hideNav'));
 })->name('login_options');
 Route::get('login/GetOrgList/{userOrganization}', [LoginController::class, 'GetOrganizationList'])->name('get-user-organization');
 
 //get into organization that been choosen
 Route::get('login/{org_id}/{role_id}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
-
-
 
 
 Route::get('/evaluation_result', function () {
@@ -47,9 +50,20 @@ Route::get('/evaluation_result', function () {
 Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
 //admin route
 Route::middleware(['auth', 'user-role:1'])->group(function(){
+
+    // Route::group('user-role:1', function()
+    // {
+
+    // });
+
+    // Route::group('user-role:2', function() {
+
+    // });
+    
     Route::get('org_dashboard', function () {
         return view('student_organization.student_organization_dashboard');
     })->name('org_dashboard');
+    // Route::get('/org_dashboard', [LoginController::class, 'LoginDashboard'])->name('org_dashboard');
 
     Route::get('student_organization_attendance_record', function () {
         return view('student_organization.student_organization_attendance_record');
@@ -96,12 +110,9 @@ Route::middleware(['auth', 'user-role:1'])->group(function(){
 
     Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
     Route::get('/user/count',[EventController::class, 'getMembersCount'])->name('get-user-count');
-
-
-
 });
 
-//student route
+//STUDENT ROUTE
 Route::middleware(['auth', 'user-role:2'])->group(function(){
     Route::get('student_dashboard', function () {
         return view('student.student_dashboard');

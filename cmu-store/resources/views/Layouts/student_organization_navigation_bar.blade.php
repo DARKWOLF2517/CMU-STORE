@@ -16,7 +16,7 @@
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/allmedia.css" rel="stylesheet">
-    <link href="/custom_css/Login.css" rel="stylesheet">
+    <link href="{{ asset('custom_css/Login.css') }}" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
 
     {{-- <link href="/custom_css/SOAttendance.css" rel="stylesheet"> --}}
@@ -27,6 +27,15 @@
 
     {{-- icon for webpage tab --}}
     <link rel="icon" href="{{ url('https://i.pinimg.com/736x/00/eb/c7/00ebc7ed5034e9f18acae56a19966099--flat-illustration-stock-illustrations.jpg') }}">
+
+    {{-- Themes CSS --}}
+    {{-- @if (session()->themes == 'blue')
+        <link rel="stylesheet" href="{{ asset('css/blue_theme.css') }}">
+    @elseif (session()->themes == 'red')
+        <link rel="stylesheet" href="{{ asset('css/red_theme.css') }}">    
+    @elseif (session()->themes == 'green')
+        <link rel="stylesheet" href="{{ asset('css/green_theme.css')}}">
+    @endif --}}
 
     @vite('resources/js/app.js')
     @yield('custom-style')

@@ -6,10 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>User Organizations</title>
   <link href="/custom_css/usercard.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+  {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   @vite('resources/js/app.js')
 </head>
 <body>
   <div id="app">
+    <div class="wrapper">
+      <div class="top-nav">
+          
+        <div class="nav-item toggle-button">
+              <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
+          </div>
+          <a href="#" class="nav-link link-dark">
+              <span class="nav-name">CMU-STORE-AMS</span>
+          </a>
+
+          <div class="profile-dropdown dropdown">
+              <button class="notification-button btn btn-link">
+                  <i class="bi bi-bell"></i>
+              </button>
+              <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" width="32" height="32" class="rounded-circle me-2">
+                  <span class="profile-name"><strong>User</strong></span>
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                  <side-nav-button
+                  link_name="Settings"
+                  link_route = "#"
+                  show_icon = "{{false}}"
+                  >
+                  </side-nav-button>
+
+                  <side-nav-button
+                  link_name="Profile"
+                  link_route = "#"
+                  show_icon = "{{false}}"
+                  >
+                  </side-nav-button>
+
+                  <li><hr class="dropdown-divider"></li>
+
+                  <side-nav-button
+                  link_name="Sign out"
+                  link_route = "{{url('/logout')}}"
+                  show_icon = "{{false}}"
+                  >
+                  </side-nav-button>
+
+              </ul>
+          </div>
+      </div>
+  </div>
       <user-organization
         id={{Auth::id()}}
       ></user-organization>
