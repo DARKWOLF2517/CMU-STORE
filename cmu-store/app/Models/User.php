@@ -23,8 +23,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-
     ];
+
     public function user_organization()
     {
         return $this->hasMany(UserOrganization::class,  'student_id');
@@ -32,7 +32,7 @@ class User extends Authenticatable
 
     public function hasRole($roleName)
     {
-        return $this->userOrganization->roles->role_id === $roleName;
+        return $this->user_organization->role_id === $roleName;
     }
     
     /**
