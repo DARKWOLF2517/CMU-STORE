@@ -24,26 +24,24 @@
                 >
                 </event-count>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="timeline shadow">
+                <h4>Schedule</h4>
+                <hr>
+                  <event-dashboard
+                    target_route="{{ route('get-events') }}"
+                    >
+                  </event-dashboard>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="calendar shadow">
+                <dashboard-calendar></dashboard-calendar>
 
-  <!-- Upcoming Events Section -->
-  <div class="container mt-3 flex-container" >
-    <div id="events">
-      <h3>Events</h3>
-      <ul class="list-group">
-        <li class="list-group-item">Event 1 - August 15</li>
-        <li class="list-group-item">Event 2 - August 20</li>
-        <li class="list-group-item">Event 3</li>
-        <li class="list-group-item">Event 3</li>
-        <li class="list-group-item">Event 3</li>
-        <li class="list-group-item">Event 3</li>
-        <li class="list-group-item">Event 3</li>
-        <li class="list-group-item">Event 3</li>
-      </ul>
-    </div>
-
-    <div id="calendar" style="width: 40%; height: 40%;"></div>
-  </div>
-
+              </div>
+            </div>
+          </div>
       </div>
     </div>
 </div>
@@ -99,5 +97,39 @@
           });
         });
       </script> --}}
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- FullCalendar JS -->
+ <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     var announcementRow = document.getElementById('announcement-row');
+     var announcementCards = announcementRow.querySelectorAll('.card');
 
+     // Limit the maximum number of announcement cards to show
+     var maxAnnouncementCards = 3;
+     for (var i = 0; i < announcementCards.length; i++) {
+       if (i >= maxAnnouncementCards) {
+         announcementCards[i].style.display = 'none';
+       }
+     }
+
+     var calendarEl = document.getElementById('calendar');
+     var calendar = new FullCalendar.Calendar(calendarEl, {
+       initialView: 'dayGridMonth', // You can change the initial view as needed
+       events: [
+         {
+           title: 'Event 1',
+           start: '2023-08-15'
+         },
+         {
+           title: 'Event 2',
+           start: '2023-08-20'
+         }
+         // Add more events here
+       ]
+     });
+     calendar.render();
+   });
+ </script>
 @endsection

@@ -32,18 +32,12 @@ export default {
         fetchData(){
             axios.get(`GetOrgList/${this.id}`)
                 .then(response => {
-                    // this.userOrganizations = response.data
-                    // // console.log(response.data)
-                    // // console.log(this.userOrganizations)
-                    // this.userOrganizations.forEach(userOrg => {
-                    //     // console.log(response)
-                    // console.log(userOrg['role_id'])
-                    // });
                 })
                 .catch(error => {
                     
                 });
         },
+        
         /**
          * 
          * @param {*} org_id organization Id to identify which dashboard to render
@@ -51,14 +45,11 @@ export default {
          */
         profileClicked(org_id, role_id){
             if (role_id == 1){
-                // window.location.assign('/login')
-                // console.log('hello')
-                window.location.href = '//127.0.0.1:8000/org_dashboard';
+                
+                window.location.href = 'org_dashboard';
             }
             else if (role_id == 2){
-                // window.location.assign('/login')
-                // console.log('hello')
-                window.location.href = '//127.0.0.1:8000/student_dashboard';
+                window.location.href = 'student_dashboard';
             }
         }   
     },

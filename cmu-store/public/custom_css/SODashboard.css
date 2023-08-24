@@ -4,10 +4,10 @@
   }
 
   .card {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     height: 150px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
 
   .card1{
@@ -17,7 +17,7 @@
     margin-top: 30px;
     padding: 10px;
     height: 330px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: white;
     overflow: auto;
   }
@@ -35,7 +35,7 @@
   .calendar {
     margin-top: 30px;
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: white;
   }
 
@@ -69,7 +69,7 @@
     .timeline {
         margin-top: 30px;
         padding: 10px;
-        border-radius: 10px;
+        /* border-radius: 10px; */
         background-color: white;
 
     }

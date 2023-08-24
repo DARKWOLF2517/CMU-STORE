@@ -30,6 +30,9 @@
     <link href="/custom_css/SOListofMembers.css" rel="stylesheet">
     <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
     {{-- icon for webpage tab --}}
     <link rel="icon" href="{{ url('https://i.pinimg.com/736x/00/eb/c7/00ebc7ed5034e9f18acae56a19966099--flat-illustration-stock-illustrations.jpg') }}">
 

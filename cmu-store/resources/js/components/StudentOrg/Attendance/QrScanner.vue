@@ -1,10 +1,37 @@
 <template>
 <div>
 
-    <main>
+
         <div id="reader"></div>
         <div id="result"></div>
-    </main>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            <div class="table-container">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                    </tr>
+                    <tr v-for="attendances in this.attendance" :id="attendances.user_id">
+                        <td> {{  attendances["user_id"] }}</td>
+                    </tr> 
+                    </thead>
+                    <tbody>
+                    <tr v-for="(item, index) in this.temporary" :key="index">
+                        <td>{{ item.ID }}</td>
+                        <td>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+
+
+    
 </div>
 </template>
 
@@ -19,9 +46,11 @@ export default {
 components: { QrcodeStream },
 mounted() {
     this.startQrReading();
+    this.fetchData();
 },
 data() {
     return {
+        attendance: []
     }
 },
 
@@ -39,23 +68,37 @@ methods: {
         // Starts scanner
     },
     success(result){
-        document.getElementById('result').innerHTML = `
-        <h2>Success!</h2>
-        <p><a href="${result}">${result}</a></p>
-        `;
-        // Prints result as a link inside result element
+        console.log(result)
+        this.addData();
 
-        // scanner.clear();
-        // Clears scanning instance
-
-        // document.getElementById('reader').remove();
-        // Removes reader element from DOM since no longer needed
     },
     error(err) {
         // console.error(err);
         // Prints any errors to the console
-    }
+    },
+    fetchData(){
+        axios.get('/attendance/show')
+            .then(response => {
+                this.attendance = response.data
 
+                
+            })
+            .catch(error => {
+                
+            });
+
+    },
+    addData(){
+        axios.post('/attendance/add', this.attendance)
+            .then(response => {
+                    window.location.reload();
+                
+            })
+            .catch(error => {
+                
+            });
+
+    }
 }
 }
 </script>
@@ -73,4 +116,21 @@ methods: {
         text-align: center;
         font-size: 1.5rem;
     }
+    
+    .table thead th {
+        background-color: #007bff;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #ffffff;
+    }
+
+
+    .table td, .table th {
+        padding: 10px;
+        text-align: center;
+    }
+
 </style>
