@@ -24,19 +24,18 @@ class LoginController extends Controller
             
             //user organization count
             $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
-            
-            //user organization result
-            $userOrganization = UserOrganization::where('student_id', $student_id)->first();
-            
             if ($userOrganizationCount > 1){
                 return redirect()->intended('/login/options');
+
             }
             else{
+                //user organization result
+                $userOrganization = UserOrganization::where('student_id', $student_id)->first();
                 if($userOrganization->role_id == 1){
-                    return redirect()->intended('org_dashboard');
+                    return redirect()->intended('/login/org_dashboard');
                 }
                 else if($userOrganization->role_id == 2){
-                    return redirect()->intended('student_dashboard');
+                    return redirect()->intended('/login/student_dashboard');
                     
                 }
                 else{
@@ -58,10 +57,6 @@ class LoginController extends Controller
     public function GetOrganizationList($userOrganization)
     {   
         $userOrganizations = UserOrganization::where('student_id', $userOrganization)->with(['organization','role'])->get();
-        // foreach ($userOrganizations as $userOrg){
-        //     $userOrg->role_id = Role::select('name')->where('role_id',$userOrg->role_id)->get();
-        //     $userOrg->student_org_id = Organization::select('name')-> where('org_id',$userOrg->student_org_id)->get();
-        // }  
         return $userOrganizations->toJson();
     }
 

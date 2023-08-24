@@ -62,22 +62,6 @@
     font-family: Arial, Helvetica, sans-serif;
     }
 
-    .table thead th {
-      background-color: #007bff;
-      color: white;
-      margin-top: 20px;
-    }
-
-    .table-striped tbody tr:nth-of-type(odd) {
-      background-color: #ffffff;
-    }
-
-
-    .table td, .table th {
-      padding: 10px;
-      text-align: center;
-    }
-
 
     @media (max-width: 576px) {
       .table thead th {
@@ -132,30 +116,6 @@
               <qr-scanner></qr-scanner>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-6">
-            <div class="table-container">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Year Level</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Taylor Swift</td>
-                    <td>3rd Year</td>
-                    <td>
-                      <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
     </div>
 
  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
