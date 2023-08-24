@@ -10,6 +10,11 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -32,7 +37,7 @@
     {{-- @if (session()->themes == 'blue')
         <link rel="stylesheet" href="{{ asset('css/blue_theme.css') }}">
     @elseif (session()->themes == 'red')
-        <link rel="stylesheet" href="{{ asset('css/red_theme.css') }}">    
+        <link rel="stylesheet" href="{{ asset('css/red_theme.css') }}">
     @elseif (session()->themes == 'green')
         <link rel="stylesheet" href="{{ asset('css/green_theme.css')}}">
     @endif --}}

@@ -24,24 +24,26 @@
                 >
                 </event-count>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="timeline shadow">
-                <h4>Schedule</h4>
-                <hr>
-                  <event-dashboard
-                    target_route="{{ route('get-events') }}"
-                    >
-                  </event-dashboard>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="calendar shadow">
-                <dashboard-calendar></dashboard-calendar>
-                
-              </div> 
-            </div>
-          </div>
+
+  <!-- Upcoming Events Section -->
+  <div class="container mt-3 flex-container" >
+    <div id="events">
+      <h3>Events</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Event 1 - August 15</li>
+        <li class="list-group-item">Event 2 - August 20</li>
+        <li class="list-group-item">Event 3</li>
+        <li class="list-group-item">Event 3</li>
+        <li class="list-group-item">Event 3</li>
+        <li class="list-group-item">Event 3</li>
+        <li class="list-group-item">Event 3</li>
+        <li class="list-group-item">Event 3</li>
+      </ul>
+    </div>
+
+    <div id="calendar" style="width: 40%; height: 40%;"></div>
+  </div>
+
       </div>
     </div>
 </div>
