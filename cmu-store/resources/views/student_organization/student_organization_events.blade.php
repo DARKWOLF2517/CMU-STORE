@@ -29,7 +29,7 @@
       <div class="col-md-3">
         <div class="d-flex justify-content-end">
           <select class="form-select custom-select-width">
-            <option selected>Sort by</option>
+            <option selected>Select Semester</option>
             <option>1st semester events</option>
             <option>2nd semester Events</option>
           </select>

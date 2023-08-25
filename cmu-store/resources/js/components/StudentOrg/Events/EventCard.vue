@@ -2,6 +2,9 @@
     <div class="add-event-button">
             <h2>Events</h2>
             <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+            <i class="bi bi-plus">Add Announcement</i>
+            </button>
+            <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
             <i class="bi bi-plus">Add Event</i>
             </button>
     </div>
