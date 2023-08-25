@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="col-md-4">
         <div class="card shadow">
             <div class="d-flex flex-row align-items-center card-body">
@@ -10,8 +10,10 @@
             </div>
         </div>
     </div>
-</template>
+</template> -->
+<template>
 
+<!-- </template>
 <script>
 export default {
     props: ['target_route', 'card_title', 'card_icon'],
@@ -22,7 +24,7 @@ export default {
 
     data() {
         return {
-            count: 0    
+            count: 0
         };
     },
 methods: {
@@ -41,4 +43,4 @@ methods: {
         this.fetchDataCount();
     },
 }
-</script>
+</script> -->
