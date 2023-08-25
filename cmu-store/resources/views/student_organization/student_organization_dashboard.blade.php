@@ -7,24 +7,126 @@
           <div class="row">
                 <event-count
                     target_route = "{{ route ('get-user-count') }}"
-                    card_title = "MEMBERS"
                     card_icon = "bi bi-people"
+                    card_title = "MEMBERS"
                 >
                 </event-count>
                 <event-count
                     target_route = "{{ route('get-events-count') }}"
-                    card_title = "NUMBER OF UPCOMING EVENTS"
                     card_icon = "bi bi-calendar-event"
+                    card_title = "UPCOMING EVENTS"
                 >
                 </event-count>
                 <event-count
                     target_route = ""
-                    card_title = "NUMBER OF COMPLETED EVENTS"
                     card_icon = "bi bi-check-circle"
+                    card_title = "COMPLETED EVENTS"
                 >
                 </event-count>
           </div>
-          <div class="row">
+
+          <!-- Upcoming Events Section -->
+          <div class="container mt-3" >
+            <div class="row">
+            <div class="col-md-6" id="events">
+              <h3>Events</h3>
+              <div id="event-list" class="list-group">
+                <div class="list-group-item">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-1">Event 1</h5>
+                    <small class="blue-date">August 15, 2023, 10:00 AM - 12:00 PM</small>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-1">Event 2</h5>
+                    <small class="blue-date">August 20, 2023, 3:30 PM - 5:00 PM</small>
+                  </div>
+                </div>
+                <!-- Add more event items here -->
+              </div>
+            </div>
+            <div class="col-md-8" id="calendar"></div>
+          </div>
+          </div>
+
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Title:</strong> <span id="eventTitle"></span></p>
+          <p><strong>Start:</strong> <span id="eventStart"></span></p>
+          <p><strong>End:</strong> <span id="eventEnd"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      editable: true,
+      eventSources: [
+        {
+          events: [
+            {
+              title: 'Meeting',
+              start: '2023-08-19T10:00:00',
+              end: '2023-08-19T12:00:00',
+              backgroundColor: '#007bff',
+              borderColor: '#007bff'
+            },
+            {
+              title: 'Appointment',
+              start: '2023-08-20T14:00:00',
+              end: '2023-08-20T15:30:00',
+              backgroundColor: '#28a745',
+              borderColor: '#28a745'
+            },
+            {
+              title: 'Deadline',
+              start: '2023-08-22T08:00:00',
+              end: '2023-08-22T18:00:00',
+              backgroundColor: '#dc3545',
+              borderColor: '#dc3545'
+            }
+            // Add more events with different colors as needed
+          ],
+        }
+      ],
+      
+      eventClick: function(info) {
+        // Display event details in the modal
+        document.getElementById('eventTitle').textContent = info.event.title;
+        document.getElementById('eventStart').textContent = info.event.start;
+        document.getElementById('eventEnd').textContent = info.event.end;
+        
+        // Show the modal
+        var modal = new bootstrap.Modal(document.getElementById('eventModal'));
+        modal.show();
+      },
+    });
+
+    calendar.render();
+  });
+</script>
+          {{-- <div class="row">
             <div class="col-md-6">
               <div class="timeline shadow">
                 <h4>Schedule</h4>
@@ -41,7 +143,9 @@
           </div>
       </div>
     </div>
-</div>
+</div> --}}
+
+
     {{-- <script>
         window.addEventListener('DOMContentLoaded', (event) => {
           const today = new Date();

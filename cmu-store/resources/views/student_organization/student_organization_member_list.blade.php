@@ -38,6 +38,9 @@
       </div>
       <div class="add-event-button">
         <h2>Student List</h2>
+        <button class="btn btn-primary me-5" id="add-student-list-button">
+          <i class="bi bi-plus">Add student list</i>
+        </button>
         <button class="btn btn-primary me-2" id="add-student-button">
           <i class="bi bi-plus">Add student</i>
         </button>
