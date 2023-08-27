@@ -1,14 +1,17 @@
 <template>
     <div class="add-event-button">
             <h2>Events</h2>
-            <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
-            <i class="bi bi-plus">Add Announcement</i>
+            <div class="event-buttons d-flex justify-content-end">
+            <div class="btn-group" role="group">
+            <button class="btn  me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+                <i class="bi bi-calendar-plus"></i> Add Announcement
             </button>
-            <button class="btn btn-primary me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
-            <i class="bi bi-plus">Add Event</i>
+            <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+                <i class="bi bi-calendar-event"></i> Add Event
             </button>
     </div>
-    
+ </div>
+ </div>
     <div class="card mb-3" v-for="event in this.events" :id="event.event_id">
         <div class="card-body">
                 <h6 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h6>
@@ -45,7 +48,7 @@
 
         <!-- Event Modal -->
     <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-label" aria-hidden="true" >
-        <div class="modal-dialog">  
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="event-modal-label">Create Event</h5>
@@ -106,7 +109,7 @@ import 'vue3-toastify/dist/index.css';
 
 export default {
     props: ['target_route', 'method', 'submit'] ,
-    data() { 
+    data() {
         return {
             submit : this.sendData,
             events: [],
@@ -121,7 +124,7 @@ export default {
                     description:'',
                     require_attendance: '',
                     org_id: '1',
-                    
+
                 },
                 errors: {},
         }
@@ -141,7 +144,7 @@ export default {
                         }
 
                         alert(error)
-                        
+
                 });
         },
         fetchData() {
@@ -166,19 +169,19 @@ export default {
                 })
             })
         },
-        
+
         FetchUpdateData(id){
             axios.get(`edit/events/${id}`)
                 .then(response => {
                     this.formData = response.data
-                    this.id = id 
+                    this.id = id
                     this.submit = this.UpdateData
                     // console.log(this.submit)
                     // console.log(id)
                     // console.log(response.data)
                 })
                 .catch(error => {
-                    
+
                 });
         },
         UpdateData() {
@@ -208,7 +211,7 @@ export default {
                             this.errors = error.response.data.errors;
                         }
                         alert(error)
-                        
+
             });
 
         },
@@ -228,7 +231,7 @@ export default {
                     description:'',
                     require_attendance: '',
                     org_id: '1',
-                    
+
                 }
         },
     }

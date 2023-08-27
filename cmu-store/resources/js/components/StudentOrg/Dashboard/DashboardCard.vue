@@ -11,9 +11,7 @@
         </div>
     </div>
 </template> -->
-<template>
 
-<!-- </template>
 <script>
 export default {
     props: ['target_route', 'card_title', 'card_icon'],

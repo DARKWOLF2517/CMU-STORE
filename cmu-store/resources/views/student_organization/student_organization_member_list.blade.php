@@ -36,15 +36,18 @@
         </div>
 
       </div>
-      <div class="add-event-button">
-        <h2>Student List</h2>
-        <button class="btn btn-primary me-5" id="add-student-list-button">
-          <i class="bi bi-plus">Add student list</i>
-        </button>
-        <button class="btn btn-primary me-2" id="add-student-button">
-          <i class="bi bi-plus">Add student</i>
-        </button>
-      </div>
+      <h2>Student List</h2>
+      <div class="student-buttons d-flex justify-content-end">
+        <div class="btn-group" role="group">
+            <button class="btn me-2" id="add-student-list-button">
+                <i class="bi bi-file-earmark-plus"></i> Add student list
+            </button>
+            <button class="btn me-2" id="add-student-button">
+                <i class="bi bi-person-plus"></i> Add student
+            </button>
+        </div>
+    </div>
+
     <div class="scroll-pane">
       <table id="student-list-table">
         <thead>

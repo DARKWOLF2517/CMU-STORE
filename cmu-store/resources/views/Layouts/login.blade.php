@@ -23,7 +23,7 @@
               <div class="logo">
                 <img src="path/to/your/logo.png" alt="Logo">
               </div>
-              <h3>CMU-STORE-AMS</h3>
+              <h5>CMU-STORE-AMS</h5>
 
               <form action="{{ route('authentication') }}" method="POST" class="login-form">
                 @csrf

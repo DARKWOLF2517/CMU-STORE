@@ -1,36 +1,4 @@
 
-.dashboard {
-    padding: 50px;
-  }
-
-  .card {
-    /* border-radius: 10px; */
-    height: 150px;
-    margin-bottom: 20px;
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    text-align: center;
-    position: relative;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  }
-
-  .card1{
-    background-color: #FFC107;
-  }
-
-  .card-text{
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 10px;
-    position: absolute;
-    top: 3px;
-    right: 250px;
-}
-
 #events {
     padding: 20px;
     border: 1px solid #ccc;

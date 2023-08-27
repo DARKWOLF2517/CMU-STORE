@@ -29,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#organizations" data-bs-toggle="tab">Organizations</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#settings" data-bs-toggle="tab">Settings</a>
-        </li>
       </ul>
       <div class="tab-content mt-3">
         <div class="tab-pane fade show active" id="profile">

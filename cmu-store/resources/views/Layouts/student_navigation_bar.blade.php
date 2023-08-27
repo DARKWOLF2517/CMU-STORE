@@ -19,10 +19,10 @@
     @vite('resources/js/app.js')
     @yield('custom-style')
 
-  <!-- FullCalendar CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- FullCalendar CSS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
     <body>
         <div class="loader-container">
@@ -92,7 +92,7 @@
                             link_icon="bi bi-people"
                         ></side-nav-button>
                         <side-nav-button
-                            link_name="Student"
+                            link_name="Student Profile"
                             link_route="/student_profile"
                             link_icon="bi bi-person"
                         ></side-nav-button>
@@ -124,9 +124,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+{{--
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebarCollapse');
