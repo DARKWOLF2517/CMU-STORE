@@ -37,16 +37,16 @@
           </div>
         <h2>Student member List</h2>
         <div class="scroll-pane">
-          <table id="accountabilities-table">
+          <table  id="accountabilities-table">
             <thead>
                 <tr>
-                  <th>Student ID number</th>
-                  <th>Name</th>
-                  <th>Membership Fee</th>
-                  <th>Membership Fee Status</th>
-                  <th>Fines</th>
-                  <th>Fines Status</th>
-                  <th>Actions</th>
+                    <th class="sortable-header">Student ID</th>
+                    <th class="sortable-header">Student Name</th>
+                    <th class="sortable-header">Membership Fee</th>
+                    <th class="sortable-header">Membership Status</th>
+                    <th class="sortable-header">Fines</th>
+                    <th class="sortable-header">Fines Status</th>
+                    <th class="sortable-header">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,6 +62,18 @@
                     <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
                   </td>
                 </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                      <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                      <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
               </tbody>
           </table>
         </div>

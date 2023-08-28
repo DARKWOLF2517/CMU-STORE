@@ -6,12 +6,24 @@
   }
   th{
     background-color: #2d7dd8;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+  }
+
+  td{
+    font-size: 14px;
   }
   th, td {
-    padding: 8px;
+    padding: 5px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+  }
+  tr:hover {
+    background-color: #eee8e8;
+  }
+
+  .edit-button i, .delete-button i {
+    font-size: 16px; /* Adjust the font size as needed */
   }
 
   .pagination {
@@ -19,7 +31,8 @@
   }
 
   .pagination button {
-    padding: 8px 12px;
+    /* padding: 8px 12px; */
+    font-size: 16px;
     text-decoration: none;
     background-color: #f2f2f2;
     color: #2d7dd8;
@@ -48,7 +61,7 @@
     margin-bottom: 20px;
   }
 
-  p {
+  /* p {
     font-size: 16px;
     margin-bottom: 30px;
-  }
+  } */

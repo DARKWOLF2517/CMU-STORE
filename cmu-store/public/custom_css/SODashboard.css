@@ -36,8 +36,12 @@ margin: 10px 0;
 }
 
 .welcome-card {
-background-image: url('https://www.cmu.edu.ph/wp-content/uploads/2023/06/branding-web-cover-660x330.jpg'); /* Replace with the actual path to your image */
+background-image: url('https://www.cmu.edu.ph/wp-content/uploads/2021/04/vlcsnap-2013-11-29-14h20m46s197-660x330.png'); /* Replace with the actual path to your image */
 background-size: cover;
 color: white; /* Adjust text color for better contrast */
 padding: 20px;
+border: none;
+}
+#announcement-row{
+    border: 1px;
 }

@@ -30,9 +30,10 @@
   color: blue;
 }
 .welcome-card {
-    background-image: linear-gradient(to bottom, #0074D9, #00A8FF);
+    background-image: url('https://img.freepik.com/premium-vector/abstract-geometric-shapes-background-memphis-style_23-2148370310.jpg?w=2000');
 color: white; /* Adjust text color for better contrast */
 padding: 20px;
+border: none;
 }
 
 
@@ -49,3 +50,11 @@ padding: 20px;
     text-decoration: none;
     transition: color 0.3s ease;
   }
+  .student-profile-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.additional-info-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

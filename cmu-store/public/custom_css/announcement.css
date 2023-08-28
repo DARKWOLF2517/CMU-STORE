@@ -5,7 +5,6 @@
     padding: 20px;
     margin: auto;
     width: 95%;
-    background-color: rgb(248, 245, 245);
     align-items: center;
     overflow: auto; /* Add scrollbar to the portlet */
     max-height: 80vh;
