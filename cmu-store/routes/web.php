@@ -31,7 +31,7 @@ Route::get('/login', function () {
     return view('layouts.login');
 })->name('login');
 
-//get student org list 
+//get student org list  
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
 });

@@ -50,7 +50,8 @@ mounted() {
 },
 data() {
     return {
-        attendance: []
+        attendance: [],
+        Data: '',
     }
 },
 
@@ -68,8 +69,10 @@ methods: {
         // Starts scanner
     },
     success(result){
-        console.log(result)
+        // console.log(result)
+        this.Data = result;
         this.addData();
+        console.log(this.Data)
 
     },
     error(err) {
@@ -89,7 +92,7 @@ methods: {
 
     },
     addData(){
-        axios.post('/attendance/add', this.attendance)
+        axios.post('/attendance/add', this.Data)
             .then(response => {
                     window.location.reload();
                 
