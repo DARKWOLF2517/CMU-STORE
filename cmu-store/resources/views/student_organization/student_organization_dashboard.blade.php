@@ -154,6 +154,7 @@
           ],
 
           eventClick: function(info) {
+            console.log('askjdfkjsd')
             // Display event details in the modal
             document.getElementById('eventTitle').textContent = info.event.title;
             document.getElementById('eventStart').textContent = info.event.start;

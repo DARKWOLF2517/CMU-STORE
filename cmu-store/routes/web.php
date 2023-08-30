@@ -56,7 +56,7 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 
 //attendance
 Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
-Route::post('/attendance/add',[AttendanceController::class, 'addAttendance'])->name('add-attendance');
+Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
 
 Route::middleware(['auth'])->group(function(){
     //ORG ROUTE
