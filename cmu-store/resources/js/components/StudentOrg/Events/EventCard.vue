@@ -142,7 +142,6 @@ export default {
                         if (error.response && error.response.status === 422) {
                             this.errors = error.response.data.errors;
                         }
-
                         alert(error)
 
                 });

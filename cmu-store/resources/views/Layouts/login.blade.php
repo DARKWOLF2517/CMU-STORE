@@ -54,9 +54,9 @@
                       Remember Me
                     </label>
                   </div>
-                  <div class="w-50 text-md-right">
+                  {{-- <div class="w-50 text-md-right">
                     <a href="#">Forgot Password</a>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="form-group text-right">
                   <button type="submit" class="btn btn-primary rounded submit">Log In</button>

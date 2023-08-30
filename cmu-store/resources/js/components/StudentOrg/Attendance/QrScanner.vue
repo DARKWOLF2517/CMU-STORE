@@ -29,7 +29,16 @@
                 </div>
             </div>
             </div>
-
+            <form @submit="this.submit"  id="eventsForm"  >
+                        <div class="mb-3">
+                            <label for="event-title" class="form-label">ID number</label>
+                            <input type="text" name="id_number" class="form-control" id="event-title" v-model="formData.user_id" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="save-event-button">Save</button>
+                        </div>
+                    </form>
 
     
 </div>
@@ -41,7 +50,6 @@
 import { QrcodeStream } from 'vue-qrcode-reader'
 import {Html5QrcodeScanner} from "html5-qrcode";
 import {Html5Qrcode} from "html5-qrcode";
-
 export default {
 components: { QrcodeStream },
 mounted() {
@@ -50,8 +58,11 @@ mounted() {
 },
 data() {
     return {
+        submit : this.submitForm,
         attendance: [],
-        Data: '',
+        formData:{
+            user_id:'',
+        },
     }
 },
 
@@ -69,9 +80,9 @@ methods: {
         // Starts scanner
     },
     success(result){
-        // console.log(result)
-        this.Data = result;
-        this.addData();
+        console.log(result)
+        this.formData.user_id = result;
+        this.submitForm();
         console.log(this.Data)
 
     },
@@ -83,24 +94,23 @@ methods: {
         axios.get('/attendance/show')
             .then(response => {
                 this.attendance = response.data
-
-                
             })
             .catch(error => {
                 
             });
 
     },
-    addData(){
-        axios.post('/attendance/add', this.Data)
+    submitForm(){
+        axios.post('/attendance', this.formData)
             .then(response => {
-                    window.location.reload();
-                
+                    // window.location.reload();
+                    console.log(response.data.message);
+                    alert(response.data.message);
             })
             .catch(error => {
-                
+                alert(error);
+                alert(this.formData.id_number);
             });
-
     }
 }
 }

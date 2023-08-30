@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('attendance', function (Blueprint $table) {
             // $table->enum('status', ['Present', 'Absent']);
             $table->unsignedBigInteger('user_id'); // Foreign key
-            $table->date('date');
             
             // Define foreign key relationship
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
