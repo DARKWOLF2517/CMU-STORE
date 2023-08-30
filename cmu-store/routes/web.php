@@ -31,7 +31,7 @@ Route::get('/login', function () {
     return view('layouts.login');
 })->name('login');
 
-//get student org list  
+//get student org list
 Route::get('/usercards', function () {
     return view('layouts.organization_cards');
 });
@@ -61,7 +61,7 @@ Route::post('/attendance/add',[AttendanceController::class, 'addAttendance'])->n
 Route::middleware(['auth'])->group(function(){
     //ORG ROUTE
     Route::middleware(['user-role:1'])->group(function(){
-        
+
         Route::get('/login/org_dashboard', function () {
             return view('student_organization.student_organization_dashboard');
         })->name('org_dashboard');
@@ -85,6 +85,10 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('student_organization_students', function () {
             return view('student_organization.student_organization_students');
+        });
+
+        Route::get('student_organization_evaluation_results', function () {
+            return view('student_organization.student_organization_evaluation_results');
         });
 
         Route::get('student_organization_evaluation', function () {
@@ -118,33 +122,33 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/login/student_dashboard', function () {
             return view('student.student_dashboard');
         });
-    
+
         Route::get('student_profile', function () {
             return view('student.student_profile');
         });
         Route::get('student_evaluationform', function () {
             return view('student.student_evaluationform');
         });
-    
+
         Route::get('student_accountabilities', function () {
             return view('student.student_accountabilities');
         });
-    
+
         Route::get('student_announcement', function () {
             return view('student.student_announcement');
         });
-    
+
         Route::get('student_attendance', function () {
             return view('student.student_attendance');
         });
-    
+
         Route::get('student_profile', function () {
             return view('student.student_profile');
         });
-    
+
         //get user profile
         Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
-    
+
     });
 });
 // Route::group('user-role:1', function()

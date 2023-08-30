@@ -1,177 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <title>Document</title>
-  <style>
-     .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .chart-container {
-      flex: 1 0 300px;
-    }
-    h2 {
-      text-align: center;
-    }
-    h4 {
-      margin: 0;
-    }
-  </style>
-  <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>
-  <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
-  <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
-  <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
-  <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
-  <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
-  <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h2>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h2>
-    <hr>
-    <h4 for="Activity">Name of Activity:</H4>
-    <h4 for="StudentOrganization">Name of Organization:</H4>
-    <h4 for="DateTime">Date & Time:</H4>
-    <h4 for="Venue">Venue:</H4>
-    <hr>
-  </div>
-  <h4>1. PROGRAM/ACTIVITY</h4>
-  <div class="flex-container">
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d" style="width: 430px; height: 300px;"></div>
-      </div>
+@extends('layouts.student_organization_navigation_bar')
+@section('main-content')
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>
+<link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
+<link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
+<div class="content">
+    <div class="container breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+            <li class="breadcrumb-item">Student Organization</li>
+            <li class="breadcrumb-item"><a href="/student_organization_evaluation">Evaluation</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Evaluation Results</li>
+          </ol>
+        </nav>
     </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_2" style="width: 430px; height: 300px;"></div>
-      </div>
+    <div class="container student-buttons d-flex justify-content-end" id="containers">
+        <div class="btn-group" role="group">
+            <button class="btn me-2" id="add-student-list-button">
+                <i class="fas fa-print"></i> Print Results
+            </button>
+            <button class="btn me-2" id="add-student-button">
+                <i class="fas fa-download"></i> Download Results
+            </button>
+        </div>
     </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_3" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_4" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_5" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_6" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-      <div class="container">
-        <div class="col-md-12">
-          <div id="piechart3d_7" style="width: 430px; height: 300px;"></div>
+      <div class="container" id="containers">
+         <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
+        <hr>
+        <h6 for="Activity">Name of Activity:</h6>
+        <h6 for="StudentOrganization">Name of Organization:</h6>
+        <h6 for="DateTime">Date & Time:</h6>
+        <h6 for="Venue">Venue:</h6>
+        <hr>
+
+        <h6>1. PROGRAM/ACTIVITY</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_2"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_3"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_4"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_5"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_6"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_7"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_8"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_9"></div>
+          </div>
+        </div>
+        <h6>2. SPEAKER (IF APPLICABLE)</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d_10"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_11"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_12"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_13"></div>
+          </div>
+        </div>
+        <h6>3. Venue</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d_14"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_15"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_16"></div>
+          </div>
+        </div>
+        <h6>4.  PARTICIPATION</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d_17"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_18"></div>
+          </div>
+          <div class="col">
+            <div class="piechart" id="piechart3d_19"></div>
+          </div>
+        </div>
+        <h6>5.  FOOD/HOSPITALITY</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d_20"></div>
+          </div>
+        </div>
+        <h6>6.  TEAMWORK/COORDINATION OF ORGANIZATION</h6>
+        <div class="row">
+          <div class="col">
+            <div class="piechart" id="piechart3d_21"></div>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <div class="col-md-12">
-          <div id="piechart3d_8" style="width: 430px; height: 300px;"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="col-md-12">
-          <div id="piechart3d_9" style="width: 430px; height: 300px;"></div>
-        </div>
-      </div>
-  </div>
-
-  <h4>2. SPEAKER (IF APPLICABLE)</h4>
-  <div class="flex-container">
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_10" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_11" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-12">
-        <div id="piechart3d_12" style="width: 430px; height: 300px;"></div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_13" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
 </div>
-
-<h4>3. Venue</h4>
-<div class="flex-container">
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_14" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_15" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_16" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<h4>4.  PARTICIPATION</h4>
-<div class="flex-container">
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_17" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_18" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_19" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-</div>
-</div>
-<h4>5.  FOOD/HOSPITALITY</h4>
-<div class="flex-container">
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_20" style="width: 430px; height: 300px;"></div>
-    </div>
-  </div>
-</div>
-  <h4>6.  TEAMWORK/COORDINATION OF ORGANIZATION</h4>
-  <div class="container">
-    <div class="col-md-12">
-      <div id="piechart3d_21" style="width: 430px; height: 300px;"></div>
-    </div>
-</div>
-</div>
-
-
   <script>
     $(document).ready(function(){
 
