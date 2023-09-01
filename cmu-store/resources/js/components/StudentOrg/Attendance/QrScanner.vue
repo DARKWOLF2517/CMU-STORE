@@ -84,7 +84,6 @@ methods: {
         this.formData.user_id = result;
         this.submitForm();
         console.log(this.Data)
-
     },
     error(err) {
         // console.error(err);
@@ -101,15 +100,15 @@ methods: {
 
     },
     submitForm(){
+        //Stopper
         axios.post('/attendance', this.formData)
             .then(response => {
-                    // window.location.reload();
                     console.log(response.data.message);
-                    alert(response.data.message);
+                    // alert(response.data.message);
             })
             .catch(error => {
                 alert(error);
-                alert(this.formData.id_number);
+                // alert(this.formData.id_number);
             });
     }
 }
