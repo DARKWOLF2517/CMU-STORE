@@ -1,71 +1,100 @@
 @extends('layouts.student_navigation_bar')
 @section('main-content')
 <div class="content">
-
-<div class="container">
-    <div class="row">
-      <div class="col-sm-8 mt-2">
-        <div class="card welcome-card">
-
-          <h2>Welcome, Student!</h2>
-          <p>College of Information Sciences and Computing</p>
-      </div>
-      <div class="col mt-4">
-        <H4>Recent Announcements</H4>
-        <div class="row" id="announcement-row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Announcement 1</h5>
-                <p class="card-text">SSC General Assembly</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Announcement 2</h5>
-                <p class="card-text">Foundation Day</p>
-              </div>
-            </div>
-          </div>
-          <!-- New Announcement Card -->
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Announcement 3</h5>
-                <p class="card-text">Palaro 2024</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-3" id="events">
-        <h3>Scheduled Events</h3>
-        <div id="event-list" class="list-group">
-          <div class="list-group-item">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="mb-1">Event 1</h5>
-              <small class="blue-date">August 15, 2023, 10:00 AM - 12:00 PM</small>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="mb-1">Event 2</h5>
-              <small class="blue-date">August 20, 2023, 3:30 PM - 5:00 PM</small>
-            </div>
-          </div>
-          <!-- Add more event items here -->
-        </div>
-      </div>
-      </div>
-
-
-      <div class="col-sm-4 mt-2">
+    <div class="container">
         <div class="row">
-      <div id="calendar"></div>
+            <div class="col-md-8">
+                <div class="card welcome-card">
+                    <h3>Welcome, User!</h3>
+                    <h6>College of Information Sciences and Computing</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row text-center" id="statistic">
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <p class="label">Number of Members:</p>
+                            <b><p class="number">200</p></b>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <p class="label">Created Events:</p>
+                            <b><p class="number">150</p></b>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <p class="label">Completed Events:</p>
+                            <b><p class="number">10</p></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mt-3">
+                    <h4>Recent Announcements</h4>
+                <div class="row" id="announcement-row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Announcement 1</h5>
+                                <p class="card-text">SSC General Assembly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Announcement 2</h5>
+                                <p class="card-text">Foundation Day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Announcement 3</h5>
+                                <p class="card-text">Palaro 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="timeline">
+                    <h3>Schedule</h3>
+                    <hr>
+                    <div class="event">
+                        <div class="event-date">10:00 AM</div>
+                        <div class="event-details">
+                            <h5>Foundation Day</h5>
+                            <p>September 20, 2023</p>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-date">12:30 PM</div>
+                        <div class="event-details">
+                            <h5>Palaro</h5>
+                            <p>Septeber 23, 2023</p>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-date">3:00 PM</div>
+                        <div class="event-details">
+                            <h5>Final defense</h5>
+                            <p>November 30, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
 
     <!-- Bootstrap Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">

@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-        <h2>Student member List</h2>
+        <h3> <i class="fas fa-chart-bar"></i> Student Accountabilities</h3>
         <div class="scroll-pane">
           <table  id="accountabilities-table">
             <thead>

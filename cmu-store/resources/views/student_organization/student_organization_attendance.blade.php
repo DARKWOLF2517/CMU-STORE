@@ -15,7 +15,9 @@
         </nav>
     </div>
     <div class="container" id="tablecontainer" >
-        <h1 class="mt-4">Attendance Monitoring</h1>
+        <h3 class="mt-2">
+             Attendance Monitoring
+        </h3>
 
         <div class="row mt-4">
           <div class="col-md-6">

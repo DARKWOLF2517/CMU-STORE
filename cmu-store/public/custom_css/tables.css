@@ -1,5 +1,5 @@
 
-  table {
+table {
     width: 100%;
     border: 1px solid #ddd;
     border-color: #ddd;
@@ -60,8 +60,3 @@
     font-size: 24px;
     margin-bottom: 20px;
   }
-
-  /* p {
-    font-size: 16px;
-    margin-bottom: 30px;
-  } */

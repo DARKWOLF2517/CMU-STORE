@@ -36,7 +36,7 @@
         </div>
 
       </div>
-      <h2>Student List</h2>
+      <h3>Student List</h3>
       <div class="student-buttons d-flex justify-content-end">
         <div class="btn-group" role="group">
             <button class="btn me-2" id="add-student-list-button">
