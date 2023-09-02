@@ -29,14 +29,14 @@ export default {
     // },
     methods: {
         
-        fetchData(){
-            axios.get(`GetOrgList/${this.id}`)
-                .then(response => {
-                })
-                .catch(error => {
+        // fetchData(){
+        //     axios.get(`GetOrgList/${this.id}`)
+        //         .then(response => {
+        //         })
+        //         .catch(error => {
                     
-                });
-        },
+        //         });
+        // },
         
         /**
          * 
@@ -44,13 +44,21 @@ export default {
          * @param {*} role_id Role id of the user on that organization
          */
         profileClicked(org_id, role_id){
-            if (role_id == 1){
+            axios.get(`${org_id}/${role_id}`)
+            .then(response => {
+                // console.log(response.data);
+                // userOrgs.value = response.data;
+                console.log(response.data.org_id)
+                console.log(response.data.role)
+                window.location
                 
-                window.location.href = 'org_dashboard';
-            }
-            else if (role_id == 2){
-                window.location.href = 'student_dashboard';
-            }
+                // console.log(response.data.org)
+            })
+            .catch(error => {
+                
+            });
+
+
         }   
     },
     // mounted() {

@@ -15,8 +15,8 @@
                 <!-- Student ID -->
                 <p>Student ID: {{this.profile['id']}}</p>
                 <div class="d-grid gap-2">
-        <a href="https://via.placeholder.com/150" download class="btn btn-secondary btn-sm">Download Image</a>
-      </div>
+                  <a href="" download class="btn btn-secondary btn-sm">Download Image</a>
+                </div>
                 </div>
             </div>
         </div>

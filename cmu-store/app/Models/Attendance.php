@@ -12,6 +12,7 @@ class Attendance extends Model
     protected $primaryKey = 'user_id'; 
     protected $fillable = [
         'user_id',
+        'org_id',
         'created_at',
         'updated_at'
     ];

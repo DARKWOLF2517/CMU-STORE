@@ -34,7 +34,7 @@
         </div>
     </div>
       <div class="container" id="containers">
-         <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
+        <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
         <hr>
         <h6 for="Activity">Name of Activity:</h6>
         <h6 for="StudentOrganization">Name of Organization:</h6>
@@ -290,8 +290,8 @@ google.charts.setOnLoadCallback(drawChart8);
 
 function drawChart8() {
   var data8 = google.visualization.arrayToDataTable([
-    ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+          ['Registration', 'Percentage'],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -314,8 +314,8 @@ google.charts.setOnLoadCallback(drawChart9);
 
 function drawChart9() {
   var data9 = google.visualization.arrayToDataTable([
-    ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+          ['Registration', 'Percentage'],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -337,8 +337,8 @@ google.charts.setOnLoadCallback(drawChart10);
 
 function drawChart10() {
   var data10 = google.visualization.arrayToDataTable([
-    ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+          ['Registration', 'Percentage'],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
@@ -360,8 +360,8 @@ google.charts.setOnLoadCallback(drawChart11);
 
 function drawChart11() {
   var data11 = google.visualization.arrayToDataTable([
-    ['Registration', 'Percentage'],
-   ['Outstanding', 18.75],
+          ['Registration', 'Percentage'],
+          ['Outstanding', 18.75],
           ['Very Satisfactory', 31.25],
           ['Satisfactory', 10],
           ['Moderately Satisfactory', 10],
