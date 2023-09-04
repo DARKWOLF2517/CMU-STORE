@@ -81,3 +81,29 @@
     width: 410px;
     height: 300px;
   }
+
+  /* Sort Button */
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Custom CSS for the option icons */
+option {
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    font-size: small;
+}

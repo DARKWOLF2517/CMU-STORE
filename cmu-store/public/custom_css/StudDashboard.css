@@ -26,14 +26,13 @@
     display: flex;
 
   }
-  .blue-date {
-  color: blue;
-}
+
 .welcome-card {
-    background-image: url('https://img.freepik.com/premium-vector/abstract-geometric-shapes-background-memphis-style_23-2148370310.jpg?w=2000');
+background-image: url('https://img.freepik.com/premium-vector/abstract-geometric-shapes-background-memphis-style_23-2148370310.jpg?w=2000');
 color: white; /* Adjust text color for better contrast */
 padding: 20px;
 border: none;
+height: 500px;
 }
 
 
@@ -44,7 +43,6 @@ border: none;
     margin-bottom: 20px;
   }
 
-  /* Styling for breadcrumb links */
   .breadcrumb-item a {
     color: #0074D9;
     text-decoration: none;

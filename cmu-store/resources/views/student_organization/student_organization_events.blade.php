@@ -28,11 +28,12 @@
       </div>
       <div class="col-md-3">
         <div class="d-flex justify-content-end">
-          <select class="form-select custom-select-width">
-            <option selected>Select Semester</option>
-            <option>1st semester events</option>
-            <option>2nd semester Events</option>
-          </select>
+            <label for="sort-select"></label>
+            <select id="sort-select">
+                <option value="option1">1st Semester 2023-2024</option>
+                <option value="option2">2nd Semester 2022-2023</option>
+                <option value="option3">1st Semester 2022-2023</option>
+            </select>
         </div>
       </div>
     </div>
@@ -44,8 +45,7 @@
           <div class="spinner-border" id="event-spinner" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <event-card
-          >
+          <event-card>
           </event-card>
         </div>
       </div>

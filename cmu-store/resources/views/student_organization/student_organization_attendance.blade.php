@@ -16,13 +16,13 @@
     </div>
     <div class="container" id="tablecontainer" >
         <h3 class="mt-2">
-             Attendance Monitoring
+            <i class="fas fa-list"></i> Attendance Monitoring
         </h3>
 
         <div class="row mt-4">
           <div class="col-md-6">
             <div class="ScheduledEventContainer">
-              <h4>Scheduled Attendance</h4>
+              <h4> <i class="fas fa-calendar-alt"></i> Scheduled Attendance</h4>
 
               {{-- <div class="card">
                 <div class="card-header">Event Name: General Assembly</div>
@@ -58,7 +58,7 @@
 
           <div class="col-md-6">
             <div class="PreviousEventContainer">
-              <h4>Previous Recorded Attendance</h4>
+              <h4><i class="fas fa-list"></i> Recorded Attendance</h4>
 
               <div class="card">
                 <div class="card-header">Event Name: Freshmen Orientation</div>

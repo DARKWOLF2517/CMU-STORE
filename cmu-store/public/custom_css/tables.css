@@ -46,17 +46,11 @@ table {
   }
 
   .pagination button.current-page {
-    background-color: #bdc6d1;
+    background-color: #6388b6;
     color: #fff;
   }
 
   .scroll-pane {
     height: 350px; /* Adjust the height as needed */
     overflow: auto;
-  }
-
-  h1 {
-    align-self: center;
-    font-size: 24px;
-    margin-bottom: 20px;
   }

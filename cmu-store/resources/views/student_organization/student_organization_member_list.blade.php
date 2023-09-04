@@ -26,17 +26,17 @@
         </div>
         <div class="col-md-3">
           <div class="d-flex justify-content-end">
-            <select class="form-select custom-select-width">
-              <option selected>Sort by</option>
-              <option>Alphabetical Order</option>
-              <option>Year Level</option>
+            <label for="sort-select"></label>
+            <select id="sort-select">
+                <option value="option1">1st Semester 2023-2024</option>
+                <option value="option2">2nd Semester 2022-2023</option>
+                <option value="option3">1st Semester 2022-2023</option>
             </select>
           </div>
-
         </div>
-
       </div>
-      <h3>Student List</h3>
+
+      <h3><i class="fas fa-list"></i> Student List</h3>
       <div class="student-buttons d-flex justify-content-end">
         <div class="btn-group" role="group">
             <button class="btn me-2" id="add-student-list-button">

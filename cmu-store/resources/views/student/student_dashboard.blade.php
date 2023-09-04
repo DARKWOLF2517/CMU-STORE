@@ -3,69 +3,49 @@
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col">
                 <div class="card welcome-card">
                     <h3>Welcome, User!</h3>
                     <h6>College of Information Sciences and Computing</h6>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="row text-center" id="statistic">
-                    <div class="col-sm-4">
-                        <div class="statistic">
-                            <p class="label">Number of Members:</p>
-                            <b><p class="number">200</p></b>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="statistic">
-                            <p class="label">Created Events:</p>
-                            <b><p class="number">150</p></b>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="statistic">
-                            <p class="label">Completed Events:</p>
-                            <b><p class="number">10</p></b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-md-8 mt-3">
+                <div class="announcement-container">
                     <h4>Recent Announcements</h4>
-                <div class="row" id="announcement-row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Announcement 1</h5>
-                                <p class="card-text">SSC General Assembly</p>
+                    <div class="row" id="announcement-row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Announcement 1</h6>
+                                    <p class="card-text">SSC General Assembly</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Announcement 2</h5>
-                                <p class="card-text">Foundation Day</p>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Announcement 2</h6>
+                                    <p class="card-text">Foundation Day</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Announcement 3</h5>
-                                <p class="card-text">Palaro 2024</p>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Announcement 3</h6>
+                                    <p class="card-text">Palaro 2024</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
+            </div>
                 <div class="mt-3">
                     <div id="calendar"></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <div class="timeline">
                     <h3>Schedule</h3>
                     <hr>
@@ -94,7 +74,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Bootstrap Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">

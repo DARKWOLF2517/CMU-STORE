@@ -37,7 +37,7 @@
               </div>
             </div>
           </div>
-        <h2>Attendance Record</h2>
+        <h3>Attendance Record</h3>
         <h4 id="Eventtitle"> Event: </h4>
         <p>Date: </p>
         <div class="scroll-pane">

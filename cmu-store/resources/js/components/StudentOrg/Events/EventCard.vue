@@ -1,6 +1,6 @@
 <template>
     <div class="add-event-button">
-            <h2>Events</h2>
+            <h3> <i class="fas fa-list"></i>  Events</h3>
             <div class="event-buttons d-flex justify-content-end">
             <div class="btn-group" role="group">
             <button class="btn  me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
