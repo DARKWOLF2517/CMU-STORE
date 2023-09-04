@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserOrganization;
-
+use Illuminate\Contracts\Session\Session;
 
 class LoginController extends Controller
 {
@@ -21,7 +21,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $student_id = Auth::id();
-            
+            // dd(Session());
             //user organization count
             $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
             if ($userOrganizationCount > 1){
@@ -62,11 +62,16 @@ class LoginController extends Controller
 
     public function LoginOrganization($org_id, $role_id)
     {   
+        $data = [
+            'org_id'=> $org_id, 
+            'role'=> $role_id];
         if($role_id == 1){
-            return redirect()->route('org_dashboard');
+            // return redirect()->route('org_dashboard');
+            
+            return response()->json($data); 
         }
         else if($role_id == 2){
-            return redirect()->route('student_dashboard');
+            return response()->json($data); 
             
         }
     }

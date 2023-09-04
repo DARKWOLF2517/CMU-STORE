@@ -16,13 +16,25 @@ class UserOrgRoleMiddleware
      */
     public function handle(Request $request, Closure $next, $role): Response
     {
-        $student_id = Auth::id();
-        $userOrganization = UserOrganization::where('student_id', $student_id)->first();
-        if (Auth::check() && $userOrganization->role_id == $role){
-            return $next($request);
+
+        $userOrganizationCount = UserOrganization::where('student_id', Auth::id())->count();
+
+        if($userOrganizationCount > 1){
+            if (Auth::check()){
+                return $next($request);
+            }
         }
-        //message to send to user when not enough permission
-        return response()->json(["You don't have permission to access this page"]);
+        else{
+            $student_id = Auth::id();
+            $userOrganization = UserOrganization::where('student_id', $student_id)->first();
+            if (Auth::check() && $userOrganization->role_id == $role){
+                return $next($request);
+            }
+            //message to send to user when not enough permission
+            else{
+                return response()->json(["You don't have permission to access this page"]);
+            }
+        }
 
     }
 }
