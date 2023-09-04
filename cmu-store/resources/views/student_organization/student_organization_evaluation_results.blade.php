@@ -13,118 +13,121 @@
 <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
 <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
 <div class="content">
-    <div class="container breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
-            <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item"><a href="/student_organization_evaluation">Evaluation</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Evaluation Results</li>
-          </ol>
-        </nav>
-    </div>
-    <div class="container student-buttons d-flex justify-content-end" id="containers">
-        <div class="btn-group" role="group">
-            <button class="btn me-2" id="add-student-list-button">
-                <i class="fas fa-print"></i> Print Results
-            </button>
-            <button class="btn me-2" id="add-student-button">
-                <i class="fas fa-download"></i> Download Results
-            </button>
+    <div class="container">
+        <div class="container breadcrumbs">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+                <li class="breadcrumb-item">Student Organization</li>
+                <li class="breadcrumb-item"><a href="/student_organization_evaluation">Evaluation</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Evaluation Results</li>
+              </ol>
+            </nav>
         </div>
-    </div>
-      <div class="container" id="containers">
-        <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
-        <hr>
-        <h6 for="Activity">Name of Activity:</h6>
-        <h6 for="StudentOrganization">Name of Organization:</h6>
-        <h6 for="DateTime">Date & Time:</h6>
-        <h6 for="Venue">Venue:</h6>
-        <hr>
+        <div class="container student-buttons d-flex justify-content-end" id="containers">
+            <div class="btn-group" role="group">
+                <button class="btn me-2" id="add-student-list-button">
+                    <i class="fas fa-print"></i> Print Results
+                </button>
+                <button class="btn me-2" id="add-student-button">
+                    <i class="fas fa-download"></i> Download Results
+                </button>
+            </div>
+        </div>
+          <div class="container" id="containers">
+            <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
+            <hr>
+            <h6 for="Activity">Name of Activity:</h6>
+            <h6 for="StudentOrganization">Name of Organization:</h6>
+            <h6 for="DateTime">Date & Time:</h6>
+            <h6 for="Venue">Venue:</h6>
+            <hr>
 
-        <h6>1. PROGRAM/ACTIVITY</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d"></div>
+            <h6>1. PROGRAM/ACTIVITY</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_2"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_3"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_4"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_5"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_6"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_7"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_8"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_9"></div>
+              </div>
+            </div>
+            <h6>2. SPEAKER (IF APPLICABLE)</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d_10"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_11"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_12"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_13"></div>
+              </div>
+            </div>
+            <h6>3. Venue</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d_14"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_15"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_16"></div>
+              </div>
+            </div>
+            <h6>4.  PARTICIPATION</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d_17"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_18"></div>
+              </div>
+              <div class="col">
+                <div class="piechart" id="piechart3d_19"></div>
+              </div>
+            </div>
+            <h6>5.  FOOD/HOSPITALITY</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d_20"></div>
+              </div>
+            </div>
+            <h6>6.  TEAMWORK/COORDINATION OF ORGANIZATION</h6>
+            <div class="row">
+              <div class="col">
+                <div class="piechart" id="piechart3d_21"></div>
+              </div>
+            </div>
           </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_2"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_3"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_4"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_5"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_6"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_7"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_8"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_9"></div>
-          </div>
-        </div>
-        <h6>2. SPEAKER (IF APPLICABLE)</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d_10"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_11"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_12"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_13"></div>
-          </div>
-        </div>
-        <h6>3. Venue</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d_14"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_15"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_16"></div>
-          </div>
-        </div>
-        <h6>4.  PARTICIPATION</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d_17"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_18"></div>
-          </div>
-          <div class="col">
-            <div class="piechart" id="piechart3d_19"></div>
-          </div>
-        </div>
-        <h6>5.  FOOD/HOSPITALITY</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d_20"></div>
-          </div>
-        </div>
-        <h6>6.  TEAMWORK/COORDINATION OF ORGANIZATION</h6>
-        <div class="row">
-          <div class="col">
-            <div class="piechart" id="piechart3d_21"></div>
-          </div>
-        </div>
-      </div>
-</div>
+    </div>
+    </div>
+
   <script>
     $(document).ready(function(){
 

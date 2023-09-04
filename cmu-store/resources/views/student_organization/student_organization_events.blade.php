@@ -6,63 +6,66 @@
 @section('main-content')
 
 <div class="content">
-    <div class="container breadcrumb">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
-            <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item active" aria-current="page">Events</li>
-          </ol>
-        </nav>
-    </div>
-<div class="container event-container" id="tablecontainer">
-    <div class="row head-container">
-      <div class="col-md-6">
-        <div class="input-group search-bar">
-          <input type="text" class="form-control rounded-start" placeholder="Search Events" aria-label="Search"
-            aria-describedby="search-icon">
-          <button class="btn btn-primary rounded-end" type="button" id="search-icon">
-            <i class="bi bi-search"></i>
-          </button>
+    <div class="container">
+        <div class="container breadcrumbs">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+                <li class="breadcrumb-item">Student Organization</li>
+                <li class="breadcrumb-item active" aria-current="page">Events</li>
+              </ol>
+            </nav>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="d-flex justify-content-end">
-            <label for="sort-select"></label>
-            <select id="sort-select">
-                <option value="option1">1st Semester 2023-2024</option>
-                <option value="option2">2nd Semester 2022-2023</option>
-                <option value="option3">1st Semester 2022-2023</option>
-            </select>
-        </div>
-      </div>
-    </div>
-
-  <div class="container event-list">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="event-list-scroll" id="event-cards">
-          <div class="spinner-border" id="event-spinner" role="status">
-            <span class="visually-hidden">Loading...</span>
+    <div class="container event-container" id="tablecontainer">
+        <div class="row head-container">
+          <div class="col-md-6">
+            <div class="input-group search-bar">
+              <input type="text" class="form-control rounded-start" placeholder="Search Events" aria-label="Search"
+                aria-describedby="search-icon">
+              <button class="btn btn-primary rounded-end" type="button" id="search-icon">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
           </div>
-          <event-card>
-          </event-card>
+          <div class="col-md-3">
+            <div class="d-flex justify-content-end">
+                <label for="sort-select"></label>
+                <select id="sort-select">
+                    <option value="option1">1st Semester 2023-2024</option>
+                    <option value="option2">2nd Semester 2022-2023</option>
+                    <option value="option3">1st Semester 2022-2023</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+      <div class="container event-list">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="event-list-scroll" id="event-cards">
+              <div class="spinner-border" id="event-spinner" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <event-card>
+              </event-card>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
-  </div>
 
-</div>
+    @endsection
 
-@endsection
+    @section('custom-script')
+      <script>
+      // $(document).ready(function () {
+      //   $('#add-event-button').click(function () {
+      //     $('#event-modal').modal('show');
+      //   });
+      // });
+      </script>
 
-@section('custom-script')
-  <script>
-  // $(document).ready(function () {
-  //   $('#add-event-button').click(function () {
-  //     $('#event-modal').modal('show');
-  //   });
-  // });
-  </script>
+    </div>
 
 @endsection

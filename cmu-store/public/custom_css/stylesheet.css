@@ -28,7 +28,7 @@ body {
 
 .container {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     padding: 15px;
     /* background-color: #ffffff; */
@@ -36,8 +36,7 @@ body {
 }
 
 #tablecontainer{
-    width: 95%;
-    margin-top: 20px;
+    margin-top: 10px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     padding: 15px;
     background-color: #ffffff;
@@ -59,6 +58,11 @@ body {
 }
 
 #containers{
+    margin-top: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+.breadcrumbs{
     margin-top: 5px;
     padding: 15px;
     background-color: #ffffff;

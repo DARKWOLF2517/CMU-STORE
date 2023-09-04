@@ -26,11 +26,9 @@
   }
 
 #statistic {
-/* border: 1px solid #ccc; */
 padding: 10px;
 margin: 10px 0;
 background-color: white;
-/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .stat-number{
@@ -83,3 +81,32 @@ p {
 background-color: #fff;
 padding: 10px;
 }
+
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    /* Add your responsive styles for screens up to 768px width here */
+    /* Example: */
+    #events {
+      padding: 10px;
+      max-height: 300px;
+    }
+
+    .card {
+      max-height: 150px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    /* Add your responsive styles for screens up to 480px width here */
+    /* Example: */
+    #events {
+      padding: 5px;
+      max-height: 200px;
+    }
+
+    .card {
+      max-height: 100px;
+    }
+  }

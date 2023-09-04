@@ -1,14 +1,19 @@
 #evaluation-container {
+    background-color: #ffffff;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+.evaluation-event-cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-  }
-
+    border: 1px solid #ccc;
+}
 .event-card {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
     margin-bottom: 20px;
     width: calc(33.33% - 20px);
     height: 200px;
@@ -47,7 +52,7 @@
 
   .view-button {
     background-color: transparent;
-    color: #cccccc;
+    color: #9b9b9b;
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
