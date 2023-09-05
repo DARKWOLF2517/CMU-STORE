@@ -45,7 +45,6 @@
         <student-profile
           user_id = {{Auth::id()}}
         >
-          
         </student-profile>
       </div>
 

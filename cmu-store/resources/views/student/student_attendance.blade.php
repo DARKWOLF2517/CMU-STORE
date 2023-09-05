@@ -2,7 +2,6 @@
 
 
 @section('main-content')
-
 <div class="content">
     <div class="container breadcrumbs">
         <nav aria-label="breadcrumb">
@@ -22,4 +21,7 @@
 
 </div>
 
+@endsection
+
+@section('custom-script')
 @endsection
