@@ -5,26 +5,27 @@
 @section('main-content')
 
 <div class="content">
-    <div class="container breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
-            <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item active" aria-current="page">Attendance</li>
-          </ol>
-        </nav>
-    </div>
-    <div class="container" id="tablecontainer" >
-        <h3 class="mt-2">
-             Attendance Monitoring
-        </h3>
+    <div class="container">
+        <div class="container breadcrumbs">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+                <li class="breadcrumb-item">Student Organization</li>
+                <li class="breadcrumb-item active" aria-current="page">Attendance</li>
+              </ol>
+            </nav>
+        </div>
 
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <div class="ScheduledEventContainer">
-              <h4>Scheduled Attendance</h4>
+        <div class="container" id="tablecontainer" >
+            <h3 class="mt-2">
+                <i class="fas fa-list"></i> Attendance Monitoring
+            </h3>
 
-              {{-- <div class="card">
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <div class="ScheduledEventContainer">
+                  <h4> <i class="fas fa-calendar-alt"></i> Scheduled Attendance</h4>
+                    {{-- <div class="card">
                 <div class="card-header">Event Name: General Assembly</div>
                 <div class="card-body d-flex justify-content-between align-items-start">
                   <div>
@@ -58,7 +59,7 @@
 
           <div class="col-md-6">
             <div class="PreviousEventContainer">
-              <h4>Previous Recorded Attendance</h4>
+              <h4><i class="fas fa-list"></i> Recorded Attendance</h4>
 
               <div class="card">
                 <div class="card-header">Event Name: Freshmen Orientation</div>
@@ -121,4 +122,9 @@
       </div> --}}
 
 </div>
+    </div>
+
+
+
+
 @endsection

@@ -1,14 +1,29 @@
 .rounded-container {
-    /* border-radius: 10px; */
     overflow: hidden;
 
   }
   .ScheduledEventContainer,
   .PreviousEventContainer {
     border: 1px solid #ddd;
-    /* border-radius: 10px; */
     padding: 15px;
+    max-height: 500px;
+    overflow-y: auto;
   }
   #Eventtitle{
     color: rgb(87, 123, 201);
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .rounded-container {
+      /* Add any additional styles for .rounded-container here */
+    }
+
+    .ScheduledEventContainer,
+    .PreviousEventContainer {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      max-height: none;
+      overflow-y: initial;
+    }
   }
