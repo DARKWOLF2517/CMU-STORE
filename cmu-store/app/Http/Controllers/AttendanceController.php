@@ -21,6 +21,7 @@ class AttendanceController extends Controller
         ]);
         $attendances = new Attendance();
         $attendances->user_id = $validatedData['user_id'];
+        $attendances->user_id = $validatedData['user_id'];
         $attendances->save();
         
         return response()->json(['message' => $validatedData['user_id']]);
