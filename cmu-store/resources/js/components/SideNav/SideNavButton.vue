@@ -5,6 +5,7 @@
                 <i  v-if="show" :class="link_icon"></i>
                 <span class="nav-link-text">&nbsp;{{ link_name }} </span>
             </a>
+            <!-- PUT DROPDOWN FOR THE CHURVA // ADDITIONAL LINKS -->
         </li>
     </div>
 </template>
