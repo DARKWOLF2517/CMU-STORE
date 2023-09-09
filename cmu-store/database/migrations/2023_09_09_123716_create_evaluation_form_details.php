@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendance', function (Blueprint $table) {
-            // $table->enum('status', ['Present', 'Absent']);
-            $table->unsignedBigInteger('user_id'); // Foreign key
+        Schema::create('evaluation_form_details', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('org_id');
-            // Define foreign key relationship
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('evaluation_form_name');
+            $table->text('description');
+            $table->integer('total_questions');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
-            // $table->primary(['user_id','org_id','session','type']);
+            // Add other fields as needed
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendance');
+        Schema::dropIfExists('evaluation_form_details');
     }
 };
