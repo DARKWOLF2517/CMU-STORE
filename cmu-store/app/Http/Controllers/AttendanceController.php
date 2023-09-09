@@ -18,14 +18,26 @@ class AttendanceController extends Controller
 
         $validatedData = $request->validate([
             'user_id' => 'required',
+            'org_id'  => 'required'
         ]);
         $attendances = new Attendance();
         $attendances->user_id = $validatedData['user_id'];
-        $attendances->user_id = $validatedData['user_id'];
+        $attendances->org_id = $validatedData['org_id'];
         $attendances->save();
         
-        return response()->json(['message' => $validatedData['user_id']]);
+        // return response()->json(['message' => $validatedData['user_id']]);
         // Redirect or return a response
-        // return redirect()->back()->with('success', 'Event created successfully!');
+        return redirect()->back()->with('success', 'Event created successfully!');
+    }
+    public function attendanceRepetition($id)
+    {
+        $data = Attendance::find($id);
+
+        if ($data) {
+            // Data exists, you can work with it here
+            return true;
+        }
+        // Data with the specific ID doesn't exist
+        return false;
     }
 }
