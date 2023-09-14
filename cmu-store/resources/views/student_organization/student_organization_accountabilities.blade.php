@@ -2,7 +2,7 @@
 
 
 @section('main-content')
-
+<link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
 <div class="content">
     <div class="container">
         <div class="container breadcrumbs">

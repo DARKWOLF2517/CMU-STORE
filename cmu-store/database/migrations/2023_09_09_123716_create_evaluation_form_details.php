@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('evaluation_form_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('org_id');
+            $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
             $table->string('evaluation_form_name');
             $table->text('description');
-            $table->integer('total_questions');
-            $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
-            // Add other fields as needed
             $table->timestamps();
         });
     }

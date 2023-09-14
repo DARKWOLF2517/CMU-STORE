@@ -11,23 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evaluation_form_questions', function (Blueprint $table) {
+        Schema::create('evaluation_form_answer', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('org_id');
             $table->unsignedBigInteger('evaluation_form_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
             $table->foreign('evaluation_form_id')->references('id')->on('evaluation_form_details')->onDelete('cascade');
-            $table->text('question');
-            // Add other fields as needed
-            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->text('answer');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations
      */
     public function down(): void
     {
-        Schema::dropIfExists('evaluation_form_questions');
+        Schema::dropIfExists('evaluation_form_answer');
     }
 };
