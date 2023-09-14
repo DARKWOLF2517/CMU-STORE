@@ -26,15 +26,9 @@
 
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
-    <link href="/custom_css/allmedia.css" rel="stylesheet">
-    <link href="{{ asset('custom_css/Login.css') }}" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/evaluation.css" rel="stylesheet">
-
     <link href="/custom_css/tables.css" rel="stylesheet">
-    <link href="/custom_css/SODashboard.css" rel="stylesheet">
-    <link href="/custom_css/SOEvents.css" rel="stylesheet">
-    <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
+ 
 
     {{-- Links for evaluation results --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -131,7 +125,7 @@
                     <div class="d-md-flex flex-shrink-0">
                         <ul class="list-unstyled ps-0">
                         <li class="toggle-button ">
-                           <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                            <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
                         </li>
                      <br>
 

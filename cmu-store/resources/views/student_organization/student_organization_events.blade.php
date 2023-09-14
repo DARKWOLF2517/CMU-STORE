@@ -3,6 +3,7 @@
 {{-- @section('custom-style')
   <link href="/custom_css/SOEvents.css" rel="stylesheet">
 @endsection --}}
+<link href="/custom_css/SOEvents.css" rel="stylesheet">
 @section('main-content')
 
 <div class="content">
