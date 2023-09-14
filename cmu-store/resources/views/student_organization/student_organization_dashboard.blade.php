@@ -22,7 +22,7 @@
                     <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
-                            card_label = "Members:"
+                            card_label = "Members"
                             target_route = ""
                         ></event-count>
                         </div>
@@ -31,7 +31,7 @@
                     <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
-                            card_label = "Created Events:"
+                            card_label = "Created Events"
                             target_route = ""
                         ></event-count>
                         </div>
@@ -39,7 +39,7 @@
                     <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
-                            card_label = "Completed Events:"
+                            card_label = "Completed Events"
                             target_route = ""
                         ></event-count>
                         </div>
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-md-8 mt-2">
                 <div class="announcement-container">
-                    <h4>Recent Announcements</h4>
+                    <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
                         <div class="col-md-4">
                             <div class="card">
@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-4">
                 <div class="timeline">
-                    <h3>Schedule</h3>
+                    <h3><i class="bi bi-list"></i>Schedule</h3>
                     <hr>
                     <div class="Schedule">
                     <event-dashboard>

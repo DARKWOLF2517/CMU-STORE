@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <!-- Add Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
@@ -22,9 +22,6 @@
 
     @yield('custom-style')
     <style>
-    body {
-    background-color: bisque;
-    }
 
     .rotate-icon .fas.fa-chevron-down {
         transition: transform 0.5s ease-in-out;
@@ -52,7 +49,7 @@
         text-decoration: none;
     }
 
-    
+
     .btn-toggle {
         display: flex;
         width: 200px;
@@ -63,19 +60,19 @@
         color: #000000;
         display: inline-block;
         transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
     .btn-toggle .link-title {
             margin-right: 10px;
         }
 
     .btn-toggle .link-arrow {
-        margin-left: auto; 
+        margin-left: auto;
     }
     .btn-toggle .fas {
-        margin-left: 10px; 
+        margin-left: 10px;
         margin-right: 0;
-    }      
+    }
         .top-nav {
             background-color: #ffffff;
             color: #2b2b2b;
@@ -103,14 +100,14 @@
         .top-nav .profile-dropdown .profile-name {
             margin-right: 5px;
         }
-
+/*
         .sidebar {
             position: absolute;
             top: 50px;
             left: 0;
             height: 100vh;
             width: 230px;
-            background-color: #ffffff; 
+            background-color: #ffffff;
             color: #1b1b1b;
             overflow-y: auto;
             transition: width 0.3s ease-in-out;
@@ -134,7 +131,7 @@
         .sidebar.collapsed .link-title {
             opacity: 0;
         }
-            
+
         .toggle-button {
             position: absolute;
             top: 10px;
@@ -144,8 +141,71 @@
             border: 1px solid grey;
             border-radius: 5px;
         }
+ */
 
-        
+        /* Sidebar */
+        .sidebar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: 100vh;
+            width: 230px;
+            background-color: #ffffff;
+            color: #1b1b1b;
+            overflow-y: auto;
+            transition: width 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-left: 230px;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Toggle button */
+        #sidebarToggle {
+            display: none;
+        }
+
+        .toggle-button label {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            margin-left: 10px;
+            background-color: transparent;
+            border: 1px solid grey;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .toggle-button label:hover {
+            background-color: #f2f2f2;
+        }
+
+        .toggle-button label::before {
+            content: "\f0c9"; /* Unicode for hamburger icon (you may need to change this) */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 20px;
+            color: #333;
+            display: block;
+        }
+
+        #sidebarToggle:checked + .sidebar {
+            width: 70px;
+        }
+
+        #sidebarToggle:checked + .sidebar + .content {
+            margin-left: 72px;
+        }
+
+        #sidebarToggle:checked + .sidebar + .content + .toggle-button label::before {
+            content: "\f00d"; /* Unicode for close icon (you may need to change this) */
+            color: #333;
+        }
     </style>
 
     <title>Student Organization Dashboard</title>
@@ -176,7 +236,7 @@
             </div>
         </div>
         <!-- SIDE NAV BAR -->
-        
+
 
     <div class="wrapper">
 
@@ -187,7 +247,7 @@
                     <button class="btn" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
                 </li>
             <br>
-                
+
                 <li class="mt-3">
                     <button class="btn btn-toggle align-items-center rounded dashboard-button">
                         <i class="fas fa-tachometer-alt"></i>
@@ -245,7 +305,7 @@
                         </ul>
                     </div>
                 </li>
-                
+
                 </ul>
             </div>
         </div>
@@ -268,27 +328,27 @@
                 }
             });
         }
-    
+
         // Toggle the sidebar when the burger button is clicked
         const toggleSidebarButton = document.getElementById('ssidebar-toggle');
         const sidebar = document.getElementById('sidebarCollapse');
         const content = document.querySelector('.content');
         const icon = document.querySelector('#ssidebar-toggle i');
         const rotateButtons = document.querySelectorAll('.rotate-icon');
-    
+
         toggleSidebarButton.addEventListener('click', function () {
             // Check if the sidebar is currently collapsed
             const isCollapsed = sidebar.classList.contains('collapsed');
-    
+
             // Close any open btn-toggle elements before toggling the sidebar
             closeOpenBtnToggle();
-    
+
             // Toggle the sidebar and content
             sidebar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
-    
+
             // If the sidebar was previously collapsed, reopen any open btn-toggle elements
             if (!isCollapsed) {
                 rotateButtons.forEach((button) => {
@@ -302,12 +362,12 @@
                 });
             }
         });
-    
+
         rotateButtons.forEach((button) => {
             button.addEventListener('click', function () {
                 // Toggle the 'collapsed' class on the button
                 this.classList.toggle('collapsed');
-    
+
                 // Check if the sidebar is collapsed, and if so, expand it
                 if (sidebar.classList.contains('collapsed')) {
                     sidebar.classList.remove('collapsed');
@@ -321,8 +381,8 @@
             });
         });
     </script>
-    
+
     </div>
-    
+
 </body>
 </html>

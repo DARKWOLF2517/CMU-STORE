@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-8 mt-3">
                 <div class="announcement-container">
-                    <h4>Recent Announcements</h4>
+                    <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
                         <div class="col-md-4">
                             <div class="card">
