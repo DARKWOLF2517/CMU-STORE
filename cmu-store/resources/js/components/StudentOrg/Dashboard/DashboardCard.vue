@@ -1,20 +1,15 @@
-<!-- <template>
-    <div class="col-md-4">
-        <div class="card shadow">
-            <div class="d-flex flex-row align-items-center card-body">
-                <h6 class="d-flex align-items-center justify-content-center card-title">
-                    <b>{{ card_title }}</b>
-                    <i :class="card_icon"> </i>
-                </h6>
-                <h3 class="card-text">{{ count }}</h3>
-            </div>
-        </div>
-    </div>
-</template> -->
+<template>
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <p class="stat-label">{{this.card_label }}</p>
+                            <b><p class="stat-number">{{ }}</p></b>
+                        </div>
+                    </div>
+</template>
 
 <script>
 export default {
-    props: ['target_route', 'card_title', 'card_icon'],
+    props: ['target_route', 'card_label'],
 
     mounted() {
     this.fetchDataCount();
