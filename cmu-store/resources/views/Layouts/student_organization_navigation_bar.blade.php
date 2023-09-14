@@ -7,13 +7,19 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Add Bootstrap 5.0 CSS -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-
+    
     <!-- Add Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
     @vite('resources/js/app.js')
+
+    {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
+    <link href="/custom_css/stylesheet.css" rel="stylesheet">
+    <link href="/custom_css/Navbars.css" rel="stylesheet">
+    <link href="/custom_css/tables.css" rel="stylesheet">
+
     @yield('custom-style')
     <style>
     body {
@@ -177,8 +183,8 @@
         <div class=" p-3  sidebar" id="sidebarCollapse">
             <div class="d-md-flex flex-shrink-0">
                 <ul class="list-unstyled ps-0">
-                <li class="toggle-button ">
-                    <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                <li class="toggle-button">
+                    <button class="btn" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
                 </li>
             <br>
                 
@@ -247,6 +253,8 @@
     @yield('main-content')
     @yield('custom-script')
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
     <script>
         // Function to close any open btn-toggle elements
         function closeOpenBtnToggle() {
@@ -262,10 +270,10 @@
         }
     
         // Toggle the sidebar when the burger button is clicked
-        const toggleSidebarButton = document.getElementById('sidebar-toggle');
+        const toggleSidebarButton = document.getElementById('ssidebar-toggle');
         const sidebar = document.getElementById('sidebarCollapse');
         const content = document.querySelector('.content');
-        const icon = document.querySelector('#sidebar-toggle i');
+        const icon = document.querySelector('#ssidebar-toggle i');
         const rotateButtons = document.querySelectorAll('.rotate-icon');
     
         toggleSidebarButton.addEventListener('click', function () {

@@ -117,59 +117,59 @@
   </div>
 @endsection
 @section('custom-script')
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          editable: true,
-          eventSources: [
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      editable: true,
+      eventSources: [
+        {
+          events: [
             {
-              events: [
-                {
-                  title: 'Meeting',
-                  start: '2023-08-19T10:00:00',
-                  end: '2023-08-19T12:00:00',
-                  backgroundColor: '#007bff',
-                  borderColor: '#007bff'
-                },
-                {
-                  title: 'Appointment',
-                  start: '2023-08-20T14:00:00',
-                  end: '2023-08-20T15:30:00',
-                  backgroundColor: '#28a745',
-                  borderColor: '#28a745'
-                },
-                {
-                  title: 'Deadline',
-                  start: '2023-08-22T08:00:00',
-                  end: '2023-08-22T18:00:00',
-                  backgroundColor: '#dc3545',
-                  borderColor: '#dc3545'
-                }
-                // Add more events with different colors as needed
-              ],
+              title: 'Meeting',
+              start: '2023-08-19T10:00:00',
+              end: '2023-08-19T12:00:00',
+              backgroundColor: '#007bff',
+              borderColor: '#007bff'
+            },
+            {
+              title: 'Appointment',
+              start: '2023-08-20T14:00:00',
+              end: '2023-08-20T15:30:00',
+              backgroundColor: '#28a745',
+              borderColor: '#28a745'
+            },
+            {
+              title: 'Deadline',
+              start: '2023-08-22T08:00:00',
+              end: '2023-08-22T18:00:00',
+              backgroundColor: '#dc3545',
+              borderColor: '#dc3545'
             }
+            // Add more events with different colors as needed
           ],
+        }
+      ],
 
-          eventClick: function(info) {
-            console.log('askjdfkjsd')
-            // Display event details in the modal
-            document.getElementById('eventTitle').textContent = info.event.title;
-            document.getElementById('eventStart').textContent = info.event.start;
-            document.getElementById('eventEnd').textContent = info.event.end;
+      eventClick: function(info) {
+        console.log('askjdfkjsd')
+        // Display event details in the modal
+        document.getElementById('eventTitle').textContent = info.event.title;
+        document.getElementById('eventStart').textContent = info.event.start;
+        document.getElementById('eventEnd').textContent = info.event.end;
 
-            // Show the modal
-            var modal = new bootstrap.Modal(document.getElementById('eventModal'));
-            modal.show();
-          },
-        });
+        // Show the modal
+        var modal = new bootstrap.Modal(document.getElementById('eventModal'));
+        modal.show();
+      },
+    });
 
-        calendar.render();
-      });
-    </script>
+    calendar.render();
+  });
+</script>
 
 @endsection
