@@ -4,261 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    {{-- BOOTSTRAP CDN --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add Bootstrap 5.0 CSS -->
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
-    <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FullCalendar JS -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
-
-
-    {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
-    <link href="/custom_css/stylesheet.css" rel="stylesheet">
-    <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/tables.css" rel="stylesheet">
- 
-
-    {{-- Links for evaluation results --}}
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>
-    <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
-    <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    {{-- icon for webpage tab --}}
-    <link rel="icon" href="{{ url('https://i.pinimg.com/736x/00/eb/c7/00ebc7ed5034e9f18acae56a19966099--flat-illustration-stock-illustrations.jpg') }}">
-
-    {{-- Themes CSS --}}
-    {{-- @if (session()->themes == 'blue')
-        <link rel="stylesheet" href="{{ asset('css/blue_theme.css') }}">
-    @elseif (session()->themes == 'red')
-        <link rel="stylesheet" href="{{ asset('css/red_theme.css') }}">
-    @elseif (session()->themes == 'green')
-        <link rel="stylesheet" href="{{ asset('css/green_theme.css')}}">
-    @endif --}}
-
+    <!-- Add Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     @vite('resources/js/app.js')
     @yield('custom-style')
+    <style>
+    body {
+    background-color: bisque;
+    }
+
+    .rotate-icon .fas.fa-chevron-down {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .rotate-icon.collapsed .fas.fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .rotate-icon:not(.collapsed) .fas.fa-chevron-down {
+        transform: rotate(0deg);
+    }
+
+    .btn-toggle-nav {
+        align-items: center;
+        margin-left: 30px;
+    }
 
 
+    .btn-toggle-nav li {
+        width: 100%;
+    }
+
+    .link-dark {
+        text-decoration: none;
+    }
+
+    
+    .btn-toggle {
+        display: flex;
+        width: 200px;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
+    .link-title {
+        color: #000000;
+        display: inline-block;
+        transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        margin-left: 10px; 
+    }
+    .btn-toggle .link-title {
+            margin-right: 10px;
+        }
+
+    .btn-toggle .link-arrow {
+        margin-left: auto; 
+    }
+    .btn-toggle .fas {
+        margin-left: 10px; 
+        margin-right: 0;
+    }      
+        .top-nav {
+            background-color: #ffffff;
+            color: #2b2b2b;
+            padding: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav .notification-button {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .top-nav .profile-dropdown {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .top-nav .profile-dropdown .profile-name {
+            margin-right: 5px;
+        }
+
+        .sidebar {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: 100vh;
+            width: 230px;
+            background-color: #ffffff; 
+            color: #1b1b1b;
+            overflow-y: auto;
+            transition: width 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        .content {
+            margin-left: 230px;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .content.collapsed {
+            margin-left: 72px;
+        }
+
+        .sidebar.collapsed .link-title {
+            opacity: 0;
+        }
+            
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            margin-left: 10px;
+            background-color: transparent;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        
+    </style>
+
+    <title>Student Organization Dashboard</title>
 </head>
-    <body>
-        <div class="loader-container">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+<body>
+    <div id="app">
+        <!-- TOP NAV BAR -->
+    <div class="wrapper">
+
+        <div class="top-nav">
+            <a href="#" class="nav-link link-light">
+                <span class="nav-link-text link-dark">CMU-STORE-AMS</span>
+            </a>
+            <div class="profile-dropdown dropdown">
+                <button class="notification-button btn btn-link link-dark">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <span class="profile-name"><strong>User</strong></span>
+                </a>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
             </div>
         </div>
-        <div id="app">
-            <!-- TOP NAV BAR -->
-            <div class="wrapper">
-                <div class="top-nav">
-                    {{-- <div class="nav-item toggle-button">
-                        <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                    </div> --}}
-                    <a href="#" class="nav-link link-dark">
-                        <span class="nav-name">CMU-STORE-AMS</span>
-                    </a>
+        <!-- SIDE NAV BAR -->
+        
 
-                    <div class="profile-dropdown dropdown">
-                        <button class="notification-button btn btn-link">
-                            <i class="bi bi-bell"></i>
-                        </button>
-                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://cdn.imgbin.com/0/4/19/imgbin-network-administrator-system-administrator-computer-icons-computer-network-database-others-k0X6MX9NfNjeUyBaXUweXTcMw.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <span class="profile-name"><strong>Admin</strong></span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+    <div class="wrapper">
 
-
-                            <side-nav-button
-                            link_name="Settings"
-                            link_route = "#"
-                            show_icon = "{{false}}"
-                            >
-                            </side-nav-button>
-
-                            <side-nav-button
-                            link_name="Profile"
-                            link_route = "#"
-                            show_icon = "{{false}}"
-                            >
-                            </side-nav-button>
-
-                            <li><hr class="dropdown-divider"></li>
-
-                            <side-nav-button
-                            link_name="Sign out"
-                            link_route = "{{url('/logout')}}"
-                            show_icon = "{{false}}"
-                            >
-                            </side-nav-button>
-
-
+        <div class=" p-3  sidebar" id="sidebarCollapse">
+            <div class="d-md-flex flex-shrink-0">
+                <ul class="list-unstyled ps-0">
+                <li class="toggle-button ">
+                    <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                </li>
+            <br>
+                
+                <li class="mt-3">
+                    <button class="btn btn-toggle align-items-center rounded dashboard-button">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="link-title">Dashboard</span>
+                    </button>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span class="link-title">Attendance</span>
+                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-                <!-- SIDE NAV BAR -->
-            <div class="wrapper">
-                <div class=" p-3  sidebar" id="sidebarCollapse">
-                    <div class="d-md-flex flex-shrink-0">
-                        <ul class="list-unstyled ps-0">
-                        <li class="toggle-button ">
-                            <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
-                        </li>
-                     <br>
-
-                         <li class="mt-3">
-                            <button class="btn btn-toggle align-items-center rounded dashboard-button">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span class="link-title">Dashboard</span>
-                            </button>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                                <i class="fas fa-clipboard-check"></i>
-                                <span class="link-title">Attendance</span>
-                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="collapse" id="dashboard-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle align-items-center studentlist-button">
-                                <i class="fas fa-users"></i>
-                                <span class="link-title">Student List</span>
-                            </button>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle align-items-center rounded events-button">
-                                <i class="fas fa-calendar"></i>
-                                <span class="link-title">Events</span>
-                            </button>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#organization-collapse" aria-expanded="false">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="link-title">Organizations</span>
-                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="collapse" id="organization-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-university"></i> College</a></li>
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-building"></i> Department</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#evaluation-collapse" aria-expanded="false">
-                                <i class="fas fa-chart-line"></i>
-                                <span class="link-title">Evaluation</span>
-                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="collapse" id="evaluation-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
-                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
-                                </ul>
-                            </div>
-                        </li>
-
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center studentlist-button">
+                        <i class="fas fa-users"></i>
+                        <span class="link-title">Student List</span>
+                    </button>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded events-button">
+                        <i class="fas fa-calendar"></i>
+                        <span class="link-title">Events</span>
+                    </button>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#organization-collapse" aria-expanded="false">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="link-title">Organizations</span>
+                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse" id="organization-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-university"></i> College</a></li>
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-building"></i> Department</a></li>
                         </ul>
                     </div>
-                </div>
-{{--
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <side-nav-button
-                            link_name="Dashboard"
-                            link_route="/login/org_dashboard"
-                            link_icon="bi bi-speedometer"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Attendance"
-                            link_route="/student_organization_attendance"
-                            link_icon="bi bi-people"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Student List"
-                            link_route="/student_organization_member_list"
-                            link_icon="bi bi-person"
-                        ></side-nav-button>
-
-                        <side-nav-button
-                            link_name="Events"
-                            link_route="/student_organization_events"
-                            link_icon="bi bi-calendar-check"
-                        ></side-nav-button>
-
-                        <side-nav-button
-                            link_name="Accountabilities"
-                            link_route="/student_organization_accountabilities"
-                            link_icon="bi bi-wallet2"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Evaluation"
-                            link_route="/student_organization_evaluation"
-                            link_icon="bi bi-clipboard-check"
-                        ></side-nav-button>
-
-                    </ul>
-
-                </div> --}}
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#evaluation-collapse" aria-expanded="false">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="link-title">Evaluation</span>
+                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="collapse" id="evaluation-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
+                            <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
+                        </ul>
+                    </div>
+                </li>
+                
+                </ul>
             </div>
-            @yield('main-content')
         </div>
-    </body>
-
-    <script>
-        window.addEventListener('load', function () {
-          // Remove loader once the page has finished loading
-            var loader = document.querySelector('.loader-container');
-            loader.style.display = 'none';
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-
-    {{-- BOOTSTRAP CDN FOR JAVASCRIPT --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
-
-    {{-- INTERNAL JavaScript --}}
-    <script>
-        document.getElementById('sidebar-toggle').addEventListener('click', function() {
-            const dropdown = document.getElementById('sidebar-dropdown');
-            dropdown.classList.toggle('dropdown');
-            dropdown.classList.toggle('dropup');
-            this.classList.toggle('collapsed');
-        });
-    </script>
+    </div>
+    @yield('main-content')
+    @yield('custom-script')
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
     <script>
         // Function to close any open btn-toggle elements
         function closeOpenBtnToggle() {
@@ -272,27 +260,27 @@
                 }
             });
         }
-
+    
         // Toggle the sidebar when the burger button is clicked
         const toggleSidebarButton = document.getElementById('sidebar-toggle');
         const sidebar = document.getElementById('sidebarCollapse');
         const content = document.querySelector('.content');
         const icon = document.querySelector('#sidebar-toggle i');
         const rotateButtons = document.querySelectorAll('.rotate-icon');
-
+    
         toggleSidebarButton.addEventListener('click', function () {
             // Check if the sidebar is currently collapsed
             const isCollapsed = sidebar.classList.contains('collapsed');
-
+    
             // Close any open btn-toggle elements before toggling the sidebar
             closeOpenBtnToggle();
-
+    
             // Toggle the sidebar and content
             sidebar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
-
+    
             // If the sidebar was previously collapsed, reopen any open btn-toggle elements
             if (!isCollapsed) {
                 rotateButtons.forEach((button) => {
@@ -306,12 +294,12 @@
                 });
             }
         });
-
+    
         rotateButtons.forEach((button) => {
             button.addEventListener('click', function () {
                 // Toggle the 'collapsed' class on the button
                 this.classList.toggle('collapsed');
-
+    
                 // Check if the sidebar is collapsed, and if so, expand it
                 if (sidebar.classList.contains('collapsed')) {
                     sidebar.classList.remove('collapsed');
@@ -325,7 +313,8 @@
             });
         });
     </script>
-    @yield('custom-script')
+    
+    </div>
+    
+</body>
 </html>
-
-
