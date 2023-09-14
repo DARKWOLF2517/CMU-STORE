@@ -14,7 +14,7 @@ import CalendarCard from './components/StudentOrg/Dashboard/CalendarCard.vue';
 import EventCard from './components/StudentOrg/Events/EventCard.vue';
 import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
 import EventAttendanceList from './components/StudentOrg/Events/AttendanceEventList.vue';
-//student module 
+//student module
 import StudentAttendance from './components/StudentUser/Attendance/StudentAttendance.vue';
 import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
 import StudentProfile from './components/StudentUser/Profile/StudentProfile.vue';

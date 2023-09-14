@@ -35,55 +35,99 @@
 .top-nav .profile-dropdown .profile-name {
     margin-right: 0.3125rem; /* Converted from 5px */
 }
+.rotate-icon .fas.fa-chevron-down {
+    transition: transform 0.5s ease-in-out;
+}
+
+.rotate-icon.collapsed .fas.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.rotate-icon:not(.collapsed) .fas.fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+.btn-toggle-nav {
+    align-items: center;
+    margin-left: 30px;
+}
+
+
+.btn-toggle-nav li {
+    width: 100%;
+}
+
+
+.link-dark {
+    text-decoration: none;
+}
+
+
+.btn-toggle {
+  display: flex;
+  width: 200px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+.link-title {
+  color: #000000;
+  display: inline-block;
+  transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  margin-left: 10px;
+}
+.btn-toggle .link-title {
+      margin-right: 10px;
+  }
+
+.btn-toggle .link-arrow {
+  margin-left: auto;
+}
+.btn-toggle .fas {
+  margin-left: 10px;
+  margin-right: 0;
+}
 
 .sidebar {
     position: absolute;
-    top: 3.125rem; /* Converted from 50px */
+    top: 50px;
     left: 0;
     height: 100vh;
-    width: 16%; /* Converted from 200px */
-    background-color: #343a40; /* Dark background color */
+    width: 230px;
+    background-color: #ffffff;
+    color: #1b1b1b;
     overflow-y: auto;
     transition: width 0.3s ease-in-out;
     z-index: 1000;
 }
 
 .sidebar.collapsed {
-    width: 4.5%; /* Converted from 72px */
+    width: 70px;
 }
 
-
-.nav-link-text {
-    display: inline-block;
-    transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+.content {
+    margin-left: 230px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
 }
 
-.sidebar.collapsed .nav-link-text {
-    margin-left: -999px;
+.content.collapsed {
+    margin-left: 72px;
+}
+
+.sidebar.collapsed .link-title {
     opacity: 0;
 }
 
-.sidebar.collapsed .nav-link-text span {
-    display: none;
-}
-
-.sidebar-title .bi {
-    color: #000000;
-}
-
-.nav-link i.bi {
-    color: #1f1f1f;
-}
-
-/* Toggle button */
-
 .toggle-button {
     position: absolute;
-    top: 0.4375rem; /* Converted from 7px */
-    left: 1.1875rem; /* Converted from 19px */
-    border: 1px;
-    background-color: #e3e5e9;
+    top: 10px;
+    right: 15px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
 }
+
 .container-breadcrumbs{
     padding-top: 30px;
     width: 100%;

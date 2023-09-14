@@ -35,8 +35,12 @@ background-color: white;
     color: blue;
   }
 
+.stat-label{
+    text-align: center;
+}
 .welcome-card {
-background-image: url('https://www.cmu.edu.ph/wp-content/uploads/2021/04/vlcsnap-2013-11-29-14h20m46s197-660x330.png'); /* Replace with the actual path to your image */
+background-image: url('https://www.cmu.edu.ph/wp-content/uploads/2021/04/vlcsnap-2013-11-29-14h20m46s197-660x330.png');
+/* background-color: #4b85e3; */
 background-size: cover;
 color: white;
 padding: 20px;
@@ -44,6 +48,7 @@ border: none;
 width: 100%;
 height: 100%;
 }
+
 #announcement-row{
     border: 1px;
 }
@@ -51,62 +56,77 @@ height: 100%;
 
 .timeline {
     background-color: #fff;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     padding: 10px;
+
+
 }
 
-.event {
+.Schedule{
+    max-height: 500px;
+    overflow-y: auto;
+}
+.Schedule-event {
     display: flex;
     border-bottom: 1px solid #e0e0e0;
     padding: 20px;
 }
 
-.event-date {
+.Schedule-event-title {
     flex: 0 0 100px;
     text-align: center;
     color: #555;
 }
 
-.event-details {
+.Schedule-event-details {
     flex: 1;
     padding-left: 20px;
 }
 
 
-p {
-    margin: 5px 0;
+small {
     color: #777;
 }
 .announcement-container{
 background-color: #fff;
 padding: 10px;
+margin-top: 5px;
 }
 
-
-/* Media Queries */
-
 @media screen and (max-width: 768px) {
-    /* Add your responsive styles for screens up to 768px width here */
-    /* Example: */
     #events {
-      padding: 10px;
-      max-height: 300px;
+        width: auto;
+        max-height: none;
+        margin-right: 0;
     }
 
     .card {
-      max-height: 150px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    /* Add your responsive styles for screens up to 480px width here */
-    /* Example: */
-    #events {
-      padding: 5px;
-      max-height: 200px;
+        max-height: none;
+        overflow: visible;
     }
 
-    .card {
-      max-height: 100px;
+    .welcome-card {
+        background-size: cover;
+        margin-bottom: 0%;
     }
-  }
+}
+    .timeline{
+        margin-top: 5px;
+    }
+
+    .announcement-container{
+        margin-top: 0px;
+    }
+
+    #statistic {
+        padding: 10px;
+        margin: 10px 0;
+        background-color: white;
+        }
+
+        .stat-number{
+            color: blue;
+          }
+
+        .stat-label{
+            text-align: center;
+        }

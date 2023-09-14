@@ -79,9 +79,9 @@
             <!-- TOP NAV BAR -->
             <div class="wrapper">
                 <div class="top-nav">
-                    <div class="nav-item toggle-button">
+                    {{-- <div class="nav-item toggle-button">
                         <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                    </div>
+                    </div> --}}
                     <a href="#" class="nav-link link-dark">
                         <span class="nav-name">CMU-STORE-AMS</span>
                     </a>
@@ -120,12 +120,83 @@
                             >
                             </side-nav-button>
 
+
                         </ul>
                     </div>
                 </div>
             </div>
                 <!-- SIDE NAV BAR -->
             <div class="wrapper">
+                <div class=" p-3  sidebar" id="sidebarCollapse">
+                    <div class="d-md-flex flex-shrink-0">
+                        <ul class="list-unstyled ps-0">
+                        <li class="toggle-button ">
+                           <button class="btn" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                        </li>
+                     <br>
+
+                         <li class="mt-3">
+                            <button class="btn btn-toggle align-items-center rounded dashboard-button">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="link-title">Dashboard</span>
+                            </button>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span class="link-title">Attendance</span>
+                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="collapse" id="dashboard-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center studentlist-button">
+                                <i class="fas fa-users"></i>
+                                <span class="link-title">Student List</span>
+                            </button>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded events-button">
+                                <i class="fas fa-calendar"></i>
+                                <span class="link-title">Events</span>
+                            </button>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#organization-collapse" aria-expanded="false">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="link-title">Organizations</span>
+                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="collapse" id="organization-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-university"></i> College</a></li>
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-building"></i> Department</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#evaluation-collapse" aria-expanded="false">
+                                <i class="fas fa-chart-line"></i>
+                                <span class="link-title">Evaluation</span>
+                                <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="collapse" id="evaluation-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
+                                    <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        </ul>
+                    </div>
+                </div>
+{{--
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
@@ -163,7 +234,7 @@
 
                     </ul>
 
-                </div>
+                </div> --}}
             </div>
             @yield('main-content')
         </div>
@@ -188,17 +259,76 @@
     {{-- INTERNAL JavaScript --}}
     <script>
         document.getElementById('sidebar-toggle').addEventListener('click', function() {
-            const sidebar = document.getElementById('sidebarCollapse');
-            const content = document.querySelector('.content');
-            const icon = document.querySelector('#sidebar-toggle i');
             const dropdown = document.getElementById('sidebar-dropdown');
-            sidebar.classList.toggle('collapsed');
-            content.classList.toggle('collapsed');
-            icon.classList.toggle('bi-list');
-            icon.classList.toggle('bi-x');
             dropdown.classList.toggle('dropdown');
             dropdown.classList.toggle('dropup');
             this.classList.toggle('collapsed');
+        });
+    </script>
+    <script>
+        // Function to close any open btn-toggle elements
+        function closeOpenBtnToggle() {
+            const btnToggle = document.querySelectorAll('.btn-toggle');
+            btnToggle.forEach((button) => {
+                const collapseTarget = button.getAttribute('data-bs-target');
+                const collapseElement = document.querySelector(collapseTarget);
+                if (collapseElement && collapseElement.classList.contains('show')) {
+                    // Close the open collapse element
+                    collapseElement.classList.remove('show');
+                }
+            });
+        }
+
+        // Toggle the sidebar when the burger button is clicked
+        const toggleSidebarButton = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebarCollapse');
+        const content = document.querySelector('.content');
+        const icon = document.querySelector('#sidebar-toggle i');
+        const rotateButtons = document.querySelectorAll('.rotate-icon');
+
+        toggleSidebarButton.addEventListener('click', function () {
+            // Check if the sidebar is currently collapsed
+            const isCollapsed = sidebar.classList.contains('collapsed');
+
+            // Close any open btn-toggle elements before toggling the sidebar
+            closeOpenBtnToggle();
+
+            // Toggle the sidebar and content
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+
+            // If the sidebar was previously collapsed, reopen any open btn-toggle elements
+            if (!isCollapsed) {
+                rotateButtons.forEach((button) => {
+                    if (!button.classList.contains('collapsed')) {
+                        const collapseTarget = button.getAttribute('data-bs-target');
+                        const collapseElement = document.querySelector(collapseTarget);
+                        if (collapseElement) {
+                            collapseElement.classList.add('show');
+                        }
+                    }
+                });
+            }
+        });
+
+        rotateButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                // Toggle the 'collapsed' class on the button
+                this.classList.toggle('collapsed');
+
+                // Check if the sidebar is collapsed, and if so, expand it
+                if (sidebar.classList.contains('collapsed')) {
+                    sidebar.classList.remove('collapsed');
+                    content.classList.remove('collapsed');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    // Close any open btn-toggle elements when a new one is clicked
+                    closeOpenBtnToggle();
+                }
+            });
         });
     </script>
     @yield('custom-script')

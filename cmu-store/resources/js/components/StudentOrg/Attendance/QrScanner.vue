@@ -15,7 +15,7 @@
                     </tr>
                     <tr v-for="attendances in this.attendance" :id="attendances.user_id">
                         <td> {{  attendances["user_id"] }}</td>
-                    </tr> 
+                    </tr>
                     </thead>
                     <tbody>
                     <tr v-for="(item, index) in this.temporary" :key="index">
@@ -40,7 +40,7 @@
                         </div>
                     </form>
 
-    
+
 </div>
 </template>
 
@@ -68,7 +68,7 @@ data() {
 
 methods: {
     startQrReading(){
-        const scanner = new Html5QrcodeScanner('reader', { 
+        const scanner = new Html5QrcodeScanner('reader', {
         // Scanner will be initialized in DOM inside element with id of 'reader'
         qrbox: {
             width: 250,
@@ -95,7 +95,7 @@ methods: {
                 this.attendance = response.data
             })
             .catch(error => {
-                
+
             });
 
     },
@@ -128,7 +128,7 @@ methods: {
         text-align: center;
         font-size: 1.5rem;
     }
-    
+
     .table thead th {
         background-color: #007bff;
         color: white;

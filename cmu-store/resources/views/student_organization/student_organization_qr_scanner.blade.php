@@ -103,14 +103,14 @@
 
   {{-- <div id="app"> --}}
     <div id="app" class="container">
-        <div class="row justify-content-center">
+        {{-- <div class="row justify-content-center">
             <div class="col-md-6">
               <div class="container-with-buttons d-flex justify-content-end">
                 <button class="btn btn-primary">Save</button>
                 <button class="btn btn-secondary"  style="margin-left: 10px;">Cancel</button>
               </div>
             </div>
-          </div>
+          </div> --}}
           <div class="row justify-content-center">
             <div class="col-md-6 qr-scanner-container">
               <qr-scanner></qr-scanner>
