@@ -88,7 +88,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Home"
-                            link_route="/student_dashboard"
+                            link_route="/login/student_dashboard"
                             link_icon="bi bi-house"
                         ></side-nav-button>
                         <side-nav-button

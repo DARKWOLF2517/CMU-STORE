@@ -50,9 +50,14 @@ export default {
                 // userOrgs.value = response.data;
                 console.log(response.data.org_id)
                 console.log(response.data.role)
-                window.location
+                if (response.data.role == 1){
                 
-                // console.log(response.data.org)
+                window.location.href = 'org_dashboard';
+            }
+                else if (response.data.role == 2){
+                    window.location.href = 'student_dashboard';
+                }
+
             })
             .catch(error => {
                 
@@ -65,6 +70,7 @@ export default {
     //     this.fetchData()
     // },
     //COMPOSITION API
+    
     setup(props) {
 
         let userOrgs = ref();

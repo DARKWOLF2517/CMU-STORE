@@ -62,6 +62,7 @@ data() {
         attendance: [],
         formData:{
             user_id:'',
+            org_id: '1'
         },
     }
 },
@@ -80,10 +81,8 @@ methods: {
         // Starts scanner
     },
     success(result){
-        console.log(result)
         this.formData.user_id = result;
         this.submitForm();
-        console.log(this.Data)
     },
     error(err) {
         // console.error(err);
@@ -100,16 +99,34 @@ methods: {
 
     },
     submitForm(){
-        //Stopper
-        axios.post('/attendance', this.formData)
+        //get the repeating data using id number of the student 
+        axios.get(`/attendance_repetition/${this.formData.user_id}`)
             .then(response => {
-                    console.log(response.data.message);
-                    // alert(response.data.message);
+                if (response.data == 1){
+
+                }
+                else{
+                     //add attendance
+                    axios.post('/attendance', this.formData)
+                        .then(response => {
+                                console.log(response.data.message);
+                                // alert(response.data.message);
+                                
+                        })
+                        .catch(error => {
+                            alert(error);
+                            // alert(this.formData.id_number);
+                        });
+                }
+
             })
             .catch(error => {
                 alert(error);
                 // alert(this.formData.id_number);
             });
+            window.location.reload();
+
+    
     }
 }
 }

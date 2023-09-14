@@ -201,7 +201,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <side-nav-button
                             link_name="Dashboard"
-                            link_route="/org_dashboard"
+                            link_route="/login/org_dashboard"
                             link_icon="bi bi-speedometer"
                         ></side-nav-button>
                         <side-nav-button
