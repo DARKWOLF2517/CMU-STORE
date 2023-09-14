@@ -1,12 +1,11 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Models\Attendance;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -55,10 +54,10 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 // });
 
 //attendance
-Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
-Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
+    Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
+    Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
     //check the repetition of the data using id number
-    Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
+        Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
 Route::middleware(['auth'])->group(function(){
     //ORG ROUTE
     Route::middleware(['user-role:1'])->group(function(){
@@ -88,14 +87,6 @@ Route::middleware(['auth'])->group(function(){
             return view('student_organization.student_organization_students');
         });
 
-        Route::get('student_organization_evaluation_results', function () {
-            return view('student_organization.student_organization_evaluation_results');
-        });
-
-        Route::get('student_organization_evaluation', function () {
-            return view('student_organization.student_organization_evaluation');
-        });
-
         Route::get('student_organization_accountabilities', function () {
             return view('student_organization.student_organization_accountabilities');
         });
@@ -104,19 +95,27 @@ Route::middleware(['auth'])->group(function(){
             return view('student_organization.student_organization_qr_scanner');
         });
 
+        #EVALUATION ROUTES
+            Route::get('student_organization_evaluation_results', function () {
+                return view('student_organization.student_organization_evaluation_results');
+            });
 
+            Route::get('student_organization_evaluation', function () {
+                return view('student_organization.student_organization_evaluation');
+            });
+            Route::get('/fetchEvaluationResult', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
         #EVENT ROUTES
-        Route::get('/events', [EventController::class, 'showEvents'])->name('events');
+            Route::get('/events', [EventController::class, 'showEvents'])->name('events');
 
 
-        Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('events-destroy');
-        Route::post('/events', [EventController::class, 'store'])->name('event-store');
-        Route::get('edit/events/{event}', [EventController::class, 'edit'])->name('events-edit');
-        Route::put('/events/{event}', [EventController::class, 'update'])->name('events-update');
+            Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('events-destroy');
+            Route::post('/events', [EventController::class, 'store'])->name('event-store');
+            Route::get('edit/events/{event}', [EventController::class, 'edit'])->name('events-edit');
+            Route::put('/events/{event}', [EventController::class, 'update'])->name('events-update');
 
 
-        Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
-        Route::get('/user/count',[EventController::class, 'getMembersCount'])->name('get-user-count');
+            Route::get('/events/count',[EventController::class, 'getEventsCount'])->name('get-events-count');
+            Route::get('/user/count',[EventController::class, 'getMembersCount'])->name('get-user-count');
     });
     //STUDENT ROUTE
     Route::middleware(['user-role:2'])->group(function(){
