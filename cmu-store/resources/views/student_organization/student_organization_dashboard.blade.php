@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col mt-2">
                 <div class="welcome-card">
-                    <h3>Welcome, User!</h3>
-                    <h6>College of Information Sciences and Computing</h6>
+                    <h1>Welcome, User!</h1>
+                    <p>College of Information Sciences and Computing</p>
                 </div>
             </div>
 
