@@ -3,15 +3,51 @@
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card welcome-card">
-                    <h3>Welcome, User!</h3>
-                    <h6>College of Information Sciences and Computing</h6>
+            <div class="col mt-2">
+                <div class="welcome-card">
+                    <h1>Welcome, User!</h1>
+                    <p>College of Information Sciences and Computing</p>
                 </div>
             </div>
 
+            <div class="col-md-4 mt-0">
+                <div class="row text-center" id="statistic">
+                    {{-- <div class="col-sm-4">
+                        <div class="statistic">
+                            <p class="stat-label">Number of Members:</p>
+                            <b><p class="stat-number">200</p></b>
+                        </div>
+                    </div> --}}
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <event-count
+                            card_label = "Members"
+                            target_route = ""
+                        ></event-count>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <event-count
+                            card_label = "Created Events"
+                            target_route = ""
+                        ></event-count>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="statistic">
+                            <event-count
+                            card_label = "Completed Events"
+                            target_route = ""
+                        ></event-count>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-8 mt-3">
+            <div class="col-md-8 mt-2">
                 <div class="announcement-container">
                     <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
@@ -41,40 +77,23 @@
                         </div>
                 </div>
             </div>
-                <div class="mt-3">
+                <div class="mt-2">
                     <div id="calendar"></div>
                 </div>
             </div>
-            <div class="col-md-4 mt-3">
+            <div class="col-md-4">
                 <div class="timeline">
-                    <h3>Schedule</h3>
+                    <h3><i class="bi bi-list"></i>Schedule</h3>
                     <hr>
-                    <div class="event">
-                        <div class="event-date">10:00 AM</div>
-                        <div class="event-details">
-                            <h5>Foundation Day</h5>
-                            <p>September 20, 2023</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-date">12:30 PM</div>
-                        <div class="event-details">
-                            <h5>Palaro</h5>
-                            <p>Septeber 23, 2023</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-date">3:00 PM</div>
-                        <div class="event-details">
-                            <h5>Final defense</h5>
-                            <p>November 30, 2023</p>
-                        </div>
-                    </div>
+                    <div class="Schedule">
+                    <event-dashboard>
+
+                    </event-dashboard>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
     <!-- Bootstrap Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -94,6 +113,7 @@
         </div>
       </div>
     </div>
+  </div>
 @endsection
 
 @section('custom-script')
@@ -101,42 +121,42 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          editable: true,
-          eventSources: [
+        initialView: 'dayGridMonth',
+        editable: true,
+        eventSources: [
             {
-              events: [
+            events: [
                 {
-                  title: 'Meeting',
-                  start: '2023-08-19T10:00:00',
-                  end: '2023-08-19T12:00:00',
-                  backgroundColor: '#007bff',
-                  borderColor: '#007bff'
+                title: 'Meeting',
+                start: '2023-08-19T10:00:00',
+                end: '2023-08-19T12:00:00',
+                backgroundColor: '#007bff',
+                borderColor: '#007bff'
                 },
                 {
-                  title: 'Appointment',
-                  start: '2023-08-20T14:00:00',
-                  end: '2023-08-20T15:30:00',
-                  backgroundColor: '#28a745',
-                  borderColor: '#28a745'
+                title: 'Appointment',
+                start: '2023-08-20T14:00:00',
+                end: '2023-08-20T15:30:00',
+                backgroundColor: '#28a745',
+                borderColor: '#28a745'
                 },
                 {
-                  title: 'Deadline',
-                  start: '2023-08-22T08:00:00',
-                  end: '2023-08-22T18:00:00',
-                  backgroundColor: '#dc3545',
-                  borderColor: '#dc3545'
+                title: 'Deadline',
+                start: '2023-08-22T08:00:00',
+                end: '2023-08-22T18:00:00',
+                backgroundColor: '#dc3545',
+                borderColor: '#dc3545'
                 }
                 // Add more events with different colors as needed
-              ],
-            }
-          ],
+            ],
+        }
+        ],
 
-          eventClick: function(info) {
+        eventClick: function(info) {
             // Display event details in the modal
             document.getElementById('eventTitle').textContent = info.event.title;
             document.getElementById('eventStart').textContent = info.event.start;
@@ -145,13 +165,12 @@
             // Show the modal
             var modal = new bootstrap.Modal(document.getElementById('eventModal'));
             modal.show();
-          },
+        },
         });
 
         calendar.render();
-      });
+    });
     </script>
-</div>
-</div>
+
 
 @endsection

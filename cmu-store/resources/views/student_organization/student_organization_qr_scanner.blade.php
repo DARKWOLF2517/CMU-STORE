@@ -43,19 +43,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Add Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Add Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Add Font Awesome CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<!-- Add Font Awesome CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  @vite('resources/js/app.js')
-  <title>Document</title>
-  <style>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+@vite('resources/js/app.js')
+<title>Document</title>
+<style>
 
     body {
     background-color: #f0f0f0;
@@ -64,42 +64,43 @@
 
 
     @media (max-width: 576px) {
-      .table thead th {
+    .table thead th {
         font-size: 10px;
-      }
+}
     }
     .container-with-buttons{
         padding: 2px;
     }
     .container-with-buttons, .qr-scanner-container, .table-container {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      margin-bottom: 10px;
+    background-color: #f9f9f9;
+      /* border-radius: 10px; */
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+padding: 10px;
+      /* margin-bottom: 10px; */
     }
 
 
     .qr-scanner-container {
-      margin-bottom: 20px;
-      text-align: center;
+      /* margin-bottom: 20px; */
+    align-items: center;
+    text-align: center;
     }
 
 
     qr-scanner {
 
     }
-  </style>
+</style>
 </head>
 <body>
   <!-- Bootstrap Top Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">CMU-STORE-AMS</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-      </div>
+    <a class="navbar-brand" href="#">CMU-STORE-AMS</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
     </div>
-  </nav>
+    </div>
+</nav>
 
   {{-- <div id="app"> --}}
     <div id="app" class="container">
@@ -111,15 +112,15 @@
               </div>
             </div>
           </div> --}}
-          <div class="row justify-content-center">
-            <div class="col-md-6 qr-scanner-container">
-              <qr-scanner></qr-scanner>
-            </div>
-          </div>
+        <div class="row justify-content-center">
+        <div class="col-md-6 qr-scanner-container">
+            <qr-scanner></qr-scanner>
+        </div>
+        </div>
     </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
 

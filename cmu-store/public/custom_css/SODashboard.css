@@ -6,13 +6,13 @@
     width: 100%;
     max-height: 430px;
     margin-right: 20px;
-  }
-  .card {
+}
+.card {
     max-height: 200px;
     overflow: hidden;
-  }
+}
 
-  #calendar {
+#calendar {
     font-size: 10px;
     border: none;
     padding: 20px;
@@ -20,11 +20,7 @@
     height: 500px;
     margin: 0 auto;
     background-color: #fff;
-  }
-  .flex-container {
-    display: flex;
-
-  }
+}
 
 #statistic {
 padding: 10px;
@@ -34,7 +30,7 @@ background-color: white;
 
 .stat-number{
     color: blue;
-  }
+}
 
 .stat-label{
     text-align: center;

@@ -4,7 +4,7 @@
     /* border-radius: 10px; */
     padding: 20px;
     margin: auto;
-    width: 95%;
+    width: 100%;
     align-items: center;
     overflow: auto; /* Add scrollbar to the portlet */
     max-height: 80vh;

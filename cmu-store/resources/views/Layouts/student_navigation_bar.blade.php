@@ -10,13 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
 
-
+{{-- CSS STYLESHEET --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
-    <link href="/custom_css/allmedia.css" rel="stylesheet">
-    <link href="/custom_css/Login.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
     <link href="/custom_css/StudDashboard.css" rel="stylesheet">
-    <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
     <link href="/custom_css/tables.css" rel="stylesheet">
     <link href="/custom_css/announcement.css" rel="stylesheet">
 
