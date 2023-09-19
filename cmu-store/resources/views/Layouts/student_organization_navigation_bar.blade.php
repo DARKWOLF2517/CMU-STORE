@@ -14,7 +14,7 @@
     <!-- FullCalendar CSS -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
     @vite('resources/js/app.js')
-
+    
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
@@ -312,9 +312,9 @@
     </div>
     @yield('main-content')
     @yield('custom-script')
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FullCalendar JS -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script> --}}
     <script>
         // Function to close any open btn-toggle elements
         function closeOpenBtnToggle() {
@@ -333,7 +333,7 @@
         const toggleSidebarButton = document.getElementById('ssidebar-toggle');
         const sidebar = document.getElementById('sidebarCollapse');
         const content = document.querySelector('.content');
-        const icon = document.querySelector('#ssidebar-toggle i');
+        const icon = document.querySelector('#sidebar-toggle i');
         const rotateButtons = document.querySelectorAll('.rotate-icon');
 
         toggleSidebarButton.addEventListener('click', function () {
@@ -342,7 +342,7 @@
 
             // Close any open btn-toggle elements before toggling the sidebar
             closeOpenBtnToggle();
-
+            alert('hello');
             // Toggle the sidebar and content
             sidebar.classList.toggle('collapsed');
             content.classList.toggle('collapsed');
