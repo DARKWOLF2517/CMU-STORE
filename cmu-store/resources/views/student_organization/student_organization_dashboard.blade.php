@@ -24,7 +24,7 @@
                             <event-count
                             card_label = "Members"
                             target_route = ""
-                            icons = "bi bi-people-fill"
+                            icons = "fas fa-users card-icon"
                         ></event-count>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <event-count
                             card_label = "Created Events"
                             target_route = ""
-                            icons = "bi bi-people-fill"
+                            icons = "fas fa-clock card-icon ongoing-events"
                         ></event-count>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                             <event-count
                             card_label = "Completed Events"
                             target_route = ""
-                            icons = "bi bi-people-fill"
+                            icons = "fas fa-check card-icon completed-events"
                         ></event-count>
                         </div>
                     </div>

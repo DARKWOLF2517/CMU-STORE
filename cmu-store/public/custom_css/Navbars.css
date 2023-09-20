@@ -64,27 +64,27 @@
 
 
 .btn-toggle {
-  display: flex;
-  width: 200px;
-  margin-bottom: 10px;
-  padding-left: 0;
+display: flex;
+width: 200px;
+margin-bottom: 10px;
+padding-left: 0;
 }
 .link-title {
-  color: #000000;
-  display: inline-block;
-  transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  margin-left: 10px;
+color: #000000;
+display: inline-block;
+transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+margin-left: 10px;
 }
 .btn-toggle .link-title {
-      margin-right: 10px;
-  }
+    margin-right: 10px;
+}
 
 .btn-toggle .link-arrow {
-  margin-left: auto;
+margin-left: auto;
 }
 .btn-toggle .fas {
-  margin-left: 10px;
-  margin-right: 0;
+margin-left: 10px;
+margin-right: 0;
 }
 
 .sidebar {

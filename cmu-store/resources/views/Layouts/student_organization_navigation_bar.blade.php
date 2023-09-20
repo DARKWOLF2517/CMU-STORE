@@ -51,9 +51,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- SIDE NAV BAR -->
         </div>
-
+<!-- SIDE NAV BAR -->
         <div class="wrapper">
 
             <div class=" p-3  sidebar" id="sidebarCollapse">
@@ -67,7 +66,9 @@
                     <li class="mt-3">
                         <button class="btn btn-toggle align-items-center rounded dashboard-button">
                             <i class="fas fa-tachometer-alt"></i>
+                            <a href="/login/org_dashboard">
                             <span class="link-title">Dashboard</span>
+                            </a>
                         </button>
                     </li>
                     <li class="mb-1">
@@ -78,21 +79,25 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
-                                <li><a href="#" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
+                                <li><a href="/student_organization_attendance" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
+                                <li><a href="/student_organization_attendance_record" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center studentlist-button">
                             <i class="fas fa-users"></i>
+                            <a href="/student_organization_member_list">
                             <span class="link-title">Student List</span>
+                            </a>
                         </button>
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
+                            <a href="/student_organization_events">
                             <span class="link-title">Events</span>
+                            </a>
                         </button>
                     </li>
                     <li class="mb-1">
@@ -116,7 +121,7 @@
                         </button>
                         <div class="collapse" id="evaluation-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
+                                <li><a href="/student_organization_evaluation_results" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
                                 <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
                             </ul>
                         </div>
