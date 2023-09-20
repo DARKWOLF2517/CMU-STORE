@@ -1,142 +1,136 @@
 
-        .rotate-icon .fas.fa-chevron-down {
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .rotate-icon.collapsed .fas.fa-chevron-down {
-            transform: rotate(180deg);
-        }
-
-        .rotate-icon:not(.collapsed) .fas.fa-chevron-down {
-            transform: rotate(0deg);
-        }
-
-        .btn-toggle-nav {
-            align-items: center;
-            margin-left: 30px;
-        }
+.top-nav {
+    position: absolute;
+    width: 100%;
+    top: 0; /* Converted from 7px */
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.875rem; /* Converted from 7px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.125rem; /* Converted from 50px */
+}
 
 
-        .btn-toggle-nav li {
-            width: 100%;
-        }
+.top-nav .notification-button {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    margin-right: 0.625rem; /* Converted from 10px */
+}
 
-        .link-dark {
-            text-decoration: none;
-        }
+.nav-name {
+    padding-left: 3.75rem; /* Converted from 60px */
+}
+
+.top-nav .profile-dropdown {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+.top-nav .profile-dropdown .profile-name {
+    margin-right: 0.3125rem; /* Converted from 5px */
+}
+.rotate-icon .fas.fa-chevron-down {
+    transition: transform 0.5s ease-in-out;
+}
+
+.rotate-icon.collapsed .fas.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.rotate-icon:not(.collapsed) .fas.fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+.btn-toggle-nav {
+    align-items: center;
+    margin-left: 30px;
+}
 
 
-        .btn-toggle {
-            display: flex;
-            width: 200px;
-            margin-bottom: 10px;
-            padding-left: 0;
-        }
-        .link-title {
-            color: #000000;
-            display: inline-block;
-            transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            margin-left: 10px;
-        }
-        .btn-toggle .link-title {
-                margin-right: 10px;
-            }
+.btn-toggle-nav li {
+    width: 100%;
+}
 
-        .btn-toggle .link-arrow {
-            margin-left: auto;
-        }
-        .btn-toggle .fas {
-            margin-left: 10px;
-            margin-right: 0;
-        }
-        .top-nav {
-            background-color: #ffffff;
-            color: #2b2b2b;
-            padding: 7px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .top-nav .notification-button {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
+.link-dark {
+    text-decoration: none;
+}
 
-        .top-nav .profile-dropdown {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-        }
 
-        .top-nav .profile-dropdown .profile-name {
-            margin-right: 5px;
-        }
+.btn-toggle {
+  display: flex;
+  width: 200px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+.link-title {
+  color: #000000;
+  display: inline-block;
+  transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  margin-left: 10px;
+}
+.btn-toggle .link-title {
+      margin-right: 10px;
+  }
 
-        /* Sidebar */
-        .sidebar {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            height: 100vh;
-            width: 230px;
-            background-color: #ffffff;
-            color: #1b1b1b;
-            overflow-y: auto;
-            transition: width 0.3s ease-in-out;
-            z-index: 1000;
-        }
+.btn-toggle .link-arrow {
+  margin-left: auto;
+}
+.btn-toggle .fas {
+  margin-left: 10px;
+  margin-right: 0;
+}
 
-        .content {
-            margin-left: 230px;
-            padding: 20px;
-            transition: margin-left 0.3s ease-in-out;
-        }
+.sidebar {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 100vh;
+    width: 230px;
+    background-color: #ffffff;
+    color: #1b1b1b;
+    overflow-y: auto;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+}
 
-        /* Toggle button */
-        #sidebarToggle {
-            display: none;
-        }
+.sidebar.collapsed {
+    width: 70px;
+}
 
-        .toggle-button label {
-            display: block;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            margin-left: 10px;
-            background-color: transparent;
-            border: 1px solid grey;
-            border-radius: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
+.content {
+    margin-left: 230px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
 
-        .toggle-button label:hover {
-            background-color: #f2f2f2;
-        }
+.content.collapsed {
+    margin-left: 72px;
+}
 
-        .toggle-button label::before {
-            content: "\f0c9"; /* Unicode for hamburger icon (you may need to change this) */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 20px;
-            color: #333;
-            display: block;
-        }
+.sidebar.collapsed .link-title {
+    opacity: 0;
+}
 
-        #sidebarToggle:checked + .sidebar {
-            width: 70px;
-        }
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
 
-        #sidebarToggle:checked + .sidebar + .content {
-            margin-left: 72px;
-        }
+.container-breadcrumbs{
+    padding-top: 30px;
+    width: 100%;
+    height: 30px;
 
-        #sidebarToggle:checked + .sidebar + .content + .toggle-button label::before {
-            content: "\f00d"; /* Unicode for close icon (you may need to change this) */
-            color: #333;
-        }
+}

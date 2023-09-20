@@ -14,155 +14,13 @@
     <!-- FullCalendar CSS -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
 
-    
+
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
     <link href="/custom_css/tables.css" rel="stylesheet">
 
-    <style>
-        .rotate-icon .fas.fa-chevron-down {
-            transition: transform 0.5s ease-in-out;
-        }
 
-        .rotate-icon.collapsed .fas.fa-chevron-down {
-            transform: rotate(180deg);
-        }
-
-        .rotate-icon:not(.collapsed) .fas.fa-chevron-down {
-            transform: rotate(0deg);
-        }
-
-        .btn-toggle-nav {
-            align-items: center;
-            margin-left: 30px;
-        }
-
-
-        .btn-toggle-nav li {
-            width: 100%;
-        }
-
-        .link-dark {
-            text-decoration: none;
-        }
-
-
-        .btn-toggle {
-            display: flex;
-            width: 200px;
-            margin-bottom: 10px;
-            padding-left: 0;
-        }
-        .link-title {
-            color: #000000;
-            display: inline-block;
-            transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            margin-left: 10px;
-        }
-        .btn-toggle .link-title {
-                margin-right: 10px;
-            }
-
-        .btn-toggle .link-arrow {
-            margin-left: auto;
-        }
-        .btn-toggle .fas {
-            margin-left: 10px;
-            margin-right: 0;
-        }
-        .top-nav {
-            background-color: #ffffff;
-            color: #2b2b2b;
-            padding: 7px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-nav .notification-button {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        .top-nav .profile-dropdown {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .top-nav .profile-dropdown .profile-name {
-            margin-right: 5px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            height: 100vh;
-            width: 230px;
-            background-color: #ffffff;
-            color: #1b1b1b;
-            overflow-y: auto;
-            transition: width 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .content {
-            margin-left: 230px;
-            padding: 20px;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
-        /* Toggle button */
-        #sidebarToggle {
-            display: none;
-        }
-
-        .toggle-button label {
-            display: block;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            margin-left: 10px;
-            background-color: transparent;
-            border: 1px solid grey;
-            border-radius: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .toggle-button label:hover {
-            background-color: #f2f2f2;
-        }
-
-        .toggle-button label::before {
-            content: "\f0c9"; /* Unicode for hamburger icon (you may need to change this) */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 20px;
-            color: #333;
-            display: block;
-        }
-
-        #sidebarToggle:checked + .sidebar {
-            width: 70px;
-        }
-
-        #sidebarToggle:checked + .sidebar + .content {
-            margin-left: 72px;
-        }
-
-        #sidebarToggle:checked + .sidebar + .content + .toggle-button label::before {
-            content: "\f00d"; /* Unicode for close icon (you may need to change this) */
-            color: #333;
-        }
-    </style>
 
     @yield('custom-style')
     <title>Student Organization Dashboard</title>
@@ -279,7 +137,7 @@
         document.onreadystatechange = () => {
             if(document.readyState === "complete")
             {
-    
+
                 // Toggle the sidebar when the burger button is clicked
                 const toggleSidebarButton = document.getElementById('ssidebar-toggle');
                 const sidebar = document.getElementById('sidebarCollapse');
