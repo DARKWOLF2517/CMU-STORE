@@ -1,15 +1,4 @@
 <template>
-    <div class="col">
-                    <div class="statistic">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-users card-icon"></i>
-                            <div class="ml-3">
-                                <p class="stat-label">Members</p>
-                                <b><p class="stat-number">200</p></b>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
     <div class="Schedule-event" v-for="event in this.events" :id="event.event_id">
         <div class="Schedule-event-title"><h5> {{ event["name"] }}</h5></div>
         <div class="Schedule-event-details">
