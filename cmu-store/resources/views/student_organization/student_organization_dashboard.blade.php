@@ -24,6 +24,7 @@
                             <event-count
                             card_label = "Members"
                             target_route = ""
+                            icons = "bi bi-people-fill"
                         ></event-count>
                         </div>
                     </div>
@@ -33,6 +34,7 @@
                             <event-count
                             card_label = "Created Events"
                             target_route = ""
+                            icons = "bi bi-people-fill"
                         ></event-count>
                         </div>
                     </div>
@@ -41,6 +43,7 @@
                             <event-count
                             card_label = "Completed Events"
                             target_route = ""
+                            icons = "bi bi-people-fill"
                         ></event-count>
                         </div>
                     </div>

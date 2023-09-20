@@ -1,6 +1,7 @@
 <template>
                     <div class="col-sm-4">
                         <div class="statistic">
+                            <i :class="icons"></i>
                             <p class="stat-label">{{this.card_label }}</p>
                             <b><p class="stat-number">{{ }}</p></b>
                         </div>
@@ -9,7 +10,7 @@
 
 <script>
 export default {
-    props: ['target_route', 'card_label'],
+    props: ['target_route', 'card_label', 'icons'],
 
     mounted() {
     this.fetchDataCount();
@@ -25,7 +26,6 @@ methods: {
         axios.get(this.target_route)
             .then(response => {
                 this.count = response.data.count;
-                // console.log(this.card_title + this.count);
             })
             .catch(error => {
                 console.log(error);
