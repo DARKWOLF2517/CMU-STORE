@@ -1,15 +1,21 @@
 <template>
+
                     <div class="col-sm-4">
                         <div class="statistic">
-                            <p class="stat-label">{{this.card_label }}</p>
-                            <b><p class="stat-number">{{ }}</p></b>
+                            <div class="d-flex align-items-center">
+                                <div class="ml-3">
+                                    <p class="stat-label">{{this.card_label }}</p>
+                                <b><p class="stat-number">{{ }}</p></b>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 </template>
 
 <script>
 export default {
-    props: ['target_route', 'card_label'],
+    props: ['target_route','card_label'],
 
     mounted() {
     this.fetchDataCount();
