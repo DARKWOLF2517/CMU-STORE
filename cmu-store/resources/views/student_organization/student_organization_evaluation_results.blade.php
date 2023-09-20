@@ -1,8 +1,10 @@
 @extends('layouts.student_organization_navigation_bar')
-@section('main-content')
+@section('custom-style')
 <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
 <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
 <link href="/custom_css/evaluation.css" rel="stylesheet">
+@endsection
+@section('main-content')
 <div class="content"> 
   <div class="container">
       <div class="container breadcrumbs">
@@ -34,14 +36,10 @@
           <h6 for="Venue">Venue:</h6>
           <hr>
           <evaluation-chart>
-  
           </evaluation-chart>
       </div>
   </div>
 </div>
-
-
-
 @endsection
 
 @section('custom-script')
