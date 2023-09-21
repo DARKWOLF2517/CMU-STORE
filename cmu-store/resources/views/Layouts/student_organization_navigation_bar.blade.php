@@ -32,8 +32,11 @@
         <div class="wrapper">
 
             <div class="top-nav">
+                {{-- Toggle button for side navigation Bar --}}
+
                 <a href="#" class="nav-link link-light">
-                    <span class="nav-link-text link-dark">CMU-STORE-AMS</span>
+                    <button class="btn toggle-button" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
+                    <span class="nav-link-text link-dark"> CMU-STORE-AMS</span>
                 </a>
                 <div class="profile-dropdown dropdown">
                     <button class="notification-button btn btn-link link-dark">
@@ -54,15 +57,9 @@
         </div>
 <!-- SIDE NAV BAR -->
         <div class="wrapper">
-
             <div class=" p-3  sidebar" id="sidebarCollapse">
                 <div class="d-md-flex flex-shrink-0">
                     <ul class="list-unstyled ps-0">
-                    <li class="toggle-button">
-                        <button class="btn" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
-                    </li>
-                <br>
-
                     <li class="mt-3">
                         <button class="btn btn-toggle align-items-center rounded dashboard-button">
                             <i class="fas fa-tachometer-alt"></i>
@@ -121,7 +118,7 @@
                         </button>
                         <div class="collapse" id="evaluation-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="/student_organization_evaluation_results" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
+                                <li><a href="/student_organization_evaluation" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
                                 <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
                             </ul>
                         </div>

@@ -4,14 +4,16 @@
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="col mt-2">
+            <div class="col-9 mt-2">
                 <div class="welcome-card">
+                    <div class="welcome-text">
                     <h1>Welcome, User!</h1>
                     <p>College of Information Sciences and Computing</p>
                 </div>
+                </div>
             </div>
 
-            <div class="col-md-4 mt-0">
+            <div class="col md-4 mt-2">
                 <div class="row text-center" id="statistic">
                     {{-- <div class="col-sm-4">
                         <div class="statistic">
@@ -19,7 +21,6 @@
                             <b><p class="stat-number">200</p></b>
                         </div>
                     </div> --}}
-                    <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
                             card_label = "Members"
@@ -27,31 +28,26 @@
                             icons = "fas fa-users card-icon"
                         ></event-count>
                         </div>
-                    </div>
 
-                    <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
                             card_label = "Created Events"
                             target_route = ""
                             icons = "fas fa-clock card-icon ongoing-events"
                         ></event-count>
-                        </div>
                     </div>
-                    <div class="col-sm-4">
                         <div class="statistic">
                             <event-count
                             card_label = "Completed Events"
                             target_route = ""
                             icons = "fas fa-check card-icon completed-events"
                         ></event-count>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8 mt-2">
+
+            <div class="col mt-2">
                 <div class="announcement-container">
                     <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
@@ -79,22 +75,26 @@
                                 </div>
                             </div>
                         </div>
+
                 </div>
             </div>
-                <div class="mt-2">
+            <div class="row">
+                <div class="col mt-2">
                     <div id="calendar"></div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="timeline">
-                    <h3><i class="bi bi-list"></i>Schedule</h3>
-                    <hr>
-                    <div class="Schedule">
-                    <event-dashboard>
+                <div class="col-md-4">
+                    <div class="timeline">
+                        <h3><i class="bi bi-list"></i>Schedule</h3>
+                        <hr>
+                        <div class="Schedule">
+                        <event-dashboard>
 
-                    </event-dashboard>
+                        </event-dashboard>
+                    </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
@@ -123,42 +123,42 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      editable: true,
-      eventSources: [
+var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    editable: true,
+    eventSources: [
         {
-          events: [
+        events: [
             {
-              title: 'Meeting',
-              start: '2023-08-19T10:00:00',
-              end: '2023-08-19T12:00:00',
-              backgroundColor: '#007bff',
-              borderColor: '#007bff'
+            title: 'Meeting',
+            start: '2023-08-19T10:00:00',
+            end: '2023-08-19T12:00:00',
+            backgroundColor: '#007bff',
+            borderColor: '#007bff'
             },
             {
-              title: 'Appointment',
-              start: '2023-08-20T14:00:00',
-              end: '2023-08-20T15:30:00',
-              backgroundColor: '#28a745',
-              borderColor: '#28a745'
+            title: 'Appointment',
+            start: '2023-08-20T14:00:00',
+            end: '2023-08-20T15:30:00',
+            backgroundColor: '#28a745',
+            borderColor: '#28a745'
             },
             {
-              title: 'Deadline',
-              start: '2023-08-22T08:00:00',
-              end: '2023-08-22T18:00:00',
-              backgroundColor: '#dc3545',
-              borderColor: '#dc3545'
+            title: 'Deadline',
+            start: '2023-08-22T08:00:00',
+            end: '2023-08-22T18:00:00',
+            backgroundColor: '#dc3545',
+            borderColor: '#dc3545'
             }
             // Add more events with different colors as needed
-          ],
+        ],
         }
-      ],
+    ],
 
-      eventClick: function(info) {
+    eventClick: function(info) {
         console.log('askjdfkjsd')
         // Display event details in the modal
         document.getElementById('eventTitle').textContent = info.event.title;

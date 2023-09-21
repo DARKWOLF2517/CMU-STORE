@@ -1,12 +1,14 @@
 <template>
 
-                    <div class="col-sm-4">
                         <div class="statistic">
+                        <div class="d-flex align-items-center">
                             <i :class="icons"></i>
+                            <div class="ml-3">
                             <p class="stat-label">{{this.card_label }}</p>
                             <b><p class="stat-number">{{ }}</p></b>
+                            </div>
                         </div>
-                    </div>
+                        </div>
 </template>
 
 <script>
