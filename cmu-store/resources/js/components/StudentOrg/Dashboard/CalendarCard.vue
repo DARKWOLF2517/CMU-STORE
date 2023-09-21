@@ -31,11 +31,22 @@ export default {
     
     mounted(){
         this.showCalendar();
+        this.fetchData();
     },
     // data(){
 
     // },
     methods:{
+        fetchData(){
+        axios.get('/events/show')
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+
+            });
+
+    },
         showCalendar(){ 
             document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
