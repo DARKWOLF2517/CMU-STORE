@@ -1,82 +1,104 @@
-<!-- <template>
-<div>
-    <div class="calendar">
-        <div class="header">
-            <button id = "prev-month" class="btn btn-link" @click="previousMonth"><i class="bi bi-caret-left"></i> </button>
-            <b><span id="month-year"> {{ currentMonth }}</span></b>
-            <button @click="nextMonth" id="next-month" class="btn btn-link"><i class="bi bi-caret-right"></i></button>
+<template>
+    
+        <div id='calendar'></div>
+    
+
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <table>
-            <thead>
-            <tr>
-                <th v-for="day in days" :key="day">{{ day }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="week in weeks" :key="week">
-                <td v-for="day in week" :key="day">{{ day }}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="modal-body">
+            <p><strong>Title:</strong> <span id="eventTitle"></span></p>
+            <p><strong>Start:</strong> <span id="eventStart"></span></p>
+            <p><strong>End:</strong> <span id="eventEnd"></span></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
     </div>
-</div>
 </template>
 
 <script>
+import { Calendar } from 'fullcalendar';
+import { Modal } from 'bootstrap'
 export default {
-data() {
-    return {
-    currentDate: new Date(),
-    days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    weeks: [],
-    };
-},
-computed: {
-    currentMonth() {
-    return this.currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
-    },
-},
-created() {
-    this.updateCalendar();
-},
-mounted() {
-    this.updateCalendar();
-},
-methods: {
-    updateCalendar() {
-    const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1).getDay();
-    const daysInMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
-    const weeks = [[]];
-    let weekIndex = 0;
-    for (let i = 0; i < firstDay; i++) {
-        weeks[weekIndex].push('');
-    }
-    for (let day = 1; day <= daysInMonth; day++) {
-        if (weeks[weekIndex].length === 7) {
-        weekIndex++;
-        weeks.push([]);
-        }
-        weeks[weekIndex].push(day);
-    }
-    this.weeks = weeks;
-    },
-    previousMonth() {
-    this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 1);
-    this.updateCalendar();
-    },
-    nextMonth() {
-    this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 1);
-    this.updateCalendar();
-    },
-},
-};
-</script>
-
-<style scoped>
-
-</style> -->
-<template>
-  <div>
     
-  </div>
-</template>
+    mounted(){
+        this.showCalendar();
+        this.fetchData();
+    },
+    // data(){
+
+    // },
+    methods:{
+        fetchData(){
+        axios.get('/events/show')
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+
+            });
+
+    },
+        showCalendar(){ 
+            document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                editable: true,
+                eventSources: [
+                    {
+                    events: [
+                        {
+                        title: 'Meeting',
+                        start: '2023-09-19T10:00:00',
+                        end: '2023-09-19T12:00:00',
+                        backgroundColor: '#007bff',
+                        borderColor: '#007bff'
+                        },
+                        {
+                        title: 'Appointment',
+                        start: '2023-08-20T14:00:00',
+                        end: '2023-08-20T15:30:00',
+                        backgroundColor: '#28a745',
+                        borderColor: '#28a745'
+                        },
+                        {
+                        title: 'Deadline',
+                        start: '2023-08-22T08:00:00',
+                        end: '2023-08-22T18:00:00',
+                        backgroundColor: '#dc3545',
+                        borderColor: '#dc3545'
+                        }
+                        // Add more events with different colors as needed
+                    ],
+                    }
+                ],
+
+                eventClick: function(info) {
+                    console.log('askjdfkjsd')
+                    // Display event details in the modal
+                    document.getElementById('eventTitle').textContent = info.event.title;
+                    document.getElementById('eventStart').textContent = info.event.start;
+                    document.getElementById('eventEnd').textContent = info.event.end;
+
+                    // Show the modal
+                    let modal = new Modal(document.getElementById('eventModal'));
+                    modal.show();
+                },
+                });
+
+            calendar.render();
+        });
+        },
+    }
+}
+</script>
