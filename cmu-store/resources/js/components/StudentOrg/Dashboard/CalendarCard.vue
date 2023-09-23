@@ -29,51 +29,53 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { Modal } from 'bootstrap'
-
+import axios from 'axios'
 export default {
-components: {
-    FullCalendar // make the <FullCalendar> tag available
-},
-data() {
-    return {
-        events: [],
-
-        calendarOptions: {
-            plugins: [ dayGridPlugin, interactionPlugin ],
-            initialView: 'dayGridMonth',
-            eventClick: this.eventClick,
-            events: [
-
-                { title: 'event 1', date: '2023-09-01' },
-                { title: 'event 2', date: '2023-09-01' }
-                ],
-        },
-
-    }
-},
-methods: {
-    fetchData(){
-            axios.get('/events/show')
-                .then(response => {
-                    this.events = data; 
-
-                })
-                .catch(error => {
-
-                });
-
+    created() {
+        this.fetchData();
     },
-    eventClick(info){
-        console.log('askjdfkjsd')
-        // Display event details in the modal
-        document.getElementById('eventTitle').textContent = info.event.title;
-        document.getElementById('eventStart').textContent = info.event.start;
-        document.getElementById('eventEnd').textContent = info.event.end;
+    components: {
+        FullCalendar // make the <FullCalendar> tag available
+    },
+    data() {
+        return {
+            events: [],
 
-        // Show the modal
-        let modal = new Modal(document.getElementById('eventModal'));
-        modal.show();
+            calendarOptions: {
+                plugins: [ dayGridPlugin, interactionPlugin ],
+                initialView: 'dayGridMonth',
+                eventClick: this.eventClick,
+                events: [
+                    // { title: 'event 1', start: '2023-09-01' + 'T08:00:00', end: '2023-09-01' + 'T17:00:00'},
+                    ],
+            },
+
+        }
+    },
+    methods: {
+        fetchData(){
+                axios.get('/events/calendar')
+                    .then(response => {
+                        this.calendarOptions.events = response.data; 
+                        
+                    })
+                    .catch(error => {
+
+                    });
+
+        },
+        eventClick: function(info){
+            console.log('askjdfkjsd')
+            
+            // Display event details in the modal
+            document.getElementById('eventTitle').textContent = info.event.title;
+            document.getElementById('eventStart').textContent = info.event.start;
+            document.getElementById('eventEnd').textContent = info.event.end;
+
+            // Show the modal
+            let modal = new Modal(document.getElementById('eventModal'));
+            modal.show();
+        }
     }
-}
 }
 </script>

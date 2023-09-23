@@ -165,6 +165,7 @@ export default {
 
                     });
                     this.events = data;
+                    console.log(data)
                 })
             })
         },

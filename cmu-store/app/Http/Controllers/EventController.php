@@ -17,6 +17,11 @@ class EventController extends Controller
         $events = Event::all();
         return $events->toJson();
     }
+    public function getEventsForCalendar()
+    {
+        $events = Event::select('name as title', 'start_date as start', 'end_date as end')->get();
+        return $events->toJson();
+    }
 
     public function getEventsCount()
     {   

@@ -53,7 +53,7 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 
 // });
 
-//attendance
+#attendance
     Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
     Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
     //check the repetition of the data using id number
@@ -61,9 +61,9 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
 
 
     Route::middleware(['auth'])->group(function(){
-    //ORG ROUTE
+    #ORG ROUTE
         Route::middleware(['user-role:1'])->group(function(){
-            //ORG DASHBOARD
+            #ORG DASHBOARD
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
                 })->name('org_dashboard');
@@ -71,22 +71,17 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
             Route::get('student_organization_attendance_record', function () {
                 return view('student_organization.student_organization_attendance_record');
             });
-
-            Route::get('student_organization_events', function () {
-                return view('student_organization.student_organization_events');
+            Route::get('student_organization_attendance', function () {
+                return view('student_organization.student_organization_attendance');
             });
 
-        Route::get('student_organization_attendance', function () {
-            return view('student_organization.student_organization_attendance');
-        });
+            Route::get('student_organization_attendance_schedule', function () {
+                return view('student_organization.student_organization_attendance_schedule');
+            });
 
-        Route::get('student_organization_attendance_schedule', function () {
-            return view('student_organization.student_organization_attendance_schedule');
-        });
-
-        Route::get('student_organization_attendance_records', function () {
-            return view('student_organization.student_organization_attendance_records');
-        });
+            Route::get('student_organization_attendance_records', function () {
+                return view('student_organization.student_organization_attendance_records');
+            });
 
 
             Route::get('student_organization_member_list', function () {
@@ -115,9 +110,13 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
                 });
                 Route::get('/fetchEvaluationResult', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
             #EVENT ROUTES
+                Route::get('student_organization_events', function () {
+                    return view('student_organization.student_organization_events');
+                });
+                //calendar events
+                Route::get('/events/calendar',[EventController::class, 'getEventsForCalendar'])->name('get-event-calendar');
+
                 Route::get('/events', [EventController::class, 'showEvents'])->name('events');
-
-
                 Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('events-destroy');
                 Route::post('/events', [EventController::class, 'store'])->name('event-store');
                 Route::get('edit/events/{event}', [EventController::class, 'edit'])->name('events-edit');
