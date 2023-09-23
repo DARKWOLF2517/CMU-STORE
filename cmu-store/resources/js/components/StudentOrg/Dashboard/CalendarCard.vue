@@ -46,7 +46,7 @@ export default {
                 initialView: 'dayGridMonth',
                 eventClick: this.eventClick,
                 events: [
-                    // { title: 'event 1', start: '2023-09-01' + 'T08:00:00', end: '2023-09-01' + 'T17:00:00'},
+                    // { title: 'event 1', start: '2023-09-01' + 'T08:00:00', end: '2023-09-02' + 'T17:00:00'},
                     ],
             },
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 class EventController extends Controller
 {
     public function showEvents()
@@ -19,7 +21,11 @@ class EventController extends Controller
     }
     public function getEventsForCalendar()
     {
-        $events = Event::select('name as title', 'start_date as start', 'end_date as end')->get();
+        // $events = Event::select(DB::raw('name as title', 'start_date as start', 'end_date as end'))->get();
+        
+        $events = Event::select(('name as title'),
+                                DB::raw("CONCAT(start_date, 'T', start_attendance) as start"),
+                                DB::raw("CONCAT(end_date, 'T', end_attendance) as end"))->get();
         return $events->toJson();
     }
 
