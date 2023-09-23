@@ -110,7 +110,7 @@ flex-shrink: 0;
 }
 .capsule {
     display: inline-block;
-    padding: 5px 7px;
+    padding: 5px;
     background-color: #0074d9; /* Change the background color as desired */
     color: white; /* Change the text color as desired */
     border-radius: 20px; /* Adjust the border radius to make it capsule-shaped */

@@ -63,3 +63,13 @@
     align-self: flex-end;
     font-size: 20px;
   }
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .record-card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+
+    .record-date-container {
+        width: auto; /* Adjust the width of date containers as needed */
+    }
+}

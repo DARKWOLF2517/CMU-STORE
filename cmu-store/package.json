@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^4.2.3",
-        "fullcalendar": "^6.1.8",
+        "fullcalendar": "^6.1.9",
         "instascan": "^1.0.0",
         "qrcode": "^1.5.3",
         "qrcode.vue": "^3.4.0",

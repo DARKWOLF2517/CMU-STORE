@@ -62,13 +62,13 @@
             </div> --}}
             <div class="container" id="tablecontainer">
                 <div class="row head-container">
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="input-container">
                             <i class="fa fa-search"></i>
                             <input type="text" placeholder="Search Event">
                         </div>
                     </div>
-                    <div class="col" style="display: flex; align-items: center; justify-content: flex-end;">
+                    <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
                         <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
                         <div class="select-dropdown">
                             <select id="sort-select" class="form-control" style="text-align: center;">
@@ -81,6 +81,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="mt-4">
                 <h3><i class="fas fa-list"></i> Attendance Records</h3>
