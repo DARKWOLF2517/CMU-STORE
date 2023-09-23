@@ -2,7 +2,9 @@
 
                         <div class="statistic">
                         <div class="d-flex align-items-center">
-                            <i :class="icons"></i>
+                            <span class="square-span">
+                                <i :class="icons"></i>
+                            </span>
                             <div class="ml-3">
                             <p class="stat-label">{{this.card_label }}</p>
                             <b><p class="stat-number">{{ }}</p></b>

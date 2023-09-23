@@ -15,91 +15,126 @@
               </ol>
             </nav>
         </div>
-
-        <div class="container" id="tablecontainer" >
+        {{-- <div class="container" id="tablecontainer">
             <h3 class="mt-2">
-                <i class="fas fa-list"></i> Attendance Monitoring
+                <i class="fas fa-list"></i> Attendance Records
             </h3>
-
-            <div class="row mt-4">
-              <div class="col-md-6">
-                <div class="ScheduledEventContainer">
-                  <h4> <i class="fas fa-calendar-alt"></i> Scheduled Attendance</h4>
-                    {{-- <div class="card">
-                <div class="card-header">Event Name: General Assembly</div>
-                <div class="card-body d-flex justify-content-between align-items-start">
-                  <div>
-                    <h5 class="card-title">Start Date: July 3, 2023</h5>
-                    <p class="card-text">Time starts at: 1:00 PM</p>
-                  </div>
-                  <div class="ml-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
-                  </div>
+            <div class="d-flex flex-wrap">
+                <div class="card mb-2 mx-2">
+                    <div class="card-header">Date: June 2, 2023</div>
+                    <div class="card-body d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title">Event Name: Freshmen Orientation</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn view-button" href="/student_organization_attendance_record">
+                                <i class="fas fa-chevron-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="card mt-3">
-                <div class="card-header">Event Name: Palaro</div>
-                <div class="card-body d-flex justify-content-between align-items-start">
-                  <div>
-                    <h5 class="card-title">Start Date: November 13, 2023</h5>
-                    <p class="card-text">Time starts at: 1:00 PM</p>
-                  </div>
-                  <div class="ml-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
-                  </div>
+                <div class="card mb-2 mx-2">
+                    <div class="card-header">Date: June 2, 2023</div>
+                    <div class="card-body d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title">Event Name: Freshmen Orientation</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn view-button" href="/student_organization_attendance_record">
+                                <i class="fas fa-chevron-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div> --}}
-              <event-attendance-list
-              target_route="{{ route('get-events') }}"
-              >
-              </event-attendance-list>
+                <div class="card mb-2 mx-2">
+                    <div class="card-header">Date: June 2, 2023</div>
+                    <div class="card-body d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title">Event Name: Freshmen Orientation</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn view-button" href="/student_organization_attendance_record">
+                                <i class="fas fa-chevron-right button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="container" id="tablecontainer">
+                <div class="row head-container">
+                    <div class="col-6">
+                        <div class="input-container">
+                            <i class="fa fa-search"></i>
+                            <input type="text" placeholder="Search Event">
+                        </div>
+                    </div>
+                    <div class="col" style="display: flex; align-items: center; justify-content: flex-end;">
+                        <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
+                        <div class="select-dropdown">
+                            <select id="sort-select" class="form-control" style="text-align: center;">
+                                <option value="">Select Semester</option>
+                                <option value="option1">1st Semester 2023-2024</option>
+                                <option value="option2">2nd Semester 2022-2023</option>
+                                <option value="option3">1st Semester 2022-2023</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-md-6">
-            <div class="PreviousEventContainer">
-              <h4><i class="fas fa-list"></i> Recorded Attendance</h4>
-
-              <div class="card">
-                <div class="card-header">Event Name: Freshmen Orientation</div>
-                <div class="card-body d-flex justify-content-between align-items-start">
-                  <div>
-                    <h5 class="card-title">Date: June 2, 2023</h5>
-                  </div>
-                  <div class="ml-auto">
-                    <a class="btn btn-primary" href="/student_organization_attendance_record">View Attendance</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card mt-3">
-                <div class="card-header">Event Name: Freshmen Orientation</div>
-                <div class="card-body d-flex justify-content-between align-items-start">
-                  <div>
-                    <h5 class="card-title">Date: June 2, 2023</h5>
-                  </div>
-                  <div class="ml-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card mt-3">
-                <div class="card-header">Event Name: Freshmen Orientation</div>
-                <div class="card-body d-flex justify-content-between align-items-start">
-                  <div>
-                    <h5 class="card-title">Date: June 2, 2023</h5>
-                  </div>
-                  <div class="ml-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttendanceModal">View Attendance</button>
-                  </div>
-                </div>
-              </div>
+            <div class="mt-4">
+                <h3><i class="fas fa-list"></i> Attendance Records</h3>
             </div>
-          </div>
+                <div class="col" id="record-container">
+
+                    <div class="recorded-event-cards">
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
+                            <div class="record-title">Event 1</div>
+                            <div class="record-description">Number of Attendance recorded: 2</div>
+                            <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
+                        </div>
+
+
+
+
+                        <!-- Add more event cards here -->
+                        </div>
+                    </div>
+
+            </div>
         </div>
-    </div>
+
 
 
 
@@ -121,8 +156,6 @@
         </div>
       </div> --}}
 
-</div>
-    </div>
 
 
 

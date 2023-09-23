@@ -79,6 +79,15 @@ Route::middleware(['auth'])->group(function(){
             return view('student_organization.student_organization_attendance');
         });
 
+        Route::get('student_organization_attendance_schedule', function () {
+            return view('student_organization.student_organization_attendance_schedule');
+        });
+
+        Route::get('student_organization_attendance_records', function () {
+            return view('student_organization.student_organization_attendance_records');
+        });
+
+
         Route::get('student_organization_member_list', function () {
             return view('student_organization.student_organization_member_list');
         });

@@ -76,8 +76,8 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="/student_organization_attendance" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
-                                <li><a href="/student_organization_attendance_record" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
+                                <li><a href="/student_organization_attendance_schedule" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
+                                <li><a href="/student_organization_attendance" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
                             </ul>
                         </div>
                     </li>

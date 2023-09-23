@@ -4,7 +4,7 @@
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="col-9 mt-2">
+            <div class="col mt-2">
                 <div class="welcome-card">
                     <div class="welcome-text">
                     <h1>Welcome, User!</h1>
@@ -12,49 +12,47 @@
                 </div>
                 </div>
             </div>
-
-            <div class="col md-4 mt-2">
-                <div class="row text-center" id="statistic">
-                    {{-- <div class="col-sm-4">
-                        <div class="statistic">
-                            <p class="stat-label">Number of Members:</p>
-                            <b><p class="stat-number">200</p></b>
-                        </div>
-                    </div> --}}
-                        <div class="statistic">
-                            <event-count
-                            card_label = "Members"
-                            target_route = ""
-                            icons = "fas fa-users card-icon"
-                        ></event-count>
-                        </div>
-
-                        <div class="statistic">
-                            <event-count
-                            card_label = "Created Events"
-                            target_route = ""
-                            icons = "fas fa-clock card-icon ongoing-events"
-                        ></event-count>
+        </div>
+        <div class="col mt-2">
+            <div class=" text-center" id="statistic">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="statistic">
+                        <event-count
+                        card_label = "Members"
+                        target_route = ""
+                        icons = "fas fa-users card-icon"
+                    ></event-count>
                     </div>
-                        <div class="statistic">
-                            <event-count
-                            card_label = "Completed Events"
-                            target_route = ""
-                            icons = "fas fa-check card-icon completed-events"
-                        ></event-count>
-                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="statistic">
+                        <event-count
+                        card_label = "Created Events"
+                        target_route = ""
+                        icons = "fas fa-clock card-icon ongoing-events"
+                    ></event-count>
+                </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="statistic">
+                        <event-count
+                        card_label = "Completed Events"
+                        target_route = ""
+                        icons = "fas fa-check card-icon completed-events"
+                    ></event-count>
                 </div>
             </div>
         </div>
-
-            <div class="col mt-2">
+        </div>
+            <div class="col mt-2 mb-2">
                 <div class="announcement-container">
                     <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6 class="card-title">Announcement 1</h6>
+                                    <span class="capsule"><h6 class="card-title">Announcement 1</h6></span>
                                     <p class="card-text">SSC General Assembly</p>
                                 </div>
                             </div>
@@ -62,7 +60,7 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6 class="card-title">Announcement 2</h6>
+                                    <span class="capsule"><h6 class="card-title">Announcement 2</h6></span>
                                     <p class="card-text">Foundation Day</p>
                                 </div>
                             </div>
@@ -70,28 +68,27 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6 class="card-title">Announcement 3</h6>
+                                    <span class="capsule"><h6 class="card-title">Announcement 3</h6></span>
                                     <p class="card-text">Palaro 2024</p>
                                 </div>
                             </div>
                         </div>
-
                 </div>
             </div>
-            <div class="row">
-                <div class="col mt-2">
-                    <div id="calendar"></div>
-                </div>
-                <div class="col-md-4">
-                    <div class="timeline">
-                        <h3><i class="bi bi-list"></i>Schedule</h3>
-                        <hr>
-                        <div class="Schedule">
-                        <event-dashboard>
-
-                        </event-dashboard>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-2">
+                        <div id="calendar"></div>
                     </div>
-                </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="timeline">
+                            <h3><i class="bi bi-list"></i> Schedule</h3>
+                            <hr>
+                            <div class="Schedule">
+                                <event-dashboard>
+                                </event-dashboard>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
 
