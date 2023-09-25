@@ -36,13 +36,13 @@
 
                 <a href="#" class="nav-link link-light">
                     <button class="btn toggle-button" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
-                    <span class="nav-link-text link-dark"> CMU-STORE-AMS</span>
+                    <span class="nav-link-text"> CMU-STORE-AMS</span>
                 </a>
                 <div class="profile-dropdown dropdown">
-                    <button class="notification-button btn btn-link link-dark">
-                        <i class="bi bi-bell"></i>
+                    <button class="notification-button btn btn-link">
+                        <i class="fas fa-bell"></i>
                     </button>
-                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                         <span class="profile-name"><strong>User</strong></span>
                     </a>

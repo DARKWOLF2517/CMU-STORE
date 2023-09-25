@@ -28,13 +28,6 @@
 
   }
 
-  .head-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
 
   .event-list {
     margin-top: 20px;

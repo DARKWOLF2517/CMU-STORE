@@ -45,7 +45,7 @@
             </div>
         </div>
         </div>
-            <div class="col mt-2 mb-2">
+            {{-- <div class="col mt-2 mb-2">
                 <div class="announcement-container">
                     <h4>  <i class="bi bi-megaphone"></i> Recent Announcements</h4>
                     <div class="row" id="announcement-row">
@@ -74,26 +74,72 @@
                             </div>
                         </div>
                 </div>
-            </div>
-            <div class="row">
+            </div> --}}
+            {{-- <div class="row">
                 <div class="col-lg-6 col-md-12 mb-2">
-                    <dashboard-calendar>
-
-                    </dashboard-calendar>
+                    <div id="calendar">
+                        <dashboard-calendar>
+                        </dashboard-calendar>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
+                <div class="col col-md-12">
                     <div class="timeline">
                         <h3><i class="bi bi-list"></i> Schedule</h3>
                         <hr>
                         <div class="Schedule">
-                        <event-dashboard>
+                            <event-dashboard>
+                            </event-dashboard>
+                        </div>
+                    </div>
+                </div> --}}
+                <div class="col mt-2">
+                    <div class="row align-items-start">
+                        <div class="col-lg-6 col-md-12">
+                            <!-- This column takes half the width on all screen sizes (xs, sm, md, lg, and xl). -->
+                            <div id="calendar">
+                                <dashboard-calendar>
+                                </dashboard-calendar>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- This column takes the full width on all screen sizes (xs, sm, md, lg, and xl). -->
+                            <div class="timeline">
+                                <h6> Announcement</h6>
+                                <hr>
+                                <div class="Schedule">
+                                    <event-dashboard>
+                                    </event-dashboard>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
 
-                        </event-dashboard>
+                            <div class="timeline-schedule">
+
+                                <h1><i class="bi bi-list"></i> Event Timeline</h1>
+                                <ul class="sessions">
+                                    <li>
+                                        <div class="date">October 07, 2023</div>
+                                        <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                                    </li>
+                                    <li>
+                                        <div class="date">September 30, 2023</div>
+                                        <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                                    </li>
+                                    <li>
+                                        <div class="date">September 20, 2023</div>
+                                        <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                                    </li>
+                                    <li>
+                                        <div class="date">July 30, 2023</div>
+                                        <small>How is it already 9:00? Just how??? 🤯🤯</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
+              </div>
         </div>
     </div>
 </div>
