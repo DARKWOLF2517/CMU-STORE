@@ -19,26 +19,25 @@
         </div>
     <div class="container event-container" id="tablecontainer">
         <div class="row head-container">
-          <div class="col-md-6">
-            <div class="input-group search-bar">
-              <input type="text" class="form-control rounded-start" placeholder="Search Events" aria-label="Search"
-                aria-describedby="search-icon">
-              <button class="btn btn-primary rounded-end" type="button" id="search-icon">
-                <i class="bi bi-search"></i>
-              </button>
+            <div class="col-md-6 col-sm-12">
+                <div class="input-container">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search Event">
+                </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="d-flex justify-content-end">
-                <label for="sort-select"></label>
-                <select id="sort-select">
-                    <option value="option1">1st Semester 2023-2024</option>
-                    <option value="option2">2nd Semester 2022-2023</option>
-                    <option value="option3">1st Semester 2022-2023</option>
-                </select>
+            <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
+                <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
+                <div class="select-dropdown">
+                    <select id="sort-select" class="form-control" style="text-align: center;">
+                        <option value="">Select Semester</option>
+                        <option value="option1">1st Semester 2023-2024</option>
+                        <option value="option2">2nd Semester 2022-2023</option>
+                        <option value="option3">1st Semester 2022-2023</option>
+                    </select>
+                </div>
             </div>
-          </div>
         </div>
+    </div>
 
       <div class="container event-list">
         <div class="row">

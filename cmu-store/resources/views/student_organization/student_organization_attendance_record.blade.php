@@ -18,25 +18,25 @@
         <div class="container" id="tablecontainer">
 
             <div class="row head-container">
-                <div class="col-md-6">
-                  <div class="input-group search-bar">
-                    <input type="text" class="form-control rounded-start" placeholder="Search Student" aria-label="Search"
-                      aria-describedby="search-icon">
-                    <button class="btn btn-primary rounded-end" type="button" id="search-icon">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="input-container">
+                        <i class="fa fa-search"></i>
+                        <input type="text" placeholder="Search Event">
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  <div class="d-flex justify-content-end">
-                    <select class="form-select custom-select-width">
-                      <option selected>Sort by</option>
-                      <option>Alphabetical Order</option>
-                      <option>Year Level</option>
-                    </select>
-                  </div>
+                <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
+                    <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
+                    <div class="select-dropdown">
+                        <select id="sort-select" class="form-control" style="text-align: center;">
+                            <option value="">Select Semester</option>
+                            <option value="option1">1st Semester 2023-2024</option>
+                            <option value="option2">2nd Semester 2022-2023</option>
+                            <option value="option3">1st Semester 2022-2023</option>
+                        </select>
+                    </div>
                 </div>
-              </div>
+            </div>
+        </div>
               <div class="container student-buttons d-flex justify-content-end" id="containers">
                 <div class="btn-group" role="group">
                     <button class="btn me-2" id="add-student-list-button">

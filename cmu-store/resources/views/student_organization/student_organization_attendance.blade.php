@@ -87,7 +87,6 @@
                 <h3><i class="fas fa-list"></i> Attendance Records</h3>
             </div>
                 <div class="col" id="record-container">
-
                     <div class="recorded-event-cards">
                         <div class="record-card">
                             <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>

@@ -2,21 +2,21 @@
 .top-nav {
     position: absolute;
     width: 100%;
-    top: 0; /* Converted from 7px */
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0.875rem; /* Converted from 7px */
+    top: 0;
+    background-color: #439756;
+    color: #ffffff;
+    padding: 0.875rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 3.125rem; /* Converted from 50px */
+    height: 3.125rem;
 }
 
 
 .top-nav .notification-button {
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     margin-right: 0.625rem; /* Converted from 10px */
 }
@@ -28,7 +28,7 @@
 .top-nav .profile-dropdown {
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -110,17 +110,14 @@ margin-right: 0;
     transition: margin-left 0.3s ease-in-out;
 }
 
-/* .content.collapsed {
-    margin-left: 5%;
-} */
 
 .sidebar.collapsed .link-title {
     opacity: 0;
 }
 
 .toggle-button {
-    background-color: transparent;
-    border: 1px solid grey;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
 }
 
