@@ -13,6 +13,7 @@ class EvaluationFormDetails extends Model
     protected $fillable = [
         'id',
         'org_id',
+        'event_id',
         'evaluation_form_name',
         'description',
     ];

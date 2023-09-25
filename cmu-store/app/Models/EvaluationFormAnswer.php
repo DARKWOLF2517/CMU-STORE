@@ -16,6 +16,7 @@ class EvaluationFormAnswer extends Model
         'evaluation_form_id',
         'evaluation_form_question_id',
         'user_id',
+        'event_id',
         'answer'
     ];
 

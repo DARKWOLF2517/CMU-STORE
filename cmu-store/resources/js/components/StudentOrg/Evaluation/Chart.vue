@@ -55,10 +55,48 @@ export default{
                     console.log(this.evaluation);
                 })
                 .catch(error => {
-                    
+                    console.log('error')
                 });
 
             },
     },
-}
-</script>
+    }
+    </script>
+
+
+
+
+
+<!-- <template>
+    <div>
+    <canvas id="myPieChart" width="400" height="400"></canvas>
+    </div>
+</template>
+
+<script>
+import { Pie } from 'vue-chartjs';
+
+export default {
+    extends: Pie,
+    data() {
+    return {
+        chartData: {
+        labels: ['Label 1', 'Label 2', 'Label 3'],
+        datasets: [
+            {
+            data: [30, 40, 30], // Data values for each segment
+            backgroundColor: ['#FF5733', '#33FF57', '#5733FF'], // Colors for each segment
+            },
+        ],
+        },
+        chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false,
+        },
+    };
+    },
+    mounted() {
+    this.renderChart(this.chartData, this.chartOptions);
+    },
+};
+</script> -->
