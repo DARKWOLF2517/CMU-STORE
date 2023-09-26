@@ -15,7 +15,7 @@ import { createApp } from 'vue';
     import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
     import EventAttendanceList from './components/StudentOrg/Events/AttendanceEventList.vue';
     import EvaluationChart from './components/StudentOrg/Evaluation/Chart.vue';
-
+    import EvaluationList from './components/StudentOrg/Evaluation/EvaluationList.vue';
 // student module 
     import StudentAttendance from './components/StudentUser/Attendance/StudentAttendance.vue';
     import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
@@ -36,6 +36,7 @@ const app = createApp({});
     app.component('qr-scanner', QrScanner);
     app.component('event-attendance-list', EventAttendanceList);
     app.component('evaluation-chart', EvaluationChart);
+    app.component('evaluation-list', EvaluationList);
 
 // student module
     app.component ('student-attendance',StudentAttendance);

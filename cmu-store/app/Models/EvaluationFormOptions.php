@@ -14,6 +14,7 @@ class EvaluationFormOptions extends Model
         'id',
         'org_id',
         'evaluation_form_id',
+        'event_id',
         'option'
     ];
 

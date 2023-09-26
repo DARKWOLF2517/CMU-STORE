@@ -15,5 +15,9 @@ class EvaluationController extends Controller
         // $EvaluationQuestions = EvaluationFormDetails::where('id', 1)->with(['formQuestions'])->get();
         return $EvaluationQuestions->toJson();
     }
+    public function EvaluationResultPage()
+    {   
+    
+    }
 
 }
