@@ -84,7 +84,7 @@
 
 
             <div class="mt-4">
-                <h3><i class="fas fa-list"></i> Attendance Records</h3>
+                <h4><i class="fas fa-list"></i> Attendance Records</h4>
             </div>
                 <div class="col" id="record-container">
                     <div class="recorded-event-cards">

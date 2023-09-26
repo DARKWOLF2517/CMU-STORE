@@ -1,14 +1,17 @@
 #evaluation-container {
     background-color: #ffffff;
-    max-height: 400px;
-    overflow-y: auto;
+    height: 65vh;
+    max-height: 65vh;
+    border: none;
+    border-radius: 10px;
   }
 .evaluation-event-cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    border: 1px solid #ccc;
+    overflow-y: auto;
+    max-height: 65vh;
 }
 .event-card {
     background-color: #ffffff;
@@ -29,7 +32,7 @@
   }
 
   .event-date-container {
-    background-color: #2d7dd8;
+    background-color: #69a09d ;
     color: #ffffff;
     border-radius: 20px;
     padding: 4px 10px;

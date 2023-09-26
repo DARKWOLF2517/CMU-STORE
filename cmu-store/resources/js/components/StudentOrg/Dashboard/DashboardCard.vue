@@ -1,6 +1,5 @@
 <template>
 
-                        <div class="statistic">
                         <div class="d-flex align-items-center">
                             <span class="square-span">
                                 <i :class="icons"></i>
@@ -9,7 +8,6 @@
                             <p class="stat-label">{{this.card_label }}</p>
                             <b><p class="stat-number">{{ }}</p></b>
                             </div>
-                        </div>
                         </div>
 </template>
 
