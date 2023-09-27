@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Auth;
     Route::get('login/GetOrgList/{userOrganization}', [LoginController::class, 'GetOrganizationList'])->name('get-user-organization');
 
 //get into organization that been choosen
-    Route::get('login/{org_id}/{role_id}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
+    Route::get('login/{org_id}/{role_id}/{organization_name}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
 
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');

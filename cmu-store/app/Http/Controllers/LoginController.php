@@ -26,19 +26,21 @@ class LoginController extends Controller
             //user organization count
 
             $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
+            //if the user has MANY org or role
             if ($userOrganizationCount > 1){
                 return redirect()->intended('/login/options');
 
             }
             else{
-                //if the user has many org or role
-                $userOrganization = UserOrganization::where('student_id', $student_id)->first();
+                //if the user has ONE org or role
+                $userOrganization = UserOrganization::where('student_id', Auth::id())->with('organization')->first();
+                // dd($userOrganization->organization->name);
+                session(['org_id' =>  $userOrganization->student_org_id]);
+                session(['org_name' =>  $userOrganization->organization->name]);
                 if($userOrganization->role_id == 1){
-                    session(['org_id' =>  $userOrganization->student_org_id]);
                     return redirect()->intended('/login/org_dashboard');
                 }
                 else if($userOrganization->role_id == 2){
-                    session(['org_id' =>  $userOrganization->student_org_id]);
                     return redirect()->intended('/login/student_dashboard');
                     
                 }
@@ -64,9 +66,10 @@ class LoginController extends Controller
         return $userOrganizations->toJson();
     }
 
-    public function LoginOrganization($org_id, $role_id)
+    public function LoginOrganization($org_id, $role_id, $organization_name)
     {   
         session(['org_id' =>  $org_id]);
+        session(['org_name' =>  $organization_name]);
         return $role_id;
         // $data = [
         //     'org_id'=> $org_id, 

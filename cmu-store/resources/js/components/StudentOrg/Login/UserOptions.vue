@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="user-card"  v-for="userOrg in this.userOrgs" >
-            <div @click=" profileClicked( userOrg['student_org_id'],  userOrg['role_id'])">
+            <div @click=" profileClicked( userOrg['student_org_id'],  userOrg['role_id'],userOrg['organization']['name'])">
             <h3> {{ userOrg['organization']['name'] }}</h3>
             <hr>
             <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User 1">
@@ -43,8 +43,8 @@ export default {
          * @param {*} org_id organization Id to identify which dashboard to render
          * @param {*} role_id Role id of the user on that organization
          */
-        profileClicked(org_id, role_id){
-            axios.get(`${org_id}/${role_id}`)
+        profileClicked(org_id, role_id, organization_name){
+            axios.get(`${org_id}/${role_id}/${organization_name}`)
             .then(response => {
                 // console.log(response.data);
                 // userOrgs.value = response.data;
