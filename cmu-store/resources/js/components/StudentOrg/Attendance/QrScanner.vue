@@ -99,7 +99,7 @@ methods: {
 
     },
     submitForm(){
-        //get the repeating data using id number of the student 
+        //get the repeating data using id number of the student
         axios.get(`/attendance_repetition/${this.formData.user_id}`)
             .then(response => {
                 if (response.data == 1){
@@ -111,7 +111,7 @@ methods: {
                         .then(response => {
                                 console.log(response.data.message);
                                 // alert(response.data.message);
-                                
+
                         })
                         .catch(error => {
                             alert(error);
@@ -126,20 +126,20 @@ methods: {
             });
             window.location.reload();
 
-    
+
     }
 }
 }
 </script>
 
-<style>
+<!-- <style>
     main {
         display: flex;
         justify-content: center;
         align-items: center;
     }
     #reader {
-        width: 600px;
+        width: 100%;
     }
     #result {
         text-align: center;
@@ -162,4 +162,4 @@ methods: {
         text-align: center;
     }
 
-</style>
+</style> -->

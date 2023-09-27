@@ -50,60 +50,22 @@
 
 <!-- Add Font Awesome CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
-
+<link href="/custom_css/stylesheet.css" rel="stylesheet">
+<link href="/custom_css/qrscanner.css" rel="stylesheet">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 @vite('resources/js/app.js')
 <title>Document</title>
-<style>
-
-    body {
-    background-color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-
-    @media (max-width: 576px) {
-    .table thead th {
-        font-size: 10px;
-}
-    }
-    .container-with-buttons{
-        padding: 2px;
-    }
-    .container-with-buttons, .qr-scanner-container, .table-container {
-    background-color: #f9f9f9;
-      /* border-radius: 10px; */
-      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-padding: 10px;
-      /* margin-bottom: 10px; */
-    }
-
-
-    .qr-scanner-container {
-      /* margin-bottom: 20px; */
-    align-items: center;
-    text-align: center;
-    }
-
-
-    qr-scanner {
-
-    }
-</style>
 </head>
 <body>
   <!-- Bootstrap Top Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-    <a class="navbar-brand" href="#">CMU-STORE-AMS</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand center link-light " href="#">CMU-STORE-AMS</a>
     <div class="collapse navbar-collapse" id="navbarNav">
-    </div>
     </div>
 </nav>
 
   {{-- <div id="app"> --}}
-    <div id="app" class="container">
+    <div id="app" class="container ">
         {{-- <div class="row justify-content-center">
             <div class="col-md-6">
               <div class="container-with-buttons d-flex justify-content-end">
@@ -112,10 +74,17 @@ padding: 10px;
               </div>
             </div>
           </div> --}}
-        <div class="row justify-content-center">
-        <div class="col-md-6 qr-scanner-container">
-            <qr-scanner></qr-scanner>
-        </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-4 qr-scanner-container mx-4 mb-2
+            border-top border-5 border-success border-bottom-0 py-3">
+                <h4><i class="bi bi-camera-video "></i>QR Scanner</h4>
+                <qr-scanner></qr-scanner>
+            </div>
+            <div class="col-md-4 qr-scanned-container
+            border-top border-5 border-warning border-bottom-0 py-3">
+                <h4>Scanned Data</h4>
+            </div>
         </div>
     </div>
 
