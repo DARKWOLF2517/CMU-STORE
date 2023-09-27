@@ -3,10 +3,10 @@
             <h3> <i class="fas fa-list"></i>  Events</h3>
             <div class="event-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
-                <button class="btn  me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+                <button class="btn  me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
                     <i class="bi bi-calendar-plus"></i> Add Announcement
                 </button>
-                <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="clearData()">
+                <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
                     <i class="bi bi-calendar-event"></i> Add Event
                 </button>
                 </div>
@@ -89,7 +89,7 @@
                                 Require Attendance
                             </label>
                         </div>
-                        <input type="hidden" name="org_id"  v-model="formData.org_id">
+                        <!-- <input type="hidden" name="org_id"  v-model="formData.org_id"> -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary" id="save-event-button">Save</button>
@@ -108,7 +108,7 @@ import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 
 export default {
-    props: ['target_route', 'method', 'submit'] ,
+    props: ['organization_id'] ,
     data() {
         return {
             submit : this.sendData,
@@ -123,7 +123,7 @@ export default {
                     location:'',
                     description:'',
                     require_attendance: '',
-                    org_id: '1',
+                    org_id: '',
 
                 },
                 errors: {},
@@ -133,42 +133,54 @@ export default {
         this.fetchData();
     },
     methods: {
+        
         sendData() {
+            // alert(this.formData.org_id);
                 axios.post('/events', this.formData)
                     .then(response => {
                         location.reload();
                     })
                     .catch(error => {
-                        if (error.response && error.response.status === 422) {
-                            this.errors = error.response.data.errors;
-                        }
                         alert(error)
 
                 });
         },
-        fetchData() {
-            // document.getElementById("event-spinner").show();
-            fetch('/events/show', {
-                method: "GET",
-                headers: {
-                    //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
-                    "Content-Type":"application/json"
-                }
-            }).then( (response) => {
-                document.getElementById("event-spinner").classList.add("hidden");
-                response.json().then((data) => {
-                    data.forEach(element => {
-                        // console.log(element);
-                        // console.log(element[])
-                        element["start_date"] = convertDate(element["start_date"]);
-                        element["end_date"] = convertDate(element["end_date"]);
+        // fetchData() {
+        //     // document.getElementById("event-spinner").show();
+        //     fetch(`/events/show/${this.org_id}`, {
+        //         method: "GET",
+        //         headers: {
+        //             //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
+        //             "Content-Type":"application/json"
+        //         }
+        //     }).then( (response) => {
+        //         console.log(response);
+        //         // document.getElementById("event-spinner").classList.add("hidden");
+        //         // response.json().then((data) => {
+        //         //     data.forEach(element => {
+        //         //         // console.log(element);
+        //         //         // console.log(element[])
+        //         //         element["start_date"] = convertDate(element["start_date"]);
+        //         //         element["end_date"] = convertDate(element["end_date"]);
 
-                    });
-                    this.events = data;
-                    console.log(data)
+        //         //     });
+        //         //     this.events = data;
+        //         //     console.log(data)
+        //         // })
+        //     })
+        // },
+        fetchData(){
+                axios.get(`/events/show/${this.organization_id}`)
+                .then(response => {
+                    document.getElementById("event-spinner").classList.add("hidden");
+                    // console.log(response.data)
+                    this.events = response.data;    
                 })
-            })
-        },
+                .catch(error => {
+                    console.log('error')
+                });
+
+            },
 
         FetchUpdateData(id){
             axios.get(`edit/events/${id}`)
@@ -200,8 +212,8 @@ export default {
             console.log(this.id);
             axios.delete(`/events/${this.id}`)
                     .then(response => {
-                        const closeButton = $('.modal button[data-bs-dismiss="modal"]');
-                        closeButton.trigger('click');
+                        // const closeButton = $('.modal button[data-bs-dismiss="modal"]');
+                        // closeButton.trigger('click');
                         this.showSucces(response.data.message);
                         this.fetchData();
 
@@ -220,7 +232,7 @@ export default {
                 autoClose: 100,
             }
         },
-        clearData(){
+        initialData(){
             this.formData = {
                     name:'',
                     start_date:'',
@@ -230,7 +242,7 @@ export default {
                     location:'',
                     description:'',
                     require_attendance: '',
-                    org_id: '1',
+                    org_id: this.organization_id,
 
                 }
         },

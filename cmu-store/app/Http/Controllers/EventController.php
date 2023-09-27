@@ -14,10 +14,13 @@ class EventController extends Controller
         return view('student_organization.student_organization_events');
     }
 
-    public function getEvents()
+    public function getEvents($org_id)
     {
-        $events = Event::all();
+        // $events = Event::all();
+        
+        $events = Event::where('org_id', $org_id)->get();
         return $events->toJson();
+        // return $org_id;
     }
     public function getEventsForCalendar()
     {

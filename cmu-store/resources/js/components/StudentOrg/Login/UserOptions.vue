@@ -48,13 +48,13 @@ export default {
             .then(response => {
                 // console.log(response.data);
                 // userOrgs.value = response.data;
-                console.log(response.data.org_id)
-                console.log(response.data.role)
-                if (response.data.role == 1){
+                console.log(response.data)
+                // console.log(response.data.role)
+                if (response.data == 1){
                 
                 window.location.href = 'org_dashboard';
-            }
-                else if (response.data.role == 2){
+                }
+                else if (response.data == 2){
                     window.location.href = 'student_dashboard';
                 }
 

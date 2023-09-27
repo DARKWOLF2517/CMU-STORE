@@ -49,7 +49,7 @@
                         </button>
                         <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <span class="profile-name"><strong>User</strong></span>
+                            <span class="profile-name"><strong>{{Auth::user()->name}}</strong></span>
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                             <side-nav-button

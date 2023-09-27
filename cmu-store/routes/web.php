@@ -46,7 +46,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');
     });
-Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
+Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
 //admin route
 // Route::middleware(['auth', 'user-role:1'])->group(function(){
 
