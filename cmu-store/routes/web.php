@@ -101,11 +101,11 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
             });
 
             #EVALUATION ROUTES
-                Route::get('student_organization_evaluation_results', [EvaluationController::class, 'EvaluationResultPage'])->name('EvaluationResultPage');
+                Route::get('/evaluation_form_summary/{event}', [EvaluationController::class, 'EvaluationFormSummary'])->name('EvaluationFormSummary');
                 Route::get('student_organization_evaluation', function () {
                     return view('student_organization.student_organization_evaluation');
                 });
-                Route::get('/fetchEvaluationResult', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
+                Route::get('/evaluation_form{event_id}', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
             #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');

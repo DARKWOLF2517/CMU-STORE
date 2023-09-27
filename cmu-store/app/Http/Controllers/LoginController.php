@@ -23,8 +23,11 @@ class LoginController extends Controller
             $student_id = Auth::id();
             // dd(Session());
             //user organization count
+            $userOrganization = UserOrganization::where('student_id', $student_id)->first();
             $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
             if ($userOrganizationCount > 1){
+                session(['org_id' =>  $userOrganization->student_org_id]);
+                // dd(session('org_id'));
                 return redirect()->intended('/login/options');
 
             }
@@ -32,9 +35,11 @@ class LoginController extends Controller
                 //user organization result
                 $userOrganization = UserOrganization::where('student_id', $student_id)->first();
                 if($userOrganization->role_id == 1){
+                    session(['org_id' =>  $userOrganization->student_org_id]);
                     return redirect()->intended('/login/org_dashboard');
                 }
                 else if($userOrganization->role_id == 2){
+                    session(['org_id' =>  $userOrganization->student_org_id]);
                     return redirect()->intended('/login/student_dashboard');
                     
                 }

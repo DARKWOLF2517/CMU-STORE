@@ -74,18 +74,9 @@
               </div>
             </div>
           </div> --}}
+          <qr-scanner></qr-scanner>
 
-          <div class="row justify-content-center">
-            <div class="col-md-4 qr-scanner-container mx-4 mb-2
-            border-top border-5 border-success border-bottom-0 py-3">
-                <h4><i class="bi bi-camera-video "></i>QR Scanner</h4>
-                <qr-scanner></qr-scanner>
-            </div>
-            <div class="col-md-4 qr-scanned-container
-            border-top border-5 border-warning border-bottom-0 py-3">
-                <h4>Scanned Data</h4>
-            </div>
-        </div>
+
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
