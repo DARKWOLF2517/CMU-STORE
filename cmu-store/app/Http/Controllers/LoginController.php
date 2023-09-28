@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\UserOrganization;
 use Illuminate\Contracts\Session\Session;
 
+
 class LoginController extends Controller
 {
     public function authenticate(Request $request): RedirectResponse
@@ -23,14 +24,19 @@ class LoginController extends Controller
             $student_id = Auth::id();
             // dd(Session());
             //user organization count
+
             $userOrganizationCount = UserOrganization::where('student_id', $student_id)->count();
+            //if the user has MANY org or role
             if ($userOrganizationCount > 1){
                 return redirect()->intended('/login/options');
 
             }
             else{
-                //user organization result
-                $userOrganization = UserOrganization::where('student_id', $student_id)->first();
+                //if the user has ONE org or role
+                $userOrganization = UserOrganization::where('student_id', Auth::id())->with('organization')->first();
+                // dd($userOrganization->organization->name);
+                session(['org_id' =>  $userOrganization->student_org_id]);
+                session(['org_name' =>  $userOrganization->organization->name]);
                 if($userOrganization->role_id == 1){
                     return redirect()->intended('/login/org_dashboard');
                 }
@@ -54,26 +60,30 @@ class LoginController extends Controller
         ])->onlyInput('email');
     }
 
-    public function GetOrganizationList($userOrganization)
+    public function GetOrganizationList($student_id)
     {   
-        $userOrganizations = UserOrganization::where('student_id', $userOrganization)->with(['organization','role'])->get();
+        $userOrganizations = UserOrganization::where('student_id', $student_id)->with(['organization','role'])->get();
         return $userOrganizations->toJson();
     }
 
-    public function LoginOrganization($org_id, $role_id)
+    public function LoginOrganization($org_id, $role_id, $organization_name)
     {   
-        $data = [
-            'org_id'=> $org_id, 
-            'role'=> $role_id];
-        if($role_id == 1){
-            // return redirect()->route('org_dashboard');
+        session(['org_id' =>  $org_id]);
+        session(['org_name' =>  $organization_name]);
+        return $role_id;
+        // $data = [
+        //     'org_id'=> $org_id, 
+        //     'role'=> $role_id];
+        
+        // if($role_id == 1){
+        //     // return redirect()->route('org_dashboard');
             
-            return response()->json($data); 
-        }
-        else if($role_id == 2){
-            return response()->json($data); 
+        //     return response()->json($data); 
+        // }
+        // else if($role_id == 2){
+        //     return response()->json($data); 
             
-        }
+        // }
     }
 
     public function LoginDashboard()

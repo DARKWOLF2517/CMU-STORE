@@ -7,7 +7,7 @@
             <div class="col mt-2">
                 <div class="welcome-card">
                     <div class="welcome-text">
-                        <p>College of Information Sciences and Computing</p>
+                        <p>{{Session::get('org_name')}}</p>
                     </div>
                 </div>
             </div>

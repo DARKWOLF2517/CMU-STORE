@@ -9,15 +9,16 @@ class EvaluationController extends Controller
 {
     //
     
-    public function GetEvaluationResult()
+    public function GetEvaluationResult($event_id)
     {   
-        $EvaluationQuestions = EvaluationFormDetails::where('id', 1)->with(['formQuestions', 'formOptions', 'formAnswers'])->get();
-        // $EvaluationQuestions = EvaluationFormDetails::where('id', 1)->with(['formQuestions'])->get();
+        $EvaluationQuestions = EvaluationFormDetails::where('event_id', $event_id )->with(['formQuestions', 'formOptions', 'formAnswers'])->get();
+        // $EvaluationQuestions = EvaluationFormDetails::all();
         return $EvaluationQuestions->toJson();
+        // return ($event_id);
     }
-    public function EvaluationResultPage()
-    {   
-    
+    public function EvaluationFormSummary($event_id)
+    { 
+        return view('student_organization.student_organization_evaluation_results', ['id' => $event_id]);
     }
 
 }

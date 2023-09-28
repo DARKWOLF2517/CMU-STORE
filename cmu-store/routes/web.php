@@ -41,12 +41,12 @@ use Illuminate\Support\Facades\Auth;
     Route::get('login/GetOrgList/{userOrganization}', [LoginController::class, 'GetOrganizationList'])->name('get-user-organization');
 
 //get into organization that been choosen
-    Route::get('login/{org_id}/{role_id}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
+    Route::get('login/{org_id}/{role_id}/{organization_name}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
 
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');
     });
-Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-events');
+Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
 //admin route
 // Route::middleware(['auth', 'user-role:1'])->group(function(){
 
@@ -101,11 +101,11 @@ Route::get('/events/show',[EventController::class, 'getEvents'])->name('get-even
             });
 
             #EVALUATION ROUTES
-                Route::get('student_organization_evaluation_results', [EvaluationController::class, 'EvaluationResultPage'])->name('EvaluationResultPage');
+                Route::get('/evaluation_form_summary/{event}', [EvaluationController::class, 'EvaluationFormSummary'])->name('EvaluationFormSummary');
                 Route::get('student_organization_evaluation', function () {
                     return view('student_organization.student_organization_evaluation');
                 });
-                Route::get('/fetchEvaluationResult', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
+                Route::get('/evaluation_form{event_id}', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
             #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');

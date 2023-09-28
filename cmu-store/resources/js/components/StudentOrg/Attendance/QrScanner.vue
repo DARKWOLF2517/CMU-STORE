@@ -1,35 +1,19 @@
 <template>
-<div>
+<div class="row justify-content-center">
+    <div class="col-md-4 qr-scanner-container mx-4 mb-2 border-top border-5 border-success border-bottom-0 py-3">
+        <h4><i class="bi bi-camera-video "></i>QR Scanner</h4>
+        
 
 
-        <div id="reader"></div>
-        <div id="result"></div>
 
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-            <div class="table-container">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                    </tr>
-                    <tr v-for="attendances in this.attendance" :id="attendances.user_id">
-                        <td> {{  attendances["user_id"] }}</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="(item, index) in this.temporary" :key="index">
-                        <td>{{ item.ID }}</td>
-                        <td>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            </div>
-            <form @submit="this.submit"  id="eventsForm"  >
+
+
+
+
+
+                <div id="reader"></div>
+                <div id="result"></div>
+                    <form @submit="this.submit"  id="eventsForm"  >
                         <div class="mb-3">
                             <label for="event-title" class="form-label">ID number</label>
                             <input type="text" name="id_number" class="form-control" id="event-title" v-model="formData.user_id" required>
@@ -39,8 +23,34 @@
                             <button type="submit" class="btn btn-primary" id="save-event-button">Save</button>
                         </div>
                     </form>
-
-
+    </div>
+    <div class="col-md-4 qr-scanned-container border-top border-5 border-warning border-bottom-0 py-3">
+        <h4>Scanned Data</h4>
+        <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                            </tr>
+                            <tr v-for="attendances in this.attendance" :id="attendances.user_id">
+                                <td> {{  attendances["user_id"] }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="(item, index) in this.temporary" :key="index">
+                                <td>{{ item.ID }}</td>
+                                <td>
+                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
 </div>
 </template>
 

@@ -3,7 +3,7 @@
         <div class="piechart" id="piechart3d"></div>
         <ul>
             <li v-for="evaluation in this.evaluation">
-                {{ evaluation['form_questions']['0'] }}
+                {{ evaluation['form_questions']['0']}}
             </li>
         </ul>
     </div>
@@ -12,6 +12,7 @@
 <script>
 
 export default{
+    props: ['event_id'],
     data() {
         return {
             evaluation:[],
@@ -19,7 +20,8 @@ export default{
     },
     mounted() {
         this.pieChart();
-        this.fetchData();
+        this.fetchData(this.event_id);
+        // console.log(this.id);
     },
     methods: {
         pieChart(){
@@ -46,12 +48,10 @@ export default{
                 chart.draw(data, options);
             }
         },
-        fetchData(){
-            axios.get('/fetchEvaluationResult')
+        fetchData(event_id){
+            axios.get(`/evaluation_form${event_id}`)
                 .then(response => {
-                    // console.log(response.data);
                     this.evaluation = response.data;
-                    // console.log(this.evaluation['0']['form_options']['0']['option']);
                     console.log(this.evaluation);
                 })
                 .catch(error => {

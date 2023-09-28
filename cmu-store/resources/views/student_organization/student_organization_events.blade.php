@@ -46,7 +46,8 @@
               <div class="spinner-border" id="event-spinner" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
-              <event-card>
+              <event-card
+              organization_id = {{Session::get('org_id')}}>
               </event-card>
             </div>
           </div>

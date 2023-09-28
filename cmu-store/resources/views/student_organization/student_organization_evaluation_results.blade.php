@@ -35,7 +35,8 @@
           <h6 for="DateTime">Date & Time:</h6>
           <h6 for="Venue">Venue:</h6>
           <hr>
-          <evaluation-chart>
+          <evaluation-chart
+          event_id={{$id}}>
           </evaluation-chart>
       </div>
   </div>

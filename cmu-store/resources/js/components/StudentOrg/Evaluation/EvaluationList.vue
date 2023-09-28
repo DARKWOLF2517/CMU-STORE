@@ -32,8 +32,8 @@
 
             },
             evaluation_result(id){
-                console.log(id);
-                
+
+                window.location.href = `evaluation_form_summary/${id}`;
             },
         },
 
