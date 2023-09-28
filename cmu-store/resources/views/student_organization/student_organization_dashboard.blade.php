@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-2">
             <div class="col mb-2">
                 <div class="timeline-schedule">
                     <h1><i class="bi bi-list"></i> Event Timeline</h1>

@@ -34,9 +34,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-          <h3><i class="fas fa-list"></i> Student List</h3>
+          <h3 class="mt-4"><i class="fas fa-list"></i> Student List</h3>
+          <div class="container" id="table-container">
           <div class="student-buttons d-flex justify-content-end">
             <div class="btn-group" role="group">
                 <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">
@@ -61,7 +62,6 @@
                 <th>Year Level</th>
                 <th>College</th>
                 <th>Actions</th>
-
               </tr>
             </thead>
             <tbody>
@@ -77,52 +77,47 @@
               </tr>
 
 
+
             </tbody>
           </table>
-        </div> --}}
+        </div>
 
-      <!-- Modal -->
+         <!-- Modal -->
       <div id="editModal" class="modal">
-          <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="accountability-modal-label">About Student</h5>
+        <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="accountability-modal-label">About Student</h5>
+          </div>
+          <div class="modal-body">
+          <form id="editForm">
+            <div class="mb-3">
+              <label for="studentID" class="form-label">Student ID number:</label>
+              <input type="text" id="studentID" readonly class="form-control">
             </div>
-            <div class="modal-body">
-            <form id="editForm">
-              <div class="mb-3">
-                <label for="studentID" class="form-label">Student ID number:</label>
-                <input type="text" id="studentID" readonly class="form-control">
-              </div>
-              <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" class="form-control">
-              </div>
-              <div class="mb-3">
-                <label for="yearlevel" class="form-label">Year Level:</label>
-                <input type="text" id="yearlevel" class="form-control">
-              </div>
-              <div class="mb-3">
-                <label for="college" class="form-label">College:</label>
-                <input type="text" id="college" class="form-control">
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" id="save-student-button">Save</button>
-              </div>
-            </form>
-          </div>
-          </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" id="name" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="yearlevel" class="form-label">Year Level:</label>
+              <input type="text" id="yearlevel" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="college" class="form-label">College:</label>
+              <input type="text" id="college" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="save-student-button">Save</button>
+            </div>
+          </form>
+        </div>
         </div>
       </div>
+      </div>
 
-        <div class="pagination">
-          <button id="first-page-button" disabled>&lt;&lt;</button>
-          <button id="previous-page-button" disabled>&lt; Previous</button>
-          <span id="pagination-numbers"></span>
-          <button id="next-page-button">Next &gt;</button>
-          <button id="last-page-button">&gt;&gt;</button>
-        </div>
+
       </div>
     </div>
   </div>
