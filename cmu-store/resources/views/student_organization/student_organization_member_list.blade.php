@@ -53,7 +53,7 @@
         >
 
         </member-list>
-        {{-- <div class="scroll-pane">
+      {{-- <div class="scroll-pane">
           <table id="student-list-table">
             <thead>
               <tr>
@@ -80,7 +80,7 @@
 
             </tbody>
           </table>
-        </div>
+        </div> --}}
 
          <!-- Modal -->
       <div id="editModal" class="modal">

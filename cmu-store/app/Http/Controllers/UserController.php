@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function GetMemberList($org_id)
     {   
-        $memberList = UserOrganization::where('student_org_id', $org_id)->with(['user','organization'])->get();
+        $memberList = UserOrganization::where([['student_org_id', $org_id],['role_id', 2]])->with(['user','organization'])->get();
         return $memberList->toJson();
     }
 }
