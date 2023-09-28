@@ -34,9 +34,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
-
-          <h3><i class="fas fa-list"></i> Student List</h3>
+          <h3 class="mt-4"><i class="fas fa-list"></i> Student List</h3>
+          <div class="container" id="table-container">
           <div class="student-buttons d-flex justify-content-end">
             <div class="btn-group" role="group">
                 <button class="btn me-2" id="add-student-list-button">
@@ -57,7 +58,6 @@
                 <th>Year Level</th>
                 <th>College</th>
                 <th>Actions</th>
-
               </tr>
             </thead>
             <tbody>
@@ -73,10 +73,19 @@
               </tr>
 
 
+
             </tbody>
           </table>
-        </div>
 
+        </div>
+        <div class="pagination">
+            <button id="first-page-button" disabled>&lt;&lt;</button>
+            <button id="previous-page-button" disabled>&lt; Previous</button>
+            <span id="pagination-numbers"></span>
+            <button id="next-page-button">Next &gt;</button>
+            <button id="last-page-button">&gt;&gt;</button>
+          </div>
+    </div>
          <!-- Modal -->
       <div id="editModal" class="modal">
         <div class="modal-dialog">
@@ -110,15 +119,9 @@
         </div>
         </div>
       </div>
-      </div>
+    </div>
 
-        <div class="pagination">
-          <button id="first-page-button" disabled>&lt;&lt;</button>
-          <button id="previous-page-button" disabled>&lt; Previous</button>
-          <span id="pagination-numbers"></span>
-          <button id="next-page-button">Next &gt;</button>
-          <button id="last-page-button">&gt;&gt;</button>
-        </div>
+
       </div>
     </div>
     @endsection

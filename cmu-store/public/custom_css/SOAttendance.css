@@ -7,6 +7,30 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
+  #calendar {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 70vh;
+    bottom: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#calendar h2{
+    font-size: 18px;
+}
+#calendar a{
+    font-size: 13px;
+}
+#calendar button{
+    color: white;
+    background-color: #69a09d;
+    border: none;
+}
 .recorded-event-cards{
     display: flex;
     flex-wrap: wrap;
@@ -27,6 +51,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
 
   .record-title {
@@ -66,6 +91,14 @@
     margin-top: auto;
     align-self: flex-end;
     font-size: 20px;
+  }
+  #ScheduledEventContainer{
+    height: 70vh;
+    max-height: 70vh;
+    overflow: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: auto;
   }
 /* Media query for screens with a maximum width of 768px */
 @media (max-width: 768px) {

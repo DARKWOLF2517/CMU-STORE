@@ -82,14 +82,6 @@
                         </div>
                     </li>
                     <li class="mb-1">
-                        <button class="btn btn-toggle align-items-center studentlist-button">
-                            <i class="fas fa-users"></i>
-                            <a href="/student_organization_member_list">
-                            <span class="link-title">Student List</span>
-                            </a>
-                        </button>
-                    </li>
-                    <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
                             <a href="/student_organization_events">
@@ -98,8 +90,17 @@
                         </button>
                     </li>
                     <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center studentlist-button">
+                            <i class="	fas fa-list-alt"></i>
+                            <a href="/student_organization_member_list">
+                            <span class="link-title">Student List</span>
+                            </a>
+                        </button>
+                    </li>
+
+                    <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#organization-collapse" aria-expanded="false">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-building"></i>
                             <span class="link-title">Organizations</span>
                             <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
                         </button>
@@ -123,7 +124,14 @@
                             </ul>
                         </div>
                     </li>
-
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center studentlist-button">
+                            <i class="fas fa-money-check"></i>
+                            <a href="/student_organization_accountabilities">
+                            <span class="link-title">Accountabilities</span>
+                            </a>
+                        </button>
+                    </li>
                     </ul>
                 </div>
             </div>

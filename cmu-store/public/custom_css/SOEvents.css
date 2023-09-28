@@ -6,6 +6,9 @@
     color: rgb(27, 116, 175);
   }
 
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  }
 
   .card-title i {
     color: rgb(34, 34, 34);
@@ -22,7 +25,6 @@
   .event-container {
     margin-top: 50px;
     padding: 20px;
-    height: auto;
     background-color: white;
     box-sizing: border-box;
 
@@ -32,10 +34,11 @@
   .event-list {
     margin-top: 20px;
     background-color: white;
-    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%;
-    height: 100%;
+    height: 70vh;
+    max-height: 70vh;
     box-sizing: border-box;
     overflow: auto;
   }
