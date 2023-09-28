@@ -9,7 +9,7 @@ class UserOrganization extends Model
 {
     use HasFactory;
     protected $table = 'user_organization';
-    protected $primaryKey = ['student_org_id', 'student_id', 'role_id'];
+    // protected $primaryKey = ['student_org_id', 'student_id', 'role_id'];
     public $incrementing = false;
 
 
@@ -17,6 +17,7 @@ class UserOrganization extends Model
         'student_org_id',
         'student_id',
         'role_id',
+        'year_level'
     ];
 
     public function organization()
@@ -26,7 +27,7 @@ class UserOrganization extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'student_id','user_id');
+        return $this->belongsTo(User::class, 'student_id','id');
     }
 
     public function role()

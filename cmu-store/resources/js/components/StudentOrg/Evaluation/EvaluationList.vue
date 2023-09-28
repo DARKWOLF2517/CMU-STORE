@@ -10,6 +10,7 @@
 
 <script>
     export default{
+        props: ['organization_id'],
         data() {
             return {
                 evaluation: [],
@@ -21,7 +22,7 @@
         },
         methods: {
             fetchData(){
-                axios.get('/events/show')
+                axios.get(`/events/show/${this.organization_id}`)
                 .then(response => {
                     this.evaluation = response.data;
                     console.log(this.evaluation);

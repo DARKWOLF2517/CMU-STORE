@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -18,9 +19,6 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// login route
-// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 // general
     Route::post('/authenticate_user', [LoginController::class, 'authenticate'])->name('authentication');
@@ -47,11 +45,6 @@ Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');
     });
 Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
-//admin route
-// Route::middleware(['auth', 'user-role:1'])->group(function(){
-
-
-// });
 
 #attendance
     Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
@@ -63,6 +56,10 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
     Route::middleware(['auth'])->group(function(){
     #ORG ROUTE
         Route::middleware(['user-role:1'])->group(function(){
+
+            #USER ROUTE
+            Route::get('getMemberRoute/{org_id}',[UserController::class, 'GetMemberList'])->name('member-list');
+
             #ORG DASHBOARD
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');

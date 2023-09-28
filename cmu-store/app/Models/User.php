@@ -18,8 +18,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+    // protected $primaryKey = 'id';
     protected $fillable = [
-        'user_id',
+        'id',
         'name',
         'email',
         'password',
@@ -30,10 +32,10 @@ class User extends Authenticatable
         return $this->hasMany(UserOrganization::class,  'student_id');
     }
 
-    public function hasRole($roleName)
-    {
-        return $this->user_organization->role_id === $roleName;
-    }
+    // public function hasRole($roleName)
+    // {
+    //     return $this->user_organization->role_id === $roleName;
+    // }
     public function attendances()
     {
         return $this->hasMany(Attendance::class);

@@ -64,7 +64,9 @@
                         <div class="event-description">Total Responses: 120</div>
                         <button class="view-button"><i class="fas fa-chevron-right button-icon"></i></button>
                     </div> --}}
-                    <evaluation-list></evaluation-list>
+                    <evaluation-list
+                    organization_id = {{Session::get('org_id')}}
+                    ></evaluation-list>
                     </div>
                 </div>
 
