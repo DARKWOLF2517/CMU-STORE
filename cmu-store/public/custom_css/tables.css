@@ -8,10 +8,11 @@ table {
     height: 100vh;
     max-height: 100vh;
   }
-  #student-list-table th{
-    background-color: #69a09d;
-    color: white;
+  #student-list-table, #accountabilities-table th{
+    /* background-color: #69a09d; */
+    color: black;
     font-size: 15px;
+    font-weight: bold;
   }
 thead th{
     position: sticky;

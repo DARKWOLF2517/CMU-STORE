@@ -6,27 +6,29 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
-.evaluation-event-cards{
+
+  .evaluation-event-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding: 20px;
     overflow-y: auto;
     max-height: 65vh;
-}
-.event-card {
+  }
+
+  .event-card {
     background-color: #ffffff;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
+    margin: 10px; /* Add space around the cards */
     width: calc(33.33% - 20px);
     height: 200px;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
+
 
   .event-title {
     font-size: 1.2rem;

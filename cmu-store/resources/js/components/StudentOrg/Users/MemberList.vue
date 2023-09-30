@@ -1,5 +1,5 @@
 <template>
-    <div class="scroll-pane">
+
             <table id="student-list-table">
                 <thead>
                     <tr>
@@ -24,7 +24,7 @@
                     </tr>
                 </tbody>
             </table>
-    </div>
+
 </template>
 
 <script>
@@ -44,8 +44,8 @@ export default{
         fetchData(){
             axios.get(`getMemberRoute/${this.organization_id}`)
             .then(response => {
-                console.log(response.data)  
-                this.memberList = response.data;    
+                console.log(response.data)
+                this.memberList = response.data;
             })
             .catch(error => {
                 console.log('error')

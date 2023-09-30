@@ -7,7 +7,7 @@
         <div class="container breadcrumbs">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item"><a href="/student_organization_attendance">Attendance</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Attendance Record</li>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-              <div class="container student-buttons d-flex justify-content-end" id="containers">
+            <div class="container student-buttons d-flex justify-content-end" id="containers">
                 <div class="btn-group" role="group">
                     <button class="btn me-2" id="add-student-list-button">
                         <i class="fas fa-print"></i> Print Recorded Attendance
@@ -47,7 +47,7 @@
                     </button>
                 </div>
             </div>
-            <hr>
+            <div class="container" id="table-container">
             <h3>Attendance Record</h3>
             <h4 id="Eventtitle"> Event: </h4>
             <p>Date: </p>
@@ -84,3 +84,5 @@
         </div>
     </div>
     </div>
+</div>
+</div>

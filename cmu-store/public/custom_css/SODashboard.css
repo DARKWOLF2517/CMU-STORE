@@ -64,16 +64,34 @@
 }
 
 
-.timeline {
+.announcement {
     background-color: #fff;
     padding: 10px;
     border-radius: 10px;
     height: 50vh;
-    max-height: 50vh;
-    overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.announcement-header, .timeline-header{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    padding: 5px;
+    border-bottom: 1px solid #cfcfcf;
+}
+.announcement-list{
+    margin-top: 10px;
+    height: 40vh;
+    max-height: 40vh;
+    overflow: auto;
+}
+.announcement-card{
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+}
 .Schedule{
     max-height: 500px;
     overflow-y: auto;

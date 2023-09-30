@@ -36,23 +36,28 @@
         </div>
     </div>
 
-          <h3 class="mt-4"><i class="fas fa-list"></i> Student List</h3>
-          <div class="container" id="table-container">
-          <div class="student-buttons d-flex justify-content-end">
-            <div class="btn-group" role="group">
-                <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">
+        <div class="container" id="table-container">
+            <h3><i class="fas fa-list"></i> Student List</h3>
+            <div class="student-buttons d-flex justify-content-end">
+                <div class="btn-group" role="group">
+                    <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">
+                        <i class="bi bi-person-plus"></i>  Add student
+                    </button>
+                    <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
+                    <button class="btn me-2" id="add-student-button"  onclick="document.getElementById('fileInput').click()">
                     <i class="bi bi-file-earmark-plus"></i> Add student list
-                </button>
-                <button class="btn me-2" id="add-student-button">
-                    <i class="bi bi-person-plus"></i> Add student
-                </button>
+                    </button>
+                </div>
             </div>
-        </div>
-        <member-list
-        organization_id = {{Session::get('org_id')}}
-        >
+            <div class="scroll-pane">
+                <member-list
+                organization_id = {{Session::get('org_id')}}
+                >
 
-        </member-list>
+                </member-list>
+            </div>
+
+
       {{-- <div class="scroll-pane">
           <table id="student-list-table">
             <thead>
@@ -81,6 +86,15 @@
             </tbody>
           </table>
         </div> --}}
+        <div class="pagination">
+            <button id="first-page-button" disabled>&lt;&lt;</button>
+            <button id="previous-page-button" disabled>&lt; Previous</button>
+            <span id="pagination-numbers"></span>
+            <button id="next-page-button">Next &gt;</button>
+            <button id="last-page-button">&gt;&gt;</button>
+        </div>
+        </div>
+    </div>
 
          <!-- Modal -->
       <div id="editModal" class="modal">
@@ -264,5 +278,54 @@
         updatePagination();
       </script>
 
+     <script>
+        // Function to handle the file input change event
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            var file = e.target.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    var data = e.target.result;
+                    var workbook = XLSX.read(data, { type: 'binary' });
+                    var sheetName = workbook.SheetNames[0];
+                    var sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+
+                    // Populate the table with the data from the Excel file
+                    var tableBody = document.getElementById("table-body");
+                    var noRecordsRow = document.getElementById("no-records-row");
+                    noRecordsRow.style.display = "none"; // Hide the initial "No records" row
+
+                    tableBody.innerHTML = ''; // Clear existing data
+
+                    if (sheet.length === 0) {
+                        noRecordsRow.style.display = "table-row"; // Show "No records" message
+                    } else {
+                        sheet.forEach(function(record) {
+                            var row = document.createElement("tr");
+                            var idCell = document.createElement("td");
+                            idCell.textContent = record.ID;
+                            var nameCell = document.createElement("td");
+                            nameCell.textContent = record.Name;
+                            var ageCell = document.createElement("td");
+                            ageCell.textContent = record.Age;
+
+                            row.appendChild(idCell);
+                            row.appendChild(nameCell);
+                            row.appendChild(ageCell);
+
+                            tableBody.appendChild(row);
+                        });
+                    }
+                };
+
+                reader.readAsBinaryString(file);
+            }
+        });
+    </script>
+
+    <!-- Include the XLSX library for parsing Excel files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 
 @endsection

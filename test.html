@@ -3,266 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
-    <!-- Add Bootstrap 5.0 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Add Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
+    <title>Student Accountabilities</title>
     <style>
         body {
-            background-color: bisque;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
         }
 
-        .rotate-icon .fas.fa-chevron-down {
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .rotate-icon.collapsed .fas.fa-chevron-down {
-            transform: rotate(180deg);
-        }
-
-        .rotate-icon:not(.collapsed) .fas.fa-chevron-down {
-            transform: rotate(0deg);
-        }
-
-        .btn-toggle-nav {
-            align-items: center;
-            margin-left: 30px;
-        }
-
-        .btn-toggle-nav li {
-            width: 100%;
-        }
-
-        .link-dark {
-            text-decoration: none;
-        }
-
-        .btn-toggle {
-            display: flex;
-            width: 200px;
-            margin-bottom: 10px;
-            padding-left: 0;
-        }
-
-        .link-title {
-            color: #000000;
-            display: inline-block;
-            transition: margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            margin-left: 10px;
-        }
-
-        .btn-toggle .link-title {
-            margin-right: 10px;
-        }
-
-        .btn-toggle .link-arrow {
-            margin-left: auto;
-        }
-
-        .btn-toggle .fas {
-            margin-left: 10px;
-            margin-right: 0;
-        }
-
-        .top-nav {
-            background-color: #ffffff;
-            color: #2b2b2b;
-            padding: 7px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-nav .notification-button {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        .top-nav .profile-dropdown {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .top-nav .profile-dropdown .profile-name {
-            margin-right: 5px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            height: 100vh;
-            width: 230px;
-            background-color: #ffffff;
-            color: #1b1b1b;
-            overflow-y: auto;
-            transition: width 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .content {
-            margin-left: 230px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
-        /* Toggle button */
-        #sidebarToggle {
-            display: none;
-        }
-
-        .toggle-button label {
-            display: block;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            margin-left: 10px;
-            background-color: transparent;
-            border: 1px solid grey;
+            background-color: #fff;
             border-radius: 5px;
-            cursor: pointer;
-            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .toggle-button label:hover {
+        h3 {
+            font-size: 24px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
             background-color: #f2f2f2;
         }
 
-        .toggle-button label::before {
-            content: "\f0c9"; /* Unicode for hamburger icon (you may need to change this) */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 20px;
-            color: #333;
-            display: block;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
-        #sidebarToggle:checked + .sidebar {
-            width: 70px;
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
-        #sidebarToggle:checked + .sidebar + .content {
-            margin-left: 72px;
+        .btn:hover {
+            background-color: #0056b3;
         }
 
-        #sidebarToggle:checked + .sidebar + .content + .toggle-button label::before {
-            content: "\f00d"; /* Unicode for close icon (you may need to change this) */
-            color: #333;
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
         }
+        .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Style the pagination buttons */
+    .pagination button {
+        padding: 5px 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 0 5px;
+    }
+
+    .pagination button.active {
+        background-color: #0056b3;
+    }
     </style>
-
-    <title>Student Organization Dashboard</title>
 </head>
 <body>
-<!-- TOP NAV BAR -->
-<div class="wrapper">
-    <div class="top-nav">
-        <a href="#" class="nav-link link-light">
-            <span class="nav-link-text link-dark">CMU-STORE-AMS</span>
-        </a>
-        <div class="profile-dropdown dropdown">
-            <button class="notification-button btn btn-link link-dark">
-                <i class="bi bi-bell"></i>
+    <div class="container student-buttons d-flex justify-content-end" id="containers">
+        <div class="btn-group" role="group">
+            <button class="btn me-2" id="add-student-list-button" onclick="printTableData()">
+                <i class="fas fa-print"></i> Print Recorded Attendance
             </button>
-            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-               id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <span class="profile-name"><strong>User</strong></span>
-            </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
+            <button class="btn me-2" id="add-student-button" onclick="  downloadTableData()">
+                <i class="fas fa-download"></i> Download Recorded Attendance
+            </button>
+            <button class="btn me-2" id="add-student-button">
+            <i class="bi bi-file-earmark-plus"></i> Add student list
+            </button>
         </div>
     </div>
-</div>
-<!-- SIDE NAV BAR -->
-<div class="wrapper">
-    <input type="checkbox" id="sidebarToggle">
-    <div class=" p-3  sidebar" id="sidebarCollapse">
-        <div class="d-md-flex flex-shrink-0">
-            <ul class="list-unstyled ps-0">
-                <li class="toggle-button">
-                    <label for="sidebarToggle"></label>
-                </li>
-                <br>
-                <li class="mt-3">
-                    <button class="btn btn-toggle align-items-center rounded dashboard-button">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span class="link-title">Dashboard</span>
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span class="link-title">Attendance</span>
-                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-calendar"></i> Schedule</a></li>
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-check-circle"></i> Record</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center studentlist-button">
-                        <i class="fas fa-users"></i>
-                        <span class="link-title">Student List</span>
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded events-button">
-                        <i class="fas fa-calendar"></i>
-                        <span class="link-title">Events</span>
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#organization-collapse" aria-expanded="false">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="link-title">Organizations</span>
-                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="collapse" id="organization-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-university"></i> College</a></li>
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-building"></i> Department</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#evaluation-collapse" aria-expanded="false">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="link-title">Evaluation</span>
-                        <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="collapse" id="evaluation-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-book"></i> Results</a></li>
-                            <li><a href="#" class="link-dark rounded"><i class="fas fa-pen"></i> Forms</a></li>
-                        </ul>
-                    </div>
-                </li>
-                
-            </ul>
-        </div>
+    <span class="table-title"><h3> <i class="fas fa-list"></i>  Student Accountabilities</h3></span>
+    <div class="scroll-pane">
+        <table id="accountabilities-table">
+            <thead>
+                <tr>
+                    <th class="sortable-header">Student ID</th>
+                    <th class="sortable-header">Student Name</th>
+                    <th class="sortable-header">Membership Fee</th>
+                    <th class="sortable-header">Membership Status</th>
+                    <th class="sortable-header">Fines</th>
+                    <th class="sortable-header">Fines Status</th>
+                    <th class="sortable-header">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>will smith</td>
+                    <td>$100</td>
+                    <td>Unpaid</td>
+                    <td>$10</td>
+                    <td>Unpaid</td>
+                    <td>
+                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <button id="first-page-button" onclick="goToPage(1)" disabled>&lt;&lt;</button>
+        <button id="previous-page-button" onclick="previousPage()" disabled>&lt; Previous</button>
+        <span id="pagination-numbers"></span>
+        <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
+        <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const table = document.getElementById('accountabilities-table');
+    const rows = table.querySelectorAll('tbody tr');
+    const rowsPerPage = 5; // Adjust this to the desired number of rows per page
+    let currentPage = 1;
+    const pageCount = Math.ceil(rows.length / rowsPerPage);
+
+    function updateTable() {
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = startIndex + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= startIndex && index < endIndex) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        // Display all page numbers
+        let paginationNumbers = '';
+        for (let i = 1; i <= pageCount; i++) {
+            paginationNumbers += `<button onclick="goToPage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
+        }
+        document.getElementById('pagination-numbers').innerHTML = paginationNumbers;
+
+        document.getElementById('first-page-button').disabled = currentPage === 1;
+        document.getElementById('previous-page-button').disabled = currentPage === 1;
+        document.getElementById('next-page-button').disabled = currentPage === pageCount;
+        document.getElementById('last-page-button').disabled = currentPage === pageCount;
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        updateTable();
+    }
+
+    function previousPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updateTable();
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < pageCount) {
+            currentPage++;
+            updateTable();
+        }
+    }
+
+    // Initialize the table and pagination
+    updateTable();
+</script>
+<script>
+         function printTableData() {
+        const table = document.getElementById('accountabilities-table');
+        const rows = table.querySelectorAll('tbody tr');
+
+        let tableData = '<table style="border-collapse: collapse;">'; // Add a style to remove the border
+
+        // Add table headers excluding the last column (Actions)
+        tableData += '<thead>';
+        tableData += '<tr>';
+        table.querySelectorAll('thead th').forEach(header => {
+            if (header.textContent !== 'Actions') {
+                tableData += '<th>' + header.textContent + '</th>';
+            }
+        });
+        tableData += '</tr>';
+        tableData += '</thead>';
+
+        // Add table body, excluding the last column (Actions)
+        tableData += '<tbody>';
+        rows.forEach(row => {
+            tableData += '<tr>';
+            row.querySelectorAll('td').forEach((cell, index) => {
+                if (index !== 6) { // Skip the last column (Actions)
+                    tableData += '<td>' + cell.textContent + '</td>';
+                }
+            });
+            tableData += '</tr>';
+        });
+        tableData += '</tbody>';
+        tableData += '</table>';
+
+        // Open a new window and print the table data
+        const printWindow = window.open('', '', 'width=600,height=600');
+        printWindow.document.open();
+        printWindow.document.write('<html><head><title>Printed Table</title></head><body>');
+        printWindow.document.write('<h3>Student Accountabilities</h3>');
+        printWindow.document.write(tableData);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+        printWindow.close();
+    }
+
+    function downloadTableData() {
+        const table = document.getElementById('accountabilities-table');
+        const clonedTable = table.cloneNode(true);
+
+        // Remove the "Actions" column from the cloned table
+        clonedTable.querySelectorAll('tr').forEach(row => {
+            const cells = row.querySelectorAll('td, th');
+            if (cells.length > 0) {
+                cells[cells.length - 1].remove();
+            }
+        });
+
+        // Create a new XLSX workbook and add the cloned table to it
+        const ws = XLSX.utils.table_to_sheet(clonedTable);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'TableData');
+
+        // Save the workbook as an XLSX file and trigger the download
+        XLSX.writeFile(wb, 'table_data.xlsx');
+    }
+</script>
+
 </body>
 </html>

@@ -44,38 +44,73 @@
         <div class="row mt-2">
             <div class="col mb-2">
                 <div class="timeline-schedule">
-                    <h1><i class="bi bi-list"></i> Event Timeline</h1>
+                    <div class="timeline-header">
+                        <i class="bi bi-list"></i> Event Timeline
+                    </div>
+
                     <ul class="sessions">
                         <li>
                             <div class="date">October 07, 2023</div>
-                            <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                            <small>Acquaintance Party</small>
                         </li>
                         <li>
                             <div class="date">September 30, 2023</div>
-                            <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                            <small>Bayanihan</small>
                         </li>
                         <li>
                             <div class="date">September 20, 2023</div>
-                            <small>Few more minutes of sleep won't do anyone any harm 🤷.</small>
+                            <small>Palaro</small>
                         </li>
                         <li>
                             <div class="date">July 30, 2023</div>
-                            <small>How is it already 9:00? Just how??? 🤯🤯</small>
+                            <small>General Assembly</small>
                         </li>
                     </ul>
                 </div>
-                <!-- This column takes half the width on all screen sizes (xs, sm, md, lg, and xl). -->
+
 
             </div>
             <div class="col mb-4">
-                <!-- This column takes the full width on all screen sizes (xs, sm, md, lg, and xl). -->
-                <div class="timeline">
-                    <h6><i class="bi bi-list"></i> Announcement</h6>
-                    <hr>
-                    <div class="Schedule">
+                <div class="announcement">
+                    <div class="announcement-header">
+                        <i class="bi bi-list"></i> Announcement
+                    </div>
+
+
+                    {{-- <div class="Schedule">
                         <event-dashboard>
                         </event-dashboard>
-                    </div>
+                    </div> --}}
+                    <div class="announcement-list">
+                        <div class="announcement-card">
+                            <span class="Organization"> <b>CSCo</b></span>
+                                <div class="date-time-posted">
+                                    <span class="date-time-uploaded"><i><small>09/30/2023 - 9:00 AM</small></i></span>
+                                </div>
+                                <div class="announcement-description"> Naay Bayanihan Way labot free fines.</div>
+                        </div>
+                        <div class="announcement-card">
+                            <span class="Organization"> <b>CSCo</b></span>
+                                <div class="date-time-posted">
+                                    <span class="date-time-uploaded"><i><small>09/30/2023 - 9:00 AM</small></i></span>
+                                </div>
+                                <div class="announcement-description"> Naay Bayanihan Way labot free fines.</div>
+                        </div>
+                        <div class="announcement-card">
+                            <span class="Organization"> <b>CSCo</b></span>
+                                <div class="date-time-posted">
+                                    <span class="date-time-uploaded"><i><small>09/30/2023 - 9:00 AM</small></i></span>
+                                </div>
+                                <div class="announcement-description"> Naay Bayanihan Way labot free fines.</div>
+                        </div>
+                        <div class="announcement-card">
+                            <span class="Organization"> <b>CSCo</b></span>
+                                <div class="date-time-posted">
+                                    <span class="date-time-uploaded"><i><small>09/30/2023 - 9:00 AM</small></i></span>
+                                </div>
+                                <div class="announcement-description"> Naay Bayanihan Way labot free fines.</div>
+                        </div>
+                </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 mb-4">
