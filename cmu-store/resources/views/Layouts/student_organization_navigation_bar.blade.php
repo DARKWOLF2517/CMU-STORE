@@ -41,7 +41,47 @@
                 <div class="profile-dropdown dropdown">
                     <button class="notification-button btn btn-link">
                         <i class="fas fa-bell"></i>
+                        <span class="notification-badge"></span>
                     </button>
+                    <div class="popover">
+                        <div class="popover-header">
+                            <p><i class="bi bi-bell"></i> Notifications</p>
+                        </div>
+                        <div class="notifications">
+                        <ul>
+                            <li>
+                                <strong>CSCo</strong>
+                                <p class="notification-description">Bayanihan </p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <strong>SSC</strong>
+                                <p class="notification-description">First General Assembly</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <strong>Notification 2</strong>
+                                <p class="notification-description">Description for Notification 2.</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <strong>Notification 3</strong>
+                                <p class="notification-description">Description for Notification 3.</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <!-- Add more notifications if needed to exceed the max height -->
+                        </ul>
+                        <div class="popover-footer">
+                            <a href="#">See All</a>
+                        </div>
+                    </div>
+
+                    </div>
+
+
                     <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                         <span class="profile-name"><strong>{{Auth::user()->name}}</strong></span>
@@ -165,7 +205,12 @@
         document.onreadystatechange = () => {
             if(document.readyState === "complete")
             {
+                const notificationButton = document.querySelector('.notification-button');
+                const popover = document.querySelector('.popover');
 
+                notificationButton.addEventListener('click', () => {
+                    popover.style.display = popover.style.display === 'block' ? 'none' : 'block';
+                });
                 // Toggle the sidebar when the burger button is clicked
                 const toggleSidebarButton = document.getElementById('ssidebar-toggle');
                 const sidebar = document.getElementById('sidebarCollapse');
@@ -232,6 +277,7 @@
                 });
             }
         }
+
     </script>
     @yield('custom-script')
 </body>

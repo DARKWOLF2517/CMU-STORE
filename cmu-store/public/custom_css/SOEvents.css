@@ -17,49 +17,34 @@
     padding-top: 25px;
     font-size: 2.5rem; /* Increase icon size */
   }
+  .card-title h6{
+
+  }
   .card-text {
     margin-right: 40px;
   }
-
-
-  .event-container {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: white;
-    box-sizing: border-box;
-
+  .event-list{
+    height: 75vh;
   }
 
-
-  .event-list {
-    margin-top: 20px;
+  .event-announcement-list {
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    height: 70vh;
-    max-height: 70vh;
-    box-sizing: border-box;
+    height: 60vh;
+    max-height: 60vh;
     overflow: auto;
+    margin-top: 20px;
   }
 
-  .event-list-scroll {
-    max-height: 500px;
-    overflow-y: auto;
-  }
-
-  .custom-select-width {
-    width: 150px;
-  }
-
-  .add-event-button {
+  #event-announcement-buttons {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #cfcfcf;
   }
 
-  .add-event-button h2 {
+  .add-event-button h3 {
     margin: 0;
   }
 
@@ -85,6 +70,11 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: #6c757d;
+  }
+
+  #event-spinner{
+    justify-items: center;
+    align-items: center;
   }
 
 /* Media query for smaller screens (e.g., screens with a max-width of 768px) */

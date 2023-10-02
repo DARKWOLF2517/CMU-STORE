@@ -39,21 +39,18 @@
         </div>
     </div>
 
-      <div class="container event-list">
-        <div class="row">
-          <div class="col-md-12">
+    <div class="container event-list" id="tablecontainer">
+        <div class="col">
             <div class="event-list-scroll" id="event-cards">
-              <div class="spinner-border" id="event-spinner" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <event-card
-              organization_id = {{Session::get('org_id')}}>
-              </event-card>
+                <div class="spinner-border" id="event-spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <event-card
+                organization_id = {{Session::get('org_id')}}>
+                </event-card>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-
     </div>
 
     @endsection

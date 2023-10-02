@@ -1,9 +1,9 @@
 <template>
-    <div class="add-event-button">
+    <div id="event-announcement-buttons">
             <h3> <i class="fas fa-list"></i>  Events</h3>
             <div class="event-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
-                <button class="btn  me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
+                <button class="btn  me-2" id="add-announcement-button" data-bs-toggle="modal" data-bs-target="#announcement-modal" @click="initialData()">
                     <i class="bi bi-calendar-plus"></i> Add Announcement
                 </button>
                 <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
@@ -12,7 +12,8 @@
                 </div>
             </div>
     </div>
-    <div class="card mb-3" v-for="event in this.events" :id="event.event_id">
+    <div class="event-announcement-list">
+        <div class="card mb-3" v-for="event in this.events" :id="event.event_id">
         <div class="card-body">
                 <h6 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h6>
                 <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: {{ event["start_date"] }}</h6>
@@ -26,6 +27,8 @@
                 </div>
         </div>
     </div>
+    </div>
+
 
 
     <!-- Delete confirmation -->
@@ -133,7 +136,7 @@ export default {
         this.fetchData();
     },
     methods: {
-        
+
         sendData() {
             // alert(this.formData.org_id);
                 axios.post('/events', this.formData)
@@ -174,7 +177,7 @@ export default {
                 .then(response => {
                     document.getElementById("event-spinner").classList.add("hidden");
                     // console.log(response.data)
-                    this.events = response.data;    
+                    this.events = response.data;
                 })
                 .catch(error => {
                     console.log('error')

@@ -20,7 +20,91 @@
     text-decoration: none;
     margin-right: 0.625rem; /* Converted from 10px */
 }
+.notification-button {
+    background-color: #0a6c3f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+}
 
+/* Badge Styles */
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FF0000;
+    border-radius: 50%;
+    padding: 5px;
+}
+.time-posted{
+    right: 0;
+}
+/* Popover Styles */
+.popover {
+    display: none;
+    position: absolute;
+    color: #000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 280px;
+    max-height: 50vh;
+    padding: 10px;
+    z-index: 1;
+    right: 0;
+    left: auto;
+    top: 100%;
+}
+.notifications{
+    margin-top: 5px;
+    padding: 5px;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+.notifications hr{
+    top: 0;
+}
+.popover-header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+}
+.popover-footer{
+    background-color: red;
+    height: 40px;
+    width: 100%;
+}
+.popover ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popover li {
+    margin-bottom: 5px;
+}
+
+.popover hr {
+    border: 1px solid #ccc;
+}
+
+.popover-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Description Styles */
+.notification-description {
+    color: #555;
+}
 .nav-name {
     padding-left: 3.75rem; /* Converted from 60px */
 }

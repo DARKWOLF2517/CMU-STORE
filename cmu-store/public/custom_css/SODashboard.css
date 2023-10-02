@@ -21,10 +21,24 @@
     width: 100%;
     margin: 0 auto;
     background-color: #fff;
-    height: 50vh;
+    max-height: 50vh;
     bottom: 0;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+#calendar th{
+    background-color: #69a09d;
+    color: white;
+}
+.fc-col-header-cell-cushion{
+    color: white;
+}
+.fc-dayGridMonth-view{
+    height: 100%;
+    margin-top: 2px;
+}
+#calendar a{
+    text-decoration: none;
 }
 
 #calendar h2{
@@ -37,6 +51,9 @@
     color: white;
     background-color: #69a09d;
     border: none;
+    height: auto;
+    width: auto;
+    font-size: 12px;
 }
 .card-text{
     margin-left: 20px;
@@ -167,7 +184,7 @@ color: #000000;
   }
 
 
-@mixin tablet-and-up {
+/* @mixin tablet-and-up {
     @media screen and (min-width: 769px) { @content; }
 }
 @mixin mobile-and-up {
@@ -178,7 +195,7 @@ color: #000000;
 }
 @mixin mobile-only {
     @media screen and (max-width: 600px) { @content; }
-}
+} */
 
 ul, li{
   list-style: none;
@@ -189,13 +206,11 @@ ul, li{
     padding: 0 1rem;
     padding: 3rem 0;
   }
-.timeline-schedule{ /* Changed from .wrapper to .timeline-schedule */
+.timeline-schedule{
  background-color: #ffffff;
   padding: 10px;
   border-radius: 15px;
   height: 50vh;
-  max-height: 50vh; /* Add max-height property */
-  overflow-y: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 h1{
@@ -203,9 +218,13 @@ h1{
 
 }
 .sessions{
-  margin-top: 2rem;
   border-radius: 12px;
   position: relative;
+}
+.timeline-body{
+    margin-top: 5px;
+    max-height: 40vh;
+    overflow-y: auto;
 }
 .timeline-schedule li{
   padding-bottom: 1.5rem;
