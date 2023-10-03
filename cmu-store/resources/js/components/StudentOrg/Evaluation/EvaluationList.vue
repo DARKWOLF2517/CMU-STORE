@@ -25,16 +25,16 @@
                 axios.get(`/events/show/${this.organization_id}`)
                 .then(response => {
                     this.evaluation = response.data;
-                    console.log(this.evaluation);
+                    // console.log(this.evaluation);
                 })
                 .catch(error => {
                     console.log('error')
                 });
 
             },
-            evaluation_result(id){
+            evaluation_result(event_id){
 
-                window.location.href = `evaluation_form_summary/${id}`;
+                window.location.href = `evaluation_form_summary/${event_id}`;
             },
         },
 

@@ -3,9 +3,13 @@
         <div class="piechart" id="piechart3d"></div>
         <ul>
             <li v-for="evaluation in this.evaluation">
-                {{ evaluation['form_questions']['0']}}
+            {{ evaluation['form_questions']['0']['question']}} <br>
+            {{ evaluation['form_answers']['0']['answer']}} <br><br>
+            {{ evaluation['form_questions']['1']['question']}} <br>
+            {{ evaluation['form_answers']['0']['answer']}} <br><br>
             </li>
         </ul>
+        
     </div>
 </template>
 

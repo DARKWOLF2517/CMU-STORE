@@ -6,11 +6,11 @@
     <div class="container">
         <div class="container breadcrumbs">
             <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
+                <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item active" aria-current="page">Attendance</li>
-              </ol>
+                </ol>
             </nav>
         </div>
 
@@ -22,7 +22,7 @@
                 <div class="row">
                 <div class="col-lg-6">
                     <div class="container" id="ScheduledEventContainer">
-                        <event-attendance-list target_route="{{ route('get-events') }}">
+                        <event-attendance-list org_id="{{Session::get('org_id')}}">
                         </event-attendance-list>
                     </div>
                 </div>

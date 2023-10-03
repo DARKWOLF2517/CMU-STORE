@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('evaluation_form_options', function (Blueprint $table) {
             $table->unsignedBigInteger('evaluation_form_id');
-            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('evaluation_form_question');
             $table->foreign('evaluation_form_id')->references('id')->on('evaluation_form_details')->onDelete('cascade');
+            $table->foreign('evaluation_form_question')->references('id')->on('evaluation_form_questions')->onDelete('cascade');
             $table->text('option');
             // Add other fields as needed
             $table->timestamps();
