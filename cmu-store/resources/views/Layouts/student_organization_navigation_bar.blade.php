@@ -46,36 +46,33 @@
                     <div class="popover">
                         <div class="popover-header">
                             <b><i class="bi bi-bell"></i> Notifications</b>
+                            <a href="#">See All</a>
                         </div>
                         <div class="notifications">
                         <ul>
                             <li>
-                                <strong>CSCo</strong>
-                                <p class="notification-description">Bayanihan </p>
+                                <p><strong>CSCo</strong> posted an announcement.</p>
                                 <small class="time-posted">9:46 AM</small>
                             </li>
                             <hr>
                             <li>
-                                <strong>SSC</strong>
-                                <p class="notification-description">First General Assembly</p>
+                                <p><strong>SCC</strong> posted an announcement.</p>
                                 <small class="time-posted">9:46 AM</small>
                             </li>
                             <hr>
                             <li>
-                                <strong>Notification 2</strong>
-                                <p class="notification-description">Description for Notification 2.</p>
+                                <p><strong>CSCo</strong> posted an announcement.</p>
                                 <small class="time-posted">9:46 AM</small>
                             </li>
                             <hr>
                             <li>
-                                <strong>Notification 3</strong>
-                                <p class="notification-description">Description for Notification 3.</p>
+                                <p><strong>Palaro</strong> is happening today!</p>
                                 <small class="time-posted">9:46 AM</small>
                             </li>
                             <!-- Add more notifications if needed to exceed the max height -->
                         </ul>
                         <div class="popover-footer">
-                            <a href="#">See All</a>
+
                         </div>
                     </div>
 

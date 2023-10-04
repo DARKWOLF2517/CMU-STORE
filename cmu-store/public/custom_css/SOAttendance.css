@@ -40,6 +40,11 @@
     max-height: 60vh;
 
 }
+.schedule-list-container{
+    height: 70vh;
+    max-height: 70vh;
+    overflow: auto;
+}
 .record-card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -93,12 +98,13 @@
     font-size: 20px;
   }
   #ScheduledEventContainer{
-    height: 70vh;
-    max-height: 70vh;
-    overflow: auto;
+
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-top: auto;
+  }
+  .card{
+    margin: 10px;
   }
 /* Media query for screens with a maximum width of 768px */
 @media (max-width: 768px) {
