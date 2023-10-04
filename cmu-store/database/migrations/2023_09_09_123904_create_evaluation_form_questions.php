@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('evaluation_form_questions', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('evaluation_form_id');
             $table->foreign('evaluation_form_id')->references('id')->on('evaluation_form_details')->onDelete('cascade');
             $table->text('question');

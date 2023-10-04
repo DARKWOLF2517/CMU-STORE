@@ -39,7 +39,7 @@
 import {convertDate} from "../Functions/DateConverter.js";
 
 export default {
-    props: ['target_route'],
+    props: ['org_id'],
     data() { 
         return {
             events: [],
@@ -53,7 +53,7 @@ export default {
     methods: {
         fetchData() {
             // document.getElementById("event-spinner").show();
-            fetch(this.target_route, {
+            fetch(`/events/show/${this.org_id}`, {
                 method: "GET",
                 headers: {
                     //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
