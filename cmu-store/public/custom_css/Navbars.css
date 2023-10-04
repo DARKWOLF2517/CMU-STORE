@@ -41,7 +41,7 @@
     padding: 5px;
 }
 .time-posted{
-    right: 0;
+    color: #007BFF;
 }
 /* Popover Styles */
 .popover {
@@ -66,19 +66,20 @@
     overflow-y: auto;
 }
 .notifications hr{
-    top: 0;
+    bottom: 0;
 }
 .popover-header{
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color: transparent;
+    background-color: white;
     height: 40px;
     width: 100%;
     padding: 0;
 }
 .popover-footer{
-    background-color: red;
+    background-color: transparent;
     height: 40px;
     width: 100%;
 }
@@ -88,7 +89,7 @@
 }
 
 .popover li {
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .popover hr {
@@ -104,6 +105,7 @@
 /* Description Styles */
 .notification-description {
     color: #555;
+    margin-bottom: 0;
 }
 .nav-name {
     padding-left: 3.75rem; /* Converted from 60px */

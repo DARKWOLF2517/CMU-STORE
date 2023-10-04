@@ -5,12 +5,12 @@
 <link href="/custom_css/evaluation.css" rel="stylesheet">
 @endsection
 @section('main-content')
-<div class="content"> 
+<div class="content">
   <div class="container">
       <div class="container breadcrumbs">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/homepage">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
               <li class="breadcrumb-item">Student Organization</li>
               <li class="breadcrumb-item"><a href="/student_organization_evaluation">Evaluation</a></li>
               <li class="breadcrumb-item active" aria-current="page">Evaluation Results</li>
@@ -80,7 +80,7 @@
 
 
 
-  {{-- 
+  {{--
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

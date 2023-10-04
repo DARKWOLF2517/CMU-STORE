@@ -45,7 +45,7 @@
                     </button>
                     <div class="popover">
                         <div class="popover-header">
-                            <p><i class="bi bi-bell"></i> Notifications</p>
+                            <b><i class="bi bi-bell"></i> Notifications</b>
                         </div>
                         <div class="notifications">
                         <ul>
