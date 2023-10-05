@@ -29,4 +29,8 @@ class EvaluationFormDetails extends Model
     {
         return $this->hasMany(EvaluationFormAnswer::class, 'evaluation_form_id');
     }
+    // public function Organization()
+    // {
+    //     return $this->hasOne(Organization::class, 'org_id');
+    // }
 }
