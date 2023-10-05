@@ -20,6 +20,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// PROFILE
+
+Route::get('student_organization_profile', function () {
+    return view('student.student_organization_profile');
+});
 // general
     Route::post('/authenticate_user', [LoginController::class, 'authenticate'])->name('authentication');
     Route::get('/logout', [LoginController::class, 'logout']);
@@ -130,7 +135,7 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                 return view('student.student_profile');
             });
             Route::get('student_evaluationform', function () {
-                return view('student.student_evaluationform');
+                return view('student.student_evaluation_form');
             });
 
             Route::get('student_accountabilities', function () {
