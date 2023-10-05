@@ -2,7 +2,7 @@
 
 
 @section('main-content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
 <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
 <div class="content">
@@ -508,7 +508,7 @@
                 printWindow.print();
                 printWindow.close();
             }
-            </script> --}} --}}
+            </script> --}}
 
 
 @endsection
