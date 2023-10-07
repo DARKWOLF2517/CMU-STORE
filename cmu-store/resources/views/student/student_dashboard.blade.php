@@ -49,7 +49,7 @@
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="announcement">
                         <div class="announcement-header">
-                            <i class="bi bi-list"></i> Announcement
+                            <i class="bi bi-list"></i> Announcements
                         </div>
                         <div class="announcement-list">
                             <div class="announcement-card">

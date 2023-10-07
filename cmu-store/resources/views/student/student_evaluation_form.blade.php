@@ -5,7 +5,7 @@
   <div class="container" id="evaluation-form">
       <form>
           <div class="evaluation-header">
-          <h5>CSCo</h5>
+          <h5>College of Information Sciences and Computing</h5>
           <h2> Evaluation Form</h2>
           <h5> Name of Activity:</h5>
           <h5>Date and Time:</h5>
