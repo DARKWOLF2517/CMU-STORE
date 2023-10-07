@@ -3,7 +3,10 @@
 <link href="/custom_css/studentEvaluation.css" rel="stylesheet">
 <div class="content">
     <div class="container" id="evaluation-form">
-        <form>
+        <student-evaluation-form>
+
+        </student-evaluation-form>
+        {{-- <form>
             <div class="evaluation-header">
                 <h5>CSCo</h5>
                 <h2> Evaluation Form</h2>
@@ -203,9 +206,12 @@
             </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
+        </form> --}}
     </div>
 </div>
 
-</body>
-</html>
+@endsection
+
+@section('custom-script')
+
+@endsection

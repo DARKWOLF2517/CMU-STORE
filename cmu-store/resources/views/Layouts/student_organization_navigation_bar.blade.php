@@ -20,8 +20,6 @@
     <link href="/custom_css/Navbars.css" rel="stylesheet">
     <link href="/custom_css/tables.css" rel="stylesheet">
 
-
-
     @yield('custom-style')
     <title>Student Organization Dashboard</title>
     @vite('resources/js/app.js','')

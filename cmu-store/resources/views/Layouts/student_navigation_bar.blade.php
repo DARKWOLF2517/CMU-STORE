@@ -28,6 +28,7 @@
 </head>
 <body>
     <div id="app">
+
         <!-- TOP NAV BAR -->
         <div class="wrapper">
 
@@ -107,7 +108,7 @@
                 </div>
             </div>
         </div>
-<!-- SIDE NAV BAR -->
+                <!-- SIDE NAV BAR -->
         <div class="wrapper">
             <div class=" p-3  sidebar" id="sidebarCollapse">
                 <div class="d-md-flex flex-shrink-0">
