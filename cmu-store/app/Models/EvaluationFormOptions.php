@@ -11,8 +11,6 @@ class EvaluationFormOptions extends Model
     protected $table = 'evaluation_form_options';
     // protected $primaryKey = 'event_id'; 
     protected $fillable = [
-        'event_id',
-        'org_id',
         'option'
     ];
 

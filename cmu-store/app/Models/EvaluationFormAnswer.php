@@ -11,9 +11,9 @@ class EvaluationFormAnswer extends Model
     protected $table = 'evaluation_form_answer';
     // protected $primaryKey = 'event_id'; 
     protected $fillable = [
-        'event_id', 
-        'org_id',
+        'evaluation_form_id',
         'user_id',
+        'evaluation_form_question_id',
         'answer'
     ];
 
