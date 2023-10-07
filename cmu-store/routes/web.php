@@ -137,6 +137,9 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
             Route::get('student_evaluationform', function () {
                 return view('student.student_evaluation_form');
             });
+            Route::get('student_events', function () {
+                return view('student.student_events');
+            });
 
             Route::get('student_accountabilities', function () {
                 return view('student.student_accountabilities');
