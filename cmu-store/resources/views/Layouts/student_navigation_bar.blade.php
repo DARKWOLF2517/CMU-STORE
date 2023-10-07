@@ -115,7 +115,7 @@
                     <li class="mt-3">
                         <button class="btn btn-toggle align-items-center rounded dashboard-button">
                             <i class="fas fa-home"></i>
-                            <a href="/login/org_dashboard">
+                            <a href="/login/student_dashboard">
                             <span class="link-title">Home</span>
                             </a>
                         </button>
@@ -131,7 +131,7 @@
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
-                            <a href="/student_organization_events">
+                            <a href="/student_evaluationform">
                             <span class="link-title">Evaluation</span>
                             </a>
                         </button>
@@ -139,7 +139,7 @@
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center studentlist-button">
                             <i class="fas fa-money-check"></i>
-                            <a href="/student_organization_accountabilities">
+                            <a href="/student_accountabilities">
                             <span class="link-title">Accountabilities</span>
                             </a>
                         </button>

@@ -1,5 +1,5 @@
 
-@extends('layouts.student_organization_navigation_bar')
+@extends('layouts.student_navigation_bar')
 @section('main-content')
 <link href="/custom_css/evaluation.css" rel="stylesheet">
 <div class="content">
