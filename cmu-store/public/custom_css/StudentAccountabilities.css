@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(228, 241, 235);
+    width: 40vh;
+    color: black;
+}
+#accountabilities-table tr:nth-child(even) {
+    background-color: #e9f5f3;
+}
+

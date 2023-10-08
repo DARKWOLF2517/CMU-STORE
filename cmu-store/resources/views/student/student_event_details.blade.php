@@ -1,7 +1,6 @@
-
 @extends('layouts.student_navigation_bar')
 @section('main-content')
-<link href="/custom_css/studentEvents.css" rel="stylesheet">
+<link href="/custom_css/studentAccountabilities.css" rel="stylesheet">
 <div class="content">
     <div class="container">
         <div class="container breadcrumbs">
@@ -36,24 +35,29 @@
                 </div>
             </div>
             <div class="mt-4">
-                <h3><i class="fas fa-list"></i> Events</h3>
+                <h3> <i class="fas fa-list"></i>  Student Accountabilities</h3>
             </div>
-
-            <div id="events-container">
-                <div class="event-cards">
-                    <div class="event-card">
-                        <div class="event-date-container"><span class="event-date">August 31, 2023</span></div>
-                        <div class="event-title">Event 1</div>
-                        <div class="event-description">Total Responses: 120</div>
-                        <a class="view-button" href="/student_event_details"><i class="fas fa-chevron-right button-icon"></i></a>
-                    </div>
-                    </div>
-                </div>
-
+            <div class="scroll-pane">
+            <table  id="accountabilities-table">
+                <thead>
+                    <tr>
+                        <th class="sortable-header">Student Name</th>
+                        <th class="sortable-header">Membership Fee Status</th>
+                        <th class="sortable-header">Fines Status</th>
+                        <th class="sortable-header">Overall status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>John Smith</td>
+                    <td>Unpaid</td>
+                    <td>Unpaid</td>
+                    <td>Not cleared</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         </div>
 
     </div>
     </div>
-
-@endsection

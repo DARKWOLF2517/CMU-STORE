@@ -18,7 +18,7 @@
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/tables.css" rel="stylesheet">
+    {{-- <link href="/custom_css/tables.css" rel="stylesheet"> --}}
 
 
 
@@ -91,7 +91,7 @@
 
                             <side-nav-button
                             link_name="Profile"
-                            link_route = "#"
+                            link_route = "{{url('/student_profile')}}"
                             show_icon = "{{false}}"
                             >
                             </side-nav-button>
@@ -131,6 +131,14 @@
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-calendar"></i>
+                            <a href="/student_events">
+                            <span class="link-title">Events</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-bullhorn"></i>
                             <a href="/student_announcement">
                             <span class="link-title">Announcements</span>
@@ -139,7 +147,7 @@
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
-                            <i class="fas fa-calendar"></i>
+                            <i class="fas fa-chart-line"></i>
                             <a href="/student_evaluationform">
                             <span class="link-title">Evaluation</span>
                             </a>
