@@ -55,7 +55,7 @@
                         <td class="present">Present</td>
                         <td class="absent">Absent</td>
                         <td class="absent">Absent</td>
-                    <td><button class="btn btn-warning">Evaluate now</button></td>
+                    <td><a href="/student_evaluationform"><button class="btn btn-warning" >Evaluate now</button></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,7 +78,7 @@
                         <td class="present">Present</td>
                         <td class="absent">Absent</td>
                         <td class="absent">Absent</td>
-                    <td><button class="btn btn-warning">Evaluate now</button></td>
+                        <td><a href="/student_evaluationform"><button class="btn btn-warning" >Evaluate now</button></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -102,7 +102,7 @@
                         <tr>
                             <td class="present">Present</td>
                             <td class="present">Present</td>
-                        <td><button class="btn btn-success">Evaluated</button></td>
+                            <td><a href="/student_evaluationform"><button class="btn btn-warning" >Evaluate now</button></a></td>
                         </tr>
                     </tbody>
                 </table>
