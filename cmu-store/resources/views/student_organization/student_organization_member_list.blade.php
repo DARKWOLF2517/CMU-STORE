@@ -35,9 +35,9 @@
             </div>
         </div>
     </div>
-
+    <h3><i class="fas fa-list mt-2"></i> Student List</h3>
         <div class="container" id="table-container">
-            <h3><i class="fas fa-list"></i> Student List</h3>
+
             <div class="student-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
                     <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">

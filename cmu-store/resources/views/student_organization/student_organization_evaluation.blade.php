@@ -34,12 +34,11 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-4">
-                <h3><i class="fas fa-list"></i> Evaluation</h3>
-            </div>
+                <h3><i class="fas fa-list mt-4"></i> Evaluation</h3>
 
             <div id="evaluation-container">
                 <div class="evaluation-event-cards">
+
                     {{-- <div class="event-card">
                         <div class="event-date-container"><span class="event-date">August 31, 2023</span></div>
                         <div class="event-title">Event 1</div>

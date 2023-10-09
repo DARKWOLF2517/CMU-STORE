@@ -18,7 +18,7 @@
     {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/tables.css" rel="stylesheet">
+    {{-- <link href="/custom_css/tables.css" rel="stylesheet"> --}}
 
 
 
@@ -91,7 +91,7 @@
 
                             <side-nav-button
                             link_name="Profile"
-                            link_route = "#"
+                            link_route = "{{url('/student_profile')}}"
                             show_icon = "{{false}}"
                             >
                             </side-nav-button>
@@ -126,6 +126,14 @@
                             <i class="fas fa-user"></i>
                             <a href="/student_profile">
                             <span class="link-title">Profile</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-calendar"></i>
+                            <a href="/student_events">
+                            <span class="link-title">Events</span>
                             </a>
                         </button>
                     </li>
