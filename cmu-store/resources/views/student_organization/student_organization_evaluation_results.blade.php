@@ -30,7 +30,7 @@
         <div class="container" id="containers">
           
           <evaluation-chart
-          event_id={{$id}}>
+              event_id={{$id}}>
           </evaluation-chart>
       </div>
   </div>

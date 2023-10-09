@@ -213,7 +213,7 @@ export default {
         data() {
             return {
                 formData:{
-                    evaluation_form_id: '',
+                    evaluation_form_id: 1,
                     user_id: this.user_id,
                     q1: '',
                     q2: '',
