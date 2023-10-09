@@ -140,7 +140,7 @@
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
-                            <a href="/student_evaluationform">
+                            <a href="/student_evaluation_list">
                             <span class="link-title">Evaluation</span>
                             </a>
                         </button>

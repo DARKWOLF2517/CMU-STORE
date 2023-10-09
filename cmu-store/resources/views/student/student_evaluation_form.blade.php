@@ -3,7 +3,9 @@
 <link href="/custom_css/studentEvaluation.css" rel="stylesheet">
 <div class="content">
     <div class="container" id="evaluation-form">
-        <student-evaluation-form>
+        <student-evaluation-form
+            user_id = {{ Auth::id()}}
+        >
 
         </student-evaluation-form>
         {{-- <form>
