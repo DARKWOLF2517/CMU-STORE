@@ -86,6 +86,20 @@ export default{
         // console.log(this.id);
     },
     methods: {
+        fetchData(event_id){
+            axios.get(`/evaluation_form${event_id}`)
+                .then(response => {
+                    this.evaluation = response.data;
+                    console.log(this.evaluation);
+                })
+                .catch(error => {
+                    console.log('error')
+                });
+
+            },
+
+
+            
         pieChart(){
             google.charts.load('current', {'packages':['corechart']});
 
@@ -426,17 +440,7 @@ export default{
             
 
         },
-        fetchData(event_id){
-            axios.get(`/evaluation_form${event_id}`)
-                .then(response => {
-                    this.evaluation = response.data;
-                    console.log(this.evaluation);
-                })
-                .catch(error => {
-                    console.log('error')
-                });
 
-            },
     },
     }
     </script>

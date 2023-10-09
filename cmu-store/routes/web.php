@@ -134,9 +134,7 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
             Route::get('student_profile', function () {
                 return view('student.student_profile');
             });
-            Route::get('student_evaluationform', function () {
-                return view('student.student_evaluation_form');
-            });
+
             Route::get('student_events', function () {
                 return view('student.student_events');
             });
@@ -159,8 +157,17 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                 return view('student.student_profile');
             });
 
-            //get user profile
-            Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
+            //get students user profile
+                Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
+
+            //evaluation form
+                Route::get('student_evaluation_list', function () {
+                    return view('student.student_evaluation_list');
+                });
+                Route::get('student_evaluationform', function () {
+                    return view('student.student_evaluation_form');
+                });
+                Route::post('/submit_evaluation',[EvaluationController::class, 'store']);
 
         });
     });

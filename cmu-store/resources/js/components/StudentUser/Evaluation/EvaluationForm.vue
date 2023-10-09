@@ -195,7 +195,7 @@
             </div>
             <div class="form-group mt-4">
                 <label for="feedback">Please write below any suggestions/recommendations on how we can improve the Activity:</label>
-                <textarea class="form-control" id="feedback" rows="3" placeholder="Enter your feedback" required ></textarea>
+                <textarea class="form-control" id="feedback" rows="3" placeholder="Enter your feedback" required  v-model="formData.q16"></textarea>
             </div >
             <br>
             <button type="submit" class="btn btn-primary">Save</button>
@@ -209,10 +209,43 @@ export default {
         mounted() {
             console.log('mounted')
         },
-
+        props: ['user_id'],
         data() {
             return {
-                formData:[],
+                formData:{
+                    evaluation_form_id: 1,
+                    user_id: this.user_id,
+                    q1: '',
+                    q2: '',
+                    q3: '',
+                    q4: '',
+                    q5: '',
+                    q6: '',
+                    q7: '',
+                    q8: '',
+                    q9: '',
+                    q10: '',
+                    q11: '',
+                    q12: '',
+                    q13: '',
+                    q14: '',
+                    q15: '',
+                    q16: '',
+                },
+            }
+        },
+        methods: {
+            submit(){
+                console.log(this.formData);
+                axios.post('/submit_evaluation', this.formData)
+                    .then(response => {
+                        console.log(response);
+                        alert('asdfd00');
+                    })
+                    .catch(error => {
+                        alert(error)
+
+                });
             }
         },
 
