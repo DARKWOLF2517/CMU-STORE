@@ -194,101 +194,101 @@ export default{
 
         // this.fetchData(this.event_id);
         // console.log(this.id);
-        this.fetchAnswer(1, 'q1', '1');
-        this.fetchAnswer(1, 'q1', '2');
-        this.fetchAnswer(1, 'q1', '3');
-        this.fetchAnswer(1, 'q1', '4');
-        this.fetchAnswer(1, 'q1', '5');
+        this.fetchAnswer(this.event_id, 'q1', '1');
+        this.fetchAnswer(this.event_id, 'q1', '2');
+        this.fetchAnswer(this.event_id, 'q1', '3');
+        this.fetchAnswer(this.event_id, 'q1', '4');
+        this.fetchAnswer(this.event_id, 'q1', '5');
 
-        this.fetchAnswer(1, 'q2', '1');
-        this.fetchAnswer(1, 'q2', '2');
-        this.fetchAnswer(1, 'q2', '3');
-        this.fetchAnswer(1, 'q2', '4');
-        this.fetchAnswer(1, 'q2', '5');
+        this.fetchAnswer(this.event_id1, 'q2', '1');
+        this.fetchAnswer(this.event_id, 'q2', '2');
+        this.fetchAnswer(this.event_id, 'q2', '3');
+        this.fetchAnswer(this.event_id, 'q2', '4');
+        this.fetchAnswer(this.event_id, 'q2', '5');
 
-        this.fetchAnswer(1, 'q3', '1');
-        this.fetchAnswer(1, 'q3', '2');
-        this.fetchAnswer(1, 'q3', '3');
-        this.fetchAnswer(1, 'q3', '4');
-        this.fetchAnswer(1, 'q3', '5');
+        this.fetchAnswer(this.event_id, 'q3', '1');
+        this.fetchAnswer(this.event_id, 'q3', '2');
+        this.fetchAnswer(this.event_id, 'q3', '3');
+        this.fetchAnswer(this.event_id, 'q3', '4');
+        this.fetchAnswer(this.event_id, 'q3', '5');
 
-        this.fetchAnswer(1, 'q4', '1');
-        this.fetchAnswer(1, 'q4', '2');
-        this.fetchAnswer(1, 'q4', '3');
-        this.fetchAnswer(1, 'q4', '4');
-        this.fetchAnswer(1, 'q4', '5');
+        this.fetchAnswer(this.event_id, 'q4', '1');
+        this.fetchAnswer(this.event_id, 'q4', '2');
+        this.fetchAnswer(this.event_id, 'q4', '3');
+        this.fetchAnswer(this.event_id, 'q4', '4');
+        this.fetchAnswer(this.event_id, 'q4', '5');
 
-        this.fetchAnswer(1, 'q5', '1');
-        this.fetchAnswer(1, 'q5', '2');
-        this.fetchAnswer(1, 'q5', '3');
-        this.fetchAnswer(1, 'q5', '4');
-        this.fetchAnswer(1, 'q5', '5');
+        this.fetchAnswer(this.event_id, 'q5', '1');
+        this.fetchAnswer(this.event_id, 'q5', '2');
+        this.fetchAnswer(this.event_id, 'q5', '3');
+        this.fetchAnswer(this.event_id, 'q5', '4');
+        this.fetchAnswer(this.event_id, 'q5', '5');
 
-        this.fetchAnswer(1, 'q6', '1');
-        this.fetchAnswer(1, 'q6', '2');
-        this.fetchAnswer(1, 'q6', '3');
-        this.fetchAnswer(1, 'q6', '4');
-        this.fetchAnswer(1, 'q6', '5');
+        this.fetchAnswer(this.event_id, 'q6', '1');
+        this.fetchAnswer(this.event_id, 'q6', '2');
+        this.fetchAnswer(this.event_id, 'q6', '3');
+        this.fetchAnswer(this.event_id, 'q6', '4');
+        this.fetchAnswer(this.event_id, 'q6', '5');
 
-        this.fetchAnswer(1, 'q7', '1');
-        this.fetchAnswer(1, 'q7', '2');
-        this.fetchAnswer(1, 'q7', '3');
-        this.fetchAnswer(1, 'q7', '4');
-        this.fetchAnswer(1, 'q7', '5');
+        this.fetchAnswer(this.event_id, 'q7', '1');
+        this.fetchAnswer(this.event_id, 'q7', '2');
+        this.fetchAnswer(this.event_id, 'q7', '3');
+        this.fetchAnswer(this.event_id, 'q7', '4');
+        this.fetchAnswer(this.event_id, 'q7', '5');
 
-        this.fetchAnswer(1, 'q8', '1');
-        this.fetchAnswer(1, 'q8', '2');
-        this.fetchAnswer(1, 'q8', '3');
-        this.fetchAnswer(1, 'q8', '4');
-        this.fetchAnswer(1, 'q8', '5');
+        this.fetchAnswer(this.event_id, 'q8', '1');
+        this.fetchAnswer(this.event_id, 'q8', '2');
+        this.fetchAnswer(this.event_id, 'q8', '3');
+        this.fetchAnswer(this.event_id, 'q8', '4');
+        this.fetchAnswer(this.event_id, 'q8', '5');
 
-        this.fetchAnswer(1, 'q9', '1');
-        this.fetchAnswer(1, 'q9', '2');
-        this.fetchAnswer(1, 'q9', '3');
-        this.fetchAnswer(1, 'q9', '4');
-        this.fetchAnswer(1, 'q9', '5');
+        this.fetchAnswer(this.event_id, 'q9', '1');
+        this.fetchAnswer(this.event_id, 'q9', '2');
+        this.fetchAnswer(this.event_id, 'q9', '3');
+        this.fetchAnswer(this.event_id, 'q9', '4');
+        this.fetchAnswer(this.event_id, 'q9', '5');
 
-        this.fetchAnswer(1, 'q10', '1');
-        this.fetchAnswer(1, 'q10', '2');
-        this.fetchAnswer(1, 'q10', '3');
-        this.fetchAnswer(1, 'q10', '4');
-        this.fetchAnswer(1, 'q10', '5');
+        this.fetchAnswer(this.event_id, 'q10', '1');
+        this.fetchAnswer(this.event_id, 'q10', '2');
+        this.fetchAnswer(this.event_id, 'q10', '3');
+        this.fetchAnswer(this.event_id, 'q10', '4');
+        this.fetchAnswer(this.event_id, 'q10', '5');
 
-        this.fetchAnswer(1, 'q11', '1');
-        this.fetchAnswer(1, 'q11', '2');
-        this.fetchAnswer(1, 'q11', '3');
-        this.fetchAnswer(1, 'q11', '4');
-        this.fetchAnswer(1, 'q11', '5');
+        this.fetchAnswer(this.event_id, 'q11', '1');
+        this.fetchAnswer(this.event_id, 'q11', '2');
+        this.fetchAnswer(this.event_id, 'q11', '3');
+        this.fetchAnswer(this.event_id, 'q11', '4');
+        this.fetchAnswer(this.event_id, 'q11', '5');
 
-        this.fetchAnswer(1, 'q12', '1');
-        this.fetchAnswer(1, 'q12', '2');
-        this.fetchAnswer(1, 'q12', '3');
-        this.fetchAnswer(1, 'q12', '4');
-        this.fetchAnswer(1, 'q12', '5');
+        this.fetchAnswer(this.event_id, 'q12', '1');
+        this.fetchAnswer(this.event_id, 'q12', '2');
+        this.fetchAnswer(this.event_id, 'q12', '3');
+        this.fetchAnswer(this.event_id, 'q12', '4');
+        this.fetchAnswer(this.event_id, 'q12', '5');
 
-        this.fetchAnswer(1, 'q13', '1');
-        this.fetchAnswer(1, 'q13', '2');
-        this.fetchAnswer(1, 'q13', '3');
-        this.fetchAnswer(1, 'q13', '4');
-        this.fetchAnswer(1, 'q13', '5');
+        this.fetchAnswer(this.event_id, 'q13', '1');
+        this.fetchAnswer(this.event_id, 'q13', '2');
+        this.fetchAnswer(this.event_id, 'q13', '3');
+        this.fetchAnswer(this.event_id, 'q13', '4');
+        this.fetchAnswer(this.event_id, 'q13', '5');
 
-        this.fetchAnswer(1, 'q14', '1');
-        this.fetchAnswer(1, 'q14', '2');
-        this.fetchAnswer(1, 'q14', '3');
-        this.fetchAnswer(1, 'q14', '4');
-        this.fetchAnswer(1, 'q14', '5');
+        this.fetchAnswer(this.event_id, 'q14', '1');
+        this.fetchAnswer(this.event_id, 'q14', '2');
+        this.fetchAnswer(this.event_id, 'q14', '3');
+        this.fetchAnswer(this.event_id, 'q14', '4');
+        this.fetchAnswer(this.event_id, 'q14', '5');
 
-        this.fetchAnswer(1, 'q15', '1');
-        this.fetchAnswer(1, 'q15', '2');
-        this.fetchAnswer(1, 'q15', '3');
-        this.fetchAnswer(1, 'q15', '4');
-        this.fetchAnswer(1, 'q15', '5');
+        this.fetchAnswer(this.event_id, 'q15', '1');
+        this.fetchAnswer(this.event_id, 'q15', '2');
+        this.fetchAnswer(this.event_id, 'q15', '3');
+        this.fetchAnswer(this.event_id, 'q15', '4');
+        this.fetchAnswer(this.event_id, 'q15', '5');
 
-        this.fetchAnswer(1, 'q16', '1');
-        this.fetchAnswer(1, 'q16', '2');
-        this.fetchAnswer(1, 'q16', '3');
-        this.fetchAnswer(1, 'q16', '4');
-        this.fetchAnswer(1, 'q16', '5');
+        this.fetchAnswer(this.event_id, 'q16', '1');
+        this.fetchAnswer(this.event_id, 'q16', '2');
+        this.fetchAnswer(this.event_id, 'q16', '3');
+        this.fetchAnswer(this.event_id, 'q16', '4');
+        this.fetchAnswer(this.event_id, 'q16', '5');
 
     },
     methods: {
