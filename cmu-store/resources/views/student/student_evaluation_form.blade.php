@@ -5,6 +5,8 @@
     <div class="container" id="evaluation-form">
         <student-evaluation-form
             user_id = {{ Auth::id()}}
+            event_id = {{$event_id}}
+            org_id = {{Session::get('org_id')}}
         >
 
         </student-evaluation-form>

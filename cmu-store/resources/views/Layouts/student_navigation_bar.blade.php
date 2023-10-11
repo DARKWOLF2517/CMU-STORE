@@ -141,7 +141,7 @@
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
-                            <a href="/student_events">
+                            <a href="/student_event_details">
                             <span class="link-title">Events</span>
                             </a>
                         </button>

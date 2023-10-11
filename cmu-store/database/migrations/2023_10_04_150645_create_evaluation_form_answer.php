@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('evaluation_form_answer', function (Blueprint $table) {
-            $table->unsignedBigInteger('evaluation_form_id');
+            $table->unsignedBigInteger('event_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('org_id');
             $table->text('q1');
             $table->text('q2');
             $table->text('q3');
@@ -30,8 +31,10 @@ return new class extends Migration
             $table->text('q14');
             $table->text('q15');
             $table->text('q16');
-            $table->foreign('evaluation_form_id')->references('id')->on('evaluation_form_details')->onDelete('cascade');
+            
+            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
             $table->timestamps();
         });
     }

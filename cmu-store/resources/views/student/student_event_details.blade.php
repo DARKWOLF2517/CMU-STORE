@@ -32,58 +32,15 @@
             </div>
         </div>
     <div class="scroll-attendance">
-        <div class="container" id="tablecontainer">
-            <h4> Event name: Palaro</h4>
-            <h6> Number of Days: 2</h6>
-            <h6> Total number of Attendance made: 4</h6>
-            <table class="mt-4">
-                <thead >
-                    <tr>
-                        <th class="sortable-header center" colspan="5">September 2, 2023</th>
-                    </tr>
-                    <tr>
-                        <th class="sortable-header">Log in - 7:00 AM</th>
-                        <th class="sortable-header"> Log out - 11:00 AM</th>
-                        <th class="sortable-header">Log in - 1:00 PM</th>
-                        <th class="sortable-header"> Log out - 4:00 PM</th>
-                        <th class="sortable-header"> Evaluation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="present">Present</td>
-                        <td class="present">Present</td>
-                        <td class="absent">Absent</td>
-                        <td class="absent">Absent</td>
-                    <td><a href="/student_evaluationform"><button class="btn btn-warning" >Evaluate now</button></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="mt-4">
-                <thead >
-                    <tr>
-                        <th class="sortable-header center" colspan="5">September 3, 2023</th>
-                    </tr>
-                    <tr>
-                        <th class="sortable-header">Log in - 7:00 AM</th>
-                        <th class="sortable-header"> Log out - 11:00 AM</th>
-                        <th class="sortable-header">Log in - 1:00 PM</th>
-                        <th class="sortable-header"> Log out - 4:00 PM</th>
-                        <th class="sortable-header"> Evaluation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="present">Present</td>
-                        <td class="present">Present</td>
-                        <td class="absent">Absent</td>
-                        <td class="absent">Absent</td>
-                        <td><a href="/student_evaluationform"><button class="btn btn-warning" >Evaluate now</button></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-            <div class="container" id="tablecontainer">
+        <student-event-card 
+        organization_id = {{Session::get('org_id')}}
+        >
+
+        </student-event-card>
+
+
+            
+            {{-- <div class="container" id="tablecontainer">
                 <h4> Event name: Acquaintance Party</h4>
                 <h6> Number of Days: 1</h6>
                 <h6> Total number of Attendance made: 1</h6>
@@ -106,7 +63,7 @@
                         </tr>
                     </tbody>
                 </table>
-                </div>
+                </div> --}}
         </div>
     </div>
 </div>

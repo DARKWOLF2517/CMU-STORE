@@ -169,6 +169,7 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                     return view('student.student_evaluation_form');
                 });
                 Route::post('/submit_evaluation',[EvaluationController::class, 'store']);
+                Route::get('/evaluation_form/{event}', [EvaluationController::class, 'EvaluationForm'])->name('EvaluationForm');
             
 
                 

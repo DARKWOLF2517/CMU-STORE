@@ -64,7 +64,7 @@
                         <button class="view-button"><i class="fas fa-chevron-right button-icon"></i></button>
                     </div> --}}
                     <evaluation-list
-                    organization_id = {{Session::get('org_id')}}
+                        organization_id = {{Session::get('org_id')}}
                     ></evaluation-list>
                     </div>
                 </div>

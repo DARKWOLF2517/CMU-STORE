@@ -200,6 +200,7 @@
             <br>
             <button type="submit" class="btn btn-primary">Save</button>
         </div>
+        
     </form>
 </template>
 
@@ -207,14 +208,16 @@
 
 export default {
         mounted() {
-            console.log('mounted')
+            console.log(this.event_id)
+
         },
-        props: ['user_id'],
+        props: ['user_id', 'event_id', 'org_id'],
         data() {
             return {
                 formData:{
-                    evaluation_form_id: 1,
+                    event_id: this.event_id,
                     user_id: this.user_id,
+                    org_id: this.org_id,
                     q1: '',
                     q2: '',
                     q3: '',
@@ -240,7 +243,6 @@ export default {
                 axios.post('/submit_evaluation', this.formData)
                     .then(response => {
                         console.log(response);
-                        alert('asdfd00');
                     })
                     .catch(error => {
                         alert(error)

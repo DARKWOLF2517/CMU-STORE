@@ -23,8 +23,9 @@ class EvaluationController extends Controller
     public function store(Request $request){
         // Validate the form data
         $validatedData = $request->validate([
-            'evaluation_form_id' => 'required|exists:evaluation_form_details,id',
+            'event_id' => 'required|exists:events,event_id',
             'user_id' => 'required|exists:users,id',
+            'org_id' => 'required|exists:organizations,org_id',
             'q1' => 'required',
             'q2' => 'required',
             'q3' => 'required',
@@ -46,8 +47,9 @@ class EvaluationController extends Controller
 
         // Create a new Event instance
         $answer = new EvaluationFormAnswer();
-        $answer->evaluation_form_id = $validatedData['evaluation_form_id'];
+        $answer->event_id = $validatedData['event_id'];
         $answer->user_id = $validatedData['user_id'];
+        $answer->org_id = $validatedData['org_id'];
         $answer->q1 = $validatedData['q1'];
         $answer->q2 = $validatedData['q2'];
         $answer->q3 = $validatedData['q3'];
@@ -71,7 +73,7 @@ class EvaluationController extends Controller
     }
     public function EvaluationFormAnswer($evaluation_form_id, $question_id, $option){ 
         // $EvaluationAnswer = EvaluationFormAnswer::where('evaluation_form_id', $evaluation_form_id )->with(['formQuestions', 'formOptions', 'formAnswers'])->get();
-        // // $EvaluationQuestions = EvaluationFormDetails::all();
+        // // $EvaluationQuestions = EvaluationFormDetails::all();  
         $EvaluationAnswer = EvaluationFormAnswer::where([
             ['evaluation_form_id',$evaluation_form_id],
             [$question_id, $option]
@@ -81,6 +83,11 @@ class EvaluationController extends Controller
 
         
         return $EvaluationAnswerCount;
+    }
+
+    //student section
+    public function EvaluationForm($event_id){ 
+        return view('student.student_evaluation_form', ['event_id' => $event_id]);
     }
 
 }

@@ -7,7 +7,7 @@
             <div class="col mt-2">
                 <div class="welcome-card">
                     <div class="welcome-text">
-                        <p>Welcome, (name of Student)</p>
+                        <p>Welcome, {{Auth::user()->name}}</p>
                     </div>
                 </div>
             </div>

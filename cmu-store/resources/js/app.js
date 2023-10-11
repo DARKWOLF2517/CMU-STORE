@@ -25,7 +25,7 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-// all
+// all  
     app.component('side-nav-button',SideNavbtn);
     app.component('login-form',LoginForm);
     app.component('user-organization',UserOrganization);

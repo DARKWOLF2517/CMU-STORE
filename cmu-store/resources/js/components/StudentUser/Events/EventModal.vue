@@ -1,25 +1,32 @@
 <template>
-<!-- container col-lg-12 -->
-<div :class="this.div_class">
-    <h2>Events</h2>
-    <hr>
-    <div class="row" id="events">
-            <!-- Events will be dynamically populated here -->
-            <div class="col-lg-4" v-for="event in this.events" :id="event.event_id">
-                <div class="card mb-3" >
-                    <a href="#"> 
-                        <div >
-                            <img src="https://via.placeholder.com/300x200" alt="" class="card-img">
-                        </div>
-                    </a>
-                    <div class="card-body"> 
-                        <h5 class="card-title">{{ event['name'] }}</h5>
-                        <p class="card-text card-desciprtion">{{ event['start_date'] }}</p>
-                    </div>
-                </div>
-        </div>
-    </div>
-        </div>
+        <div class="container" id="tablecontainer" v-for="event in this.events" :id="event.event_id">
+                <h4> Event name: {{ event["name"] }}</h4>
+                <h6> Number of Days: 2</h6>
+                <h6> Total number of Attendance made: 4</h6>
+                <table class="mt-4">
+                    <thead >
+                        <tr>
+                            <th class="sortable-header center" colspan="5">September 3, 2023</th>
+                        </tr>
+                        <tr>
+                            <th class="sortable-header">Log in - 7:00 AM</th>
+                            <th class="sortable-header"> Log out - 11:00 AM</th>
+                            <th class="sortable-header">Log in - 1:00 PM</th>
+                            <th class="sortable-header"> Log out - 4:00 PM</th>
+                            <th class="sortable-header"> Evaluation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="present">Present</td>
+                            <td class="present">Present</td>
+                            <td class="absent">Absent</td>
+                            <td class="absent">Absent</td>
+                            <td><button class="btn btn-warning" @click="this.showEvaluationForm(event.event_id)">Evaluate now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
 
     
@@ -27,7 +34,7 @@
 
 <script>
 export default {
-    props: ['target_route', 'div_class'],
+    props: ['organization_id'],
     data() { 
         return {
             events: [],
@@ -35,31 +42,25 @@ export default {
     },
     created() {
         this.fetchData();
-        console.log("mounted")
+        // console.log("mounted")
     },
     methods: {
-        fetchData() {
-            // document.getElementById("event-spinner").show();
-            fetch(this.target_route, {
-                method: "GET",
-                headers: {
-                    //TYPE OF DATA THAT THE SERVER SHOULD RESPOND
-                    "Content-Type":"application/json"
-                }
-            }).then( (response) => {
-                // document.getElementById("event-spinner").classList.add("hidden");
-                response.json().then((data) => {
-                    this.events = data;
+        fetchData(){
+                axios.get(`/events/show/${this.organization_id}`)
+                .then(response => {
+                    // document.getElementById("event-spinner").classList.add("hidden");
+                    // console.log(response.data)
+                    this.events = response.data;
                 })
-            })
+                .catch(error => {
+                    console.log(error)
+                });
+
+            },
+        showEvaluationForm(event_id){
+            window.location.href = `evaluation_form/${event_id}`;
+
         },
-        deleteEvent(id) {
-            console.log(id);
-            //Send fetch delete type here.
-        },
-        editEvent(id) {
-            //Show modal here
-        }
     }
 }
 </script>
