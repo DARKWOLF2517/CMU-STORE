@@ -22,34 +22,35 @@
                 <label for="PA-1">Stimulates the interest of the students.</label>
                 <select class="form-control" id="PA-1"  v-model="formData.q1">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
+
                 </select>
             </div>
             <div class="mt-4">
             <label for="PA-2">Provide equal opportunities to all students or
                 participants.</label>
             <select class="form-control" id="PA-2" v-model="formData.q2">
-                <option disabled>Select choice</option>
-                <option>1 – Needs Improvement</option>
-                <option>2 – Satisfactory</option>
-                <option>3 – Good</option>
-                <option>4 – Very Good</option>
-                <option>5 – Excellent</option>
+                    <option disabled>Select choice</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
             </select>
             </div>
             <div class="mt-4">
                 <label for="PA-2">Enhance the learning experience of the students</label>
                 <select class="form-control" id="PA-3" v-model="formData.q3">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>>
                 </select>
             </div>
             <div class="mt-4">
@@ -58,11 +59,11 @@
                     innovative skills, etc.</label>
                 <select class="form-control" id="PA-4" v-model="formData.q4">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-4">
@@ -71,11 +72,11 @@
                     solve a problem or answer a question.</label>
                 <select class="form-control" id="PA-5" v-model="formData.q5">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-4">
@@ -83,11 +84,11 @@
                     than just studying.</label>
                 <select class="form-control" id="PA-6" v-model="formData.q6">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-4">
@@ -95,11 +96,11 @@
                     mingle easily with others.</label>
                 <select class="form-control" id="PA-7" v-model="formData.q7">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-4">
@@ -107,22 +108,22 @@
                     in their practical life.</label>
                 <select class="form-control" id="PA-8" v-model="formData.q8">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-4">
                 <label for="PA-2">Provide opportunity for student to work in team.</label>
                 <select class="form-control" id="PA-9" v-model="formData.q9">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <h6 class="text-center mt-4">VENUE</h6>
@@ -130,11 +131,11 @@
                 <label for="V-1">The venue was accessible and comfortable</label>
                 <select class="form-control" id="V-1" v-model="formData.q10">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <h6 class="text-center mt-4">PARTICIPATION</h6>
@@ -142,55 +143,54 @@
                 <label for="P-1">Attendance</label>
                 <select class="form-control" id="P-1" v-model="formData.q11">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-2">
                 <label for="P-2">Cooperation</label>
                 <select class="form-control" id="P-2" v-model="formData.q12">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="mt-2">
                 <label for="P-3">Punctuality</label>
                 <select class="form-control" id="P-3" v-model="formData.q13">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <h6 class="text-center mt-4">FOOD/HOSPITALITY</h6>
             <div class="mt-2">
                 <select class="form-control" id="FH-1" v-model="formData.q14">
                     <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <h6 class="text-center mt-4">TEAMWORK/COORDINATION OF ORGANIZATION</h6>
             <div class="mt-2">
                 <select class="form-control" id="TCO-1" v-model="formData.q15">
-                    <option disabled>Select choice</option>
-                    <option>1 – Needs Improvement</option>
-                    <option>2 – Satisfactory</option>
-                    <option>3 – Good</option>
-                    <option>4 – Very Good</option>
-                    <option>5 – Excellent</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Satisfactory</option>
+                    <option value="1">1 - Needs Improvement</option>
                 </select>
             </div>
             <div class="form-group mt-4">

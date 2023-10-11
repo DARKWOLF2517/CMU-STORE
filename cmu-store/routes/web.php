@@ -108,6 +108,7 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                     return view('student_organization.student_organization_evaluation');
                 });
                 Route::get('/evaluation_form{event_id}', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
+                Route::get('/evaluation_form_answer/{event_id}/{question_id}/{option}',[EvaluationController::class, 'EvaluationFormAnswer']);
             #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');
@@ -168,6 +169,9 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                     return view('student.student_evaluation_form');
                 });
                 Route::post('/submit_evaluation',[EvaluationController::class, 'store']);
+            
+
+                
 
         });
     });
