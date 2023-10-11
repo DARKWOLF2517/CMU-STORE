@@ -2,15 +2,6 @@
 <div class="row justify-content-center">
     <div class="col-md-4 qr-scanner-container mx-4 mb-2 border-top border-5 border-success border-bottom-0 py-3">
         <h4><i class="bi bi-camera-video "></i>QR Scanner</h4>
-        
-
-
-
-
-
-
-
-
                 <div id="reader"></div>
                 <div id="result"></div>
                     <form @submit="this.submit"  id="eventsForm"  >

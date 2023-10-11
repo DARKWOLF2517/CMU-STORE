@@ -28,15 +28,9 @@
           </div>
       </div>
         <div class="container" id="containers">
-          <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
-          <hr>
-          <h6 for="Activity">Name of Activity:</h6>
-          <h6 for="StudentOrganization">Name of Organization:</h6>
-          <h6 for="DateTime">Date & Time:</h6>
-          <h6 for="Venue">Venue:</h6>
-          <hr>
+          
           <evaluation-chart
-          event_id={{$id}}>
+              event_id={{$id}}>
           </evaluation-chart>
       </div>
   </div>
@@ -213,8 +207,8 @@
       $(document).ready(function(){
 
         google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
 
+        google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
             ['Registration', 'Percentage'],
@@ -237,7 +231,6 @@
 
         // SECOND PIE
         google.charts.setOnLoadCallback(drawChart2);
-
         function drawChart2() {
           var data2 = google.visualization.arrayToDataTable([
             ['Registration', 'Percentage'],
@@ -282,7 +275,6 @@
         }
         //Fourth pie
         google.charts.setOnLoadCallback(drawChart4);
-
         function drawChart4() {
           var data4 = google.visualization.arrayToDataTable([
             ['Registration', 'Percentage'],
@@ -302,119 +294,119 @@
           var chart4 = new google.visualization.PieChart(document.getElementById('piechart3d_4'));
           chart4.draw(data4, options4);
         }
-        //Fifth pie
-        google.charts.setOnLoadCallback(drawChart5);
+          //Fifth pie
+          google.charts.setOnLoadCallback(drawChart5);
 
-        function drawChart5() {
-          var data5 = google.visualization.arrayToDataTable([
-            ['Registration', 'Percentage'],
-            ['Outstanding', 18.75],
-            ['Very Satisfactory', 31.25],
-            ['Satisfactory', 10],
-            ['Moderately Satisfactory', 10],
-            ['Needs Improvement', 17.5],
-          ]);
+          function drawChart5() {
+            var data5 = google.visualization.arrayToDataTable([
+              ['Registration', 'Percentage'],
+              ['Outstanding', 18.75],
+              ['Very Satisfactory', 31.25],
+              ['Satisfactory', 10],
+              ['Moderately Satisfactory', 10],
+              ['Needs Improvement', 17.5],
+            ]);
 
-          var options5 = {
-            title: 'e.	Help in developing richer learning experiences by giving the students chance to think in new ways to solve a problem or answer a question.',
-            pieSliceText: 'value',
-            is3D: true
-          };
+            var options5 = {
+              title: 'e.	Help in developing richer learning experiences by giving the students chance to think in new ways to solve a problem or answer a question.',
+              pieSliceText: 'value',
+              is3D: true
+            };
 
-          var chart5 = new google.visualization.PieChart(document.getElementById('piechart3d_5'));
-          chart5.draw(data5, options5);
-        }
-        //Sixth pie
-        google.charts.setOnLoadCallback(drawChart6);
+            var chart5 = new google.visualization.PieChart(document.getElementById('piechart3d_5'));
+            chart5.draw(data5, options5);
+          }
+          //Sixth pie
+          google.charts.setOnLoadCallback(drawChart6);
 
-  function drawChart6() {
-    var data6 = google.visualization.arrayToDataTable([
-      ['Registration', 'Percentage'],
-      ['Outstanding', 18.75],
-            ['Very Satisfactory', 31.25],
-            ['Satisfactory', 10],
-            ['Moderately Satisfactory', 10],
-            ['Needs Improvement', 17.5],
-    ]);
+    function drawChart6() {
+      var data6 = google.visualization.arrayToDataTable([
+        ['Registration', 'Percentage'],
+        ['Outstanding', 18.75],
+              ['Very Satisfactory', 31.25],
+              ['Satisfactory', 10],
+              ['Moderately Satisfactory', 10],
+              ['Needs Improvement', 17.5],
+      ]);
 
-    var options6 = {
-      title: 'f.	Satisfy students’ need to take time outs to do more than just studying.',
-      pieSliceText: 'value',
-      is3D: true
-    };
+      var options6 = {
+        title: 'f.	Satisfy students’ need to take time outs to do more than just studying.',
+        pieSliceText: 'value',
+        is3D: true
+      };
 
-    var chart6 = new google.visualization.PieChart(document.getElementById('piechart3d_6'));
-    chart6.draw(data6, options6);
-  }
-  //Seventh pie
-  google.charts.setOnLoadCallback(drawChart7);
+      var chart6 = new google.visualization.PieChart(document.getElementById('piechart3d_6'));
+      chart6.draw(data6, options6);
+    }
+    //Seventh pie
+    google.charts.setOnLoadCallback(drawChart7);
 
-  function drawChart7() {
-    var data7 = google.visualization.arrayToDataTable([
-      ['Registration', 'Percentage'],
-      ['Outstanding', 18.75],
-            ['Very Satisfactory', 31.25],
-            ['Satisfactory', 10],
-            ['Moderately Satisfactory', 10],
-            ['Needs Improvement', 17.5],
-    ]);
+    function drawChart7() {
+      var data7 = google.visualization.arrayToDataTable([
+        ['Registration', 'Percentage'],
+        ['Outstanding', 18.75],
+              ['Very Satisfactory', 31.25],
+              ['Satisfactory', 10],
+              ['Moderately Satisfactory', 10],
+              ['Needs Improvement', 17.5],
+      ]);
 
-    var options7 = {
-      title: 'g.	Give students a chance to relax, refresh and mingle easily with others.',
-      pieSliceText: 'value',
-      is3D: true
-    };
+      var options7 = {
+        title: 'g.	Give students a chance to relax, refresh and mingle easily with others.',
+        pieSliceText: 'value',
+        is3D: true
+      };
 
-    var chart7 = new google.visualization.PieChart(document.getElementById('piechart3d_7'));
-    chart7.draw(data7, options7);
-  }
+      var chart7 = new google.visualization.PieChart(document.getElementById('piechart3d_7'));
+      chart7.draw(data7, options7);
+    }
 
-  //Eighth pie
-  google.charts.setOnLoadCallback(drawChart8);
+    //Eighth pie
+    google.charts.setOnLoadCallback(drawChart8);
 
-  function drawChart8() {
-    var data8 = google.visualization.arrayToDataTable([
-            ['Registration', 'Percentage'],
-            ['Outstanding', 18.75],
-            ['Very Satisfactory', 31.25],
-            ['Satisfactory', 10],
-            ['Moderately Satisfactory', 10],
-            ['Needs Improvement', 17.5],
-    ]);
+    function drawChart8() {
+      var data8 = google.visualization.arrayToDataTable([
+              ['Registration', 'Percentage'],
+              ['Outstanding', 18.75],
+              ['Very Satisfactory', 31.25],
+              ['Satisfactory', 10],
+              ['Moderately Satisfactory', 10],
+              ['Needs Improvement', 17.5],
+      ]);
 
-    var options8 = {
-      title: 'h.	Provide opportunity for students to apply learning in their practical life.',
-      pieSliceText: 'value',
-      is3D: true
-    };
+      var options8 = {
+        title: 'h.	Provide opportunity for students to apply learning in their practical life.',
+        pieSliceText: 'value',
+        is3D: true
+      };
 
-    var chart8 = new google.visualization.PieChart(document.getElementById('piechart3d_8'));
-    chart8.draw(data8, options8);
-  }
+      var chart8 = new google.visualization.PieChart(document.getElementById('piechart3d_8'));
+      chart8.draw(data8, options8);
+    }
 
 
-  //Ninth pie
-  google.charts.setOnLoadCallback(drawChart9);
+    //Ninth pie
+    google.charts.setOnLoadCallback(drawChart9);
 
-  function drawChart9() {
-    var data9 = google.visualization.arrayToDataTable([
-            ['Registration', 'Percentage'],
-            ['Outstanding', 18.75],
-            ['Very Satisfactory', 31.25],
-            ['Satisfactory', 10],
-            ['Moderately Satisfactory', 10],
-            ['Needs Improvement', 17.5],
-    ]);
+    function drawChart9() {
+      var data9 = google.visualization.arrayToDataTable([
+              ['Registration', 'Percentage'],
+              ['Outstanding', 18.75],
+              ['Very Satisfactory', 31.25],
+              ['Satisfactory', 10],
+              ['Moderately Satisfactory', 10],
+              ['Needs Improvement', 17.5],
+      ]);
 
-    var options9 = {
-      title: 'i.	Provide opportunity for student to work in team.',
-      pieSliceText: 'value',
-      is3D: true
-    };
+      var options9 = {
+        title: 'i.	Provide opportunity for student to work in team.',
+        pieSliceText: 'value',
+        is3D: true
+      };
 
-    var chart9 = new google.visualization.PieChart(document.getElementById('piechart3d_9'));
-    chart9.draw(data9, options9);
-  }
+      var chart9 = new google.visualization.PieChart(document.getElementById('piechart3d_9'));
+      chart9.draw(data9, options9);
+    }
 
   //Tenth pie
   google.charts.setOnLoadCallback(drawChart10);
@@ -578,7 +570,6 @@
 
   //17
   google.charts.setOnLoadCallback(drawChart17);
-
   function drawChart17() {
     var data17 = google.visualization.arrayToDataTable([
       ['Registration', 'Percentage'],

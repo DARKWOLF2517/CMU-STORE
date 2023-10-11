@@ -20,6 +20,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// PROFILE
+
+Route::get('student_organization_profile', function () {
+    return view('student.student_organization_profile');
+});
 // general
     Route::post('/authenticate_user', [LoginController::class, 'authenticate'])->name('authentication');
     Route::get('/logout', [LoginController::class, 'logout']);
@@ -129,10 +134,13 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
             Route::get('student_profile', function () {
                 return view('student.student_profile');
             });
-            Route::get('student_evaluationform', function () {
-                return view('student.student_evaluationform');
-            });
 
+            Route::get('student_events', function () {
+                return view('student.student_events');
+            });
+            Route::get('student_event_details', function () {
+                return view('student.student_event_details');
+            });
             Route::get('student_accountabilities', function () {
                 return view('student.student_accountabilities');
             });
@@ -149,8 +157,17 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                 return view('student.student_profile');
             });
 
-            //get user profile
-            Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
+            //get students user profile
+                Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
+
+            //evaluation form
+                Route::get('student_evaluation_list', function () {
+                    return view('student.student_evaluation_list');
+                });
+                Route::get('student_evaluationform', function () {
+                    return view('student.student_evaluation_form');
+                });
+                Route::post('/submit_evaluation',[EvaluationController::class, 'store']);
 
         });
     });

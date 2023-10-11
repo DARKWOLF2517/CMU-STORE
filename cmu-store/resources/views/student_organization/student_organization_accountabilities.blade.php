@@ -1,8 +1,6 @@
 @extends('layouts.student_organization_navigation_bar')
-
-
 @section('main-content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
 <link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
 <div class="content">
@@ -22,7 +20,7 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="input-container">
                         <i class="fa fa-search"></i>
-                        <input type="text" placeholder="Search Event">
+                        <input type="text" placeholder="Search Student">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
@@ -48,7 +46,9 @@
                 </button>
             </div>
         </div>
-            <h3> <i class="fas fa-list"></i>  Student Accountabilities</h3>
+        </div>
+            <h3> <i class="fas fa-list mt-2"></i>  Student Accountabilities</h3>
+            <div class="container" id="table-container">
             <div class="scroll-pane">
             <table  id="accountabilities-table">
                 <thead>
@@ -508,7 +508,7 @@
                 printWindow.print();
                 printWindow.close();
             }
-            </script> --}} --}}
+            </script> --}}
 
 
 @endsection

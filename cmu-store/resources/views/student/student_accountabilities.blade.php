@@ -1,38 +1,58 @@
 @extends('layouts.student_navigation_bar')
-
 @section('main-content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
+<link href="/custom_css/StudentAccountabilities.css" rel="stylesheet">
 <div class="content">
-    <div class="container breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/student_dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item">Student Organization</li>
-            <li class="breadcrumb-item active" aria-current="page">Accountabilities</li>
-          </ol>
-        </nav>
+    <div class="container">
+        <div class="container breadcrumbs">
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item">Student Organization</li>
+                <li class="breadcrumb-item active" aria-current="page">Accountabilities</li>
+            </ol>
+            </nav>
+        </div>
+        <div class="container" id="tablecontainer">
+            <div class="row head-container">
+                <div class="col-md-6 col-sm-12">
+                    <h3> <i class="fas fa-list"></i>  Student Accountabilities</h3>
+                </div>
+                <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
+                    <div class="select-dropdown">
+                        <select id="sort-select" class="form-control" style="text-align: center;">
+                            <option value="">Select Semester</option>
+                            <option value="option1">1st Semester 2023-2024</option>
+                            <option value="option2">2nd Semester 2022-2023</option>
+                            <option value="option3">1st Semester 2022-2023</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="tablecontainer">
+            <table  id="accountabilities-table">
+                    <tr>
+                        <th>Student Name</th>
+                        <td>Taylor Swift</td>
+                    </tr>
+                    <tr>
+                        <th>Membership Fee Status</th>
+                        <td>Unpaid</td>
+                    </tr>
+                    <tr>
+                        <th>Fines Status</th>
+                        <td>Unpaid</td>
+                    </tr>
+                    <tr>
+                        <th>Clearance Status</th>
+                        <td>Not Cleared</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <div class="container" id="tablecontainer">
-
-        <table class="table table-styled" >
-
-          <thead>
-            <tr>
-              <th>Student ID</th>
-              <th>Name</th>
-              <th>Membership Fee Status</th>
-              <th>Fines Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>12345</td>
-              <td>John Doe</td>
-              <td>Paid</td>
-              <td>No fines</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 </div>
+@endsection

@@ -5,54 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
 
-{{-- CSS STYLESHEET --}}
+    <!-- Add Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
+
+
+    {{-- CUSTOM STYLE SHEETS FOUND IN PUBLIC DIRECTORY --}}
     <link href="/custom_css/stylesheet.css" rel="stylesheet">
     <link href="/custom_css/Navbars.css" rel="stylesheet">
-    <link href="/custom_css/StudDashboard.css" rel="stylesheet">
-    <link href="/custom_css/tables.css" rel="stylesheet">
-    <link href="/custom_css/announcement.css" rel="stylesheet">
+    {{-- <link href="/custom_css/tables.css" rel="stylesheet"> --}}
 
-    @vite('resources/js/app.js')
+
+
     @yield('custom-style')
-
-<!-- FullCalendar CSS -->
-<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet">
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Student Organization Dashboard</title>
+    @vite('resources/js/app.js','')
 </head>
-    <body>
-        <div class="loader-container">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        <div id="app">
-            <!-- TOP NAV BAR -->
-            <div class="wrapper">
-                <div class="top-nav">
-                    <div class="nav-item toggle-button">
-                        <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                    </div>
-                    <a href="#" class="nav-link link-dark">
-                        <span class="nav-name">CMU-STORE-AMS</span>
-                    </a>
+<body>
+    <div id="app">
 
-                    <div class="profile-dropdown dropdown">
-                        <button class="notification-button btn btn-link">
-                            <i class="bi bi-bell"></i>
-                        </button>
-                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <span class="profile-name"><strong>{{Auth::user()->name}}</strong></span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                            <side-nav-button
+        <!-- TOP NAV BAR -->
+        <div class="wrapper">
+
+            <div class="top-nav">
+                {{-- Toggle button for side navigation Bar --}}
+
+                <a href="#" class="nav-link link-light">
+                    <button class="btn toggle-button" id="ssidebar-toggle"><i class="fas fa-bars"></i></button>
+                    <span class="nav-link-text"> CMU-STORE-AMS</span>
+                </a>
+                <div class="profile-dropdown dropdown">
+                    <button class="notification-button btn btn-link">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="popover">
+                        <div class="popover-header">
+                            <b><i class="bi bi-bell"></i> Notifications</b>
+                            <a href="#">See All</a>
+                        </div>
+                        <div class="notifications">
+                        <ul>
+                            <li>
+                                <p><strong>CSCo</strong> posted an announcement.</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <p><strong>SCC</strong> posted an announcement.</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <p><strong>CSCo</strong> posted an announcement.</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <hr>
+                            <li>
+                                <p><strong>Palaro</strong> is happening today!</p>
+                                <small class="time-posted">9:46 AM</small>
+                            </li>
+                            <!-- Add more notifications if needed to exceed the max height -->
+                        </ul>
+                    </div>
+
+                    </div>
+
+
+                    <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <span class="profile-name"><strong>{{Auth::user()->name}}</strong></span>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                        <side-nav-button
                             link_name="Settings"
                             link_route = "#"
                             show_icon = "{{false}}"
@@ -61,7 +91,7 @@
 
                             <side-nav-button
                             link_name="Profile"
-                            link_route = "#"
+                            link_route = "{{url('/student_profile')}}"
                             show_icon = "{{false}}"
                             >
                             </side-nav-button>
@@ -74,78 +104,155 @@
                             show_icon = "{{false}}"
                             >
                             </side-nav-button>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-                <!-- SIDE NAV BAR -->
-            <div class="wrapper">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" id="sidebarCollapse">
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <side-nav-button
-                            link_name="Home"
-                            link_route="/login/student_dashboard"
-                            link_icon="bi bi-house"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Attendance"
-                            link_route="/student_attendance"
-                            link_icon="bi bi-people"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Student Profile"
-                            link_route="/student_profile"
-                            link_icon="bi bi-person"
-                        ></side-nav-button>
-                        <side-nav-button
-                        link_name="Announcement"
-                        link_route="/student_announcement"
-                        link_icon="bi bi-megaphone"
-                        ></side-nav-button>
-                        <side-nav-button
-                            link_name="Accountabilities"
-                            link_route="/student_accountabilities"
-                            link_icon="bi bi-wallet2"
-                        ></side-nav-button>
-
                     </ul>
-
                 </div>
             </div>
+        </div>
+                <!-- SIDE NAV BAR -->
+        <div class="wrapper">
+            <div class=" p-3  sidebar" id="sidebarCollapse">
+                <div class="d-md-flex flex-shrink-0">
+                    <ul class="list-unstyled ps-0">
+                    <li class="mt-3">
+                        <button class="btn btn-toggle align-items-center rounded dashboard-button">
+                            <i class="fas fa-home"></i>
+                            <a href="/login/student_dashboard">
+                            <span class="link-title">Home</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-bullhorn"></i>
+                            <a href="/student_announcement">
+                            <span class="link-title">Announcements</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-user"></i>
+                            <a href="/student_profile">
+                            <span class="link-title">Profile</span>
+                            </a>
+                        </button>
+                    </li>
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-calendar"></i>
+                            <a href="/student_events">
+                            <span class="link-title">Events</span>
+                            </a>
+                        </button>
+                    </li>
+
+                    {{-- <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-calendar"></i>
+                            <a href="/student_evaluationform">
+                            <span class="link-title">Evaluation</span>
+                            </a>
+                        </button>
+                    </li> --}}
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center studentlist-button">
+                            <i class="fas fa-money-check"></i>
+                            <a href="/student_accountabilities">
+                            <span class="link-title">Accountabilities</span>
+                            </a>
+                        </button>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
             @yield('main-content')
         </div>
-    </body>
+    </div>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+    <!-- FullCalendar JS -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script> --}}
     <script>
-        window.addEventListener('load', function () {
-          // Remove loader once the page has finished loading
-            var loader = document.querySelector('.loader-container');
-            loader.style.display = 'none';
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        document.onreadystatechange = () => {
+            if(document.readyState === "complete")
+            {
+                const notificationButton = document.querySelector('.notification-button');
+                const popover = document.querySelector('.popover');
 
-{{--
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <script>
-        document.getElementById('sidebar-toggle').addEventListener('click', function() {
-            const sidebar = document.getElementById('sidebarCollapse');
-            const content = document.querySelector('.content');
-            const icon = document.querySelector('#sidebar-toggle i');
-            const dropdown = document.getElementById('sidebar-dropdown');
+                notificationButton.addEventListener('click', () => {
+                    popover.style.display = popover.style.display === 'block' ? 'none' : 'block';
+                });
+                // Toggle the sidebar when the burger button is clicked
+                const toggleSidebarButton = document.getElementById('ssidebar-toggle');
+                const sidebar = document.getElementById('sidebarCollapse');
+                const content = document.querySelector('.content');
+                const icon = document.querySelector('#sidebar-toggle i');
+                const rotateButtons = document.querySelectorAll('.rotate-icon');
 
-            sidebar.classList.toggle('collapsed');
-            content.classList.toggle('collapsed');
-            icon.classList.toggle('bi-list');
-            icon.classList.toggle('bi-x');
-            dropdown.classList.toggle('dropdown');
-            dropdown.classList.toggle('dropup');
-            this.classList.toggle('collapsed');
-        });
+                // Function to close any open btn-toggle elements
+                function closeOpenBtnToggle() {
+                    console.log("jsdkfjskdjfsfjskjfd");
+                    const btnToggle = document.querySelectorAll('.btn-toggle');
+                    btnToggle.forEach((button) => {
+                        const collapseTarget = button.getAttribute('data-bs-target');
+                        const collapseElement = document.querySelector(collapseTarget);
+                        if (collapseElement && collapseElement.classList.contains('show')) {
+                            // Close the open collapse element
+                            collapseElement.classList.remove('show');
+                        }
+                    });
+                }
+
+                toggleSidebarButton.addEventListener('click', function () {
+                    // Check if the sidebar is currently collapsed
+                    const isCollapsed = sidebar.classList.contains('collapsed');
+
+                    // Close any open btn-toggle elements before toggling the sidebar
+                    closeOpenBtnToggle();
+                    // Toggle the sidebar and content
+                    sidebar.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+
+                    // If the sidebar was previously collapsed, reopen any open btn-toggle elements
+                    if (!isCollapsed) {
+                        rotateButtons.forEach((button) => {
+                            if (!button.classList.contains('collapsed')) {
+                                const collapseTarget = button.getAttribute('data-bs-target');
+                                const collapseElement = document.querySelector(collapseTarget);
+                                if (collapseElement) {
+                                    collapseElement.classList.add('show');
+                                }
+                            }
+                        });
+                    }
+                });
+
+                rotateButtons.forEach((button) => {
+                    button.addEventListener('click', function () {
+                        // Toggle the 'collapsed' class on the button
+                        this.classList.toggle('collapsed');
+
+                        // Check if the sidebar is collapsed, and if so, expand it
+                        if (sidebar.classList.contains('collapsed')) {
+                            sidebar.classList.remove('collapsed');
+                            content.classList.remove('collapsed');
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            // Close any open btn-toggle elements when a new one is clicked
+                            closeOpenBtnToggle();
+                        }
+                    });
+                });
+            }
+        }
+
     </script>
     @yield('custom-script')
+</body>
 </html>
-
-

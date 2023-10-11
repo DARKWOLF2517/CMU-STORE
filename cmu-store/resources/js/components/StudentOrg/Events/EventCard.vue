@@ -12,10 +12,10 @@
                 </div>
             </div>
     </div>
-    <div class="event-announcement-list">
-        <div class="card mb-3" v-for="event in this.events" :id="event.event_id">
+    <div class="event-announcement-list ">
+        <div class="card mb-3" v-for="event in this.events" :id="event.event_id" >
         <div class="card-body">
-                <h6 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h6>
+                <h5 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Scheduled Date: {{ event["start_date"] }}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Scheduled Time: {{ event["start_attendance"] }} </h6>
                 <h6 class="card-text">Location: {{ event["location"] }} </h6>

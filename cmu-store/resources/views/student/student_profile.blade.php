@@ -1,63 +1,66 @@
 @extends('layouts.student_navigation_bar')
 @section('main-content')
+<link href="/custom_css/studentProfile.css" rel="stylesheet">
 <div class="content">
-  <br>
-    <div class="container md-6 mt-4">
-        {{-- <div class="row">
-          <!-- Student Profile Container -->
-          <div class="col-md-3">
-            <div class="card profile-card"> <!-- Add the "profile-card" class here -->
-              <div class="card-body text-center">
-
-                {{QrCode::generate(Auth::id())}}
-                <!-- Student's Name -->
-                <h3 class="mt-3">{{}}</h3>
-                <!-- Student ID -->
-                <p>Student ID: 2020400</p>
-              </div>
+    <div class="container mt-4">
+        <div class="container breadcrumbs">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/login/student_dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item">Student</li>
+                <li class="breadcrumb-item active" aria-current="page">Student Profile</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="qr-code">
+                    <img src="https://via.placeholder.com/150" alt="profile photo">
+                    <h5>Queen Bahay</h5>
+                    <small>2020202020</small>
+                </div>
             </div>
-          </div>
-          <!-- Additional Information Container -->
-          <div class="col-md-7 mt-4 mt-md-0">
-            <div class="card">
-              <div class="card-header"> 
-                <h3>Student Information</h3>
-              </div>
-              <div class="card-body">
-                <!-- Year Level -->
-                <h6>Year Level</h6>
-                <p>Year 3</p>
-                <!-- College Department -->
-                <h6>College Department</h6>
-                <p>Department of Computer Science</p>
-                <!-- Student Organizations -->
-                <h6>Student Organizations</h6>
-                <ul>
-                  <li>Computer Science Club</li>
-                  <li>Student Council</li>
-                  <li>Volunteer Club</li>
+
+            <div class="col-md-9">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><b>Profile</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="organization" aria-selected="false"><b>Organization</b></a>
+                    </li>
                 </ul>
-              </div>
+                <div class="tab-content" id="myTabContent">
+                    <!-- Profile Tab Content -->
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="col">
+                            <div class="row student-details">
+                                <div class="student-info">
+                                    <h3>Student Information</h3>
+                                    <p><b>Full name: </b> <span id="full-name">John Doe</span></p>
+                                    <p><b>Year level: </b> <span id="year-level">3rd year</span></p>
+                                    <p><b>College: </b> <span id="college">College of Arts and Sciences</span></p>
+                                    <p><b>Department: </b> <span id="department"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Clubs Tab Content -->
+                    <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab">
+                        <h3>Organizations</h3>
+                        <ul>
+                            <li><b>SSC</b> Supreme Student Council</li>
+                            <li><b>SSC</b> Supreme Student Council</li>
+                            <li><b>SSC</b> Supreme Student Council</li>
+                            <!-- Add more club items here -->
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div> --}}
-
-        <student-profile
-          user_id = {{Auth::id()}}
-        >
-        </student-profile>
-      </div>
-
-
-      <!-- QR Code Generator Library -->
-      {{-- <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
-      <script>
-          const qrCodeCanvas = document.getElementById('qrCodeCanvas');
-          const qr = new QRious({
-              element: qrCodeCanvas,
-              value: 'John Doe, Student ID: 202020202',
-              size: 200 // Increase the size value to make the QR code bigger
-          });
-      </script> --}}
-
-@endsection
+        </div>
+    </div>
+</div>
+ <!-- Add Bootstrap JS and jQuery for tab functionality -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

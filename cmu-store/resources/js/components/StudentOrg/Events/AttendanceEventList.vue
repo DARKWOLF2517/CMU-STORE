@@ -1,4 +1,5 @@
 <template>
+    <div class="schedule-list-container">
     <div class="card" v-for="event in this.events" :id="event.event_id">
         <div class="card-header">
             Event Name: {{ event["name"] }}
@@ -26,11 +27,12 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Start</button>
+            <button type="button" class="btn btn-primary" href = "/student_qrscanner">Start</button>
         </div>
         </div>
     </div>
     </div>
+</div>
 </template>
 
 
@@ -40,10 +42,10 @@ import {convertDate} from "../Functions/DateConverter.js";
 
 export default {
     props: ['org_id'],
-    data() { 
+    data() {
         return {
             events: [],
-            
+
         }
     },
     created() {

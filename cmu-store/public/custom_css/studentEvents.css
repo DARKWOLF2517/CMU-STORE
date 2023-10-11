@@ -1,4 +1,6 @@
-#evaluation-container {
+
+
+#events-container {
     background-color: #ffffff;
     padding: 5px;
     height: 70vh;
@@ -8,7 +10,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
 
-  .evaluation-event-cards {
+  .event-cards {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;

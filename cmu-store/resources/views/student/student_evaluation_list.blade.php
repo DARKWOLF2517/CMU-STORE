@@ -1,5 +1,4 @@
-
-@extends('layouts.student_organization_navigation_bar')
+@extends('layouts.student_navigation_bar')
 @section('main-content')
 <link href="/custom_css/evaluation.css" rel="stylesheet">
 <div class="content">
@@ -8,7 +7,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
-                    <li class="breadcrumb-item">Student Organization</li>
+                    <li class="breadcrumb-item">Student</li>
                     <li class="breadcrumb-item active" aria-current="page">Evaluation</li>
                 </ol>
             </nav>
@@ -34,11 +33,12 @@
                     </div>
                 </div>
             </div>
-                <h3><i class="fas fa-list mt-4"></i> Evaluation</h3>
+            <div class="mt-4">
+                <h3><i class="fas fa-list"></i> Evaluation</h3>
+            </div>
 
             <div id="evaluation-container">
                 <div class="evaluation-event-cards">
-
                     {{-- <div class="event-card">
                         <div class="event-date-container"><span class="event-date">August 31, 2023</span></div>
                         <div class="event-title">Event 1</div>
