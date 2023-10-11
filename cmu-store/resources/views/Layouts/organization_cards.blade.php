@@ -16,19 +16,12 @@
   <div id="app">
     <div class="wrapper">
       <div class="top-nav">
-          
-        <div class="nav-item toggle-button">
-              <button class="btn " id="sidebar-toggle"><i class="bi bi-list"></i></button>
-          </div>
-          <a href="#" class="nav-link link-dark">
+          <a href="#" class="nav-link link-light">
               <span class="nav-name">CMU-STORE-AMS</span>
           </a>
 
           <div class="profile-dropdown dropdown">
-              <button class="notification-button btn btn-link">
-                  <i class="bi bi-bell"></i>
-              </button>
-              <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="d-flex align-items-center link-light text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="" width="32" height="32" class="rounded-circle me-2">
                   <span class="profile-name"><strong>User</strong></span>
               </a>
@@ -59,6 +52,9 @@
               </ul>
           </div>
       </div>
+  </div>
+  <div class="container" id="head-container">
+    <h1> Select Account</h1>
   </div>
       <user-organization
         id={{Auth::id()}}
