@@ -304,17 +304,17 @@ export default{
 
         //     },
 
-        fetchAnswer(evaluation_form_id, question_id, option){
-        axios.get(`/evaluation_form_answer/${evaluation_form_id}/${question_id}/${option}`)
-            .then(response => {
-                // alert(response.data);
-                this.answers[question_id][option] = response.data;
-                // console.log(this.answers[question_id][option]);
-                this.pieChart( this.answers);
-            })
-            .catch(error => {
-                console.log(error)
-            });
+        fetchAnswer(event_id, question_id, option){
+            axios.get(`/evaluation_form_answer/${event_id}/${question_id}/${option}`)
+                .then(response => {
+                    // alert(response.data);
+                    this.answers[question_id][option] = response.data;
+                    // console.log(this.answers[question_id][option]);
+                    this.pieChart( this.answers);
+                })
+                .catch(error => {
+                    console.log(error)
+                });
 
         },
 

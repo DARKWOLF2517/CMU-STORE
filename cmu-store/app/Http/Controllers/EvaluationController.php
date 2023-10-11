@@ -71,11 +71,11 @@ class EvaluationController extends Controller
         // Redirect or return a response
         return redirect()->back()->with('success', 'Event created successfully!');
     }
-    public function EvaluationFormAnswer($evaluation_form_id, $question_id, $option){ 
+    public function EvaluationFormAnswer($event_id, $question_id, $option){ 
         // $EvaluationAnswer = EvaluationFormAnswer::where('evaluation_form_id', $evaluation_form_id )->with(['formQuestions', 'formOptions', 'formAnswers'])->get();
         // // $EvaluationQuestions = EvaluationFormDetails::all();  
         $EvaluationAnswer = EvaluationFormAnswer::where([
-            ['evaluation_form_id',$evaluation_form_id],
+            ['event_id',$event_id],
             [$question_id, $option]
         ])->get();
 
