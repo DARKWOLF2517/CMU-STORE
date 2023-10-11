@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-2">
             <div class="col-md-4 col-sm-6 mb-2">
                 <div class="statistic">
                     <event-count
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-2">
+        <div class=" mt-2">
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="timeline-schedule">

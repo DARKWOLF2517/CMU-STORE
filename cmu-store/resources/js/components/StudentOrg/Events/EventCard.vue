@@ -1,6 +1,5 @@
 <template>
     <div id="event-announcement-buttons">
-            <h3> <i class="fas fa-list"></i>  Events</h3>
             <div class="event-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
                 <button class="btn  me-2" id="add-announcement-button" data-bs-toggle="modal" data-bs-target="#announcement-modal" @click="initialData()">
