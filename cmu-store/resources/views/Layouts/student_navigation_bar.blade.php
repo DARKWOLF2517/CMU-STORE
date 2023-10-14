@@ -46,7 +46,7 @@
                     </button>
                     <div class="popover">
                         <div class="popover-header">
-                            <b><i class="bi bi-bell"></i> Notifications</b>
+                            <b>Notifications</b>
                             <a href="#">See All</a>
                         </div>
                         <div class="notifications">
@@ -140,9 +140,9 @@
 
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
-                            <i class="fas fa-calendar"></i>
+                            <i class="fas fa-list"></i>
                             <a href="/student_event_details">
-                            <span class="link-title">Events</span>
+                            <span class="link-title">Attendance</span>
                             </a>
                         </button>
                     </li>

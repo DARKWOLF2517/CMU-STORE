@@ -47,39 +47,52 @@
                     </button>
                 </div>
             </div>
+            <h4> <i class="fas fa-list mt-2"></i> Attendance Record</h4>
             <div class="container" id="table-container">
-            <h3>Attendance Record</h3>
-            <h4 id="Eventtitle"> Event: </h4>
+                <div class="scroll-pane">
+            <h5 id="Eventtitle"> Event: </h5>
             <p>Date: </p>
-            <div class="scroll-pane">
-              <table id="accountabilities-table">
+            <table  id="accountabilities-table">
                 <thead>
                     <tr>
-                      <th>Student ID number</th>
-                      <th>Name</th>
-                      <th>Time In </th>
-                      <th>Time out</th>
-                      <th>Status</th>
+                        <th class="sortable-header">Student ID</th>
+                        <th class="sortable-header">Student Name</th>
+                        <th class="sortable-header">Log in</th>
+                        <th class="sortable-header">Log out</th>
+                        <th class="sortable-header">Log in</th>
+                        <th class="sortable-header">Log out</th>
+                        <th class="sortable-header">Actions</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                     <tr>
-                      <td>2023-05-01</td>
-                      <td>John Smith</td>
-                      <td>7:00 AM</td>
-                      <td>12:00 PM</td>
-                      <td>Present</td>
+                    <td>2023-05-01</td>
+                    <td>John Smith</td>
+                    <td>present</td>
+                    <td>present</td>
+                    <td>absent</td>
+                    <td>absent</td>
+                    <td>
+                        <button class="edit-button ellipsis-button" onclick="openEditModal(this)">
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
+                    </td>
                     </tr>
-                  </tbody>
-              </table>
+
+                </tbody>
+            </table>
             </div>
             <div class="pagination">
-              <button id="first-page-button" disabled>&lt;&lt;</button>
-              <button id="previous-page-button" disabled>&lt; Previous</button>
-              <span id="pagination-numbers"></span>
-              <button id="next-page-button">Next &gt;</button>
-              <button id="last-page-button">&gt;&gt;</button>
+                <button id="first-page-button" onclick="goToPage(1)" disabled>&lt;&lt;</button>
+                <button id="previous-page-button" onclick="previousPage()" disabled>&lt; Previous</button>
+                <span id="pagination-numbers"></span>
+                <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
+                <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
             </div>
+        </div>
+        </div>
+    </div>
           </div>
         </div>
     </div>

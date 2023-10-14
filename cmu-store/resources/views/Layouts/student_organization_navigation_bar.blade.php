@@ -43,8 +43,8 @@
                     </button>
                     <div class="popover">
                         <div class="popover-header">
-                            <b><i class="bi bi-bell"></i> Notifications</b>
-                            <a href="#">See All</a>
+                            <b>Notifications</b>
+                            <a href="/a">See All</a>
                         </div>
                         <div class="notifications">
                         <ul>

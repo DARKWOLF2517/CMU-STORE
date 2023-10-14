@@ -27,9 +27,9 @@ td {
     font-weight: bold;
   }
 th {
-    background-color: rgb(228, 241, 235);
+    background-color:  #69a09d;
     width: 40vh;
-    color: black;
+    color: white;
 }
 #accountabilities-table tr:nth-child(even) {
     background-color: #e9f5f3;

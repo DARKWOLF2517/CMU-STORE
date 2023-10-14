@@ -1,5 +1,5 @@
 <template>
-    <div id="event-announcement-buttons">
+
             <div class="event-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
                 <button class="btn  me-2" id="add-announcement-button" data-bs-toggle="modal" data-bs-target="#announcement-modal" @click="initialData()">
@@ -10,7 +10,6 @@
                 </button>
                 </div>
             </div>
-    </div>
     <div class="event-announcement-list ">
         <div class="card mb-3" v-for="event in this.events" :id="event.event_id" >
         <div class="card-body">

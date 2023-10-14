@@ -42,6 +42,7 @@
 }
 .time-posted{
     color: #007BFF;
+    margin: 0;
 }
 /* Popover Styles */
 .popover {
@@ -61,7 +62,6 @@
 }
 .notifications{
     margin-top: 5px;
-    padding: 5px;
     max-height: 40vh;
     overflow-y: auto;
 }
@@ -73,14 +73,20 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    display: flex;
-
+    display: flex; /* Flex layout for content alignment */
+    justify-content: space-between; /* Space between content */
     background-color: white;
     height: 40px;
     width: 100%;
     padding: 0;
-}
 
+}
+.popover-header i {
+    margin-right: 5px; /* Spacing to the right of the icon */
+}
+.popover-header a {
+    list-style: none;
+}
 .popover ul {
     list-style: none;
     padding: 0;

@@ -34,8 +34,7 @@
                     </div>
                 </div>
             </div>
-                <h3><i class="fas fa-list mt-4"></i> Evaluation</h3>
-
+                <h3><i class="fas fa-list mt-2"></i> Evaluation</h3>
             <div id="evaluation-container">
                 <div class="evaluation-event-cards">
 

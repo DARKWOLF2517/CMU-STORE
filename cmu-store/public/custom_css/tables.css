@@ -10,13 +10,14 @@ table {
   }
   #student-list-table, #accountabilities-table th{
     /* background-color: #69a09d; */
-    color: black;
     font-size: 15px;
     font-weight: bold;
   }
 thead th{
     position: sticky;
     top: 0;
+    background-color: #69a09d;
+    color: white;
 }
   td{
     font-size: 14px;
@@ -53,11 +54,20 @@ thead th{
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 10px;
     height: 60vh;
     max-height: 60vh;
     background-color: #ffffff;
 }
+/* #table-container{
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    height: 60vh;
+    max-height: 60vh;
+    background-color: #ffffff;
+} */
   .ellipsis-button{
     background-color: transparent;
     border: none;

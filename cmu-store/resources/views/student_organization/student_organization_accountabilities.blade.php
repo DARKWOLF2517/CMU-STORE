@@ -15,7 +15,6 @@
             </nav>
         </div>
         <div class="container" id="tablecontainer">
-
             <div class="row head-container">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-container">
@@ -35,20 +34,19 @@
                     </div>
                 </div>
             </div>
-
+        </div>
         <div class="container student-buttons d-flex justify-content-end" id="containers">
             <div class="btn-group" role="group">
-                <button class="btn me-2" id="add-student-list-button" onclick="printTableData()">
+                <button class="btn me-2" id="add-student-list-button">
                     <i class="fas fa-print"></i> Print Recorded Attendance
                 </button>
-                <button class="btn me-2" id="add-student-button" onclick="  downloadTableData()">
+                <button class="btn me-2" id="add-student-button">
                     <i class="fas fa-download"></i> Download Recorded Attendance
                 </button>
             </div>
         </div>
-        </div>
-            <h3> <i class="fas fa-list mt-2"></i>  Student Accountabilities</h3>
-            <div class="container" id="table-container">
+            <h4> <i class="fas fa-list mt-2"></i>  Student Accountabilities</h4>
+            <div  id="table-container">
             <div class="scroll-pane">
             <table  id="accountabilities-table">
                 <thead>
@@ -71,93 +69,9 @@
                     <td>$10</td>
                     <td>Unpaid</td>
                     <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="edit-button ellipsis-button" data-toggle="modal" data-target="#editModal"> <i class="bi bi-pencil-square"></i></button>
                         <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
                     </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>John Smith</td>
-                        <td>$100</td>
-                        <td>Unpaid</td>
-                        <td>$10</td>
-                        <td>Unpaid</td>
-                        <td>
-                        <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                        <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -172,7 +86,7 @@
         </div>
         </div>
     </div>
-      <!-- Modal -->
+
     <div id="editModal" class="modal">
         <div class="modal-dialog">
         <div class="modal-content">
