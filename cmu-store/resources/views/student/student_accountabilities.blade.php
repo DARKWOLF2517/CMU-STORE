@@ -35,19 +35,19 @@
             <table  id="accountabilities-table">
                     <tr>
                         <th>Student Name</th>
-                        <td>Taylor Swift</td>
+                        <td><b>Taylor Swift</b></td>
                     </tr>
                     <tr>
                         <th>Membership Fee Status</th>
-                        <td>Unpaid</td>
+                        <td class="unpaid">Unpaid</td>
                     </tr>
                     <tr>
                         <th>Fines Status</th>
-                        <td>Unpaid</td>
+                        <td class="paid">Paid</td>
                     </tr>
                     <tr>
                         <th>Clearance Status</th>
-                        <td>Not Cleared</td>
+                        <td class="not-cleared">Not Cleared</td>
                     </tr>
                 </table>
             </div>

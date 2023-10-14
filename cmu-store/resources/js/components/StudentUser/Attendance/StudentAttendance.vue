@@ -28,10 +28,11 @@
             <td v-if="showDiv1">Present</td>
             <th v-if="showDiv1">Pending</th>
             <th><a  class="btn btn-warning" href ="/student_evaluationform">Evaluate Now</a></th>
+            <!-- <th>Evaluated</th> -->
         </tr>
 
         </tbody>
-    </table> 
+    </table>
     </div>
 
 
@@ -42,9 +43,9 @@
 
 import {convertDate} from "../../StudentOrg/Functions/DateConverter.js";
 export default {
-    
+
     props: ['target_route', 'show'],
-    data() { 
+    data() {
         return {
             events: [],
             count : 1,

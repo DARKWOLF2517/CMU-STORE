@@ -34,4 +34,16 @@ th {
 #accountabilities-table tr:nth-child(even) {
     background-color: #e9f5f3;
 }
+.paid, .cleared {
+    color: green;
+    font-weight: bold;
+}
+
+.unpaid, .not-cleared{
+    color: red;
+    font-weight: bold;
+}
+
+
+
 

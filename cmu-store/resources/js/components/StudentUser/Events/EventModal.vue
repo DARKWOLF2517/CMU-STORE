@@ -1,5 +1,5 @@
 <template>
-        <div class="container" id="tablecontainer" v-for="event in this.events" :id="event.event_id">
+        <div class="container mb-3" id="tablecontainer" v-for="event in this.events" :id="event.event_id">
                 <h4> Event name: {{ event["name"] }}</h4>
                 <h6> Number of Days: 2</h6>
                 <h6> Total number of Attendance made: 4</h6>
@@ -29,13 +29,13 @@
             </div>
 
 
-    
+
 </template>
 
 <script>
 export default {
     props: ['organization_id'],
-    data() { 
+    data() {
         return {
             events: [],
         }
