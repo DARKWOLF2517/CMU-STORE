@@ -37,10 +37,10 @@
         </div>
         <div class="container student-buttons d-flex justify-content-end" id="containers">
             <div class="btn-group" role="group">
-                <button class="btn me-2" id="add-student-list-button">
+                <button class="btn me-2" id="add-student-list-button" onclick="printTableData()">
                     <i class="fas fa-print"></i> Print
                 </button>
-                <button class="btn me-2" id="add-student-button">
+                <button class="btn me-2" id="add-student-button" onclick="  downloadTableData()">
                     <i class="fas fa-download"></i> Download
                 </button>
             </div>
@@ -69,7 +69,7 @@
                     <td>$10</td>
                     <td>Unpaid</td>
                     <td>
-                        <button class="edit-button ellipsis-button" data-toggle="modal" data-target="#editModal"> <i class="bi bi-pencil-square"></i></button>
+                        <button class="edit-button ellipsis-button" onclick="editStudent(this)"><i class="bi bi-pencil-square"></i></button>
                         <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
                     </td>
                     </tr>
@@ -83,55 +83,52 @@
                 <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
                 <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
             </div>
-        </div>
-        </div>
-    </div>
+            <div id="edit-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="event-modal-label">Edit Student Accountabilities</h5>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="edit-student-id">Student ID:</label>
+                            <input type="text" id="edit-student-id" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-student-name">Student Name:</label>
+                            <input type="text" id="edit-student-name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-membership-fee">Membership Fee:</label>
+                            <input type="text" id="edit-membership-fee" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-membership-status">Membership Status:</label>
+                            <select id="edit-membership-status" class="form-control">
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-fines">Fines:</label>
+                            <input type="text" id="edit-fines" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-fines-status">Fines Status:</label>
+                            <select id="edit-fines-status" class="form-control">
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                        <button class="btn btn-danger" type="button" onclick="cancelEdit()">Cancel</button>
+                        <button class="btn btn-success" type="button" onclick="saveEditedData()">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-    <div id="editModal" class="modal">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="accountability-modal-label">Student's Accountabilities</h5>
-        </div>
-        <div class="modal-body">
-        <form id="editForm">
-            <div class="mb-3">
-            <label for="studentID" class="form-label">Student ID number:</label>
-            <input type="text" id="studentID" readonly class="form-control">
-            </div>
-            <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" id="name" readonly class="form-control">
-            </div>
-            <div class="mb-3">
-            <label for="membershipFee" class="form-label">Membership Fee:</label>
-            <input type="text" id="membershipFee" class="form-control">
-            </div>
-            <div class="mb-3">
-            <label for="membershipStatus" class="form-label">Membership Fee Status:</label>
-            <select id="membershipStatus" class="form-select">
-                <option value="Unpaid">Unpaid</option>
-                <option value="Paid">Paid</option>
-            </select>
-            </div>
-            <div class="mb-3">
-            <label for="fines" class="form-label">Fines:</label>
-            <input type="text" id="fines" class="form-control">
-            </div>
-            <div class="mb-3">
-            <label for="finesStatus" class="form-label">Fines Status:</label>
-            <select id="finesStatus" class="form-select">
-                <option value="Unpaid">Unpaid</option>
-                <option value="Paid">Paid</option>
-            </select>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="save-accountabilities-button">Save</button>
-            </div>
-        </form>
-        </div>
-        </div>
     </div>
     </div>
 </div>
@@ -195,71 +192,128 @@
         // Initialize the table and pagination
         updateTable();
     </script>
-    <script>
-             function printTableData() {
-            const table = document.getElementById('accountabilities-table');
-            const rows = table.querySelectorAll('tbody tr');
 
-            let tableData = '<table style="border-collapse: collapse;">'; // Add a style to remove the border
+<script>
+   // Define a variable to store the currently edited row
+let editingRow = null;
 
-            // Add table headers excluding the last column (Actions)
-            tableData += '<thead>';
-            tableData += '<tr>';
-            table.querySelectorAll('thead th').forEach(header => {
-                if (header.textContent !== 'Actions') {
-                    tableData += '<th>' + header.textContent + '</th>';
-                }
-            });
-            tableData += '</tr>';
-            tableData += '</thead>';
+// Function to open the edit modal
+function editStudent(button) {
+    const row = button.closest('tr');
+    const cells = row.querySelectorAll('td');
+    const editModal = document.getElementById('edit-modal');
 
-            // Add table body, excluding the last column (Actions)
-            tableData += '<tbody>';
-            rows.forEach(row => {
-                tableData += '<tr>';
-                row.querySelectorAll('td').forEach((cell, index) => {
-                    if (index !== 6) { // Skip the last column (Actions)
-                        tableData += '<td>' + cell.textContent + '</td>';
-                    }
-                });
-                tableData += '</tr>';
-            });
-            tableData += '</tbody>';
-            tableData += '</table>';
+    // Populate the form fields with the data from the selected row
+    document.getElementById('edit-student-id').value = cells[0].textContent;
+    document.getElementById('edit-student-name').value = cells[1].textContent;
+    document.getElementById('edit-membership-fee').value = cells[2].textContent;
+    document.getElementById('edit-membership-status').value = cells[3].textContent;
+    document.getElementById('edit-fines').value = cells[4].textContent;
+    document.getElementById('edit-fines-status').value = cells[5].textContent;
 
-            // Open a new window and print the table data
-            const printWindow = window.open('', '', 'width=600,height=600');
-            printWindow.document.open();
-            printWindow.document.write('<html><head><title>Printed Table</title></head><body>');
-            printWindow.document.write('<h3>Student Accountabilities</h3>');
-            printWindow.document.write(tableData);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-            printWindow.close();
-        }
+    // Display the edit modal
+    editModal.style.display = 'block';
 
-        function downloadTableData() {
-            const table = document.getElementById('accountabilities-table');
-            const clonedTable = table.cloneNode(true);
+    // Set the currently edited row
+    editingRow = row;
+}
 
-            // Remove the "Actions" column from the cloned table
-            clonedTable.querySelectorAll('tr').forEach(row => {
-                const cells = row.querySelectorAll('td, th');
-                if (cells.length > 0) {
-                    cells[cells.length - 1].remove();
-                }
-            });
+// Function to save the edited data
+function saveEditedData() {
+    if (editingRow) {
+        const cells = editingRow.querySelectorAll('td');
 
-            // Create a new XLSX workbook and add the cloned table to it
-            const ws = XLSX.utils.table_to_sheet(clonedTable);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, 'TableData');
+        // Update the table with the edited data from the form
+        cells[0].textContent = document.getElementById('edit-student-id').value;
+        cells[1].textContent = document.getElementById('edit-student-name').value;
+        cells[2].textContent = document.getElementById('edit-membership-fee').value;
 
-            // Save the workbook as an XLSX file and trigger the download
-            XLSX.writeFile(wb, 'table_data.xlsx');
-        }
-    </script>
+        // Get the selected values from the dropdowns
+        const membershipStatusDropdown = document.getElementById('edit-membership-status');
+        const finesStatusDropdown = document.getElementById('edit-fines-status');
+        cells[3].textContent = membershipStatusDropdown.options[membershipStatusDropdown.selectedIndex].value;
+        cells[4].textContent = document.getElementById('edit-fines').value;
+        cells[5].textContent = finesStatusDropdown.options[finesStatusDropdown.selectedIndex].value;
+
+        // Close the edit modal
+        document.getElementById('edit-modal').style.display = 'none';
+
+        // Clear the currently edited row
+        editingRow = null;
+    }
+}
+
+// Function to cancel the edit and close the modal
+function cancelEdit() {
+    document.getElementById('edit-modal').style.display = 'none';
+    editingRow = null;
+}
+</script>
+<script>
+    function printTableData() {
+   const table = document.getElementById('accountabilities-table');
+   const rows = table.querySelectorAll('tbody tr');
+
+   let tableData = '<table style="border-collapse: collapse;">'; // Add a style to remove the border
+
+   // Add table headers excluding the last column (Actions)
+   tableData += '<thead>';
+   tableData += '<tr>';
+   table.querySelectorAll('thead th').forEach(header => {
+       if (header.textContent !== 'Actions') {
+           tableData += '<th>' + header.textContent + '</th>';
+       }
+   });
+   tableData += '</tr>';
+   tableData += '</thead>';
+
+   // Add table body, excluding the last column (Actions)
+   tableData += '<tbody>';
+   rows.forEach(row => {
+       tableData += '<tr>';
+       row.querySelectorAll('td').forEach((cell, index) => {
+           if (index !== 6) { // Skip the last column (Actions)
+               tableData += '<td>' + cell.textContent + '</td>';
+           }
+       });
+       tableData += '</tr>';
+   });
+   tableData += '</tbody>';
+   tableData += '</table>';
+
+   // Open a new window and print the table data
+   const printWindow = window.open('', '', 'width=600,height=600');
+   printWindow.document.open();
+   printWindow.document.write('<html><head><title>Printed Table</title></head><body>');
+   printWindow.document.write('<h3>Student Accountabilities</h3>');
+   printWindow.document.write(tableData);
+   printWindow.document.write('</body></html>');
+   printWindow.document.close();
+   printWindow.print();
+   printWindow.close();
+}
+
+function downloadTableData() {
+   const table = document.getElementById('accountabilities-table');
+   const clonedTable = table.cloneNode(true);
+
+   // Remove the "Actions" column from the cloned table
+   clonedTable.querySelectorAll('tr').forEach(row => {
+       const cells = row.querySelectorAll('td, th');
+       if (cells.length > 0) {
+           cells[cells.length - 1].remove();
+       }
+   });
+
+   // Create a new XLSX workbook and add the cloned table to it
+   const ws = XLSX.utils.table_to_sheet(clonedTable);
+   const wb = XLSX.utils.book_new();
+   XLSX.utils.book_append_sheet(wb, ws, 'TableData');
+
+   // Save the workbook as an XLSX file and trigger the download
+   XLSX.writeFile(wb, 'table_data.xlsx');
+}
+</script>
 
 
     {{-- <script>

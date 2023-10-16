@@ -41,24 +41,23 @@
             <div class="student-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
                     <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">
-                        <i class="bi bi-person-plus"></i>  Add student
+                        <i class="fas fa-user-plus"></i>  Add student
                     </button>
                     <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
                     <button class="btn me-2" id="add-student-button"  onclick="document.getElementById('fileInput').click()">
-                    <i class="bi bi-file-earmark-plus"></i> Add student list
+                    <i class="fas fa-file-excel"></i> Add student list
                     </button>
                 </div>
             </div>
-            <div class="scroll-pane">
-                <member-list
+            {{-- <div class="scroll-pane"> --}}
+                {{-- <member-list
                 organization_id = {{Session::get('org_id')}}
                 >
 
-                </member-list>
-            </div>
-
-
-      {{-- <div class="scroll-pane">
+                </member-list> --}}
+            {{-- </div> --}}
+            <div  id="table-container">
+ <div class="scroll-pane">
           <table id="student-list-table">
             <thead>
               <tr>
@@ -85,14 +84,13 @@
 
             </tbody>
           </table>
-        </div> --}}
-        <div class="pagination">
-            <button id="first-page-button" disabled>&lt;&lt;</button>
-            <button id="previous-page-button" disabled>&lt; Previous</button>
-            <span id="pagination-numbers"></span>
-            <button id="next-page-button">Next &gt;</button>
-            <button id="last-page-button">&gt;&gt;</button>
         </div>
+        <div class="pagination">
+            <button id="first-page-button" onclick="goToPage(1)" disabled>&lt;&lt;</button>
+            <button id="previous-page-button" onclick="previousPage()" disabled>&lt; Previous</button>
+            <span id="pagination-numbers"></span>
+            <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
+            <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
         </div>
     </div>
 
