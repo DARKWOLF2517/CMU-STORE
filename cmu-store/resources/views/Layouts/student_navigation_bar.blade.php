@@ -47,31 +47,29 @@
                     <div class="popover">
                         <div class="popover-header">
                             <b>Notifications</b>
-                            <a href="#">See All</a>
+                            <a href="/student_announcement">See All</a>
                         </div>
                         <div class="notifications">
-                        <ul>
-                            <li>
-                                <p><strong>CSCo</strong> posted an announcement.</p>
-                                <small class="time-posted">9:46 AM</small>
-                            </li>
-                            <hr>
-                            <li>
-                                <p><strong>SCC</strong> posted an announcement.</p>
-                                <small class="time-posted">9:46 AM</small>
-                            </li>
-                            <hr>
-                            <li>
-                                <p><strong>CSCo</strong> posted an announcement.</p>
-                                <small class="time-posted">9:46 AM</small>
-                            </li>
-                            <hr>
-                            <li>
-                                <p><strong>Palaro</strong> is happening today!</p>
-                                <small class="time-posted">9:46 AM</small>
-                            </li>
-                            <!-- Add more notifications if needed to exceed the max height -->
-                        </ul>
+                            <ul>
+                                <li>
+                                    <a class="btn text-start" href="">
+                                        <p><strong>SSC</strong> posted an announcement.</p>
+                                        <small class="time-posted">9:46 AM</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="btn text-start" href="">
+                                    <p><strong>CSCo</strong> posted an announcement.</p>
+                                    <small class="time-posted">9:46 AM</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="btn text-start" href="">
+                                    <p><strong>CSCo</strong> posted an announcement.</p>
+                                    <small class="time-posted">9:46 AM</small>
+                                    </a>
+                                </li>
+                            </ul>
                     </div>
 
                     </div>
@@ -113,7 +111,7 @@
             <div class=" p-3  sidebar" id="sidebarCollapse">
                 <div class="d-md-flex flex-shrink-0">
                     <ul class="list-unstyled ps-0">
-                    <li class="mt-3">
+                    <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded dashboard-button">
                             <i class="fas fa-home"></i>
                             <a href="/login/student_dashboard">

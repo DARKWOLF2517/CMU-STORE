@@ -44,6 +44,15 @@
     color: #007BFF;
     margin: 0;
 }
+.notifications li p {
+    margin: 0;
+}
+.notifications button{
+    border: none;
+    background-color: transparent;
+    justify-items: left;
+    justify-content: left;
+}
 /* Popover Styles */
 .popover {
     display: none;
@@ -52,7 +61,7 @@
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    width: 280px;
+    width: 50vh;
     max-height: 50vh;
     padding: 10px;
     z-index: 1;
@@ -78,14 +87,17 @@
     background-color: white;
     height: 40px;
     width: 100%;
-    padding: 0;
+
 
 }
 .popover-header i {
-    margin-right: 5px; /* Spacing to the right of the icon */
+    margin-right: 5px;
+
 }
 .popover-header a {
     list-style: none;
+    text-decoration: none;
+    color: #000;
 }
 .popover ul {
     list-style: none;

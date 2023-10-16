@@ -20,7 +20,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 #calendar th{
-    background-color: #69a09d;
+    background-color: #198754;
     color: white;
 }
 .fc-col-header-cell-cushion{
@@ -48,7 +48,7 @@
 }
 #calendar button{
     color: white;
-    background-color: #69a09d;
+    background-color: #198754;
     border: none;
     height: auto;
     width: auto;
