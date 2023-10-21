@@ -32,6 +32,8 @@ Route::get('student_organization_profile', function () {
     Route::get('/login', function () {
         return view('layouts.login');
     })->name('login');
+    Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
+
 
 //get student org list
     Route::get('/usercards', function () {
@@ -49,7 +51,6 @@ Route::get('student_organization_profile', function () {
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');
     });
-Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
 
 #attendance
     Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
@@ -109,7 +110,10 @@ Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name(
                 });
                 Route::get('/evaluation_form{event_id}', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
                 Route::get('/evaluation_form_answer/{event_id}/{question_id}/{option}',[EvaluationController::class, 'EvaluationFormAnswer']);
-            #EVENT ROUTES
+                //get event total response
+                Route::get('/evaluation_form_total_response/{event_id}',[EvaluationController::class, 'EvaluationTotalResponse']);
+                Route::get('/evaluation_list/{org_id}',[EvaluationController::class, 'EvaluationList']);
+                #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');
                 });

@@ -22,7 +22,11 @@
                             <td class="present">Present</td>
                             <td class="absent">Absent</td>
                             <td class="absent">Absent</td>
-                            <td><button class="btn btn-warning" @click="this.showEvaluationForm(event.event_id)">Evaluate now</button></td>
+                            <td>
+                                <button class="btn btn-warning" @click="this.showEvaluationForm(event.event_id)" v-if="event['status'] == 1">Evaluate now</button>
+                                <div v-else>Evaluation is disable at the moment..</div>
+                                </td>
+    
                         </tr>
                     </tbody>
                 </table>
@@ -49,7 +53,7 @@ export default {
                 axios.get(`/events/show/${this.organization_id}`)
                 .then(response => {
                     // document.getElementById("event-spinner").classList.add("hidden");
-                    // console.log(response.data)
+  
                     this.events = response.data;
                 })
                 .catch(error => {
