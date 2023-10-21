@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <h3><i class="fas fa-list mt-2"></i> Student List</h3>
+    <h4><i class="fas fa-list mt-2"></i> Student List</h4>
         <div class="container" id="table-container">
 
             <div class="student-buttons d-flex justify-content-end">
@@ -56,8 +56,7 @@
 
                 </member-list> --}}
             {{-- </div> --}}
-            <div  id="table-container">
- <div class="scroll-pane">
+            <div class="scroll-pane">
           <table id="student-list-table">
             <thead>
               <tr>
