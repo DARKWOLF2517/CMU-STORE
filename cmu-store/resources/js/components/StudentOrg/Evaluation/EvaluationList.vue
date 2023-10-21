@@ -3,8 +3,8 @@
             <!-- <h5> {{ evaluation['event_id'] }}</h5> -->
             <div class="event-date-container"><span class="event-date">{{evaluation['start_date']}}</span></div>
             <div class="event-title">{{ evaluation['name'] }}</div>
-            <div class="event-description">Total Responses: 120</div>
-            <button class="view-button" @click="evaluation_result(evaluation.event_id)"> <i class="fas fa-chevron-right button-icon"></i></button>
+            <div class="event-description">{{evaluation['evaluation_count']}}</div>
+            <button v-if="this.evaluation_count !== 0"  class="view-button" @click="evaluation_result(evaluation.event_id)"> <i class="fas fa-chevron-right button-icon"></i></button>
         </div>
 </template>
 
@@ -13,7 +13,11 @@
         props: ['organization_id'],
         data() {
             return {
-                evaluation: [],
+                evaluation: {
+                    
+                },
+                evaluation_count: 1,
+                
             }
         },
 
@@ -22,10 +26,20 @@
         },
         methods: {
             fetchData(){
-                axios.get(`/events/show/${this.organization_id}`)
+                // console.log(this.evaluation_count)
+                axios.get(`/evaluation_list/${this.organization_id}`)
                 .then(response => {
                     this.evaluation = response.data;
-                    // console.log(this.evaluation);
+                    console.log (response.data)
+                        // axios.get(`/evaluation_form_total_response/${this.evaluation['0']['event_id']}`)
+                        // .then(response => {
+                        //     //  this.evaluation['evaluation_count'] = response.data;
+
+
+                        // })
+                        // .catch(error => {
+                        //     console.log('erroasdfdsafsdafr')
+                        // });
                 })
                 .catch(error => {
                     console.log('error')

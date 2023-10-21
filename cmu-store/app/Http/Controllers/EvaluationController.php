@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EvaluationFormAnswer;
 use App\Models\EvaluationFormDetails;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -90,4 +91,17 @@ class EvaluationController extends Controller
         return view('student.student_evaluation_form', ['event_id' => $event_id]);
     }
 
+    public function EvaluationTotalResponse($event_id){ 
+        $EvaluationCount = EvaluationFormAnswer::where('event_id', $event_id )->count();
+        return $EvaluationCount;
+    }
+
+
+    public function EvaluationList($org_id)
+    {
+        $events = Event::where('org_id', $org_id)->with('EvaluationFormAnswer')->get();
+        return $events->toJson();
+        // return 'hello';
+
+    }
 }

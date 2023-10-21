@@ -20,10 +20,15 @@ class Event extends Model
         'description',
         'require_attendance',
         'org_id',
+        'status'
     ];
 
     public function organization()
     {
         return $this->belongsTo(Organization::class, 'org_id', 'org_id');
+    }
+    public function EvaluationFormAnswer()
+    {
+        return $this->hasMany(EvaluationFormAnswer::class, 'event_id', 'event_id');
     }
 }
