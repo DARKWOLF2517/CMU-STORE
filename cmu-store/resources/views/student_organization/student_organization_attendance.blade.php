@@ -88,7 +88,12 @@
             </div>
                 <div class="col" id="record-container">
                     <div class="recorded-event-cards">
-                        <div class="record-card">
+                        <attendance-record
+                        organization_id = {{Session::get('org_id')}}
+                        >
+
+                        </attendance-record>
+                        {{-- <div class="record-card">
                             <div class="record-date-container"><span class="event-date">August 31, 2023</span></div>
                             <div class="record-title">Event 1</div>
                             <div class="record-description">Number of Attendance recorded: 2</div>
@@ -123,14 +128,14 @@
                             <div class="record-title">Event 1</div>
                             <div class="record-description">Number of Attendance recorded: 2</div>
                             <a class="view-button" href="/student_organization_attendance_record"><i class="fas fa-chevron-right button-icon"></i></a>
-                        </div>
+                        </div> --}}
 
 
 
 
                         <!-- Add more event cards here -->
-                        </div>
                     </div>
+                </div>
 
             </div>
         </div>
