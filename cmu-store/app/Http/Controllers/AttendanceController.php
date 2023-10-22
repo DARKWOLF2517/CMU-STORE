@@ -40,4 +40,13 @@ class AttendanceController extends Controller
         // Data with the specific ID doesn't exist
         return false;
     }
+
+    public function update($event_id,$status)
+    {   
+        $attendance = Event::find($event_id);
+        $attendance->update(['status' => $status]);
+        
+        return response()->json(['message' => 'Status updated successfully']);
+
+    }
 }

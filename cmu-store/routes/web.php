@@ -70,6 +70,9 @@ Route::get('/evaluation_result', function () {
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
                 })->name('org_dashboard');
+            //attendance status route
+            Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
+            
 
             Route::get('student_organization_attendance_record', function () {
                 return view('student_organization.student_organization_attendance_record');
@@ -113,6 +116,7 @@ Route::get('/evaluation_result', function () {
                 //get event total response
                 Route::get('/evaluation_form_total_response/{event_id}',[EvaluationController::class, 'EvaluationTotalResponse']);
                 Route::get('/evaluation_list/{org_id}',[EvaluationController::class, 'EvaluationList']);
+
                 #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');
