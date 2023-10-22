@@ -37,18 +37,19 @@
                 </div>
             </div>
         </div>
-            <div class="container student-buttons d-flex justify-content-end" id="containers">
-                <div class="btn-group" role="group">
-                    <button class="btn me-2" id="add-student-list-button">
-                        <i class="fas fa-print"></i> Print Recorded Attendance
-                    </button>
-                    <button class="btn me-2" id="add-student-button">
-                        <i class="fas fa-download"></i> Download Recorded Attendance
-                    </button>
-                </div>
-            </div>
+
             <h4> <i class="fas fa-list mt-2"></i> Attendance Record</h4>
             <div class="container" id="table-container">
+                <div class=" student-buttons d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <button class="btn me-2" id="add-student-list-button">
+                            <i class="fas fa-print"></i> Print Recorded Attendance
+                        </button>
+                        <button class="btn me-2" id="add-student-button">
+                            <i class="fas fa-download"></i> Download Recorded Attendance
+                        </button>
+                    </div>
+                </div>
                 <div class="scroll-pane">
             <h5 id="Eventtitle"> Event: </h5>
             <p>Date: </p>

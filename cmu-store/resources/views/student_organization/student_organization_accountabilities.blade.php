@@ -35,18 +35,19 @@
                 </div>
             </div>
         </div>
-        <div class="container student-buttons d-flex justify-content-end" id="containers">
-            <div class="btn-group" role="group">
-                <button class="btn me-2" id="add-student-list-button" onclick="printTableData()">
-                    <i class="fas fa-print"></i> Print
-                </button>
-                <button class="btn me-2" id="add-student-button" onclick="  downloadTableData()">
-                    <i class="fas fa-download"></i> Download
-                </button>
-            </div>
-        </div>
+
             <h4> <i class="fas fa-list mt-2"></i>  Student Accountabilities</h4>
-            <div  id="table-container">
+            <div class="container" id="table-container">
+                <div class="student-buttons d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <button class="btn me-2" id="add-student-list-button" onclick="printTableData()">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                        <button class="btn me-2" id="add-student-button" onclick="  downloadTableData()">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
             <div class="scroll-pane">
             <table  id="accountabilities-table">
                 <thead>
