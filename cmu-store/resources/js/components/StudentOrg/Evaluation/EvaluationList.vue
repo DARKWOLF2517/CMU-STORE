@@ -1,9 +1,22 @@
 <template>
         <div class="event-card" v-for="evaluation in this.evaluation" :id="evaluation.event_id">
             <!-- <h5> {{ evaluation['event_id'] }}</h5> -->
+            <div class="dropdown">
+            <a class="ellipsis-button" href="#" role="button" id="ellipsisDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-ellipsis-h"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="ellipsisDropdown">
+                <!-- option 1 -->
+              <li><a class="dropdown-item" href="#">Start Evaluation</a></li>
+              <!-- option 2 -->
+              <li><a class="dropdown-item" href="#">Stop Evaluation</a></li>
+              <!-- Add more dropdown items as needed -->
+            </ul>
+          </div>
             <div class="event-date-container"><span class="event-date">{{evaluation['start_date']}}</span></div>
             <div class="event-title">{{ evaluation['name'] }}</div>
             <div class="event-description">Total Response: {{evaluation['evaluation_form_answer']}}</div>
+            <div class="event-status">Status: Ongoing or Complete</div>
             <button v-if="evaluation['evaluation_form_answer'] !== 0"  class="view-button" @click="evaluation_result(evaluation.event_id)"> <i class="fas fa-chevron-right button-icon"></i></button>
         </div>
 </template>
@@ -14,10 +27,10 @@
         data() {
             return {
                 evaluation: {
-                    
+
                 },
                 // evaluation_count: 1,
-                
+
             }
         },
 
@@ -31,7 +44,7 @@
                 .then(response => {
                     const data = response.data;
                     data.forEach(item => {
-        
+
                     // console.log(item);
                     item['evaluation_form_answer'] =  item['evaluation_form_answer'].length;
                     });
