@@ -57,7 +57,10 @@ Route::get('/evaluation_result', function () {
     Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
     //check the repetition of the data using id number
     Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
-
+    //attendance record list
+    Route::get('/attendance_record/{organization_id}',[AttendanceController::class, 'attendanceRecord']);
+    //attendance status route
+    Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
 
     Route::middleware(['auth'])->group(function(){
     #ORG ROUTE
@@ -70,9 +73,8 @@ Route::get('/evaluation_result', function () {
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
                 })->name('org_dashboard');
-            //attendance status route
-            Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
-            
+
+
 
             Route::get('student_organization_attendance_record', function () {
                 return view('student_organization.student_organization_attendance_record');

@@ -49,4 +49,10 @@ class AttendanceController extends Controller
         return response()->json(['message' => 'Status updated successfully']);
 
     }
+    public function attendanceRecord($organization_id)
+    {   
+        $attendance = Event::where('org_id', $organization_id)->with('Attendance')->get();
+        return $attendance->toJson();
+
+    }
 }

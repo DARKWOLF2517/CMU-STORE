@@ -31,4 +31,8 @@ class Event extends Model
     {
         return $this->hasMany(EvaluationFormAnswer::class, 'event_id', 'event_id');
     }
+    public function Attendance()
+    {
+        return $this->hasMany(Attendance::class, 'event_id', 'event_id');
+    }
 }

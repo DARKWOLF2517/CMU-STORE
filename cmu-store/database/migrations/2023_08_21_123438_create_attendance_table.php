@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('attendance', function (Blueprint $table) {
-            // $table->enum('status', ['Present', 'Absent']);
-            $table->unsignedBigInteger('user_id'); // Foreign key
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('org_id');
-            // Define foreign key relationship
+            $table->unsignedBigInteger('event_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
+            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
             // $table->primary(['user_id','org_id','session','type']);
             $table->timestamps();
         });

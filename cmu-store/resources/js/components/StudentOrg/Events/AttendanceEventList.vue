@@ -2,7 +2,7 @@
     <div class="schedule-list-container">
     <div class="card" v-for="event in this.events" :id="event.event_id">
         <div class="card-header">
-           <b> Event Name: {{ event["name"] }}</b>
+            <b> Event Name: {{ event["name"] }}</b>
         </div>
         <div class="card-body d-flex justify-content-between align-items-start">
             <div>
@@ -10,7 +10,7 @@
             <p class="card-text">Time starts at: {{ event["start_attendance"] }}</p>
             </div>
             <div class="ml-auto">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#startAttendanceModal">Start Attendance</button>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#startAttendanceModal" @click="this.eventId = event['event_id']" >Start Attendance</button>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" href = "/student_qrscanner">Start</button>
+            <button type="button" class="btn btn-primary" @click="startAttendance(this.eventId)" >Start</button>
         </div>
         </div>
     </div>
@@ -45,6 +45,7 @@ export default {
     data() {
         return {
             events: [],
+            eventId: 0,
 
         }
     },
@@ -75,12 +76,8 @@ export default {
                 })
             })
         },
-        deleteEvent(id) {
-            console.log(id);
-            //Send fetch delete type here.
-        },
-        editEvent(id) {
-            //Show modal here
+        startAttendance(event_id){
+            //query for qr scanner with event_id
         }
     }
 }
