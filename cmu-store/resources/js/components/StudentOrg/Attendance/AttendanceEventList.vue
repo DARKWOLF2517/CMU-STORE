@@ -27,7 +27,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" @click="startAttendance(this.eventId)" >Start</button>
+            <button type="button" class="btn btn-primary" @click="startAttendance(this.eventId, this.org_id)" >Start</button>
         </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ export default {
                 // document.getElementById("event-spinner").classList.add("hidden");
                 response.json().then((data) => {
                     data.forEach(element => {
-                        console.log(element);
+                        // console.log(element);
                         // console.log(element[])
                         element["start_date"] = convertDate(element["start_date"]);
                         element["end_date"] = convertDate(element["end_date"]);
@@ -76,8 +76,9 @@ export default {
                 })
             })
         },
-        startAttendance(event_id){
+        startAttendance(event_id, org_id){
             //query for qr scanner with event_id
+            window.location.href = `student_qrscanner/${event_id}/${org_id}`;
         }
     }
 }

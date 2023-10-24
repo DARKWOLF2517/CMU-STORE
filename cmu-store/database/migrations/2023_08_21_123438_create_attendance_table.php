@@ -15,9 +15,11 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('org_id');
             $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('officer_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');
             $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
+            $table->foreign('officer_id')->references('id')->on('users')->onDelete('cascade');
             // $table->primary(['user_id','org_id','session','type']);
             $table->timestamps();
         });

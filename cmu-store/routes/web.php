@@ -104,9 +104,8 @@ Route::get('/evaluation_result', function () {
                 return view('student_organization.student_organization_accountabilities');
             });
 
-            Route::get('student_qrscanner', function () {
-                return view('student_organization.student_organization_qr_scanner');
-            });
+            //QR SCANNER
+            Route::get('student_qrscanner/{event_id}/{org_id}', [AttendanceController::class, 'showQR']);
 
             #EVALUATION ROUTES
                 Route::get('/evaluation_form_summary/{event}', [EvaluationController::class, 'EvaluationFormSummary'])->name('EvaluationFormSummary');

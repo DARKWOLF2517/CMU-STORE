@@ -74,7 +74,13 @@
               </div>
             </div>
           </div> --}}
-          <qr-scanner></qr-scanner>
+          
+          <qr-scanner
+          event_id = {{$event_id}}
+          org_id = {{$org_id}}
+          officer_id = {{Auth::id()}}
+          >
+        </qr-scanner>
 
 
     </div>

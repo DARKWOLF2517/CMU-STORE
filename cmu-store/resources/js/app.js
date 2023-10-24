@@ -13,7 +13,7 @@ import { createApp } from 'vue';
     import CalendarCard from './components/StudentOrg/Dashboard/CalendarCard.vue';
     import EventCard from './components/StudentOrg/Events/EventCard.vue';
     import QrScanner from './components/StudentOrg/Attendance/QrScanner.vue';
-    import EventAttendanceList from './components/StudentOrg/Events/AttendanceEventList.vue';
+    import EventAttendanceList from './components/StudentOrg/Attendance/AttendanceEventList.vue';
     import EvaluationChart from './components/StudentOrg/Evaluation/Chart.vue';
     import EvaluationList from './components/StudentOrg/Evaluation/EvaluationList.vue';
     import MemberList from './components/StudentOrg/Users/MemberList.vue';
