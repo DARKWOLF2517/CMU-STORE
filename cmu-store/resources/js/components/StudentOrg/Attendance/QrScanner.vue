@@ -4,13 +4,13 @@
         <h4><i class="bi bi-camera-video "></i>QR Scanner</h4>
                 <div id="reader"></div>
                 <div id="result"></div>
-                    <form @submit="this.submit"  id="eventsForm"  >
+                    <form @submit.prevent="submitForm()"  id="eventsForm"  >
                         <div class="mb-3">
                             <label for="event-title" class="form-label">ID number</label>
                             <input type="text" name="id_number" class="form-control" id="event-title" v-model="formData.user_id" required>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
                             <button type="submit" class="btn btn-primary" id="save-event-button">Save</button>
                         </div>
                     </form>
@@ -55,16 +55,16 @@ export default {
 components: { QrcodeStream },
 
 
-props: ['event_id', 'org_id', 'officer_id'],
+props: ['event_id', 'org_id', 'officer_id', 'session'],
 data() {
     return {
-        submit : this.submitForm,
-        attendance: [],
+        attendance:[],
         formData:{
             user_id:'',
             org_id: this.org_id,
             event_id: this.event_id,
             officer_id: this.officer_id,
+            session: this.session,
 
         },
     }
@@ -72,8 +72,6 @@ data() {
 mounted() {
     this.startQrReading();
     this.fetchData();
-    console.log(this.event_id);
-    console.log(this.org_id);
 },
 methods: {
     startQrReading(){
@@ -108,30 +106,39 @@ methods: {
     },
     submitForm(){
         //get the repeating data using id number of the student
-        axios.get(`/attendance_repetition/${this.formData.user_id}`)
-            .then(response => {
-                if (response.data == 1){
-                    alert('Already repeated Id Number');
-                }
-                else{
-                     //add attendance
-                    axios.post('/attendance', this.formData)
-                        .then(response => {
-                                console.log(response.data.message);
-                                // alert(response.data.message);
+        // axios.get(`/show/user/${this.formData.user_id}`)
+        //     .then(response => {
+        //         if(response.data > 0){
 
-                        })
-                        .catch(error => {
-                            alert(error);
-                            // alert(this.formData.id_number);
-                        });
-                }
+        //         }
+        //         else{
+        //             alert('adfdsf')
+        //         }
+        //     })
+        //     .catch(error => {
 
-            })
-            .catch(error => {
-                alert(error);
-                // alert(this.formData.id_number);
-            });
+        //     });
+            axios.get(`/attendance_repetition/${this.formData.user_id}/${this.session}/${this.event_id}`)
+                .then(response => {
+                    if(response.data > 0){
+                        alert ('Already Repeated')
+                    }
+                    else{
+                        axios.post('/attendance', this.formData)
+                            .then(response => {
+                                
+                            })
+                            .catch(error => {
+                                alert(error);
+                                // alert(this.formData.id_number);
+                            });
+                    }
+                })
+                .catch(error => {
+                    alert(error);
+                
+                });
+
             window.location.reload();
 
 

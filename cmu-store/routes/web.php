@@ -35,7 +35,7 @@ Route::get('student_organization_profile', function () {
     Route::get('/events/show/{org_id}',[EventController::class, 'getEvents'])->name('get-events');
 
 
-//get student org list
+    //get student org list
     Route::get('/usercards', function () {
         return view('layouts.organization_cards');
     });
@@ -45,30 +45,30 @@ Route::get('student_organization_profile', function () {
     })->name('login_options');
     Route::get('login/GetOrgList/{userOrganization}', [LoginController::class, 'GetOrganizationList'])->name('get-user-organization');
 
-//get into organization that been choosen
+    //get into organization that been choosen
     Route::get('login/{org_id}/{role_id}/{organization_name}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
 
-Route::get('/evaluation_result', function () {
-    return view('student_organization.student_organization_evaluation_results');
-    });
+    Route::get('/evaluation_result', function () {
+        return view('student_organization.student_organization_evaluation_results');
+        });
 
-#attendance
-    Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
-    Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
-    //check the repetition of the data using id number
-    Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
-    //attendance record list
-    Route::get('/attendance_record/{organization_id}',[AttendanceController::class, 'attendanceRecord']);
-    //attendance status route
-    Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
 
     Route::middleware(['auth'])->group(function(){
     #ORG ROUTE
         Route::middleware(['user-role:1'])->group(function(){
+            #attendance
+            Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
+            Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
+            //check the repetition of the data using id number
+            Route::get('/attendance_repetition/{result_id}/{session}/{event_id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
+            //attendance record list
+            Route::get('/attendance_record/{organization_id}',[AttendanceController::class, 'attendanceRecord']);
+            //attendance status route
+            Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
 
             #USER ROUTE
             Route::get('getMemberRoute/{org_id}',[UserController::class, 'GetMemberList'])->name('member-list');
-
+            // Route::get('/show/user/{user_id}',[UserController::class, 'GetUsers']);
             #ORG DASHBOARD
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
@@ -105,7 +105,7 @@ Route::get('/evaluation_result', function () {
             });
 
             //QR SCANNER
-            Route::get('student_qrscanner/{event_id}/{org_id}', [AttendanceController::class, 'showQR']);
+            Route::get('student_qrscanner/{event_id}/{org_id}/{session}', [AttendanceController::class, 'showQR']);
 
             #EVALUATION ROUTES
                 Route::get('/evaluation_form_summary/{event}', [EvaluationController::class, 'EvaluationFormSummary'])->name('EvaluationFormSummary');
@@ -179,17 +179,3 @@ Route::get('/evaluation_result', function () {
 
         });
     });
-// Route::group('user-role:1', function()
-// {
-
-// });
-
-// Route::group('user-role:2', function() {
-
-// });
-
-// //STUDENT ROUTE
-// Route::middleware(['auth', 'user-role:2'])->group(function(){
-
-// });
-

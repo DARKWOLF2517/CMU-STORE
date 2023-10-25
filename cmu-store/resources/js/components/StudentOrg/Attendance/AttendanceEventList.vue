@@ -27,7 +27,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" @click="startAttendance(this.eventId, this.org_id)" >Start</button>
+            <button type="button" class="btn btn-primary" @click="startAttendance(this.eventId, this.org_id, 1)" >Start</button>
         </div>
         </div>
     </div>
@@ -76,9 +76,9 @@ export default {
                 })
             })
         },
-        startAttendance(event_id, org_id){
+        startAttendance(event_id, org_id, session){
             //query for qr scanner with event_id
-            window.location.href = `student_qrscanner/${event_id}/${org_id}`;
+            window.location.href = `student_qrscanner/${event_id}/${org_id}/${session}`;
         }
     }
 }

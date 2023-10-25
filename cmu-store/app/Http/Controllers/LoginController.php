@@ -32,7 +32,7 @@ class LoginController extends Controller
 
             }
             else{
-                //if the user has ONE org or role
+                //if the user has only ONE org or role
                 $userOrganization = UserOrganization::where('student_id', Auth::id())->with('organization')->first();
                 // dd($userOrganization->organization->name);
                 session(['org_id' =>  $userOrganization->student_org_id]);
@@ -49,7 +49,6 @@ class LoginController extends Controller
                 }
             }
 
-            // return redirect()->intended('dashboard');
         }
         else{
             dd('errror');
@@ -71,19 +70,6 @@ class LoginController extends Controller
         session(['org_id' =>  $org_id]);
         session(['org_name' =>  $organization_name]);
         return $role_id;
-        // $data = [
-        //     'org_id'=> $org_id, 
-        //     'role'=> $role_id];
-        
-        // if($role_id == 1){
-        //     // return redirect()->route('org_dashboard');
-            
-        //     return response()->json($data); 
-        // }
-        // else if($role_id == 2){
-        //     return response()->json($data); 
-            
-        // }
     }
 
     public function LoginDashboard()

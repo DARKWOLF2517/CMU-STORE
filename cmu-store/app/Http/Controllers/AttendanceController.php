@@ -21,28 +21,28 @@ class AttendanceController extends Controller
             'org_id'  => 'required',
             'event_id'  => 'required',
             'officer_id'  => 'required',
+            'session'  => 'required',
         ]);
         $attendances = new Attendance();
         $attendances->user_id = $validatedData['user_id'];
         $attendances->org_id = $validatedData['org_id'];
         $attendances->event_id = $validatedData['event_id'];
         $attendances->officer_id = $validatedData['officer_id'];
+        $attendances->session = $validatedData['session'];
         $attendances->save();
 
-        // return response()->json(['message' => $validatedData['user_id']]);
-        // Redirect or return a response
         return redirect()->back()->with('success', 'Event created successfully!');
     }
-    public function attendanceRepetition($id)
+    public function attendanceRepetition($result_id, $session, $event_id)
     {
-        $data = Attendance::find($id);
-
-        if ($data) {
-            // Data exists, you can work with it here
-            return true;
-        }
-        // Data with the specific ID doesn't exist
-        return false;
+        $attendance = Attendance::where([
+            ['user_id', $result_id],
+            ['session', $session],
+            ['event_id', $event_id]
+        ])->get();
+        $attendance = $attendance->count();
+        return $attendance;
+        
     }
 
     public function update($event_id,$status)
@@ -59,10 +59,10 @@ class AttendanceController extends Controller
         return $attendance->toJson();
 
     }
-    public function showQR($event_id, $org_id)
+    public function showQR($event_id, $org_id, $session)
     {   
 
-        return view('student_organization.student_organization_qr_scanner', ['event_id' => $event_id, 'org_id' => $org_id]);
+        return view('student_organization.student_organization_qr_scanner', ['event_id' => $event_id, 'org_id' => $org_id, 'session' => $session]);
 
     }
 }

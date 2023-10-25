@@ -79,6 +79,7 @@
           event_id = {{$event_id}}
           org_id = {{$org_id}}
           officer_id = {{Auth::id()}}
+          session = {{$session}}
           >
         </qr-scanner>
 
