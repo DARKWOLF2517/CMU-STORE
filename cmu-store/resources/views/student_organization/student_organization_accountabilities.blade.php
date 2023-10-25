@@ -52,13 +52,13 @@
             <table  id="accountabilities-table">
                 <thead>
                     <tr>
-                        <th class="sortable-header">Student ID</th>
-                        <th class="sortable-header">Student Name</th>
-                        <th class="sortable-header">Membership Fee</th>
-                        <th class="sortable-header">Membership Status</th>
-                        <th class="sortable-header">Fines</th>
-                        <th class="sortable-header">Fines Status</th>
-                        <th class="sortable-header">Actions</th>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Membership Fee</th>
+                        <th>Membership Status</th>
+                        <th>Fines</th>
+                        <th>Fines Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

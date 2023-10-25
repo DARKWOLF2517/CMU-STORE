@@ -1,10 +1,6 @@
 <template>
-
             <div class="event-buttons d-flex justify-content-end">
                 <div class="btn-group" role="group">
-                <button class="btn  me-2" id="add-announcement-button" data-bs-toggle="modal" data-bs-target="#announcement-modal" @click="initialData()">
-                    <i class="bi bi-calendar-plus"></i> Add Announcement
-                </button>
                 <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
                     <i class="bi bi-calendar-event"></i> Add Event
                 </button>
@@ -84,11 +80,19 @@
                                 <label for="event-description" class="form-label">Description</label>
                                 <textarea class="form-control" name="description" id="event-description" rows="3" v-model="formData.description" required></textarea>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  name="require_attendance" id="require-attendance" v-model="formData.require_attendance" true-value="1" false-value="0" >
-                            <label class="form-check-label" for="require-attendance">
-                                Require Attendance
-                            </label>
+                        <div class="mb-3">
+                            <input class="form-check-input" type="checkbox" name="require_attendance" id="require-attendance" v-model="formData.require_attendance" true-value="1" false-value="0">
+                            <label for="require-attendance" class="form-label">Require Attendance</label>
+                        </div>
+
+                        <div id="attendance-container" style="display: none;">
+                            <div class="mb-3">
+                                <label for="event-attendance" class="form-label">Number of Attendance</label>
+                                <select name="attendance_count" class="form-select" id="event-attendance" v-model="formData.attendance_count" required>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                            </select>
+                            </div>
                         </div>
                         <!-- <input type="hidden" name="org_id"  v-model="formData.org_id"> -->
                         <div class="modal-footer">
@@ -100,6 +104,17 @@
             </div>
         </div>
     </div>
+
+<!-- <script>
+  document.getElementById('require-attendance').addEventListener('change', function() {
+      const attendanceContainer = document.getElementById('attendance-container');
+      if (this.checked) {
+          attendanceContainer.style.display = 'block';
+      } else {
+          attendanceContainer.style.display = 'none';
+      }
+  });
+</script> -->
 </template>
 
 <script>

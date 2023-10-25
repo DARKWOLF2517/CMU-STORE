@@ -51,6 +51,10 @@ Route::get('student_organization_profile', function () {
 Route::get('/evaluation_result', function () {
     return view('student_organization.student_organization_evaluation_results');
     });
+#Announcement Page
+    Route::get('student_organization_announcement', function () {
+        return view('student_organization.student_organization_announcement');
+    });
 
 #attendance
     Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
