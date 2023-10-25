@@ -57,11 +57,10 @@ Route::get('/evaluation_result', function () {
     Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
     //check the repetition of the data using id number
     Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
-
-#announcement
-    Route::get('/organization_announcement', function () {
-    return view('student_organization.student_organization_announcement');
-    });
+    //attendance record list
+    Route::get('/attendance_record/{organization_id}',[AttendanceController::class, 'attendanceRecord']);
+    //attendance status route
+    Route::put('/attendance/{event_id}/{status}', [AttendanceController::class, 'update']);
 
     Route::middleware(['auth'])->group(function(){
     #ORG ROUTE
@@ -74,6 +73,8 @@ Route::get('/evaluation_result', function () {
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
                 })->name('org_dashboard');
+
+
 
             Route::get('student_organization_attendance_record', function () {
                 return view('student_organization.student_organization_attendance_record');
@@ -103,9 +104,8 @@ Route::get('/evaluation_result', function () {
                 return view('student_organization.student_organization_accountabilities');
             });
 
-            Route::get('student_qrscanner', function () {
-                return view('student_organization.student_organization_qr_scanner');
-            });
+            //QR SCANNER
+            Route::get('student_qrscanner/{event_id}/{org_id}', [AttendanceController::class, 'showQR']);
 
             #EVALUATION ROUTES
                 Route::get('/evaluation_form_summary/{event}', [EvaluationController::class, 'EvaluationFormSummary'])->name('EvaluationFormSummary');
@@ -117,6 +117,7 @@ Route::get('/evaluation_result', function () {
                 //get event total response
                 Route::get('/evaluation_form_total_response/{event_id}',[EvaluationController::class, 'EvaluationTotalResponse']);
                 Route::get('/evaluation_list/{org_id}',[EvaluationController::class, 'EvaluationList']);
+
                 #EVENT ROUTES
                 Route::get('student_organization_events', function () {
                     return view('student_organization.student_organization_events');

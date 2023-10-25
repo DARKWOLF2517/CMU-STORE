@@ -2,7 +2,7 @@
 
     <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
         <hr>
-        <h6 for="Activity">Event: </h6>
+        <h6 for="Activity">Event:  </h6>
         <h6 for="StudentOrganization">Name of Organization:</h6>
         <h6 for="DateTime">Date & Time:</h6>
         <h6 for="Venue">Venue:</h6>

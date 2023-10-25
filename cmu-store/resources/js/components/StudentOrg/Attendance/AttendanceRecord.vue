@@ -1,10 +1,10 @@
 <template>
-        <div class="record-card" v-for="evaluation in this.evaluation" :id="evaluation.event_id">
+        <div class="record-card" v-for="attendance in this.attendance" :id="attendance.event_id">
             <!-- <h5> {{ evaluation['event_id'] }}</h5> -->
-            <div class="record-date-container"><span class="event-date">{{evaluation['start_date']}}</span></div>
-            <div class="record-title">{{ evaluation['name'] }}</div>
-            <div class="record-description">Number of Attendance recorded: {{evaluation['evaluation_form_answer']}}</div>
-            <button v-if="evaluation['evaluation_form_answer'] !== 0"  class="view-button" @click="evaluation_result(evaluation.event_id)"> <i class="fas fa-chevron-right button-icon"></i></button>
+            <div class="record-date-container"><span class="event-date">{{attendance['start_date']}}</span></div>
+            <div class="record-title">{{ attendance['name'] }}</div>
+            <div class="record-description">Number of Attendance recorded: <b>{{attendance['attendance']}}</b></div>
+            <button v-if="attendance['attendance'] !== 0"  class="view-button" @click="attendance_result(attendance.event_id)"> <i class="fas fa-chevron-right button-icon"></i></button>
         </div>
 
 </template>
@@ -15,7 +15,7 @@
         props: ['organization_id'],
         data() {
             return {
-                evaluation: {
+                attendance: {
                     
                 },
                 // evaluation_count: 1,
@@ -29,24 +29,26 @@
         methods: {
             fetchData(){
                 // console.log(this.evaluation_count)
-                axios.get(`/evaluation_list/${this.organization_id}`)
+                axios.get(`/attendance_record/${this.organization_id}`)
                 .then(response => {
+                    console.log(response.data)
                     const data = response.data;
                     data.forEach(item => {
         
                     // console.log(item);
-                    item['evaluation_form_answer'] =  item['evaluation_form_answer'].length;
+                    item['attendance'] =  item['attendance'].length;
                     });
-                    this.evaluation = response.data;
+                    this.attendance = response.data;
                 })
                 .catch(error => {
                     console.log('error')
                 });
 
             },
-            evaluation_result(event_id){
+            attendance_result(event_id){
 
-                window.location.href = `evaluation_form_summary/${event_id}`;
+                // window.location.href = `student_organization_attendance_record/${event_id}`;
+                window.location.href = `student_organization_attendance_record`;
             },
         },
 

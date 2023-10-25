@@ -53,21 +53,28 @@ import {Html5QrcodeScanner} from "html5-qrcode";
 import {Html5Qrcode} from "html5-qrcode";
 export default {
 components: { QrcodeStream },
-mounted() {
-    this.startQrReading();
-    this.fetchData();
-},
+
+
+props: ['event_id', 'org_id', 'officer_id'],
 data() {
     return {
         submit : this.submitForm,
         attendance: [],
         formData:{
             user_id:'',
-            org_id: '1'
+            org_id: this.org_id,
+            event_id: this.event_id,
+            officer_id: this.officer_id,
+
         },
     }
 },
-
+mounted() {
+    this.startQrReading();
+    this.fetchData();
+    console.log(this.event_id);
+    console.log(this.org_id);
+},
 methods: {
     startQrReading(){
         const scanner = new Html5QrcodeScanner('reader', {
@@ -104,7 +111,7 @@ methods: {
         axios.get(`/attendance_repetition/${this.formData.user_id}`)
             .then(response => {
                 if (response.data == 1){
-
+                    alert('Already repeated Id Number');
                 }
                 else{
                      //add attendance
