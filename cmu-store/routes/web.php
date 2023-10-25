@@ -48,9 +48,13 @@ Route::get('student_organization_profile', function () {
     //get into organization that been choosen
     Route::get('login/{org_id}/{role_id}/{organization_name}', [LoginController::class, 'LoginOrganization'])->name('login-organization');
 
-    Route::get('/evaluation_result', function () {
-        return view('student_organization.student_organization_evaluation_results');
-        });
+Route::get('/evaluation_result', function () {
+    return view('student_organization.student_organization_evaluation_results');
+    });
+#Announcement Page
+    Route::get('student_organization_announcement', function () {
+        return view('student_organization.student_organization_announcement');
+    });
 
 
     Route::middleware(['auth'])->group(function(){

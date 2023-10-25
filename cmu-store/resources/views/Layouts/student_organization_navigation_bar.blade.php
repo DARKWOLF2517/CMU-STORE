@@ -130,6 +130,14 @@
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle align-items-center rounded events-button">
+                            <i class="fas fa-bullhorn"></i>
+                            <a href="/student_organization_announcement">
+                            <span class="link-title">Announcement</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded events-button">
                             <i class="fas fa-calendar"></i>
                             <a href="/student_organization_events">
                             <span class="link-title">Events</span>
