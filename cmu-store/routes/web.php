@@ -58,6 +58,10 @@ Route::get('/evaluation_result', function () {
     //check the repetition of the data using id number
     Route::get('/attendance_repetition/{id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
 
+#announcement
+    Route::get('/organization_announcement', function () {
+    return view('student_organization.student_organization_announcement');
+    });
 
     Route::middleware(['auth'])->group(function(){
     #ORG ROUTE
