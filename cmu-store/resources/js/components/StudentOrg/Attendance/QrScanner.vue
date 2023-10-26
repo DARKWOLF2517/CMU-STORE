@@ -95,7 +95,7 @@ methods: {
         // Prints any errors to the console
     },
     fetchData(){
-        axios.get('/attendance/show')
+        axios.get(`/attendance/show/${this.event_id}/${this.org_id}`)
             .then(response => {
                 this.attendance = response.data
             })

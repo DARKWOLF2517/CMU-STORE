@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('location');
             $table->text('description');
             $table->tinyInteger('require_attendance');
+            $table->integer('attendance_count')->default(1);
             $table->boolean('status')->default(0);
             $table->unsignedBigInteger('org_id');
             $table->foreign('org_id')->references('org_id')->on('organizations')->onDelete('cascade');

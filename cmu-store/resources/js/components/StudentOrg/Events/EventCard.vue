@@ -81,15 +81,17 @@
                                 <textarea class="form-control" name="description" id="event-description" rows="3" v-model="formData.description" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" name="require_attendance" id="require-attendance" v-model="formData.require_attendance" true-value="1" false-value="0">
+                            <input class="form-check-input" type="checkbox" name="require_attendance" id="require-attendance" v-model="formData.require_attendance" true-value="1" false-value="0" @click="checkboxClick()">
                             <label for="require-attendance" class="form-label">Require Attendance</label>
                         </div>
 
                         <div id="attendance-container" style="display: none;">
                             <div class="mb-3">
                                 <label for="event-attendance" class="form-label">Number of Attendance</label>
-                                <select name="attendance_count" class="form-select" id="event-attendance" v-model="formData.attendance_count" required>
+                                <select name="attendance_count" class="form-select" id="event-attendance" v-model="formData.attendance_count">
+                                <option value="1">1</option>
                                 <option value="2">2</option>
+                                <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
                             </div>
@@ -106,14 +108,7 @@
     </div>
 
 <!-- <script>
-  document.getElementById('require-attendance').addEventListener('change', function() {
-      const attendanceContainer = document.getElementById('attendance-container');
-      if (this.checked) {
-          attendanceContainer.style.display = 'block';
-      } else {
-          attendanceContainer.style.display = 'none';
-      }
-  });
+
 </script> -->
 </template>
 
@@ -139,6 +134,7 @@ export default {
                     location:'',
                     description:'',
                     require_attendance: '',
+                    attendance_count: '',
                     org_id: '',
 
                 },
@@ -147,8 +143,19 @@ export default {
     },
     created() {
         this.fetchData();
+
     },
     methods: {
+        checkboxClick(){
+            document.getElementById('require-attendance').addEventListener('change', function() {
+                const attendanceContainer = document.getElementById('attendance-container');
+                if (this.checked) {
+                    attendanceContainer.style.display = 'block';
+                } else {
+                    attendanceContainer.style.display = 'none';
+                }
+            });
+        },
 
         sendData() {
             // alert(this.formData.org_id);

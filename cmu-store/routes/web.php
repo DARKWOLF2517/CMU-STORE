@@ -61,7 +61,7 @@ Route::get('/evaluation_result', function () {
     #ORG ROUTE
         Route::middleware(['user-role:1'])->group(function(){
             #attendance
-            Route::get('/attendance/show',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
+            Route::get('/attendance/show/{event_id}/{org_id}',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
             Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
             //check the repetition of the data using id number
             Route::get('/attendance_repetition/{result_id}/{session}/{event_id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');

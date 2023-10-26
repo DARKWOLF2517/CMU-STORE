@@ -7,9 +7,13 @@ use App\Models\Attendance;
 use App\Models\Event;
 class AttendanceController extends Controller
 {
-    public function showAttendanceList()
+    public function showAttendanceList($event_id, $org_id)
     {
-        $attendance = Attendance::all();
+        $attendance = Attendance::where([
+            ['event_id', $event_id],
+            ['org_id', $org_id],
+        ])->get();
+        
         return $attendance->toJson();
     }
 

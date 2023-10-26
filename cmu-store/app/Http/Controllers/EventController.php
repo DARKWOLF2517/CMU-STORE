@@ -58,6 +58,7 @@ class EventController extends Controller
             'location' => 'required',
             'description' => 'required',
             'require_attendance' => 'nullable|boolean',
+            'attendance_count' => 'nullable|integer',
             'org_id' => 'required|exists:organizations,org_id',
         ]);
 
@@ -71,6 +72,7 @@ class EventController extends Controller
         $event->location = $validatedData['location'];
         $event->description = $validatedData['description'];
         $event->require_attendance = $validatedData['require_attendance'] ?? 0;
+        $event->attendance_count = $validatedData['attendance_count'] ?? 1;
         $event->org_id = $validatedData['org_id'];
         $event->save();
 
