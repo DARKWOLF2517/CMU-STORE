@@ -24,6 +24,15 @@
         </div>
         <div class="modal-body">
             <p>Are you sure you want to start attendance?</p>
+            <div class="form-group">
+                        <label for="attendanceType">Select Attendance Type:</label>
+                        <select class="form-select" id="attendanceType">
+                            <option value="morning">Morning (Log in)</option>
+                            <option value="morning">Morning (Log out)</option>
+                            <option value="afternoon">Afternoon (Log in)</option>
+                            <option value="afternoon">Afternoon (Log out)</option>
+                        </select>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
