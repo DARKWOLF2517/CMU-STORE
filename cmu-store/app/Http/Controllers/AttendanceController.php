@@ -19,7 +19,10 @@ class AttendanceController extends Controller
 
 
     public function store(Request $request){
-
+        if($this->attendanceRepetition($request['user_id'],$request['session'],$request['event_id']) >= 1)
+        {
+            return response()->json(array("result"=>"failure","message"=>"Already logged in for this session..."));
+        }
         $validatedData = $request->validate([
             'user_id' => 'required',
             'org_id'  => 'required',
@@ -35,8 +38,9 @@ class AttendanceController extends Controller
         $attendances->session = $validatedData['session'];
         $attendances->save();
 
-        return redirect()->back()->with('success', 'Event created successfully!');
+        return response()->json(array("result"=>"success","message"=>"Student successfully logged in..."));
     }
+
     public function attendanceRepetition($result_id, $session, $event_id)
     {
         $attendance = Attendance::where([
@@ -46,7 +50,6 @@ class AttendanceController extends Controller
         ])->get();
         $attendance = $attendance->count();
         return $attendance;
-        
     }
 
     public function update($event_id,$status)
@@ -67,6 +70,17 @@ class AttendanceController extends Controller
     {   
 
         return view('student_organization.student_organization_qr_scanner', ['event_id' => $event_id, 'org_id' => $org_id, 'session' => $session]);
+
+        
+    }
+    public function AttendanceCount($event_id, $org_id)
+    {   
+
+        $attendance = Event::where([
+            ['event_id', $event_id],
+            ['org_id', $org_id],
+        ])->value('attendance_count');
+        return $attendance;
 
     }
 }

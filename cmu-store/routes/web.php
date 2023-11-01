@@ -63,6 +63,7 @@ Route::get('/evaluation_result', function () {
             #attendance
             Route::get('/attendance/show/{event_id}/{org_id}',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
             Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
+            Route::get('/attendance/count/{event_id}/{org_id}',[AttendanceController::class, 'AttendanceCount']);
             //check the repetition of the data using id number
             Route::get('/attendance_repetition/{result_id}/{session}/{event_id}',[AttendanceController::class, 'attendanceRepetition'])->name('repeat-attendance');
             //attendance record list
@@ -117,7 +118,8 @@ Route::get('/evaluation_result', function () {
                     return view('student_organization.student_organization_evaluation');
                 });
                 Route::get('/evaluation_form{event_id}', [EvaluationController::class, 'GetEvaluationResult'])->name('fetchEvaluation');
-                Route::get('/evaluation_form_answer/{event_id}/{question_id}/{option}',[EvaluationController::class, 'EvaluationFormAnswer']);
+                // Route::get('/evaluation_form_answer/{event_id}/{question_id}/{option}',[EvaluationController::class, 'EvaluationFormAnswer']);
+                Route::get('/evaluation_form_answer/{event_id}',[EvaluationController::class, 'EvaluationFormAnswer']);
                 //get event total response
                 Route::get('/evaluation_form_total_response/{event_id}',[EvaluationController::class, 'EvaluationTotalResponse']);
                 Route::get('/evaluation_list/{org_id}',[EvaluationController::class, 'EvaluationList']);

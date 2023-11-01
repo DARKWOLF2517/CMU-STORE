@@ -68,6 +68,7 @@
             UpdateAttendanceStatus(event_id,status) {
                 axios.put(`/attendance/${event_id}/${status}`)
                     .then(response => {
+                        // After update, axios post for calculating fines
                         location.reload();
                     })
                     .catch(error => {
