@@ -1,4 +1,7 @@
 <template>
+     <div id="head-container">
+    <h1> Select Account</h1>
+  </div>
     <div class="container">
         <div class="user-card"  v-for="userOrg in this.userOrgs" >
             <div @click=" profileClicked( userOrg['student_org_id'],  userOrg['role_id'],userOrg['organization']['name'])">
@@ -10,7 +13,7 @@
                 <span v-else-if="userOrg['role']['role_id'] == 2">Student</span>
             </p>
             </div>
-        </div>  
+        </div>
     </div>
 
 </template>
@@ -28,18 +31,18 @@ export default {
     //     }
     // },
     methods: {
-        
+
         // fetchData(){
         //     axios.get(`GetOrgList/${this.id}`)
         //         .then(response => {
         //         })
         //         .catch(error => {
-                    
+
         //         });
         // },
-        
+
         /**
-         * 
+         *
          * @param {*} org_id organization Id to identify which dashboard to render
          * @param {*} role_id Role id of the user on that organization
          */
@@ -51,7 +54,7 @@ export default {
                 console.log(response.data)
                 // console.log(response.data.role)
                 if (response.data == 1){
-                
+
                 window.location.href = 'org_dashboard';
                 }
                 else if (response.data == 2){
@@ -60,28 +63,28 @@ export default {
 
             })
             .catch(error => {
-                
+
             });
 
 
-        }   
+        }
     },
     // mounted() {
     //     this.fetchData()
     // },
     //COMPOSITION API
-    
+
     setup(props) {
 
         let userOrgs = ref();
-        
+
         axios.get(`GetOrgList/${props.id}`)
             .then(response => {
                 console.log(response.data);
                 userOrgs.value = response.data;
             })
             .catch(error => {
-                
+
             });
 
         // id.value = axios.get(`GetOrgList/${props.id}`)
@@ -94,9 +97,9 @@ export default {
         //             // });
         //         })
         //         .catch(error => {
-                    
+
         //         });
-        
+
         return { userOrgs };
     }
 }
