@@ -147,6 +147,17 @@ methods:{
             reader.readAsArrayBuffer(file);
         }
 
+        // Function to handle the "Delete" button click
+            document.getElementById("studentTableBody").addEventListener("click", function(e) {
+                if (e.target && e.target.classList.contains("delete-button")) {
+                    const row = e.target.closest("tr");
+                    if (confirm("Are you sure you want to delete this student?")) {
+                        // If the user confirms the deletion, remove the row from the table
+                        row.remove();
+                    }
+                }
+            });
+
         // Function to handle the "Edit" button click
         document.getElementById("studentTableBody").addEventListener("click", function(e) {
             if (e.target && e.target.classList.contains("edit-button")) {
@@ -184,6 +195,7 @@ methods:{
                     e.target.disabled = false;
                 });
             }
+            
         });
     }
 
