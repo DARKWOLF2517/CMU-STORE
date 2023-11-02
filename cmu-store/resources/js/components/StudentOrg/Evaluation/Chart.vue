@@ -191,134 +191,33 @@ export default{
         }
     },
     mounted() {
-
-        // this.fetchData(this.event_id);
-        // console.log(this.id);
-        this.fetchAnswer(this.event_id, 'q1', '1');
-        this.fetchAnswer(this.event_id, 'q1', '2');
-        this.fetchAnswer(this.event_id, 'q1', '3');
-        this.fetchAnswer(this.event_id, 'q1', '4');
-        this.fetchAnswer(this.event_id, 'q1', '5');
-
-        this.fetchAnswer(this.event_id1, 'q2', '1');
-        this.fetchAnswer(this.event_id, 'q2', '2');
-        this.fetchAnswer(this.event_id, 'q2', '3');
-        this.fetchAnswer(this.event_id, 'q2', '4');
-        this.fetchAnswer(this.event_id, 'q2', '5');
-
-        this.fetchAnswer(this.event_id, 'q3', '1');
-        this.fetchAnswer(this.event_id, 'q3', '2');
-        this.fetchAnswer(this.event_id, 'q3', '3');
-        this.fetchAnswer(this.event_id, 'q3', '4');
-        this.fetchAnswer(this.event_id, 'q3', '5');
-
-        this.fetchAnswer(this.event_id, 'q4', '1');
-        this.fetchAnswer(this.event_id, 'q4', '2');
-        this.fetchAnswer(this.event_id, 'q4', '3');
-        this.fetchAnswer(this.event_id, 'q4', '4');
-        this.fetchAnswer(this.event_id, 'q4', '5');
-
-        this.fetchAnswer(this.event_id, 'q5', '1');
-        this.fetchAnswer(this.event_id, 'q5', '2');
-        this.fetchAnswer(this.event_id, 'q5', '3');
-        this.fetchAnswer(this.event_id, 'q5', '4');
-        this.fetchAnswer(this.event_id, 'q5', '5');
-
-        this.fetchAnswer(this.event_id, 'q6', '1');
-        this.fetchAnswer(this.event_id, 'q6', '2');
-        this.fetchAnswer(this.event_id, 'q6', '3');
-        this.fetchAnswer(this.event_id, 'q6', '4');
-        this.fetchAnswer(this.event_id, 'q6', '5');
-
-        this.fetchAnswer(this.event_id, 'q7', '1');
-        this.fetchAnswer(this.event_id, 'q7', '2');
-        this.fetchAnswer(this.event_id, 'q7', '3');
-        this.fetchAnswer(this.event_id, 'q7', '4');
-        this.fetchAnswer(this.event_id, 'q7', '5');
-
-        this.fetchAnswer(this.event_id, 'q8', '1');
-        this.fetchAnswer(this.event_id, 'q8', '2');
-        this.fetchAnswer(this.event_id, 'q8', '3');
-        this.fetchAnswer(this.event_id, 'q8', '4');
-        this.fetchAnswer(this.event_id, 'q8', '5');
-
-        this.fetchAnswer(this.event_id, 'q9', '1');
-        this.fetchAnswer(this.event_id, 'q9', '2');
-        this.fetchAnswer(this.event_id, 'q9', '3');
-        this.fetchAnswer(this.event_id, 'q9', '4');
-        this.fetchAnswer(this.event_id, 'q9', '5');
-
-        this.fetchAnswer(this.event_id, 'q10', '1');
-        this.fetchAnswer(this.event_id, 'q10', '2');
-        this.fetchAnswer(this.event_id, 'q10', '3');
-        this.fetchAnswer(this.event_id, 'q10', '4');
-        this.fetchAnswer(this.event_id, 'q10', '5');
-
-        this.fetchAnswer(this.event_id, 'q11', '1');
-        this.fetchAnswer(this.event_id, 'q11', '2');
-        this.fetchAnswer(this.event_id, 'q11', '3');
-        this.fetchAnswer(this.event_id, 'q11', '4');
-        this.fetchAnswer(this.event_id, 'q11', '5');
-
-        this.fetchAnswer(this.event_id, 'q12', '1');
-        this.fetchAnswer(this.event_id, 'q12', '2');
-        this.fetchAnswer(this.event_id, 'q12', '3');
-        this.fetchAnswer(this.event_id, 'q12', '4');
-        this.fetchAnswer(this.event_id, 'q12', '5');
-
-        this.fetchAnswer(this.event_id, 'q13', '1');
-        this.fetchAnswer(this.event_id, 'q13', '2');
-        this.fetchAnswer(this.event_id, 'q13', '3');
-        this.fetchAnswer(this.event_id, 'q13', '4');
-        this.fetchAnswer(this.event_id, 'q13', '5');
-
-        this.fetchAnswer(this.event_id, 'q14', '1');
-        this.fetchAnswer(this.event_id, 'q14', '2');
-        this.fetchAnswer(this.event_id, 'q14', '3');
-        this.fetchAnswer(this.event_id, 'q14', '4');
-        this.fetchAnswer(this.event_id, 'q14', '5');
-
-        this.fetchAnswer(this.event_id, 'q15', '1');
-        this.fetchAnswer(this.event_id, 'q15', '2');
-        this.fetchAnswer(this.event_id, 'q15', '3');
-        this.fetchAnswer(this.event_id, 'q15', '4');
-        this.fetchAnswer(this.event_id, 'q15', '5');
-
-        this.fetchAnswer(this.event_id, 'q16', '1');
-        this.fetchAnswer(this.event_id, 'q16', '2');
-        this.fetchAnswer(this.event_id, 'q16', '3');
-        this.fetchAnswer(this.event_id, 'q16', '4');
-        this.fetchAnswer(this.event_id, 'q16', '5');
-
+        this.fetchAnswer(this.event_id).then((evals)=> 
+        {
+            for(let e of evals)
+            {
+                for(let i = 1; i <= 15; i++)
+                {
+                    const key = "q" + i;
+                    const student_score = e[key]
+                    // e[key] => score of student on this question
+                    this.answers[key][student_score]+=1;
+                }
+            }
+            this.pieChart(this.answers);
+        });
     },
     methods: {
-        // fetchData(event_id){
-        //     axios.get(`/evaluation_form/${event_id}`)
-        //         .then(response => {
-        //             this.evaluation = response.data;
-        //             console.log(this.evaluation);
-        //         })
-        //         .catch(error => {
-        //             console.log('error')
-        //         });
-
-        //     },
-
-        fetchAnswer(event_id, question_id, option){
-            axios.get(`/evaluation_form_answer/${event_id}/${question_id}/${option}`)
+        async fetchAnswer(event_id){
+            let evals = "Whatever";
+            await axios.get(`/evaluation_form_answer/${event_id}`)
                 .then(response => {
-                    // alert(response.data);
-                    this.answers[question_id][option] = response.data;
-                    // console.log(this.answers[question_id][option]);
-                    this.pieChart( this.answers);
+                    evals = response.data.evaluation;
                 })
                 .catch(error => {
                     console.log(error)
                 });
-
+            return evals;
         },
-
-            
         pieChart($answer){
             google.charts.load('current', {'packages':['corechart']});
 
