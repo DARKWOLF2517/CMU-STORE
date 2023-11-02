@@ -18,6 +18,7 @@ import { createApp } from 'vue';
     import EvaluationList from './components/StudentOrg/Evaluation/EvaluationList.vue';
     import MemberList from './components/StudentOrg/Users/MemberList.vue';
     import AttendanceRecord from './components/StudentOrg/Attendance/AttendanceRecord.vue';
+    import UploadStudents from './components/StudentOrg/Users/UploadStudents.vue'
 // student module 
     import StudentAttendance from './components/StudentUser/Attendance/StudentAttendance.vue';
     import StudentEventModal from './components/StudentUser/Events/EventModal.vue';
@@ -42,6 +43,7 @@ const app = createApp({});
     app.component('evaluation-list', EvaluationList);
     app.component('member-list', MemberList);
     app.component('attendance-record', AttendanceRecord);
+    app.component('upload-students', UploadStudents);
 
 
 // student module
