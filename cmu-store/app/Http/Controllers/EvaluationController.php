@@ -110,4 +110,11 @@ class EvaluationController extends Controller
         // return 'hello';
 
     }
+    public function EvaluationResultTitle($event_id)
+    {
+        $events = Event::where('event_id', $event_id)->with('organization')->get();
+        return $events->toJson();
+    
+
+    }
 }

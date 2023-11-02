@@ -123,6 +123,8 @@ Route::get('/evaluation_result', function () {
                 //get event total response
                 Route::get('/evaluation_form_total_response/{event_id}',[EvaluationController::class, 'EvaluationTotalResponse']);
                 Route::get('/evaluation_list/{org_id}',[EvaluationController::class, 'EvaluationList']);
+                //get evaluation form title
+                Route::get('/evaluation_form_title/{event_id}', [EvaluationController::class, 'EvaluationResultTitle']);
 
                 #EVENT ROUTES
                 Route::get('student_organization_events', function () {
@@ -168,8 +170,9 @@ Route::get('/evaluation_result', function () {
             });
 
             //get students user profile
-                Route::get('user/profile/{user}',[ProfileController::class, 'getUserProfile']);
-
+                Route::get('organization/{org_id}',[ProfileController::class, 'getUserOrganization']);
+            //get user organization
+                Route::get('profile/{student_id}',[ProfileController::class, 'getUserProfile']);
             //evaluation form
                 Route::get('student_evaluation_list', function () {
                     return view('student.student_evaluation_list');

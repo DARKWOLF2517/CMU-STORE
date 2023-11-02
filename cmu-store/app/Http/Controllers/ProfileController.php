@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Organization;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
+use App\Models\UserOrganization;
 use PHPUnit\Framework\Constraint\RegularExpression;
 
 class ProfileController extends Controller
@@ -62,11 +64,17 @@ class ProfileController extends Controller
 
 
     //fetch user profile
-    public function getUserProfile($user){
-        $userProfile = User::find($user);
-        return $userProfile;
+    public function getUserOrganization($org_id){
+        $organization = Organization::find($org_id);
+        return $organization;
 
     }
+    public function getUserProfile($student_id){
+        $user_organization = UserOrganization::where('student_id',$student_id)->with(['organization','user'])->get();
+            return $user_organization;
+
+    }
+    
 
 
     

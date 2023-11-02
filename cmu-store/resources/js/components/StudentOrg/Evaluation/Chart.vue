@@ -2,10 +2,10 @@
 
     <h3>STUDENT ORGANIZATIONS & ACTIVITIES EVALUATION FORM</h3>
         <hr>
-        <h6 for="Activity">Event:  </h6>
-        <h6 for="StudentOrganization">Name of Organization:</h6>
-        <h6 for="DateTime">Date & Time:</h6>
-        <h6 for="Venue">Venue:</h6>
+        <h6 for="Activity">Event: <b>{{this.event_title['name']}}</b>   </h6>
+        <h6 for="StudentOrganization">Name of Organization: <b>{{this.event_title['organization']}}</b></h6>
+        <h6 for="DateTime">Date & Time: <b>{{this.event_title['start_attendance']}}</b></h6>
+        <h6 for="Venue">Venue:  <b>{{this.event_title['location']}}</b></h6>
         <hr>
     <h6>1. PROGRAM/ACTIVITY</h6>
         <div class="row">
@@ -72,7 +72,7 @@
 </template>
 
 <script>
-
+import {converTime} from "../Functions/TimeConverter.js";
 export default{
     props: ['event_id'],
     data() {
@@ -187,6 +187,13 @@ export default{
                     text: ""
                 },
             },
+            event_title: {
+                name: '',
+                organization: '',
+                start_attendance:'',
+                location: '',
+
+            },
 
         }
     },
@@ -205,11 +212,12 @@ export default{
             }
             this.pieChart(this.answers);
         });
+        this.showEventTitle();
     },
     methods: {
-        async fetchAnswer(event_id){
+        async fetchAnswer(){
             let evals = "Whatever";
-            await axios.get(`/evaluation_form_answer/${event_id}`)
+            await axios.get(`/evaluation_form_answer/${this.event_id}`)
                 .then(response => {
                     evals = response.data.evaluation;
                 })
@@ -217,6 +225,27 @@ export default{
                     console.log(error)
                 });
             return evals;
+        },
+        showEventTitle(){
+            axios.get(`/evaluation_form_title/${this.event_id}`)
+                .then(response => {
+                    const data = response.data;
+                    data.forEach(item => {
+
+                    // console.log(item);
+                    item["start_attendance"] = converTime(item["start_attendance"]);
+                    this.event_title['name'] =  item['name'];
+                    this.event_title['organization'] =  item['organization']['name'];
+                    this.event_title['start_attendance'] =  item['start_attendance'];
+                    this.event_title['location'] =  item['location'];
+                    });
+                    console.log(this.event_title);
+                    
+
+                })
+                .catch(error => {
+                    console.log(error)
+                });
         },
         pieChart($answer){
             google.charts.load('current', {'packages':['corechart']});
