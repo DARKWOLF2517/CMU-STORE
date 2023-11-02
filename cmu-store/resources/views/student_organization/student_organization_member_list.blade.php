@@ -43,10 +43,12 @@
                     <button class="btn me-2" id="add-student-list-button" data-bs-toggle="modal" data-bs-target="#editModal">
                         <i class="fas fa-user-plus"></i>  Add student
                     </button>
-                    <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
+                    {{-- <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
                     <button class="btn me-2" id="add-student-button"  onclick="document.getElementById('fileInput').click()">
                     <i class="fas fa-file-excel"></i> Add student list
-                    </button>
+                    </button> --}}
+                    <button id="uploadButton" class="btn me-2">Upload Student List</button>
+                    <input type="file" id="fileInput" accept=".xls, .xlsx" style="display: none;">
                 </div>
             </div>
             {{-- <div class="scroll-pane"> --}}
@@ -59,16 +61,19 @@
             <div class="scroll-pane">
           <table id="student-list-table">
             <thead>
-              <tr>
-                <th>Student ID number</th>
-                <th>Name</th>
-                <th>Year Level</th>
-                <th>College</th>
-                <th>Actions</th>
-              </tr>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Year Level</th>
+                    <th>College</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
+                 <tbody id="studentTableBody">
+                <!-- Student data will be added here -->
+            </tbody>
+              {{-- <tr>
                 <td>2023-05-01</td>
                 <td>John Smith</td>
                 <td>1st year</td>
@@ -78,7 +83,7 @@
                     <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
                   </td>
               </tr>
-
+ --}}
 
 
             </tbody>
@@ -93,103 +98,22 @@
         </div>
     </div>
 
-         <!-- Modal -->
-      <div id="editModal" class="modal">
-        <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="accountability-modal-label">About Student</h5>
-          </div>
-          <div class="modal-body">
-          <form id="editForm">
-            <div class="mb-3">
-              <label for="studentID" class="form-label">Student ID number:</label>
-              <input type="text" id="studentID" readonly class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="yearlevel" class="form-label">Year Level:</label>
-              <input type="text" id="yearlevel" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="college" class="form-label">College:</label>
-              <input type="text" id="college" class="form-control">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="save-student-button">Save</button>
-            </div>
-          </form>
-        </div>
-        </div>
-      </div>
-      </div>
-
 
       </div>
     </div>
   </div>
+
+    <!-- Include Bootstrap and jQuery JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Include exceljs for parsing Excel files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+
     @endsection
 
     @section('custom-script')
     <script>
-        const editButtons = document.getElementsByClassName('edit-button');
-        const editModal = document.getElementById('editModal');
-        const closeModal = editModal.getElementsByClassName('close')[0];
-        const editForm = document.getElementById('editForm');
-        const studentIDInput = document.getElementById('studentID');
-        const nameInput = document.getElementById('name');
-        const yearlevelInput = document.getElementById('yearlevel');
-        const collegeInput = document.getElementById('college');
-
-        function showModal() {
-          editModal.style.display = 'block';
-          // Retrieve the values from the table and populate the form fields
-          const row = this.closest('tr');
-          const studentID = row.cells[0].textContent;
-          const name = row.cells[1].textContent;
-          const yearlevel = row.cells[2].textContent;
-          const college = row.cells[3].textContent;
-
-          studentIDInput.value = studentID;
-          nameInput.value = name;
-          yearlevelInput.value = yearlevel;
-          collegeInput.value = college;
-        }
-
-        function hideModal() {
-          editModal.style.display = 'none';
-        }
-
-        function submitForm(event) {
-          event.preventDefault();
-          // Retrieve the selected values from the form fields
-          const studentID = studentIDInput.value;
-          const name = nameInput.value;
-          const yearlevel = yearlevelInput.value;
-          const college = college.value;
-
-          // Perform further actions or send the form data to the server
-          console.log('Student ID:', studentID);
-          console.log('Name:', name);
-          console.log('Year-Level:', yearlevel);
-          console.log('College:', college);
-          hideModal();
-        }
-
-        Array.from(editButtons).forEach(button => {
-          button.addEventListener('click', showModal);
-        });
-
-        closeModal.addEventListener('click', hideModal);
-        editForm.addEventListener('submit', submitForm);
-      </script>
-
-      <script src="{{ asset('js/app.js') }}"></script>
-      <script>
         const table = document.getElementById('student-list-table');
         const rowsPerPage = 10;
         const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
@@ -273,56 +197,109 @@
 
         showPage(currentPage);
         updatePagination();
-      </script>
 
-     <script>
-        // Function to handle the file input change event
-        document.getElementById('fileInput').addEventListener('change', function(e) {
-            var file = e.target.files[0];
+          // Function to handle the file upload
+        document.getElementById("uploadButton").addEventListener("click", function() {
+            document.getElementById("fileInput").click();
+        });
 
+        document.getElementById("fileInput").addEventListener("change", function(e) {
+            const file = e.target.files[0];
             if (file) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    var data = e.target.result;
-                    var workbook = XLSX.read(data, { type: 'binary' });
-                    var sheetName = workbook.SheetNames[0];
-                    var sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-                    // Populate the table with the data from the Excel file
-                    var tableBody = document.getElementById("table-body");
-                    var noRecordsRow = document.getElementById("no-records-row");
-                    noRecordsRow.style.display = "none"; // Hide the initial "No records" row
-
-                    tableBody.innerHTML = ''; // Clear existing data
-
-                    if (sheet.length === 0) {
-                        noRecordsRow.style.display = "table-row"; // Show "No records" message
-                    } else {
-                        sheet.forEach(function(record) {
-                            var row = document.createElement("tr");
-                            var idCell = document.createElement("td");
-                            idCell.textContent = record.ID;
-                            var nameCell = document.createElement("td");
-                            nameCell.textContent = record.Name;
-                            var ageCell = document.createElement("td");
-                            ageCell.textContent = record.Age;
-
-                            row.appendChild(idCell);
-                            row.appendChild(nameCell);
-                            row.appendChild(ageCell);
-
-                            tableBody.appendChild(row);
-                        });
-                    }
-                };
-
-                reader.readAsBinaryString(file);
+                parseExcelData(file);
             }
         });
-    </script>
 
-    <!-- Include the XLSX library for parsing Excel files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+        // Function to handle the file upload
+        document.getElementById("uploadButton").addEventListener("click", function() {
+            document.getElementById("fileInput").click();
+        });
+
+        document.getElementById("fileInput").addEventListener("change", function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                parseExcelData(file);
+            }
+        });
+
+        // Function to parse the uploaded Excel file
+        async function parseExcelData(file) {
+            const workbook = new ExcelJS.Workbook();
+            const reader = new FileReader();
+
+            reader.onload = async function(e) {
+                const buffer = e.target.result;
+                await workbook.xlsx.load(buffer);
+                const worksheet = workbook.getWorksheet(1); // Assuming data is in the first worksheet
+
+                // Clear the existing table content
+                const tableBody = document.getElementById("studentTableBody");
+                tableBody.innerHTML = "";
+
+                // Populate the table with student data
+                worksheet.eachRow({ includeEmpty: false }, function(row, rowNumber) {
+                    if (rowNumber === 1) return; // Skip the header row
+                    const student = row.values;
+                    const studentArray = student.slice(1); // Exclude the first empty cell
+
+                    const newRow = document.createElement("tr");
+                    newRow.innerHTML = `
+                        <td>${studentArray[0]}</td>
+                        <td>${studentArray[1]}</td>
+                        <td>${studentArray[2]}</td>
+                        <td>${studentArray[3]}</td>
+                        <td>
+                            <button class="btn btn-danger delete-button">Delete</button>
+                            <button class="btn btn-primary edit-button">Edit</button>
+                        </td>
+                    `;
+
+                    tableBody.appendChild(newRow);
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        // Function to handle the "Edit" button click
+        document.getElementById("studentTableBody").addEventListener("click", function(e) {
+            if (e.target && e.target.classList.contains("edit-button")) {
+                const row = e.target.closest("tr");
+                const cells = row.querySelectorAll("td");
+
+                // Disable the Edit button
+                e.target.disabled = true;
+
+                // Enable editing of the student details
+                for (let i = 0; i < cells.length - 1; i++) {
+                    const cellContent = cells[i].textContent;
+                    const input = document.createElement("input");
+                    input.value = cellContent;
+                    cells[i].textContent = "";
+                    cells[i].appendChild(input);
+                }
+
+                // Create a Save button
+                const saveButton = document.createElement("button");
+                saveButton.textContent = "Save";
+                saveButton.classList.add("btn", "btn-success");
+                row.querySelector(".edit-button").insertAdjacentElement("beforebegin", saveButton);
+
+                // Handle saving changes
+                saveButton.addEventListener("click", function() {
+                    // Update the table with the edited details
+                    for (let i = 0; i < cells.length - 1; i++) {
+                        const input = cells[i].querySelector("input");
+                        cells[i].textContent = input.value;
+                    }
+
+                    // Remove the Save button and re-enable the Edit button
+                    saveButton.remove();
+                    e.target.disabled = false;
+                });
+            }
+        });
+      </script>
+
 
 @endsection
