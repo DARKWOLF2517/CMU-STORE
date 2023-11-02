@@ -53,3 +53,8 @@
     font-size: 14px;
     margin-bottom: 20px;
 }
+.ellipsis-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }

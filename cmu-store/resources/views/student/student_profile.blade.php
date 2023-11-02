@@ -15,11 +15,14 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="qr-code">
-                    <img src="https://via.placeholder.com/150" alt="profile photo">
-                    <h5>Queen Bahay</h5>
+                    <div class="qr-code-image">
+                        <img src="https://via.placeholder.com/150" alt="profile photo">
+                    </div>
+                    <h5>John Doe</h5>
                     <small>2020202020</small>
                 </div>
             </div>
+
 
             <div class="col-md-9">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">

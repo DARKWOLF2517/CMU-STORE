@@ -53,9 +53,6 @@
           </div>
       </div>
   </div>
-  <div class="container" id="head-container">
-    <h1> Select Account</h1>
-  </div>
       <user-organization
         id={{Auth::id()}}
       ></user-organization>
