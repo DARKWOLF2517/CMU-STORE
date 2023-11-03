@@ -6,15 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>User Organizations</title>
   <link href="/custom_css/usercard.css" rel="stylesheet">
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+  {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/"> --}}
   {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@ 5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> --}}
+  {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> --}}
   @vite('resources/js/app.js')
 </head>
 <body>
   <div id="app">
-    <div class="wrapper">
+    {{-- <div class="wrapper">
       <div class="top-nav">
           <a href="#" class="nav-link link-light">
               <span class="nav-name">CMU-STORE-AMS</span>
@@ -52,7 +52,7 @@
               </ul>
           </div>
       </div>
-  </div>
+  </div> --}}
       <user-organization
         id={{Auth::id()}}
       ></user-organization>

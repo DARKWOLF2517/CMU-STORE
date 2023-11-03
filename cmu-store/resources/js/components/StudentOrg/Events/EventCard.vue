@@ -1,6 +1,6 @@
 <template>
 
-    <div class="event-announcement-list ">
+<div class="event-announcement-list d-flex flex-wrap">
         <div class="card mb-3" v-for="event in this.events" :id="event.event_id" >
         <div class="card-body">
                 <h5 class="card-title">Event Name: <strong>{{ event["name"] }}</strong></h5>
