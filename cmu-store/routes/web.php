@@ -106,8 +106,12 @@ Route::get('/evaluation_result', function () {
                 return view('student_organization.student_organization_students');
             });
 
-            Route::get('student_organization_accountabilities', function () {
-                return view('student_organization.student_organization_accountabilities');
+            Route::get('student_organization_fines', function () {
+                return view('student_organization.student_organization_fines');
+            });
+
+            Route::get('student_organization_membership_fee', function () {
+                return view('student_organization.student_organization_membership_fee');
             });
 
             //QR SCANNER

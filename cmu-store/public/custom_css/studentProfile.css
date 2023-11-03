@@ -41,10 +41,10 @@
     padding: 10px;
 }
 
-.qr-code img {
-    margin-top: 10px;
+.qrcode-img {
+    margin-top: 30px;
     width: auto;
-    height: 250px;
+    padding: 10px;
 }
 
 .student-details {

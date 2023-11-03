@@ -17,7 +17,7 @@
             </ol>
           </nav>
       </div>
-      <div class="container student-buttons d-flex justify-content-end" id="containers">
+      <div class="mt-2 student-buttons d-flex justify-content-end">
           <div class="btn-group" role="group">
               <button class="btn me-2" id="add-student-list-button">
                   <i class="fas fa-print"></i> Print Results
@@ -27,8 +27,8 @@
               </button>
           </div>
       </div>
-        <div class="container" id="containers">
-          
+        <div class="container mt-2" id="evaluation-summary">
+
           <evaluation-chart
               event_id={{$id}}>
           </evaluation-chart>

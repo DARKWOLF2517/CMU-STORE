@@ -58,7 +58,7 @@ width: 80vh; /* Adjust the width as needed */
 background-color: #fff;
 z-index: 1;
 height: 75vh;
-max-height: 75vh;
+max-height: 65vh;
 
 }
 .modal{

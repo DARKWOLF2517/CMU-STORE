@@ -117,3 +117,10 @@ option {
     background-position: center left;
     font-size: small;
 }
+#evaluation-summary{
+    height: 80vh;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+}

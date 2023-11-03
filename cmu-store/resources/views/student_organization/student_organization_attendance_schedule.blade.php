@@ -10,6 +10,7 @@
                 <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item active" aria-current="page">Attendance</li>
+                <li class="breadcrumb-item active" aria-current="page">Schedule</li>
                 </ol>
             </nav>
         </div>
@@ -22,7 +23,7 @@
                 <div class="row">
                 <div class="col-lg-6 mb-2">
                     <div class="container" id="ScheduledEventContainer">
-                        <event-attendance-list 
+                        <event-attendance-list
                         org_id="{{Session::get('org_id')}}">
                         </event-attendance-list>
                     </div>

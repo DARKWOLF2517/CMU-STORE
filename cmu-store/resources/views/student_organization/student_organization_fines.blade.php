@@ -11,15 +11,16 @@
                 <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item active" aria-current="page">Accountabilities</li>
+                <li class="breadcrumb-item active" aria-current="page">Fines List</li>
             </ol>
             </nav>
         </div>
-        <div class="container" id="tablecontainer">
+        <div class="mt-2">
             <div class="row head-container">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-container">
                         <i class="fa fa-search"></i>
-                        <input type="text" placeholder="Search Student">
+                        <input type="text" placeholder="Search Event">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
@@ -54,8 +55,6 @@
                     <tr>
                         <th>Student ID</th>
                         <th>Student Name</th>
-                        <th>Membership Fee</th>
-                        <th>Membership Status</th>
                         <th>Fines</th>
                         <th>Fines Status</th>
                         <th>Actions</th>
@@ -65,8 +64,6 @@
                     <tr>
                     <td>2023-05-01</td>
                     <td>John Smith</td>
-                    <td>$100</td>
-                    <td>Unpaid</td>
                     <td>$10</td>
                     <td>Unpaid</td>
                     <td>
@@ -87,7 +84,7 @@
             <div id="edit-modal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="event-modal-label">Edit Student Accountabilities</h5>
+                        <h5 class="modal-title" id="event-modal-label">Edit Student Fines</h5>
                     </div>
                     <div class="modal-body">
                     <form>
@@ -98,17 +95,6 @@
                         <div class="form-group">
                             <label for="edit-student-name">Student Name:</label>
                             <input type="text" id="edit-student-name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="edit-membership-fee">Membership Fee:</label>
-                            <input type="text" id="edit-membership-fee" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="edit-membership-status">Membership Status:</label>
-                            <select id="edit-membership-status" class="form-control">
-                                <option value="Unpaid">Unpaid</option>
-                                <option value="Paid">Paid</option>
-                            </select>
                         </div>
                         <div class="form-group">
                             <label for="edit-fines">Fines:</label>
@@ -207,10 +193,8 @@ function editStudent(button) {
     // Populate the form fields with the data from the selected row
     document.getElementById('edit-student-id').value = cells[0].textContent;
     document.getElementById('edit-student-name').value = cells[1].textContent;
-    document.getElementById('edit-membership-fee').value = cells[2].textContent;
-    document.getElementById('edit-membership-status').value = cells[3].textContent;
-    document.getElementById('edit-fines').value = cells[4].textContent;
-    document.getElementById('edit-fines-status').value = cells[5].textContent;
+    document.getElementById('edit-fines').value = cells[2].textContent;
+    document.getElementById('edit-fines-status').value = cells[3].textContent;
 
     // Display the edit modal
     editModal.style.display = 'block';
@@ -227,14 +211,11 @@ function saveEditedData() {
         // Update the table with the edited data from the form
         cells[0].textContent = document.getElementById('edit-student-id').value;
         cells[1].textContent = document.getElementById('edit-student-name').value;
-        cells[2].textContent = document.getElementById('edit-membership-fee').value;
 
         // Get the selected values from the dropdowns
-        const membershipStatusDropdown = document.getElementById('edit-membership-status');
         const finesStatusDropdown = document.getElementById('edit-fines-status');
-        cells[3].textContent = membershipStatusDropdown.options[membershipStatusDropdown.selectedIndex].value;
-        cells[4].textContent = document.getElementById('edit-fines').value;
-        cells[5].textContent = finesStatusDropdown.options[finesStatusDropdown.selectedIndex].value;
+        cells[2].textContent = document.getElementById('edit-fines').value;
+        cells[3].textContent = finesStatusDropdown.options[finesStatusDropdown.selectedIndex].value;
 
         // Close the edit modal
         document.getElementById('edit-modal').style.display = 'none';
