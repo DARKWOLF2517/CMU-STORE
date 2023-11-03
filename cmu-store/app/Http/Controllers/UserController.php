@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     public function GetMemberList($org_id)
-    {   
+    {
         $memberList = UserOrganization::where([['student_org_id', $org_id],['role_id', 2]])->with(['user','organization'])->get();
         return $memberList->toJson();
     }
@@ -20,31 +20,31 @@ class UserController extends Controller
         public function getUserOrganization($org_id){
             $organization = Organization::find($org_id);
             return $organization;
-    
+
         }
         public function getUserProfile($student_id){
             $user_organization = UserOrganization::where('student_id',$student_id)->with(['organization','user'])->get();
                 return $user_organization;
-    
+
         }
-        
+
 
         public function store(Request $request)
         {
             $org_id = Session::get('org_id');
             $data = $request->input('data');
             foreach ($data as $row) {
-                $event = new UserOrganization();
-                $event->student_id = $row[0];
-                $event->year_level = $row[2];
-                $event->student_org_id = $org_id ;
-                $event->role_id = '2' ;
-                $event->save();
-                
+                $user = new UserOrganization();
+                $user->student_id = $row[0];
+                $user->year_level = $row[2];
+                $user->student_org_id = $org_id;
+                $user->role_id = '2' ;
+                $user->save();
+
             }
-        
-            return "Data inserted successfully!";
+
+            // return "Data inserted successfully!";
             // Optionally, you can return a response indicating success or redirection
-            // return $aw;
+            return $request;
         }
 }

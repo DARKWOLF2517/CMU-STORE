@@ -19,7 +19,7 @@ data(){
     return{
         collectedData:[],
     }
-    
+
 },
 mounted(){
     this.upload();
@@ -39,25 +39,25 @@ methods:{
 
         for (var j = 0; j < row.cells.length; j++) {
             var cell = row.cells[j];
-        
+
             rowData.push(cell.textContent);
         }
 
         data.push(rowData);
         }
         // data.forEach((data=>{
-        //    
+        //
         // }));
         this.collectedData = data;
         // console.log(this.collectedData)
         // Display the extracted data in the console
-    
-            axios.post('/upload_students',  { data: this.collectedData })
-                        .then(response => {
-                            console.log(response.data)
-                        })
-                        .catch(error => {
-                            alert(error)
+
+            axios.post('/upload_students', { data: this.collectedData })
+                .then(response => {
+                    console.log(response.data)
+                })
+                .catch(error => {
+                    console.log(error)
 
                     });
 
@@ -159,7 +159,7 @@ methods:{
             }
         });
 
-        
+
 
         // Function to parse the uploaded Excel file
         async function parseExcelData(file) {
@@ -248,12 +248,12 @@ methods:{
                     e.target.disabled = false;
                 });
             }
-            
+
         });
     }
 
 }
-        
+
 
 }
 
