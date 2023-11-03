@@ -174,13 +174,26 @@
                             </ul>
                         </div>
                     </li> --}}
-                    <li class="mb-1">
+                    {{-- <li class="mb-1">
                         <button class="btn btn-toggle align-items-center studentlist-button">
                             <i class="fas fa-money-check"></i>
                             <a href="/student_organization_accountabilities">
                             <span class="link-title">Accountabilities</span>
                             </a>
                         </button>
+                    </li> --}}
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded rotate-icon" data-bs-toggle="collapse" data-bs-target="#accountabilities-collapse" aria-expanded="false">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span class="link-title">Accountabilities</span>
+                            <span class="link-arrow"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="collapse" id="accountabilities-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="/student_organization_membership_fee" class="link-dark rounded"><i class="fas fa-calendar"></i> Membership fee list</a></li>
+                                <li><a href="/student_organization_fines" class="link-dark rounded"><i class="fas fa-check-circle"></i> Fines List</a></li>
+                            </ul>
+                        </div>
                     </li>
                     </ul>
                 </div>

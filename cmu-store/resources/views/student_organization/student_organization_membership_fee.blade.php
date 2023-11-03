@@ -56,8 +56,6 @@
                         <th>Student Name</th>
                         <th>Membership Fee</th>
                         <th>Membership Status</th>
-                        <th>Fines</th>
-                        <th>Fines Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -66,8 +64,6 @@
                     <td>2023-05-01</td>
                     <td>John Smith</td>
                     <td>$100</td>
-                    <td>Unpaid</td>
-                    <td>$10</td>
                     <td>Unpaid</td>
                     <td>
                         <button class="edit-button ellipsis-button" onclick="editStudent(this)"><i class="bi bi-pencil-square"></i></button>
@@ -87,7 +83,7 @@
             <div id="edit-modal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="event-modal-label">Edit Student Accountabilities</h5>
+                        <h5 class="modal-title" id="event-modal-label">Edit Student Membership fee</h5>
                     </div>
                     <div class="modal-body">
                     <form>
@@ -106,17 +102,6 @@
                         <div class="form-group">
                             <label for="edit-membership-status">Membership Status:</label>
                             <select id="edit-membership-status" class="form-control">
-                                <option value="Unpaid">Unpaid</option>
-                                <option value="Paid">Paid</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="edit-fines">Fines:</label>
-                            <input type="text" id="edit-fines" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="edit-fines-status">Fines Status:</label>
-                            <select id="edit-fines-status" class="form-control">
                                 <option value="Unpaid">Unpaid</option>
                                 <option value="Paid">Paid</option>
                             </select>
@@ -209,8 +194,6 @@ function editStudent(button) {
     document.getElementById('edit-student-name').value = cells[1].textContent;
     document.getElementById('edit-membership-fee').value = cells[2].textContent;
     document.getElementById('edit-membership-status').value = cells[3].textContent;
-    document.getElementById('edit-fines').value = cells[4].textContent;
-    document.getElementById('edit-fines-status').value = cells[5].textContent;
 
     // Display the edit modal
     editModal.style.display = 'block';
@@ -231,10 +214,7 @@ function saveEditedData() {
 
         // Get the selected values from the dropdowns
         const membershipStatusDropdown = document.getElementById('edit-membership-status');
-        const finesStatusDropdown = document.getElementById('edit-fines-status');
-        cells[3].textContent = membershipStatusDropdown.options[membershipStatusDropdown.selectedIndex].value;
-        cells[4].textContent = document.getElementById('edit-fines').value;
-        cells[5].textContent = finesStatusDropdown.options[finesStatusDropdown.selectedIndex].value;
+
 
         // Close the edit modal
         document.getElementById('edit-modal').style.display = 'none';
@@ -315,169 +295,4 @@ function downloadTableData() {
    XLSX.writeFile(wb, 'table_data.xlsx');
 }
 </script>
-
-
-    {{-- <script>
-        const editButtons = document.getElementsByClassName('edit-button');
-        const editModal = document.getElementById('editModal');
-        const closeModal = editModal.getElementsByClassName('close')[0];
-        const editForm = document.getElementById('editForm');
-        const studentIDInput = document.getElementById('studentID');
-        const nameInput = document.getElementById('name');
-        const membershipFeeInput = document.getElementById('membershipFee');
-        const membershipStatusSelect = document.getElementById('membershipStatus');
-        const finesInput = document.getElementById('fines');
-        const finesStatusSelect = document.getElementById('finesStatus');
-
-        function showModal() {
-        editModal.style.display = 'block';
-        // Retrieve the values from the table and populate the form fields
-        const row = this.closest('tr');
-        const studentID = row.cells[0].textContent;
-        const name = row.cells[1].textContent;
-        const membershipFee = row.cells[2].textContent;
-        const membershipFeeStatus = row.cells[3].textContent;
-        const fines = row.cells[4].textContent;
-        const finesStatus = row.cells[5].textContent;
-        studentIDInput.value = studentID;
-        nameInput.value = name;
-        membershipFeeInput.value = membershipFee;
-        membershipStatusSelect.value = membershipFeeStatus;
-        finesInput.value = fines;
-        finesStatusSelect.value = finesStatus;
-        }
-
-        function hideModal() {
-        editModal.style.display = 'none';
-        }
-
-        function submitForm(event) {
-        event.preventDefault();
-          // Retrieve the selected values from the form fields
-        const studentID = studentIDInput.value;
-        const name = nameInput.value;
-        const membershipFee = membershipFeeInput.value;
-        const membershipFeeStatus = membershipStatusSelect.value;
-        const fines = finesInput.value;
-        const finesStatus = finesStatusSelect.value;
-          // Perform further actions or send the form data to the server
-        console.log('Student ID:', studentID);
-        console.log('Name:', name);
-        console.log('Membership Fee:', membershipFee);
-        console.log('Membership Fee Status:', membershipFeeStatus);
-        console.log('Fines:', fines);
-        console.log('Fines Status:', finesStatus);
-        hideModal();
-        }
-
-        Array.from(editButtons).forEach(button => {
-          button.addEventListener('click', showModal);
-        });
-
-        closeModal.addEventListener('click', hideModal);
-        editForm.addEventListener('submit', submitForm);
-      </script>
-    {{-- Pagination JS --}}
-          {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
-        {{-- <script>
-            const table = document.getElementById('accountabilities-table');
-            const rowsPerPage = 10;
-            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-            const pageCount = Math.ceil(rows.length / rowsPerPage);
-            const firstPageButton = document.getElementById('first-page-button');
-            const previousPageButton = document.getElementById('previous-page-button');
-            const nextPageButton = document.getElementById('next-page-button');
-            const lastPageButton = document.getElementById('last-page-button');
-            const paginationNumbers = document.getElementById('pagination-numbers');
-            let currentPage = 1;
-
-            function showPage(page) {
-              const startIndex = (page - 1) * rowsPerPage;
-            const endIndex = startIndex + rowsPerPage;
-
-            for (let i = 0; i < rows.length; i++) {
-                rows[i].style.display = i >= startIndex && i < endIndex ? 'table-row' : 'none';
-            }
-            }
-
-            function updatePaginationButtons() {
-            firstPageButton.disabled = currentPage === 1;
-            previousPageButton.disabled = currentPage === 1;
-            nextPageButton.disabled = currentPage === pageCount;
-            lastPageButton.disabled = currentPage === pageCount;
-            }
-
-            function updatePaginationNumbers() {
-            let paginationHTML = '';
-            for (let i = 1; i <= pageCount; i++) {
-                const buttonClass = i === currentPage ? 'page-number-button current-page' : 'page-number-button';
-                paginationHTML += `<button class="${buttonClass}" data-page="${i}">${i}</button>`;
-            }
-            paginationNumbers.innerHTML = paginationHTML;
-
-            const pageButtons = document.getElementsByClassName('page-number-button');
-            for (let i = 0; i < pageButtons.length; i++) {
-                const pageButton = pageButtons[i];
-                pageButton.addEventListener('click', function() {
-                const page = parseInt(this.getAttribute('data-page'));
-                currentPage = page;
-                showPage(currentPage);
-                updatePaginationButtons();
-                updatePaginationNumbers();
-                });
-            }
-            }
-
-            function updatePagination() {
-            updatePaginationButtons();
-            updatePaginationNumbers();
-            }
-
-            firstPageButton.addEventListener('click', function() {
-            currentPage = 1;
-            showPage(currentPage);
-            updatePagination();
-            });
-
-            previousPageButton.addEventListener('click', function() {
-            if (currentPage > 1) {
-                currentPage--;
-                showPage(currentPage);
-                updatePagination();
-            }
-            });
-
-            nextPageButton.addEventListener('click', function() {
-            if (currentPage < pageCount) {
-                currentPage++;
-                showPage(currentPage);
-                updatePagination();
-            }
-            });
-
-            lastPageButton.addEventListener('click', function() {
-            currentPage = pageCount;
-            showPage(currentPage);
-            updatePagination();
-            });
-
-            showPage(currentPage);
-            updatePagination();
-        </script>
-        <script>
-            function printTable() {
-                var table = document.getElementById("accountabilities-table");
-                var printWindow = window.open('', '', 'width=800,height=600');
-                printWindow.document.open();
-                printWindow.document.write('<html><head><title>Print Table</title></head><body>');
-                printWindow.document.write('<h1>Recorded Attendance Table</h1>');
-                printWindow.document.write(table.outerHTML);
-                printWindow.document.write('</body></html>');
-                printWindow.document.close();
-                printWindow.print();
-                printWindow.close();
-            }
-            </script> --}}
-
-
 @endsection
