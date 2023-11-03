@@ -34,17 +34,19 @@ class UserController extends Controller
             $org_id = Session::get('org_id');
             $data = $request->input('data');
             foreach ($data as $row) {
+
+
                 $user = new UserOrganization();
-                $user->student_id = $row[0];
-                $user->year_level = $row[2];
                 $user->student_org_id = $org_id;
+                $user->student_id = $row[0];
                 $user->role_id = '2' ;
+                $user->year_level = $row[2];
                 $user->save();
 
             }
 
-            // return "Data inserted successfully!";
+            return "Data inserted successfully!";
             // Optionally, you can return a response indicating success or redirection
-            return $request;
+            // return $request;
         }
 }

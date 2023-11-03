@@ -37,7 +37,7 @@ methods:{
         var row = table.rows[i];
         var rowData = [];
 
-        for (var j = 0; j < row.cells.length; j++) {
+        for (var j = 0; j < row.cells.length -1; j++) {
             var cell = row.cells[j];
 
             rowData.push(cell.textContent);
@@ -49,7 +49,7 @@ methods:{
         //
         // }));
         this.collectedData = data;
-        // console.log(this.collectedData)
+        console.log(this.collectedData)
         // Display the extracted data in the console
 
             axios.post('/upload_students', { data: this.collectedData })
