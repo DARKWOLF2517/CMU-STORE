@@ -1,14 +1,67 @@
 <template>
+        <div class="pagination">
+            <button id="first-page-button" onclick="goToPage(1)" disabled>&lt;&lt;</button>
+            <button id="previous-page-button" onclick="previousPage()" disabled>&lt; Previous</button>
+            <span id="pagination-numbers"></span>
+            <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
+            <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
+        </div>
 
+
+        <button id="aqw" @click="this.getData()">ASJDHKAS</button>
 </template>
 
 <script>
 
 export default{
+props: ['org_id'],
+data(){
+    return{
+        collectedData:[],
+    }
+    
+},
 mounted(){
     this.upload();
 },
 methods:{
+    getData(){
+        // Get a reference to the table
+        var table = document.getElementById("student-list-table");
+
+        // Initialize an empty array to store the data
+        var data = [];
+
+        // Iterate through the table rows and cells
+        for (var i = 1; i < table.rows.length; i++) {
+        var row = table.rows[i];
+        var rowData = [];
+
+        for (var j = 0; j < row.cells.length; j++) {
+            var cell = row.cells[j];
+        
+            rowData.push(cell.textContent);
+        }
+
+        data.push(rowData);
+        }
+        // data.forEach((data=>{
+        //    
+        // }));
+        this.collectedData = data;
+        // console.log(this.collectedData)
+        // Display the extracted data in the console
+    
+            axios.post('/upload_students',  { data: this.collectedData })
+                        .then(response => {
+                            console.log(response.data)
+                        })
+                        .catch(error => {
+                            alert(error)
+
+                    });
+
+    },
     upload(){
         const table = document.getElementById('student-list-table');
         const rowsPerPage = 10;
@@ -94,7 +147,7 @@ methods:{
         showPage(currentPage);
         updatePagination();
 
-            // Function to handle the file upload
+        // Function to handle the file upload
         document.getElementById("uploadButton").addEventListener("click", function() {
             document.getElementById("fileInput").click();
         });

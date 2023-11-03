@@ -73,7 +73,8 @@ Route::get('/evaluation_result', function () {
 
             #USER ROUTE
             Route::get('getMemberRoute/{org_id}',[UserController::class, 'GetMemberList'])->name('member-list');
-            // Route::get('/show/user/{user_id}',[UserController::class, 'GetUsers']);
+
+            Route::post('/upload_students',[UserController::class, 'store']);
             #ORG DASHBOARD
                 Route::get('/login/org_dashboard', function () {
                     return view('student_organization.student_organization_dashboard');
@@ -174,9 +175,9 @@ Route::get('/evaluation_result', function () {
             });
 
             //get students user profile
-                Route::get('organization/{org_id}',[ProfileController::class, 'getUserOrganization']);
+                Route::get('organization/{org_id}',[UserController::class, 'getUserOrganization']);
             //get user organization
-                Route::get('profile/{student_id}',[ProfileController::class, 'getUserProfile']);
+                Route::get('profile/{student_id}',[UserController::class, 'getUserProfile']);
             //evaluation form
                 Route::get('student_evaluation_list', function () {
                     return view('student.student_evaluation_list');

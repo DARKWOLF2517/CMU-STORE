@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Organization;
 use App\Models\User;
 use App\Models\UserOrganization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -13,14 +15,36 @@ class UserController extends Controller
         $memberList = UserOrganization::where([['student_org_id', $org_id],['role_id', 2]])->with(['user','organization'])->get();
         return $memberList->toJson();
     }
-    // public function GetUsers ($user_id){
-    //     $users = User::find($user_id);
-    //     if($users){
-    //         $users = $users->count();
-    //         return $users;
-    //     }
-    //     else{
-    //         return 0;
-    //     }
-    // }
+
+        //fetch user profile
+        public function getUserOrganization($org_id){
+            $organization = Organization::find($org_id);
+            return $organization;
+    
+        }
+        public function getUserProfile($student_id){
+            $user_organization = UserOrganization::where('student_id',$student_id)->with(['organization','user'])->get();
+                return $user_organization;
+    
+        }
+        
+
+        public function store(Request $request)
+        {
+            $org_id = Session::get('org_id');
+            $data = $request->input('data');
+            foreach ($data as $row) {
+                $event = new UserOrganization();
+                $event->student_id = $row[0];
+                $event->year_level = $row[2];
+                $event->student_org_id = $org_id ;
+                $event->role_id = '2' ;
+                $event->save();
+                
+            }
+        
+            return "Data inserted successfully!";
+            // Optionally, you can return a response indicating success or redirection
+            // return $aw;
+        }
 }

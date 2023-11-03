@@ -89,21 +89,17 @@
             </tbody>
           </table>
         </div>
-        <div class="pagination">
-            <button id="first-page-button" onclick="goToPage(1)" disabled>&lt;&lt;</button>
-            <button id="previous-page-button" onclick="previousPage()" disabled>&lt; Previous</button>
-            <span id="pagination-numbers"></span>
-            <button id="next-page-button" onclick="nextPage()">Next &gt;</button>
-            <button id="last-page-button" onclick="goToPage(pageCount)">&gt;&gt;</button>
-        </div>
+
     </div>
 
+        <upload-students
+        org_id = {{Session::get('org_id')}}
+        >
 
-      </div>
+        </upload-students>
     </div>
-    <upload-students>
+    </div>
 
-    </upload-students>
 
     <!-- Include Bootstrap and jQuery JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
