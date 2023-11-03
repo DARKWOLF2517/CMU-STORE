@@ -9,6 +9,7 @@
   .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     padding: 10px;
+    border: none;
   }
 
   .card-title i {
@@ -18,18 +19,16 @@
     padding-top: 25px;
     font-size: 2.5rem; /* Increase icon size */
   }
-  .card-title h6{
 
-  }
   .card-text {
     margin-right: 40px;
   }
   .event-list{
     height: 80vh;
+
   }
 
   .event-announcement-list {
-    background-color: white;
     height: 70vh;
     max-height: 70vh;
     overflow: auto;
@@ -77,7 +76,6 @@
     justify-items: center;
     align-items: center;
   }
-
 
 /* Media query for smaller screens (e.g., screens with a max-width of 768px) */
 @media screen and (max-width: 768px) {

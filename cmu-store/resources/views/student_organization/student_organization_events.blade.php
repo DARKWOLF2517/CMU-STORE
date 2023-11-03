@@ -17,36 +17,43 @@
               </ol>
             </nav>
         </div>
-    <div class="container event-container" id="tablecontainer">
-        <div class="row head-container">
-            <div class="col-md-6 col-sm-12">
-                <div class="input-container">
-                    <i class="fa fa-search"></i>
-                    <input type="text" placeholder="Search Event">
+        <div class="mt-2">
+            <div class="row head-container">
+                <div class="col-md-6 col-sm-12">
+                    <div class="input-container">
+                        <i class="fa fa-search"></i>
+                        <input type="text" placeholder="Search Event">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
-                <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
-                <div class="select-dropdown">
-                    <select id="sort-select" class="form-control" style="text-align: center;">
-                        <option value="">Select Semester</option>
-                        <option value="option1">1st Semester 2023-2024</option>
-                        <option value="option2">2nd Semester 2022-2023</option>
-                        <option value="option3">1st Semester 2022-2023</option>
-                    </select>
+                <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
+                    <button class="btn sort-btn"><i class="bi bi-sort-up"></i></button>
+                    <div class="select-dropdown">
+                        <select id="sort-select" class="form-control" style="text-align: center;">
+                            <option value="">Select Semester</option>
+                            <option value="option1">1st Semester 2023-2024</option>
+                            <option value="option2">2nd Semester 2022-2023</option>
+                            <option value="option3">1st Semester 2022-2023</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="event-buttons d-flex justify-content-end">
+            <div class="btn-group" role="group">
+            <button class="btn me-2" id="add-event-button" data-bs-toggle="modal" data-bs-target="#event-modal" @click="initialData()">
+                <i class="bi bi-calendar-event"></i> Add Event
+            </button>
+            </div>
+        </div>
     <h3> <i class="fas fa-list mt-2"></i>  Events</h3>
-    <div class="container event-list" id="tablecontainer">
+    <div class="event-list">
         <div class="col">
-            
+
             <div class="event-list-scroll" id="event-cards">
                 <div class="spinner-border" id="event-spinner" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
-                
+
                 <event-card
                 organization_id = {{Session::get('org_id')}}>
                 </event-card>

@@ -1,13 +1,19 @@
 
 body {
-    background-color: #f5f5f4;
+    background-color: #f3f7fb;
     font-family: sans-serif;
-}
 
+}
+.fa-search{
+    color: #42b385;
+}
+.p{
+    color: #283739;
+}
 .content {
     /* margin-left: 14.375%; */
     height: 100%;
-    padding: 1.25rem;
+    padding: 1.20rem;
     transition: margin-left 0.3s ease-in-out;
 
 }
@@ -89,7 +95,7 @@ body {
     cursor: pointer;
     text-align: center; /* Center-align the text */
     border: none;
-    background-color: #f5f6fc;
+    background-color: white;
 }
 
 
@@ -118,9 +124,9 @@ body {
     padding-left: 30px;
     width: 70%;
     height: 90%;
-    border-radius: 25px; /* Add border-radius to the input */
+    border-radius: 10px; /* Add border-radius to the input */
     border: none;
-    background-color: #e9f5f3;
+    background-color: white;
   }
 .sort-btn{
     font-size: 35px;

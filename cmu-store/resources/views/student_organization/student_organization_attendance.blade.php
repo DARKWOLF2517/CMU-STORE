@@ -12,6 +12,7 @@
                 <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item active" aria-current="page">Attendance</li>
+                <li class="breadcrumb-item active" aria-current="page">Attendance Records</li>
               </ol>
             </nav>
         </div>
@@ -60,7 +61,7 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="container" id="tablecontainer">
+            <div class="mt-2">
                 <div class="row head-container">
                     <div class="col-md-6 col-sm-12">
                         <div class="input-container">
@@ -81,7 +82,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="mt-4">
                 <h4><i class="fas fa-list"></i> Attendance Records</h4>

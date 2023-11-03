@@ -3,7 +3,7 @@
     position: absolute;
     width: 100%;
     top: 0;
-    background-color: #0b904f;
+    background-color: #42b385;
     color: #ffffff;
     padding: 0.875rem;
     display: flex;
@@ -21,12 +21,11 @@
     margin-right: 0.625rem; /* Converted from 10px */
 }
 .notification-button {
-    background-color: #0a6c3f;
+    background-color: #337058;
     color: #fff;
     border: none;
     padding: 10px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
     position: relative;
 }
@@ -149,7 +148,9 @@
     margin-left: 30px;
 }
 
-
+.btn-toggle-nav i{
+    color: #283739;
+}
 .btn-toggle-nav li {
     width: 100%;
 }
@@ -201,7 +202,9 @@ margin-right: 0;
 .sidebar.collapsed {
     width: 70px;
 }
-
+.sidebar i{
+    color: #283739;
+}
 .content {
     margin-left: 230px;
     padding: 20px;

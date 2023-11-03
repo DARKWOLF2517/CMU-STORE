@@ -11,15 +11,16 @@
                 <li class="breadcrumb-item"><a href="/login/org_dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item">Student Organization</li>
                 <li class="breadcrumb-item active" aria-current="page">Accountabilities</li>
+                <li class="breadcrumb-item active" aria-current="page">Membership Fee List</li>
             </ol>
             </nav>
         </div>
-        <div class="container" id="tablecontainer">
+        <div class="mt-2">
             <div class="row head-container">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-container">
                         <i class="fa fa-search"></i>
-                        <input type="text" placeholder="Search Student">
+                        <input type="text" placeholder="Search Event">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" style="display: flex; align-items: center; justify-content: flex-end;">
@@ -97,7 +98,7 @@
                         </div>
                         <div class="form-group">
                             <label for="edit-membership-fee">Membership Fee:</label>
-                            <input type="text" id="edit-membership-fee" class="form-control" readonly>
+                            <input type="text" id="edit-membership-fee" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="edit-membership-status">Membership Status:</label>
