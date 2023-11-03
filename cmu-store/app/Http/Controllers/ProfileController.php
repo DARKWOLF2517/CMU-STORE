@@ -63,18 +63,7 @@ class ProfileController extends Controller
     }
 
 
-    //fetch user profile
-    public function getUserOrganization($org_id){
-        $organization = Organization::find($org_id);
-        return $organization;
 
-    }
-    public function getUserProfile($student_id){
-        $user_organization = UserOrganization::where('student_id',$student_id)->with(['organization','user'])->get();
-            return $user_organization;
-
-    }
-    
 
 
     
