@@ -14,14 +14,14 @@ class CreateUserSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-                'id' =>'2020301072',
+                'id' =>'1',
                 'name' =>'admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('admin1234'),
             ]);
 
         DB::table('users')->insert([
-            'id' =>'2020301071',
+            'id' =>'2',
             'name' =>'student',
             'email' => 'student@gmail.com',
             'password' => bcrypt('student1234'),

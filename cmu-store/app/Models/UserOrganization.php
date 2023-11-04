@@ -9,7 +9,7 @@ class UserOrganization extends Model
 {
     use HasFactory;
     protected $table = 'user_organization';
-    // protected $primaryKey = ['student_org_id', 'student_id', 'role_id'];
+    protected $primaryKey = ['student_org_id', 'student_id', 'role_id'];
     public $incrementing = false;
 
 

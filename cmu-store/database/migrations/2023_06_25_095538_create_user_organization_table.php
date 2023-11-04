@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreign('student_org_id')->references('org_id')->on('organizations');
             $table->foreign('student_id')->references('id')->on('users');
             $table->foreign('role_id')->references('role_id')->on('roles');
+            
+            $table->primary(['student_org_id','student_id','role_id']);
         });
     }
 

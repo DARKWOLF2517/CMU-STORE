@@ -6,6 +6,7 @@ use App\Models\Organization;
 use App\Models\User;
 use App\Models\UserOrganization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -36,11 +37,23 @@ class UserController extends Controller
             foreach ($data as $row) {
 
 
+                $user = new User();
+                $user->id = $row[0];
+                $user->name = $row[1];
+                $user->email = $row[2];
+                $user->password = Hash::make($row[0]);
+                $user->save();
+
+            }
+
+            foreach ($data as $row) {
+
+
                 $user = new UserOrganization();
                 $user->student_org_id = $org_id;
                 $user->student_id = $row[0];
                 $user->role_id = '2' ;
-                $user->year_level = $row[2];
+                $user->year_level = $row[3];
                 $user->save();
 
             }
