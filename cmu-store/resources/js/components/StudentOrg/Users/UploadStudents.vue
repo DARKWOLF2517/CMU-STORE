@@ -76,7 +76,7 @@ methods:{
         });
 
                 // Function to parse the uploaded Excel file and display it in the modal
-                async function parseExcelData(file) {
+            async function parseExcelData(file) {
             const workbook = new ExcelJS.Workbook();
             const reader = new FileReader();
 
