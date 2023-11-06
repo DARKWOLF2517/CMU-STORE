@@ -24,4 +24,8 @@ class Attendance extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function events()
+    {
+        return $this->hasOne(Event::class,'event_id','event_id');
+    }
 }

@@ -69,25 +69,22 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                  <tbody id="studentTableBody">
-                <!-- Student data will be added here -->
-            </tbody>
-              {{-- <tr>
-                <td>2023-05-01</td>
-                <td>John Smith</td>
-                <td>1st year</td>
-                <td>CISC</td>
-                <td>
-                    <button class="edit-button ellipsis-button"> <i class="bi bi-pencil-square"></i></button>
-                    <button class="delete-button ellipsis-button"><i class="bi bi-trash"></i></button>
-                  </td>
-              </tr>
-              --}}
-
+                <tbody id="studentTableBody">
+                    <!-- Student data will be added here -->
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>2</td>
+                        <td>Engineering</td>
+                        <td>
+                            <button class="btn btn-danger delete-button">Delete</button>
+                            <button class="btn btn-primary edit-button">Edit</button>
+                        </td>
+                        </tr>
+                </tbody>
+        
 
             </tbody>
-          </table>
+            </table>
         </div>
 
     </div>
@@ -100,37 +97,7 @@
     </div>
     </div>
 
-        <!-- Modal for displaying Excel data -->
-        <div class="modal fade" id="excelDataModal" tabindex="-1" aria-labelledby="excelDataModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="excelDataModalLabel">Excel Data</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Student ID</th>
-                                <th>Name</th>
-                                <th>Institutional Email</th>
-                                <th>Year Level</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="modalStudentTableBody">
-                            <!-- Excel data will be displayed here -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="uploadToTableButton">Upload to Table</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 
   <!-- Include Bootstrap and jQuery JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

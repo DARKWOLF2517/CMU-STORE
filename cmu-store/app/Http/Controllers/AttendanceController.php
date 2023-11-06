@@ -16,7 +16,19 @@ class AttendanceController extends Controller
         
         return $attendance->toJson();
     }
+    public function AttendanceList($organization_id, $event_id)
+    {
+        $attendance = Attendance::where([
+            ['org_id', $organization_id],
+            ['event_id', $event_id]
+        ])->with(['user','events'])->get();
 
+        return $attendance->toJson();
+    }
+    public function events($event_id)
+    {
+        return view('student_organization.student_organization_attendance_record', ['event_id' => $event_id]);
+    }
 
     public function store(Request $request){
         if($this->attendanceRepetition($request['user_id'],$request['session'],$request['event_id']) >= 1)

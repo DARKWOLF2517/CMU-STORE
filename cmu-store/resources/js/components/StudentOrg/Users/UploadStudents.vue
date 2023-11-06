@@ -9,6 +9,39 @@
 
 
         <button id="aqw" @click="this.getData()">ASJDHKAS</button>
+
+
+
+        <!-- Modal for displaying Excel data -->
+        <div class="modal fade" id="excelDataModal" tabindex="-1" aria-labelledby="excelDataModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="excelDataModalLabel">Excel Data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table" id="tableModal">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Institutional Email</th>
+                                    <th>Year Level</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modalStudentTableBody">
+                                <!-- Excel data will be displayed here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="excelDataModal">Close</button>
+                        <button type="button" class="btn btn-primary" id="uploadToTableButton" @click="this.getData()">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </template>
 
 <script>
@@ -27,7 +60,7 @@ mounted(){
 methods:{
     getData(){
         // Get a reference to the table
-        var table = document.getElementById("student-list-table");
+        var table = document.getElementById("tableModal");
 
         // Initialize an empty array to store the data
         var data = [];
@@ -37,10 +70,11 @@ methods:{
         var row = table.rows[i];
         var rowData = [];
 
-        for (var j = 0; j < row.cells.length -1; j++) {
+        for (var j = 0; j < row.cells.length; j++) {
             var cell = row.cells[j];
 
             rowData.push(cell.textContent);
+    
         }
 
         data.push(rowData);
@@ -49,23 +83,24 @@ methods:{
         //
         // }));
         this.collectedData = data;
-        console.log(this.collectedData)
+        console.log(data)
         // Display the extracted data in the console
 
             axios.post('/upload_students', { data: this.collectedData })
                 .then(response => {
                     console.log(response.data)
+                    location.reload();
                 })
                 .catch(error => {
                     console.log(error)
 
                     });
 
+
     },
     upload(){
-        // Function to handle the file upload
         document.getElementById("uploadButton").addEventListener("click", function () {
-        document.getElementById("fileInput").click();
+            document.getElementById("fileInput").click();
         });
 
         document.getElementById("fileInput").addEventListener("change", function (e) {
@@ -75,8 +110,8 @@ methods:{
             }
         });
 
-                // Function to parse the uploaded Excel file and display it in the modal
-            async function parseExcelData(file) {
+        // Function to parse the uploaded Excel file and display it in the modal
+          async function parseExcelData(file) {
             const workbook = new ExcelJS.Workbook();
             const reader = new FileReader();
 
@@ -109,55 +144,19 @@ methods:{
                     <td>${studentArray[1] || ""}</td>
                     <td>${studentArray[2] || ""}</td>
                     <td>${studentArray[3] || ""}</td>
-                    <td>
-                        <button class="btn btn-danger delete-button">Delete</button>
-                        <button class="btn btn-primary edit-button">Edit</button>
-                    </td>
+                    
                 `;
 
                 tableBody.appendChild(newRow);
             });
+            // Show the modal
+            const excelDataModal = new bootstrap.Modal(document.getElementById("excelDataModal"), { keyboard: false });
+            excelDataModal.show();
         };
 
     reader.readAsArrayBuffer(file);
     }
 
-            // Function to upload data from the modal to the main table
-            document.getElementById("uploadToTableButton").addEventListener("click", function () {
-            const modalTableBody = document.getElementById("modalStudentTableBody");
-            const tableBody = document.getElementById("studentTableBody");
-
-            // Clone the rows from the modal and append them to the main table with "Edit" and "Delete" buttons in the last cell
-                const modalRows = modalTableBody.querySelectorAll("tr");
-                modalRows.forEach(function (row) {
-                const newRow = row.cloneNode(true);
-
-                // Create a cell for "Edit" and "Delete" buttons in the last column
-                const actionsCell = document.createElement("td");
-
-                // Add "Edit" button
-                const editButton = document.createElement("button");
-                editButton.textContent = "Edit";
-                editButton.classList.add("btn", "btn-primary", "edit-button");
-                actionsCell.appendChild(editButton);
-
-                // Add "Delete" button
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
-                deleteButton.classList.add("btn", "btn-danger", "delete-button");
-                actionsCell.appendChild(deleteButton);
-
-                // Append the actions cell to the new row
-                newRow.appendChild(actionsCell);
-
-                // Append the new row to the main table
-                tableBody.appendChild(newRow);
-            });
-
-            // Hide the modal
-            const excelDataModal = new bootstrap.Modal(document.getElementById("excelDataModal"));
-            excelDataModal.hide();
-        });
 
         // Function to handle the "Delete" button click
         document.getElementById("studentTableBody").addEventListener("click", function (e) {

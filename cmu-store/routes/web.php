@@ -61,7 +61,8 @@ Route::get('/evaluation_result', function () {
     #ORG ROUTE
         Route::middleware(['user-role:1'])->group(function(){
             #attendance
-            Route::get('/attendance/show/{event_id}/{org_id}',[AttendanceController::class, 'showAttendanceList'])->name('get-attendance');
+            Route::get('/attendance/show/{event_id}/{org_id}',[AttendanceController::class, 'showAttendanceList']);
+            Route::get('/attendance/list/{organization_id}/{event_id}',[AttendanceController::class, 'AttendanceList']);
             Route::post('/attendance',[AttendanceController::class, 'store'])->name('add-attendance');
             Route::get('/attendance/count/{event_id}/{org_id}',[AttendanceController::class, 'AttendanceCount']);
             //check the repetition of the data using id number
@@ -82,9 +83,11 @@ Route::get('/evaluation_result', function () {
 
 
 
-            Route::get('student_organization_attendance_record', function () {
-                return view('student_organization.student_organization_attendance_record');
-            });
+            // Route::get('student_organization_attendance_record/{event_id}', function () {
+            //     return view('student_organization.student_organization_attendance_record');
+            // });
+            Route::get('student_organization_attendance_record/{event_id}',[AttendanceController::class, 'events']);
+            
             Route::get('student_organization_attendance', function () {
                 return view('student_organization.student_organization_attendance');
             });
